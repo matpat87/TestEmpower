@@ -1,0 +1,6 @@
+<?php
+ // created: 2018-06-12 09:52:14
+$dictionary['Account']['fields']['gross_margin_c']['inline_edit']='1';
+$dictionary['Account']['fields']['gross_margin_c']['labelValue']='Margin';
+
+ ?>

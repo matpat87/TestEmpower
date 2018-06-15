@@ -1,0 +1,540 @@
+/*
+ ************ 
+ * SUGAR FIXED CSS
+ ************
+*/
+/******************************************************/
+.ui-dialog {
+	position: absolute !important;
+}
+
+.ui-state-default {
+	font-weight: bold !important;
+}
+/*****************************************************/
+
+ul.cssmenu {
+	z-index: 2;
+}
+
+.ui-corner-left {
+  border-bottom-left-radius: 6px !important;
+  border-top-left-radius: 6px !important;
+}
+
+.ui-corner-right {
+  border-bottom-right-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+}
+
+.fc-button-group button {
+	border-radius: 0px;
+}
+
+/*.ui-dialog .ui-dialog-titlebar-close span {
+	margin: -8px;
+}*/
+/********************************/
+
+/*
+ ************ 
+ * COMPONENT TAGS CSS
+ ************
+*/
+
+hr {
+	margin-top: -3px;
+}
+
+/*.textAreaInput {
+	width: 380px;
+	height: 50px;
+}*/
+
+fieldset {
+	border: 0;
+}
+
+.inputText.text {
+	width: 230px;
+	margin-bottom:12px;
+	padding: .4em;
+}
+
+.selectJqueryStyle {
+	width: 230px;
+	border-radius: 6px;
+	padding: 2px 0 2px 4px;
+}
+
+.ui-multiselect {
+	width: 230px !important;
+	padding: 4px 0px 0px 4px;
+}
+
+.ui-icon-triangle-2-n-s {
+	background-position: -130px -18px;
+}
+
+/******************************/
+
+/*
+ ************ 
+ * CALENDAR CSS
+ ************
+*/
+
+#calendar {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+#calendarContent {
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: -o-inline-box;
+	display: inline-box;
+}
+
+.calendarContent {
+	visibility: hidden;
+}
+
+.fc-day-header {
+	background: #deedf7 url(images/ui-bg_highlight-soft_100_deedf7_1x100.png) 50% 50% repeat-x;
+}
+
+.fc-day.fc-sat, .fc-day.fc-sun {
+	background: #D7D7D7;
+    opacity: .3;
+}
+
+.fc-day:hover:not(.fc-sat):not(.fc-sun) {
+	background: aliceblue;
+}
+
+.fc-sat:hover, .fc-sun:hover {
+	background: #BBDCFF;
+}
+
+.fc-event:hover {
+	cursor: pointer;
+}
+
+.titleCategory {
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+	margin-top: 7px;
+	margin-bottom: 14px;
+}
+
+.titleEvent {
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+	margin-top: 7px;
+	margin-bottom: 14px;
+	height: 75px;
+	padding-top: 25px;
+	background-color: #F2F5F7;
+	color: black;
+	border-radius: 6px;
+}
+
+#nextButton {
+	margin-top: 45px;
+	margin-left: 25px;
+	width: 150px;
+} 
+
+#createEvent, #modifyEvent {
+	position: absolute;
+	right: 0;
+	margin-right: 18px;
+	margin-bottom: 14px;
+}
+
+#deleteButton {
+	position: absolute;
+	left: 0;
+	margin-left: 18px;
+	margin-top: 14px;
+}
+
+#modifyButton {
+	position: absolute;
+	right: 0;
+	margin-right: 18px;
+	margin-top: 14px;
+}
+
+#backButton {
+	position: absolute;
+	left: 0;
+	margin-left: 18px;
+	margin-bottom: 14px;
+}
+
+#properties, #modify-properties {
+	display: none;
+}
+
+.hideRole {
+	display: inline-flex;
+}
+
+.subtitleEvent {
+	font-size: 16px;
+    font-weight: initial;
+    margin-top: 10px;
+}
+
+.dataInfo li {
+	list-style-type: initial;
+}
+
+.dataInfo td {
+	border: 1px solid black;
+	padding: .5em;
+}
+/*********************************/
+
+/*
+ ************ 
+ * FORM CSS
+ ************
+*/
+
+#allDay, label[for="allDay"] {
+	display: none;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.hide {
+	display: none;
+}
+
+.block {
+	clear: both;
+	display: block;
+}
+
+.textInputLabel {
+	margin-bottom: 7px;
+}
+
+.textInputLabel, .inputText, #panel-new select, #panel-modify {
+	display: block;
+}
+
+.inputForm {
+	margin-bottom: 12px;
+}
+
+.inputTitle input.text {
+	max-width: 800px;
+	width: 95%;
+}
+
+.inputHour {
+	margin-left: 7px;
+}
+
+.inputMinute, .inputCategory, .inputVisibility, .inputRole {
+	margin-left: 7px;
+}
+
+.inputAllDay, .inputCountry, .inputImpact, .inputBrand, .inputSubCategory, .inputCategory, .inputRole, .inputInfo, .inputVisibility, .inputWorkflow, .inputBrandAction, .inputTimeZone {
+	margin-bottom: 12px;
+}
+
+.checkBoxPublish {
+	margin-top: 12px;
+}
+
+#asol_published_domain {
+	margin-left: 0.5ex;
+}
+
+#initialDate, #finalDate {
+	margin-right: 14px;
+}
+
+.checkBoxInputLabel, .inputCheckbox {
+	display: inline;
+}
+
+.elementInline {
+	display: inline-flex;
+	margin-left: -7px;
+}
+
+.combodateInline {
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: -o-inline-box;
+	display: inline-box;
+	margin-top: 17px;
+}
+
+.combodate .hour, .combodate .minute {
+    display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: -o-inline-box;
+	display: inline-box;
+	margin: 0px 5px;
+}
+
+.inputHour input, .inputMinute input, .inputDuration input {
+	width: 60px;
+}
+
+.minuteLabel {
+	margin-left: 7px;
+	margin-top: 7px;
+}
+
+.symbol {
+	margin-left: 7px;
+	margin-top: 23px;
+}
+
+#category {
+	margin-left: 185px;
+	margin-top: 160px;
+}
+
+#selectCategory {
+	height: 30px;
+	width: 200px;
+}
+
+#displayTime {
+	margin-top: 14px;
+	margin-bottom: 7px;
+	text-align: center;
+}
+
+#displayInfo {
+	margin: 14px 7px;
+	text-align: justify;
+}
+
+.titleDisplay {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.dataDisplay {
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.titleImpact, .titleCountry, .titleBrand, .titleAction, .titleVisibility, .titleRole, .titleWorkflows, .titleTimezone {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.dataImpact, .dataCountry, .dataBrand, .dataAction, .dataVisibility, .dataRole, .dataWorkflows, .dataTimezone {
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.titleTime, .titleInfo {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.dataTime, .dataInfo {
+	font-weight: normal;
+	font-size: 14px;
+	margin-left: 5px;
+}
+/**************************************/
+
+/*
+ ************ 
+ * ACORDION CSS
+ ************
+*/
+
+#ac-container {
+  text-align: left;
+  margin-right: 50px;
+}
+
+#buttonPanel {
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: -o-inline-box;
+	display: inline-box;
+}
+
+#ac-container .selectable-boton {
+	width: 90px;
+	box-sizing: initial;
+	margin-bottom: 0px;
+	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+	padding: 5px 20px;
+	position: relative;
+	z-index: 20;
+	display: block;
+	height: 30px;
+  	cursor: pointer;
+	color: #777;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+	line-height: 33px;
+	font-size: 15px;
+	background: linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+    background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #ffffff), color-stop(100%, #eaeaea));
+	background: -webkit-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+	background: -o-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+	background: -ms-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+	background: linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+	box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 1px 0px 0px 0px rgba(255, 255, 255, 0.9) inset, 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#ac-container .selectable-menu {
+	width: 350px;
+	box-sizing: initial;
+	margin-bottom: 0px;
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    padding: 5px 20px;
+    position: relative;
+    z-index: 20;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: #777;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    line-height: 33px;
+    font-size: 18px;
+    background: #f5f5f5;
+    box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 1px 0px 0px 0px rgba(255, 255, 255, 0.9) inset, 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#ac-container label:hover {
+  background: #fff;
+}
+
+#ac-container input:checked + label,
+#ac-container input:checked + label:hover {
+  background: #c6e1ec;
+  color: #3d7489;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#ac-container .selectable-menu:hover:after,
+#ac-container input:checked + .selectable-menu:hover:after {
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	right: 13px;
+	top: 7px;
+	background: transparent url(../images/arrow_down.png) no-repeat center center;	
+}
+
+#ac-container input:checked + .selectable-menu:hover:after {
+  background-image: url(../images/arrow_up.png);
+}
+
+#ac-container [for='toggleFilter']:after,
+#ac-container input:checked + [for='toggleFilter']:after {
+	content: '';
+	position: absolute;
+	width: 90px;
+	height: 24px;
+	top: 7px;
+	background: transparent url(../images/plus.png) no-repeat center center;	
+	background-size: contain;
+}
+
+#ac-container input:checked + [for='toggleFilter']:after {
+  background-image: url(../images/minus.png);
+}
+
+#ac-container [for='selectedFilter']:after,
+#ac-container input:checked + [for='selectedFilter']:after {
+	content: '';
+	position: absolute;
+	width: 90px;
+	height: 24px;
+	top: 7px;
+	background: transparent url(../images/no_check.png) no-repeat center center;	
+	background-size: contain;
+}
+
+#ac-container input:checked + [for='selectedFilter']:after {
+  background-image: url(../images/check.png);
+}
+
+#ac-container input {
+  display: none;
+}
+
+#ac-container section {
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: -1px;
+    overflow: auto;
+    max-height: 0px;
+    position: relative;
+    z-index: 10;
+    -webkit-transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+    -moz-transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+    -o-transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+    -ms-transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+    transition: max-height 0.5s ease-in-out, box-shadow 0.6s linear;
+}
+
+#ac-container input:checked ~ section {
+    -webkit-transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -moz-transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -o-transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -ms-transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    transition: max-height 0.5s ease-in-out, box-shadow 0.1s linear;
+    box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+}
+
+#ac-container input:checked ~ section {
+    max-height: 700px;
+}
+
+li.ui-widget-content {
+	background: #F2F5F7; 
+	color: #ADADAD; 
+}
+
+.selectable .ui-selecting { 
+	background: #FECA40; 
+}
+
+.selectable .ui-selected { 
+	background: #F2F5F7; 
+	color: #362B36; 
+}
+
+.selectable { 
+	list-style-type: none; 
+	margin: 0;
+	width: 80%; 
+	box-sizing: initial;
+}
+
+.selectable li { 
+	margin: 15px; 
+	padding: 0.4em; 
+	font-size: 1.4em; 
+	height: 18px; 
+	box-sizing: initial;
+}

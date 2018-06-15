@@ -1,0 +1,5 @@
+.collapsed .panelContainer, .collapsed .collapseLink, .expanded .expandLink { display:none; }
+
+table {
+    font-size: 11px;
+}

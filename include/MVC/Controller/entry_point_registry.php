@@ -43,14 +43,6 @@ if (!defined('sugarEntry') || !sugarEntry) {
 }
 
 $entry_point_registry = array(
-	'wfm_engine' => array('file' => 'modules/asol_Process/wfm_engine.php', 'auth' => false),
-	'wfm_export_workflows' => array('file' => 'modules/asol_Process/export_workflows.php', 'auth' => false),
-	'wfm_layout' => array('file' => 'modules/asol_Process/_flowChart/layout.php', 'auth' => true),
-	'wfm_flowChart' => array('file' => 'modules/asol_Process/_flowChart/flowChart.php', 'auth' => true),
-	'wfm_flowChartActions' => array('file' => 'modules/asol_Process/_flowChart/flowChartActions.php', 'auth' => true),
-	'wfm_scheduled_task' => array('file' => 'modules/asol_Process/scheduledTask.php', 'auth' => false),
-	'wfm_variable_generator' => array('file' => 'modules/asol_Process/___common_WFM_premium/wfm_variable_generator/wfm_variable_generator.php', 'auth' => true),
-	'wfm_variable_generator_actions' => array('file' => 'modules/asol_Process/___common_WFM_premium/wfm_variable_generator/wfm_variable_generator_actions.php', 'auth' => true),
     'emailImage' => array('file' => 'modules/EmailMan/EmailImage.php', 'auth' => false),
     'download' => array('file' => 'download.php', 'auth' => true),
     'export' => array('file' => 'export.php', 'auth' => true),

@@ -9,7 +9,6 @@ $hook_array['after_save'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php'
 $hook_array['before_save'] = Array(); 
 $hook_array['before_save'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php','wfm_hook_process', 'execute_process'); 
 $hook_array['before_delete'] = Array(); 
-$hook_array['before_delete'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php','wfm_hook_process', 'execute_process'); 
 
 
 

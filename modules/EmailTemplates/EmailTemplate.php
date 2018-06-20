@@ -825,7 +825,7 @@ class EmailTemplate extends SugarBean
     {
         $this->storedVariables = array();
         $this->body_html = preg_replace_callback('/\{::[^}]+::\}/', array($this, 'storeVariables'), $this->body_html);
-//WFMcommented         parent::cleanBean();
+        parent::cleanBean();
         $this->body_html = str_replace(array_values($this->storedVariables), array_keys($this->storedVariables), $this->body_html);
     }
 

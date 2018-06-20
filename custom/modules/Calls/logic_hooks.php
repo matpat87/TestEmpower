@@ -11,7 +11,6 @@ $hook_array['before_save'] = Array();
 $hook_array['before_save'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php','wfm_hook_process', 'execute_process'); 
 $hook_array['before_delete'] = Array(); 
 $hook_array['before_delete'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php','wfm_hook_process', 'execute_process'); 
-$hook_array['before_delete'][] = Array(1, 'WakeUp Holded Item', 'custom/include/wfm_on_hold.php','wfm_hook_on_hold', 'wakeup_on_hold'); 
 
 
 

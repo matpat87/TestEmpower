@@ -15,7 +15,6 @@ $hook_array['after_login'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php
 $hook_array['before_logout'] = Array(); 
 $hook_array['before_logout'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php','wfm_hook_process', 'execute_process'); 
 $hook_array['login_failed'] = Array(); 
-$hook_array['login_failed'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php','wfm_hook_process', 'execute_process'); 
 
 
 

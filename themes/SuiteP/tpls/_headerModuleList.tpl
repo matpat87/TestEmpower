@@ -774,7 +774,7 @@
                                 <div class="side-bar-action-icon">
                                      <span class="suitepicon suitepicon-action-"></span>
                                 </div>
-                                <div class="actionmenulink">Logout Sudo</div>
+                                <div class="actionmenulink">Sudo Logout</div>
                             </a>
                         </li>
                     </ul>

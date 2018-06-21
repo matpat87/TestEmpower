@@ -47,6 +47,8 @@ $mod_strings = array (
   'LBL_REPORTS_TO' => 'Reports to',
   'LBL_ACTIONITEM_ASSIGNED_USER_USER_ID' => 'Action Item Assigned to (related User ID)',
   'LBL_ACTIONITEM_ASSIGNED_USER' => 'Action Item Assigned to',
-  'LBL_EDITVIEW_PANEL2' => 'New Panel 2',
-  'LBL_EDITVIEW_PANEL1' => 'New Panel 1',
+  'LBL_EDITVIEW_PANEL1' => 'Main',
+  'LBL_EDITVIEW_PANEL2' => 'Initial Incident Investigation',
+  'LBL_EDITVIEW_PANEL3' => 'Other',
+  'LBL_EDITVIEW_PANEL4' => 'Investigation',
 );

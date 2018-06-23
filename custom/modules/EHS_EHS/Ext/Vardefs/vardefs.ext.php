@@ -74,7 +74,7 @@ $dictionary['EHS_EHS']['fields']['findings_corrective_action_c']['labelValue']='
 
  
 
- // created: 2018-06-20 16:15:47
+ // created: 2018-06-23 09:41:03
 $dictionary['EHS_EHS']['fields']['first_name_c']['inline_edit']='1';
 $dictionary['EHS_EHS']['fields']['first_name_c']['labelValue']='First Name';
 
@@ -128,7 +128,7 @@ $dictionary['EHS_EHS']['fields']['job_factors_c']['labelValue']='Job Factors';
 
  
 
- // created: 2018-06-20 16:16:57
+ // created: 2018-06-23 09:41:23
 $dictionary['EHS_EHS']['fields']['last_name_c']['inline_edit']='1';
 $dictionary['EHS_EHS']['fields']['last_name_c']['labelValue']='Last Name';
 
@@ -152,13 +152,13 @@ $dictionary['EHS_EHS']['fields']['number_people_injured_c']['labelValue']='Numbe
 
  
 
- // created: 2018-06-20 17:31:18
+ // created: 2018-06-23 09:41:48
 $dictionary['EHS_EHS']['fields']['period_c']['inline_edit']='1';
 $dictionary['EHS_EHS']['fields']['period_c']['labelValue']='Period of Work Week';
 
  
 
- // created: 2018-06-20 18:08:52
+ // created: 2018-06-23 09:39:44
 $dictionary['EHS_EHS']['fields']['personal_factors_c']['inline_edit']='1';
 $dictionary['EHS_EHS']['fields']['personal_factors_c']['labelValue']='Contributing Cause';
 
@@ -182,7 +182,7 @@ $dictionary['EHS_EHS']['fields']['reports_to_c']['labelValue']='Reports to';
 
  
 
- // created: 2018-06-20 16:29:21
+ // created: 2018-06-23 09:40:47
 $dictionary['EHS_EHS']['fields']['return_date_c']['inline_edit']='1';
 $dictionary['EHS_EHS']['fields']['return_date_c']['labelValue']='Work Date';
 
@@ -230,13 +230,14 @@ $dictionary['EHS_EHS']['fields']['time_shift_minutes_c']['labelValue']='Minutes'
 
  
 
- // created: 2018-06-20 17:57:19
+ // created: 2018-06-23 09:40:37
 $dictionary['EHS_EHS']['fields']['type']['len']=100;
 $dictionary['EHS_EHS']['fields']['type']['inline_edit']=true;
 $dictionary['EHS_EHS']['fields']['type']['comments']='The type of issue (ex: issue, feature)';
 $dictionary['EHS_EHS']['fields']['type']['merge_filter']='disabled';
 $dictionary['EHS_EHS']['fields']['type']['options']='ehs_ehs_type_dom';
 $dictionary['EHS_EHS']['fields']['type']['audited']=true;
+$dictionary['EHS_EHS']['fields']['type']['required']=true;
 
  
 

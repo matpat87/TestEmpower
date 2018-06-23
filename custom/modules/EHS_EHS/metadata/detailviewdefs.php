@@ -31,25 +31,25 @@ array (
           'field' => '30',
         ),
       ),
-      'useTabs' => false,
+      'useTabs' => true,
       'tabDefs' => 
       array (
         'LBL_EDITVIEW_PANEL1' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
         'LBL_EDITVIEW_PANEL2' => 
         array (
-          'newTab' => false,
-          'panelDefault' => 'expanded',
-        ),
-        'LBL_EDITVIEW_PANEL3' => 
-        array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
         'LBL_EDITVIEW_PANEL4' => 
+        array (
+          'newTab' => true,
+          'panelDefault' => 'expanded',
+        ),
+        'LBL_EDITVIEW_PANEL3' => 
         array (
           'newTab' => false,
           'panelDefault' => 'expanded',
@@ -251,13 +251,6 @@ array (
           ),
         ),
       ),
-      'LBL_EDITVIEW_PANEL3' => 
-      array (
-        0 => 
-        array (
-          0 => 'assigned_user_name',
-        ),
-      ),
       'LBL_EDITVIEW_PANEL4' => 
       array (
         0 => 
@@ -375,6 +368,13 @@ array (
             'name' => 'signoff_date_c',
             'label' => 'LBL_SIGNOFF_DATE',
           ),
+        ),
+      ),
+      'LBL_EDITVIEW_PANEL3' => 
+      array (
+        0 => 
+        array (
+          0 => 'assigned_user_name',
         ),
       ),
     ),

@@ -74,7 +74,15 @@ if (is_admin($current_user)) {
 
 }
 
-
-if($current_user->is_admin && !$_SESSION['sudo_user_id'] && $_GET['module'] == "Users" && $_GET['action'] == "DetailView"){
+/**
+ * Custom code for adding modules Sudo Login for any users.
+ * @author Steven Kyamko
+ * @date_created 6/14/2018 
+**/
+if($current_user->is_admin && 
+    (empty($_SESSION['sudo_user_id']) && $_GET['module'] == "Users" && $_GET['action'] == "DetailView")){
     $module_menu[] = Array("index.php?entryPoint=switchUserEntryPoint&user_id=" . $_GET['record'], "Login As", "");
 }
+/**
+ * End of customization
+**/

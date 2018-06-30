@@ -2,6 +2,30 @@
  //WARNING: The contents of this file are auto-generated
 
 
+// created: 2018-06-30 06:18:22
+$dictionary["Opportunity"]["fields"]["opportunities_accounts_1"] = array (
+  'name' => 'opportunities_accounts_1',
+  'type' => 'link',
+  'relationship' => 'opportunities_accounts_1',
+  'source' => 'non-db',
+  'module' => 'Accounts',
+  'bean_name' => 'Account',
+  'vname' => 'LBL_OPPORTUNITIES_ACCOUNTS_1_FROM_ACCOUNTS_TITLE',
+);
+
+
+// created: 2018-06-30 06:22:37
+$dictionary["Opportunity"]["fields"]["opportunities_project_1"] = array (
+  'name' => 'opportunities_project_1',
+  'type' => 'link',
+  'relationship' => 'opportunities_project_1',
+  'source' => 'non-db',
+  'module' => 'Project',
+  'bean_name' => 'Project',
+  'vname' => 'LBL_OPPORTUNITIES_PROJECT_1_FROM_PROJECT_TITLE',
+);
+
+
  // created: 2018-06-18 17:51:18
 $dictionary['Opportunity']['fields']['amount_usd_c']['inline_edit']='';
 $dictionary['Opportunity']['fields']['amount_usd_c']['labelValue']='Opportunity Amount: (USD $)';

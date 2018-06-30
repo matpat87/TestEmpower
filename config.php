@@ -1,5 +1,5 @@
 <?php
-// created: 2018-06-05 21:05:24
+// created: 2018-06-30 10:22:21
 $sugar_config = array (
   'addAjaxBannedModules' => 
   array (
@@ -309,7 +309,7 @@ $sugar_config = array (
     'timeout' => 86400,
   ),
   'js_custom_version' => 1,
-  'js_lang_version' => 11,
+  'js_lang_version' => 15,
   'languages' => 
   array (
     'en_us' => 'English (US)',
@@ -351,18 +351,22 @@ $sugar_config = array (
   ),
   'passwordsetting' => 
   array (
-    'SystemGeneratedPasswordON' => '',
+    'SystemGeneratedPasswordON' => '0',
     'generatepasswordtmpl' => 'f08afa01-5787-fee1-3027-5aea689685e0',
     'lostpasswordtmpl' => 'f3886c5a-a3c4-2618-e8d9-5aea6839876d',
     'factoremailtmpl' => '2a2704e7-c5c8-bfc4-817a-5aea68611652',
-    'forgotpasswordON' => false,
+    'forgotpasswordON' => '1',
     'linkexpiration' => '1',
     'linkexpirationtime' => '30',
     'linkexpirationtype' => '1',
-    'systexpiration' => '1',
-    'systexpirationtime' => '7',
+    'systexpiration' => '0',
+    'systexpirationtime' => '',
     'systexpirationtype' => '1',
     'systexpirationlogin' => '',
+    'oneupper' => '1',
+    'onelower' => '1',
+    'onenumber' => '1',
+    'onespecial' => '1',
   ),
   'portal_view' => 'single_user',
   'require_accounts' => true,
@@ -450,4 +454,8 @@ $sugar_config = array (
   'dashlet_auto_refresh_min' => '30',
   'stack_trace_errors' => false,
   'email_xss' => 'YToxMzp7czo2OiJhcHBsZXQiO3M6NjoiYXBwbGV0IjtzOjQ6ImJhc2UiO3M6NDoiYmFzZSI7czo1OiJlbWJlZCI7czo1OiJlbWJlZCI7czo0OiJmb3JtIjtzOjQ6ImZvcm0iO3M6NToiZnJhbWUiO3M6NToiZnJhbWUiO3M6ODoiZnJhbWVzZXQiO3M6ODoiZnJhbWVzZXQiO3M6NjoiaWZyYW1lIjtzOjY6ImlmcmFtZSI7czo2OiJpbXBvcnQiO3M6ODoiXD9pbXBvcnQiO3M6NToibGF5ZXIiO3M6NToibGF5ZXIiO3M6NDoibGluayI7czo0OiJsaW5rIjtzOjY6Im9iamVjdCI7czo2OiJvYmplY3QiO3M6MzoieG1wIjtzOjM6InhtcCI7czo2OiJzY3JpcHQiO3M6Njoic2NyaXB0Ijt9',
+  'SAML_loginurl' => '',
+  'SAML_logouturl' => '',
+  'SAML_X509Cert' => '',
+  'authenticationClass' => '',
 );

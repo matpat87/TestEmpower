@@ -44,9 +44,9 @@ $dictionary['Account']['fields']['address_longitude_c']['labelValue']='Map Longi
 
  
 
- // created: 2018-06-12 08:26:05
-$dictionary['Account']['fields']['altsysid_c']['inline_edit']='1';
-$dictionary['Account']['fields']['altsysid_c']['labelValue']='ALT SYS ID';
+ // created: 2018-07-02 16:02:48
+$dictionary['Account']['fields']['alt_sys_id_c']['inline_edit']='1';
+$dictionary['Account']['fields']['alt_sys_id_c']['labelValue']='ALT SYS ID';
 
  
 
@@ -295,9 +295,9 @@ $dictionary['Account']['fields']['cur_year_ranking_c']['labelValue']='Current Ye
 
  
 
- // created: 2018-06-12 08:48:20
-$dictionary['Account']['fields']['cust_no_c']['inline_edit']='1';
-$dictionary['Account']['fields']['cust_no_c']['labelValue']='Customer Number';
+ // created: 2018-07-02 16:49:57
+$dictionary['Account']['fields']['cust_num_c']['inline_edit']='1';
+$dictionary['Account']['fields']['cust_num_c']['labelValue']='Customer Number';
 
  
 
@@ -319,9 +319,15 @@ $dictionary['Account']['fields']['dsc_pct_c']['labelValue']='Discount Percentage
 
  
 
- // created: 2018-06-12 08:57:26
+ // created: 2018-07-02 16:45:38
 $dictionary['Account']['fields']['equipment_multi_c']['inline_edit']='1';
 $dictionary['Account']['fields']['equipment_multi_c']['labelValue']='Equipment';
+
+ 
+
+ // created: 2018-07-02 16:05:51
+$dictionary['Account']['fields']['erp_db_c']['inline_edit']='1';
+$dictionary['Account']['fields']['erp_db_c']['labelValue']='ERP DB';
 
  
 

@@ -1,11 +1,10 @@
 <?php
-// created: 2018-06-12 10:17:45
+// created: 2018-07-02 16:12:17
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
   'LBL_ACCOUNTS_NEAR_50_MILE' => 'Account(s) Near 50 mile Radius',
   'LBL_ACCOUNTS_TYPE' => 'Accounts Type',
-  'LBL_ALTSYSID' => 'ALT SYS ID',
   'LBL_APR_VOLUME' => 'April',
   'LBL_CUR_YEAR_MONTH4_C' => 'April $',
   'LBL_BUDGET_COST_04_APR' => 'April Cost',
@@ -22,7 +21,6 @@ $mod_strings = array (
   'LBL_CR_LIMIT' => 'Credit Limit',
   'LBL_CURR_MONTH_BUDGET_C' => 'Current Month Budget',
   'LBL_CUR_YEAR_RANKING_C' => 'Current Year Ranking',
-  'LBL_CUST_NO_C' => 'Customer Number',
   'LBL_START_DT' => 'Customer Since',
   'LBL_CURR_YEAR_MARGIN_C' => 'CY Margin',
   'LBL_DEC_VOLUME_C' => 'December',
@@ -90,4 +88,7 @@ $mod_strings = array (
   'LBL_VOLUME_LY' => 'Volume Last Year',
   'LBL_VOLUME_YTD' => 'Volume YTD',
   'LBL_YTD_BUDGET' => 'YTD Budget',
+  'LBL_ALT_SYS_ID' => 'ALT SYS ID',
+  'LBL_ERP_DB' => 'ERP DB',
+  'LBL_CUST_NUM' => 'Customer Number',
 );

@@ -19,6 +19,9 @@ $mod_strings['LBL_RE_REGULATORY_CALLS_1_FROM_CALLS_TITLE'] = 'Calls';
 $mod_strings['LBL_RE_REGULATORY_DOCUMENTS_1_FROM_DOCUMENTS_TITLE'] = 'Documents';
 $mod_strings['LBL_RE_REGULATORY_TASKS_1_FROM_TASKS_TITLE'] = 'Tasks';
 
+
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+
  
  // created: 2018-06-23 08:12:10
 $mod_strings['LBL_DATE_FILED'] = 'Date Filed';

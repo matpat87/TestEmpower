@@ -1,5 +1,5 @@
 <?php
-// created: 2018-06-20 18:19:48
+// created: 2018-07-03 17:46:52
 $mod_strings = array (
   'LBL_TYPE' => 'EHS Type',
   'LBL_ACTION_ITEMS' => 'Action Item',
@@ -51,4 +51,6 @@ $mod_strings = array (
   'LBL_EDITVIEW_PANEL2' => 'Initial Incident Investigation',
   'LBL_EDITVIEW_PANEL3' => 'Other',
   'LBL_EDITVIEW_PANEL4' => 'Investigation',
+  'LBL_EHS_EHS_MEETINGS_1_FROM_MEETINGS_TITLE' => 'Meetings',
+  'LBL_SECURITYGROUPS_EHS_EHS_TITLE' => 'Security Groups',
 );

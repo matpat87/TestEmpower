@@ -1,5 +1,5 @@
 <?php
-// created: 2018-07-02 16:12:17
+// created: 2018-07-04 18:10:23
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
@@ -91,4 +91,6 @@ $mod_strings = array (
   'LBL_ALT_SYS_ID' => 'ALT SYS ID',
   'LBL_ERP_DB' => 'ERP DB',
   'LBL_CUST_NUM' => 'Customer Number',
+  'LBL_BILL_TO' => 'Bill To',
+  'LBL_SHIP_TO' => 'Ship To',
 );

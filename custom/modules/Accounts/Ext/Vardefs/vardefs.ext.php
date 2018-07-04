@@ -68,6 +68,12 @@ $dictionary['Account']['fields']['balance_c']['labelValue']='Balance';
 
  
 
+ // created: 2018-07-04 15:48:21
+$dictionary['Account']['fields']['bill_to_c']['inline_edit']='1';
+$dictionary['Account']['fields']['bill_to_c']['labelValue']='Bill To';
+
+ 
+
  // created: 2018-06-12 09:44:48
 $dictionary['Account']['fields']['budget_cost_01_jan_c']['inline_edit']='1';
 $dictionary['Account']['fields']['budget_cost_01_jan_c']['labelValue']='January Cost';
@@ -486,6 +492,12 @@ $dictionary['Account']['fields']['sector_c']['labelValue']='Sector';
  // created: 2018-06-12 10:08:49
 $dictionary['Account']['fields']['sept_volume_c']['inline_edit']='1';
 $dictionary['Account']['fields']['sept_volume_c']['labelValue']='September';
+
+ 
+
+ // created: 2018-07-04 15:48:46
+$dictionary['Account']['fields']['ship_to_c']['inline_edit']='1';
+$dictionary['Account']['fields']['ship_to_c']['labelValue']='Ship To';
 
  
 

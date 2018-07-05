@@ -1,5 +1,5 @@
 <?php
-// created: 2018-07-04 18:10:23
+// created: 2018-07-04 18:59:39
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
@@ -91,6 +91,10 @@ $mod_strings = array (
   'LBL_ALT_SYS_ID' => 'ALT SYS ID',
   'LBL_ERP_DB' => 'ERP DB',
   'LBL_CUST_NUM' => 'Customer Number',
-  'LBL_BILL_TO' => 'Bill To',
-  'LBL_SHIP_TO' => 'Ship To',
+  'LBL_BILLING_ADDRESS_COUNTRY' => 'Billing Country:',
+  'LBL_BILLING_ADDRESS_CITY' => 'Billing City:',
+  'LBL_BILLING_ADDRESS_POSTALCODE' => 'Billing Postal Code:',
+  'LBL_BILLING_ADDRESS_STATE' => 'Billing State:',
+  'LBL_BILLING_ADDRESS_STREET' => 'Billing Street:',
+  'LBL_SHIPPING_ADDRESS_STREET' => 'Shipping Street:',
 );

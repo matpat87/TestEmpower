@@ -2,6 +2,40 @@
  //WARNING: The contents of this file are auto-generated
 
 
+
+$dictionary['Account']['fields']['billing_address_country']['comments']='Country for billing address';
+$dictionary['Account']['fields']['billing_address_country']['group']='billing_address';
+$dictionary['Account']['fields']['billing_address_country']['options']='countries_list';
+$dictionary['Account']['fields']['billing_address_country']['type']='enum';
+$dictionary['Account']['fields']['billing_address_country']['inline_edit']='0';
+
+
+
+
+$dictionary['Account']['fields']['billing_address_state']['comments']='State for billing address';
+$dictionary['Account']['fields']['billing_address_state']['group']='billing_address';
+$dictionary['Account']['fields']['billing_address_state']['options']='states_list';
+$dictionary['Account']['fields']['billing_address_state']['type']='enum';
+$dictionary['Account']['fields']['billing_address_state']['inline_edit']='0';
+
+
+
+
+$dictionary['Account']['fields']['shipping_address_country']['comments']='Country for shipping address';
+$dictionary['Account']['fields']['shipping_address_country']['group']='shipping_address';
+$dictionary['Account']['fields']['shipping_address_country']['options']='countries_list';
+$dictionary['Account']['fields']['shipping_address_country']['type']='enum';
+
+
+
+
+$dictionary['Account']['fields']['shipping_address_state']['comments']='Country for shipping address';
+$dictionary['Account']['fields']['shipping_address_state']['group']='shipping_address';
+$dictionary['Account']['fields']['shipping_address_state']['options']='states_list';
+$dictionary['Account']['fields']['shipping_address_state']['type']='enum';
+
+
+
 // created: 2018-06-30 06:18:22
 $dictionary["Account"]["fields"]["opportunities_accounts_1"] = array (
   'name' => 'opportunities_accounts_1',
@@ -68,9 +102,37 @@ $dictionary['Account']['fields']['balance_c']['labelValue']='Balance';
 
  
 
- // created: 2018-07-04 15:48:21
-$dictionary['Account']['fields']['bill_to_c']['inline_edit']='1';
-$dictionary['Account']['fields']['bill_to_c']['labelValue']='Bill To';
+ // created: 2018-07-04 18:57:02
+$dictionary['Account']['fields']['billing_address_city']['inline_edit']='';
+$dictionary['Account']['fields']['billing_address_city']['comments']='The city used for billing address';
+$dictionary['Account']['fields']['billing_address_city']['merge_filter']='disabled';
+
+ 
+
+ // created: 2018-07-04 18:55:21
+$dictionary['Account']['fields']['billing_address_country']['inline_edit']='';
+$dictionary['Account']['fields']['billing_address_country']['merge_filter']='disabled';
+
+ 
+
+ // created: 2018-07-04 18:57:46
+$dictionary['Account']['fields']['billing_address_postalcode']['inline_edit']='';
+$dictionary['Account']['fields']['billing_address_postalcode']['comments']='The postal code used for billing address';
+$dictionary['Account']['fields']['billing_address_postalcode']['merge_filter']='disabled';
+
+ 
+
+ // created: 2018-07-04 18:58:15
+$dictionary['Account']['fields']['billing_address_state']['inline_edit']='';
+$dictionary['Account']['fields']['billing_address_state']['comments']='The state used for billing address';
+$dictionary['Account']['fields']['billing_address_state']['merge_filter']='disabled';
+
+ 
+
+ // created: 2018-07-04 18:58:33
+$dictionary['Account']['fields']['billing_address_street']['inline_edit']='';
+$dictionary['Account']['fields']['billing_address_street']['comments']='The street address used for billing address';
+$dictionary['Account']['fields']['billing_address_street']['merge_filter']='disabled';
 
  
 
@@ -495,9 +557,10 @@ $dictionary['Account']['fields']['sept_volume_c']['labelValue']='September';
 
  
 
- // created: 2018-07-04 15:48:46
-$dictionary['Account']['fields']['ship_to_c']['inline_edit']='1';
-$dictionary['Account']['fields']['ship_to_c']['labelValue']='Ship To';
+ // created: 2018-07-04 18:59:39
+$dictionary['Account']['fields']['shipping_address_street']['inline_edit']='';
+$dictionary['Account']['fields']['shipping_address_street']['comments']='The street address used for for shipping purposes';
+$dictionary['Account']['fields']['shipping_address_street']['merge_filter']='disabled';
 
  
 

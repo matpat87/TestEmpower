@@ -99,7 +99,7 @@ array (
           array (
             'name' => 'billing_address_street',
             'hideLabel' => true,
-            'type' => 'address',
+            'type' => 'DropdownCountryAddress',
             'displayParams' => 
             array (
               'key' => 'billing',
@@ -112,7 +112,7 @@ array (
           array (
             'name' => 'shipping_address_street',
             'hideLabel' => true,
-            'type' => 'address',
+            'type' => 'DropdownCountryAddress',
             'displayParams' => 
             array (
               'key' => 'shipping',

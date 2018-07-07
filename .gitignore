@@ -3,8 +3,4 @@ upload
 modules/AOD_Index
 vendor
 themes
-config.php
-config_override.php
-suitecrm.log
-sugarcrm.log
 

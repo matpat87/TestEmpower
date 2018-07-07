@@ -1,7 +1,7 @@
 <?php
  // created: 2018-06-23 09:03:50
 $layout_defs["RE_Regulatory"]["subpanel_setup"]['re_regulatory_tasks_1'] = array (
-  'order' => 100,
+  'order' => 5,
   'module' => 'Tasks',
   'subpanel_name' => 'default',
   'sort_order' => 'asc',

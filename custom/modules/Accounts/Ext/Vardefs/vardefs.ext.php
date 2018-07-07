@@ -268,6 +268,23 @@ $dictionary['Account']['fields']['cr_limit_c']['labelValue']='Credit Limit';
 
  
 
+ // created: 2018-06-12 08:29:19
+$dictionary['Account']['fields']['currency_id']['inline_edit']=1;
+
+ 
+
+ // created: 2018-06-12 08:47:16
+$dictionary['Account']['fields']['curr_month_budget_c']['inline_edit']='1';
+$dictionary['Account']['fields']['curr_month_budget_c']['labelValue']='Current Month Budget';
+
+ 
+
+ // created: 2018-06-12 08:49:58
+$dictionary['Account']['fields']['curr_year_margin_c']['inline_edit']='1';
+$dictionary['Account']['fields']['curr_year_margin_c']['labelValue']='CY Margin';
+
+ 
+
  // created: 2018-06-12 09:56:34
 $dictionary['Account']['fields']['cur_year_month10_c']['inline_edit']='1';
 $dictionary['Account']['fields']['cur_year_month10_c']['labelValue']='October $';
@@ -343,23 +360,6 @@ $dictionary['Account']['fields']['cur_year_month9_c']['labelValue']='September $
  // created: 2018-06-12 08:47:48
 $dictionary['Account']['fields']['cur_year_ranking_c']['inline_edit']='1';
 $dictionary['Account']['fields']['cur_year_ranking_c']['labelValue']='Current Year Ranking';
-
- 
-
- // created: 2018-06-12 08:47:16
-$dictionary['Account']['fields']['curr_month_budget_c']['inline_edit']='1';
-$dictionary['Account']['fields']['curr_month_budget_c']['labelValue']='Current Month Budget';
-
- 
-
- // created: 2018-06-12 08:49:58
-$dictionary['Account']['fields']['curr_year_margin_c']['inline_edit']='1';
-$dictionary['Account']['fields']['curr_year_margin_c']['labelValue']='CY Margin';
-
- 
-
- // created: 2018-06-12 08:29:19
-$dictionary['Account']['fields']['currency_id']['inline_edit']=1;
 
  
 

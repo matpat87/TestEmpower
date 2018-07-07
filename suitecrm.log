@@ -1,2 +1,0 @@
-Sat Jul  7 05:25:14 2018 [32984][b77f139d-3640-4c7b-3f53-5b1fb52a2197][FATAL] ERROR: rmdir_recursive(): argument cache/themes/SuiteP/modules is not a file or a dir.
-Sat Jul  7 05:28:36 2018 [33206][b77f139d-3640-4c7b-3f53-5b1fb52a2197][FATAL] SugarBean::populateDefaultValues $field_defs should be an array

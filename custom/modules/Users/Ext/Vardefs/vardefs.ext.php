@@ -14,15 +14,15 @@ $dictionary['User']['fields']['division_c']['labelValue']='Division';
 
  
 
- // created: 2018-06-12 07:20:10
-$dictionary['User']['fields']['erp_uid_c']['inline_edit']='1';
-$dictionary['User']['fields']['erp_uid_c']['labelValue']='ERP Sales UID';
-
- 
-
  // created: 2018-06-12 07:23:23
 $dictionary['User']['fields']['erpuserid_c']['inline_edit']='1';
 $dictionary['User']['fields']['erpuserid_c']['labelValue']='ERP UID';
+
+ 
+
+ // created: 2018-06-12 07:20:10
+$dictionary['User']['fields']['erp_uid_c']['inline_edit']='1';
+$dictionary['User']['fields']['erp_uid_c']['labelValue']='ERP Sales UID';
 
  
 

@@ -24,4 +24,6 @@ $sugar_config['SAML_X509Cert'] = '';
 $sugar_config['authenticationClass'] = '';
 $sugar_config['securitysuite_inbound_email'] = false;
 $sugar_config['developerMode'] = true;
+$sugar_config['addAjaxBannedModules'][0] = 'SecurityGroups';
+$sugar_config['addAjaxBannedModules'][1] = 'Opportunities';
 /***CONFIGURATOR***/

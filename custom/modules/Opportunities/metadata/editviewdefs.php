@@ -20,12 +20,12 @@ array (
         ),
       ),
       'javascript' => '{$PROBABILITY_SCRIPT}',
-      'useTabs' => false,
+      'useTabs' => true,
       'tabDefs' => 
       array (
         'DEFAULT' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
         'LBL_PANEL_ASSIGNMENT' => 
@@ -63,8 +63,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'amount_usd_c',
-            'label' => 'LBL_AMOUNT_USD',
+            'name' => 'amount',
+            'customCode' => '<input type="text" name="{$fields.amount.name}" id="{$fields.amount.name}" value="{$fields.amount.value}" maxlength="{$fields.amount.len}" class="custom-currency" />',
           ),
           1 => 'opportunity_type',
         ),
@@ -75,7 +75,8 @@ array (
         ),
         4 => 
         array (
-          0 => 'probability_list_c',
+          0 => 'probability',
+          1 => '',
         ),
         5 => 
         array (
@@ -96,5 +97,14 @@ array (
     ),
   ),
 );
-;
+
+
+
+$viewdefs['Opportunities']['EditView']['templateMeta']['includes'] =
+    array (
+        array (
+        'file' => 'custom/modules/Opportunities/js/custom-edit.js',
+        ),
+    );
+
 ?>

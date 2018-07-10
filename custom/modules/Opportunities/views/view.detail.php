@@ -26,6 +26,13 @@ class CustomOpportunitiesViewDetail extends OpportunitiesViewDetail
 
     public function display()
    {
+      //format amount
+      if(isset($this->bean->amount))
+      {
+        $bean_amount = "$" . number_format($this->bean->amount, 2, '.', ',');
+        $this->ss->assign('AMOUNT', $bean_amount);
+      }
+
       parent::display();
-   }
+    }
 }

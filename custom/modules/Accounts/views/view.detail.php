@@ -96,10 +96,11 @@ class AccountsViewDetail extends ViewDetail {
 			sugar_die($app_strings['ERROR_NO_RECORD']);
 		}
 
-		// Hide input field so that custom non-db fields will display labels only
-		// Added by: Ralph Siasat
+		// Hide input fields so that custom non-db fields will display labels only
+		// Added by: Ralph Julian Siasat
 		echo 
 		"<script>
+			$(\"div[field='margin_forecast_percent_non_db'],div[field='sales_forecast_percent_non_db'],div[field='volume_forecast_lb_non_db'],div[field='budget_cost_non_db']\").prev().removeClass('col-sm-2').addClass('col-sm-12').addClass('col-md-12').addClass('col-lg-12').css('background-color', '#66727d').css('color', '#FFF').css('margin-top', '15px');
 			$(\"div[field='margin_forecast_percent_non_db'],div[field='sales_forecast_percent_non_db'],div[field='volume_forecast_lb_non_db'],div[field='budget_cost_non_db']\").addClass('hidden');
 		</script>";
 

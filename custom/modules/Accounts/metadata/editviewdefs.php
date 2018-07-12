@@ -138,6 +138,10 @@ array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
           ),
+          1 => 
+          array (
+            'name' => 'mkt_markets_accounts_1_name',
+          ),
         ),
       ),
       'LBL_PANEL_ADVANCED' => 

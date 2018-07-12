@@ -84,6 +84,10 @@ array (
         6 => 
         array (
           0 => 'description',
+          1 => 
+          array (
+            'name' => 'mkt_markets_opportunities_1_name',
+          ),
         ),
       ),
       'LBL_PANEL_ASSIGNMENT' => 

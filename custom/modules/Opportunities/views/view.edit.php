@@ -64,9 +64,11 @@ class CustomOpportunitiesViewEdit extends OpportunitiesViewEdit {
 
 		$this->bean->next_step_temp_c = ''; // for Task in OnTrack #5 - OPPORTUNITY - SCREEN CHANGES
 
-		if(empty($this->bean->id))
+		if(strpos($this->bean->amount, '$') === false)
 		{
-			$this->bean->amount_usd_c = '$';
+			$bean_amount = "$" . number_format($this->bean->amount, 2, '.', ',');
+
+        	$this->bean->amount = $bean_amount;
 		}
 
  		parent::display();

@@ -39,7 +39,7 @@ array (
         ),
         'LBL_PANEL_ASSIGNMENT' => 
         array (
-          'newTab' => true,
+          'newTab' => false,
           'panelDefault' => 'expanded',
         ),
       ),
@@ -57,39 +57,47 @@ array (
         array (
           0 => 
           array (
-            'name' => 'amount_usd_c',
-            'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})',
+            'name' => 'currency_id',
+            'comment' => 'Currency used for display purposes',
+            'label' => 'LBL_CURRENCY',
           ),
           1 => 'date_closed',
         ),
         2 => 
         array (
-          0 => 'sales_stage',
+          0 => 
+          array (
+            'name' => 'amount',
+            'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})',
+            'customCode' => '{$AMOUNT}',
+          ),
           1 => 'opportunity_type',
         ),
         3 => 
         array (
-          0 => 'probability_list_c',
+          0 => 'sales_stage',
           1 => 'lead_source',
         ),
         4 => 
         array (
-          0 => 'next_step',
+          0 => 'probability',
+          1 => '',
         ),
         5 => 
         array (
           0 => 
           array (
-            'name' => 'description',
-            'nl2br' => true,
+            'name' => 'next_step',
+            'label' => 'LBL_NEXT_STEP_TEMP',
+            //'customCode' => '{$CUSTOM_NEXT_STEP}',
           ),
         ),
         6 => 
         array (
           0 => 
           array (
-            'name' => 'assigned_user_name',
-            'label' => 'LBL_ASSIGNED_TO',
+            'name' => 'description',
+            'nl2br' => true,
           ),
           1 => 
           array (
@@ -103,14 +111,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'date_modified',
-            'label' => 'LBL_DATE_MODIFIED',
-            'customCode' => '{$fields.date_modified.value} {$APP.LBL_BY} {$fields.modified_by_name.value}',
-          ),
-          1 => 
-          array (
-            'name' => 'date_entered',
-            'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
+            'name' => 'assigned_user_name',
+            'label' => 'LBL_ASSIGNED_TO',
           ),
         ),
       ),

@@ -13,19 +13,20 @@ function AddJSToEditView()
 	if(editViewLength.length > 0)
 	{
 		//Insert Codes here
+		PhoneJS();
 
-		//Custom Codes for adding mask on phone class
-		$('.phone').each(function(index, phoneObj){
-			$(phoneObj).attr('placeholder', '(XXX) XXX-XXXXXXXXXX');
-			$(phoneObj).blur(PhoneBlur).keydown(PhoneKeyDown).bind('focus click', PhoneFocus);
-		});
-		//End of Custom Codes for adding 
 
 		clearInterval(editViewIntervalObj);
 	}
 }
 
 function AddJSToDetailView()
+{
+    PhoneJS();
+}
+
+//Custom Codes for adding mask on phone class
+function PhoneJS()
 {
     $('.phone').each(function(index, phoneObj){
         $(phoneObj).attr('placeholder', '(XXX) XXX-XXXXXXXXXX');

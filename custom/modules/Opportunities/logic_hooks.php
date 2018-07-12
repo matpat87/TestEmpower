@@ -8,8 +8,6 @@ $hook_array['after_save'] = Array();
 $hook_array['after_save'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php','wfm_hook_process', 'execute_process'); 
 $hook_array['before_save'] = Array(); 
 $hook_array['before_save'][] = Array(2, 'wfm_hook', 'custom/include/wfm_hook.php','wfm_hook_process', 'execute_process'); 
-$hook_array['before_save'][] = Array(3, 'Amount Edited', 'custom/modules/Opportunities/hooks/BeforeSave.php','BeforeSave', 'amount_edited_before_save'); 
-$hook_array['before_save'][] = Array(4, 'Probability Edited', 'custom/modules/Opportunities/hooks/BeforeSave.php','BeforeSave', 'probability_edited_before_save'); 
 $hook_array['before_save'][] = Array(5, 'Next Step Edited', 'custom/modules/Opportunities/hooks/BeforeSave.php','BeforeSave', 'next_step_edited_before_save'); 
 $hook_array['before_delete'] = Array(); 
 

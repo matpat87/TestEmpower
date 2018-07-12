@@ -262,12 +262,20 @@ array (
         array (
           0 => 
           array (
+            'name' => 'margin_forecast_percent_non_db',
+            'label' => 'Margin Forecast (%)',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
             'name' => 'gross_margin_c',
             'label' => 'LBL_GROSS_MARGIN',
           ),
           1 => '',
         ),
-        1 => 
+        2 => 
         array (
           0 => 
           array (
@@ -276,7 +284,7 @@ array (
           ),
           1 => '',
         ),
-        2 => 
+        3 => 
         array (
           0 => 
           array (
@@ -285,12 +293,15 @@ array (
           ),
           1 => '',
         ),
-        3 => 
-        array (
-          0 => '',
-          1 => '',
-        ),
         4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'sales_forecast_percent_non_db',
+            'label' => 'Sales Forecast ($)',
+          ),
+        ),
+        5 => 
         array (
           0 => 
           array (
@@ -303,7 +314,7 @@ array (
             'label' => 'LBL_SLS_LY',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -312,7 +323,7 @@ array (
           ),
           1 => '',
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -325,7 +336,7 @@ array (
             'label' => 'LBL_CUR_YEAR_MONTH2',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (
@@ -338,7 +349,7 @@ array (
             'label' => 'LBL_CUR_YEAR_MONTH4_C',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 
           array (
@@ -351,7 +362,7 @@ array (
             'label' => 'LBL_CUR_YEAR_MONTH6',
           ),
         ),
-        9 => 
+        10 => 
         array (
           0 => 
           array (
@@ -364,7 +375,7 @@ array (
             'label' => 'LBL_CUR_YEAR_MONTH8',
           ),
         ),
-        10 => 
+        11 => 
         array (
           0 => 
           array (
@@ -377,7 +388,7 @@ array (
             'label' => 'LBL_CUR_YEAR_MONTH10',
           ),
         ),
-        11 => 
+        12 => 
         array (
           0 => 
           array (
@@ -390,12 +401,15 @@ array (
             'label' => 'LBL_CUR_YEAR_MONTH12',
           ),
         ),
-        12 => 
-        array (
-          0 => '',
-          1 => '',
-        ),
         13 => 
+        array (
+          0 => 
+          array (
+            'name' => 'volume_forecast_lb_non_db',
+            'label' => 'Volume Forecast (Lb)',
+          ),
+        ),
+        14 => 
         array (
           0 => 
           array (
@@ -408,7 +422,7 @@ array (
             'label' => 'LBL_VOLUME_LY',
           ),
         ),
-        14 => 
+        15 => 
         array (
           0 => 
           array (
@@ -421,7 +435,7 @@ array (
             'label' => 'LBL_FEB_VOLUME',
           ),
         ),
-        15 => 
+        16 => 
         array (
           0 => 
           array (
@@ -434,7 +448,7 @@ array (
             'label' => 'LBL_APR_VOLUME',
           ),
         ),
-        16 => 
+        17 => 
         array (
           0 => 
           array (
@@ -447,7 +461,7 @@ array (
             'label' => 'LBL_JUN_VOLUME',
           ),
         ),
-        17 => 
+        18 => 
         array (
           0 => 
           array (
@@ -460,7 +474,7 @@ array (
             'label' => 'LBL_AUG_VOLUME',
           ),
         ),
-        18 => 
+        19 => 
         array (
           0 => 
           array (
@@ -473,7 +487,7 @@ array (
             'label' => 'LBL_OCT_VOLUME',
           ),
         ),
-        19 => 
+        20 => 
         array (
           0 => 
           array (
@@ -486,12 +500,15 @@ array (
             'label' => 'LBL_DEC_VOLUME_C',
           ),
         ),
-        20 => 
-        array (
-          0 => '',
-          1 => '',
-        ),
         21 => 
+        array (
+          0 => 
+          array (
+            'name' => 'budget_cost_non_db',
+            'label' => 'Budget Cost',
+          ),
+        ),
+        22 => 
         array (
           0 => 
           array (
@@ -504,7 +521,7 @@ array (
             'label' => 'LBL_BUDGET_COST_07_JUL',
           ),
         ),
-        22 => 
+        23 => 
         array (
           0 => 
           array (
@@ -517,7 +534,7 @@ array (
             'label' => 'LBL_BUDGET_COST_08_AUG',
           ),
         ),
-        23 => 
+        24 => 
         array (
           0 => 
           array (
@@ -530,7 +547,7 @@ array (
             'label' => 'LBL_BUDGET_COST_09_SEPT',
           ),
         ),
-        24 => 
+        25 => 
         array (
           0 => 
           array (
@@ -543,7 +560,7 @@ array (
             'label' => 'LBL_BUDGET_COST_10_OCT',
           ),
         ),
-        25 => 
+        26 => 
         array (
           0 => 
           array (
@@ -556,7 +573,7 @@ array (
             'label' => 'LBL_BUDGET_COST_11_NOV',
           ),
         ),
-        26 => 
+        27 => 
         array (
           0 => 
           array (

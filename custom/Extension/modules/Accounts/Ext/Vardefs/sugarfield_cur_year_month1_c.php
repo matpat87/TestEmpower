@@ -1,6 +1,6 @@
 <?php
- // created: 2018-06-12 09:44:15
+ // created: 2018-07-11 18:17:01
 $dictionary['Account']['fields']['cur_year_month1_c']['inline_edit']='1';
-$dictionary['Account']['fields']['cur_year_month1_c']['labelValue']='cur year month1January $';
+$dictionary['Account']['fields']['cur_year_month1_c']['labelValue']='January $';
 
  ?>

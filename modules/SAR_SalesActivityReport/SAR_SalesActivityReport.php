@@ -95,7 +95,7 @@ class SAR_SalesActivityReport extends Basic
         $return_array['select'] = $salesActivityReportQuery->get_select_query();   
         $return_array['from'] = $salesActivityReportQuery->get_from_query();                               
         $return_array['where'] = " order by ";    
-        $return_array['order_by'] = $order_by;
+        $return_array['order_by'] = ' ';
         $contains = false;
 
         if(!empty($where))
@@ -154,6 +154,13 @@ class SAR_SalesActivityReport extends Basic
                 $return_array['where'] .= ' order by ';
             }
         }
+
+        if(!empty($order_by) && strpos($order_by, 'date_entered') !== false)
+        {
+            $order_by = string_replace_all("date_entered", "date_start_c", $where);
+        }
+
+        $return_array['order_by'] = $order_by;
 
         $_SESSION['SalesActivityReportQuery'] = $return_array;
 

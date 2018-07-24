@@ -130,11 +130,6 @@ array (
             'name' => 'description',
             'label' => 'LBL_DESCRIPTION',
           ),
-          1 => 
-          array (
-            'name' => 'order_cycle_c',
-            'label' => 'LBL_ORDER_CYCLE',
-          ),
         ),
         5 => 
         array (
@@ -164,10 +159,16 @@ array (
         2 => 
         array (
           0 => 'parent_name',
+          1 => 'campaign_name',
         ),
         3 => 
         array (
-          0 => 'campaign_name',
+          0 => 
+          array (
+            'name' => 'order_cycle_c',
+            'label' => 'LBL_ORDER_CYCLE',
+          ),
+          1 => '',
         ),
       ),
     ),

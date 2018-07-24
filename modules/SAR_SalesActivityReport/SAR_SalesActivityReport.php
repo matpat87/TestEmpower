@@ -157,7 +157,7 @@ class SAR_SalesActivityReport extends Basic
 
         if(!empty($order_by) && strpos($order_by, 'date_entered') !== false)
         {
-            $order_by = string_replace_all("date_entered", "date_start_c", $where);
+            $order_by = string_replace_all("date_entered", "date_start_c", $order_by);
         }
 
         $return_array['order_by'] = $order_by;

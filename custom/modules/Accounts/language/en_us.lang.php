@@ -1,5 +1,5 @@
 <?php
-// created: 2018-07-12 13:58:56
+// created: 2018-07-19 17:45:11
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
@@ -70,7 +70,7 @@ $mod_strings = array (
   'LBL_CUR_YEAR_MONTH10' => 'October $',
   'LBL_BUDGET_COST_10_OCT' => 'October Cost',
   'LBL_LAST_SALE_AMT' => 'Order Amount',
-  'LBL_ORDER_CYCLE' => 'Order cycle',
+  'LBL_ORDER_CYCLE' => 'Order Cycle',
   'LBL_LAST_SOLD_DT' => 'Order Date',
   'LBL_SUBTYPE' => 'Sales Channel',
   'LBL_SLS_LY' => 'Sales Last Year',

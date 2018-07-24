@@ -62,6 +62,16 @@ class CustomUsersViewEdit extends UsersViewEdit {
  	function display() {
 		global $app_list_strings;
 
+		// Set default Layout to Day for new records
+		if (!isset($_REQUEST['record'])) {
+			echo 	'<script>
+						$(document).ready(function(e){							
+							$(\'select[name="subtheme"]\').val(\'Day\');							
+						});						
+					 </script>
+					';	
+		} 		
+
  		parent::display();
  	}
 }

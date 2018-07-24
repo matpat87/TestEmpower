@@ -161,6 +161,11 @@ array (
             'comment' => 'Full text of the note',
             'label' => 'LBL_DESCRIPTION',
           ),
+          1 => 
+          array (
+            'name' => 'order_cycle_c',
+            'label' => 'LBL_ORDER_CYCLE',
+          ),
         ),
         5 => 
         array (

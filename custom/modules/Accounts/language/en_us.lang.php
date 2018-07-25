@@ -1,5 +1,5 @@
 <?php
-// created: 2018-07-19 17:45:11
+// created: 2018-07-25 01:23:56
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
@@ -94,4 +94,7 @@ $mod_strings = array (
   'LBL_DETAILVIEW_PANEL1' => 'New Panel 1',
   'LBL_DETAILVIEW_PANEL2' => 'FORECASTS',
   'LBL_DETAILVIEW_PANEL3' => 'Margin Forecast (%)',
+  'LBL_CUST_NUM' => 'Customer Number',
+  'LBL_ERP_DB' => 'ERP DB',
+  'LBL_ALT_SYS_ID' => 'ALT SYS ID',
 );

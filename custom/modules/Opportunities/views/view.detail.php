@@ -34,5 +34,17 @@ class CustomOpportunitiesViewDetail extends OpportunitiesViewDetail
       }
 
       parent::display();
+
+      echo <<<EOF
+      <style type="text/css"> 
+        #next_step {
+          height: 200px;
+          line-height: 20px;
+          display: block;
+          overflow-y:scroll
+        }
+
+      </style>';
+EOF;
     }
 }

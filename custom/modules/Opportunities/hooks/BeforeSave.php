@@ -13,8 +13,8 @@ class BeforeSave{
         $next_step = "";
 
         if($bean->next_step_temp_c != ""){
-            $conjunction = " \r\n ";
-            $next_step = $bean->next_step_temp_c . "$conjunction (" . $current_user->user_name . "-" . date("Y-m-d H:i:s") . ")";
+            $conjunction = "<br/>";
+            $next_step = '<div>' . $bean->next_step_temp_c . '</div>' . ' <div style="font-size: 10px;">(' . $current_user->user_name . '-' . date("Y-m-d H:i:s") . ')</div>';
 
             if($bean->next_step != "")
             {

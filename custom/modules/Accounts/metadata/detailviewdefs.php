@@ -243,6 +243,45 @@ array (
             'label' => 'LBL_ORDER_CYCLE',
           ),
         ),
+        5 => 
+        array (
+          0 => 
+          array (
+            'name' => 'terms_c',
+            'label' => 'LBL_TERMS',
+          ),
+          1 => 
+          array (
+            'name' => 'cr_limit_c',
+            'label' => 'LBL_CR_LIMIT',
+          ),
+        ),
+        6 => 
+        array (
+          0 => 
+          array (
+            'name' => 'last_sale_amt_c',
+            'label' => 'LBL_LAST_SALE_AMT',
+          ),
+          1 => 
+          array (
+            'name' => 'last_sold_dt_c',
+            'label' => 'LBL_LAST_SOLD_DT',
+          ),
+        ),
+        7 => 
+        array (
+          0 => 
+          array (
+            'name' => 'balance_c',
+            'label' => 'LBL_BALANCE',
+          ),
+          1 => 
+          array (
+            'name' => 'cr_hold_c',
+            'label' => 'LBL_CR_HOLD',
+          ),
+        ),
       ),
       'LBL_PANEL_ASSIGNMENT' => 
       array (

@@ -168,7 +168,11 @@ array (
             'name' => 'order_cycle_c',
             'label' => 'LBL_ORDER_CYCLE',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'cr_hold_c',
+            'label' => 'LBL_CR_HOLD',
+          ),
         ),
       ),
     ),

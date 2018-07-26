@@ -1,10 +1,9 @@
 <?php
 require_once('include/json_config.php');
 require_once('include/MVC/View/views/view.list.php');
-require_once('modules/Contacts/views/view.list.php');  
 
 class CustomOTR_OnTrackViewList extends ViewList {
-    function CustomContactsViewList(){
+    function CustomOTR_OnTrackViewList(){
           parent::ViewList();
     }
        

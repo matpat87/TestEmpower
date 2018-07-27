@@ -80,8 +80,8 @@ if (is_admin($current_user)) {
  * @date_created 6/14/2018 
 **/
 if($current_user->is_admin && 
-    (empty($_SESSION['sudo_user_id']) && $_GET['module'] == "Users" && $_GET['action'] == "DetailView")){
-    $module_menu[] = Array("index.php?entryPoint=switchUserEntryPoint&user_id=" . $_GET['record'], "Login As", "");
+    (empty($_SESSION['sudo_user_id']) && (isset($_REQUEST['module']) && $_REQUEST['module'] == "Users") && ( isset($_REQUEST['module']) && $_REQUEST['action'] == "DetailView") )){
+    $module_menu[] = Array("index.php?entryPoint=switchUserEntryPoint&user_id=" . $_REQUEST['record'], "Login As", "");
 }
 /**
  * End of customization

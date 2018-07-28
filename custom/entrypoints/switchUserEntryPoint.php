@@ -25,10 +25,16 @@ if(!empty($_GET['user_id']) && $GLOBALS['current_user']->is_admin)
     $_SESSION['authenticated_user_id'] = $user_focus->id;
     echo "Successfully logged in as " . $GLOBALS['current_user']->user_name;
 
+    if(!empty($_SESSION['breadCrumbs']))
+    {
+      $_SESSION['breadCrumbs'] = new BreadCrumbStack($user_focus->id, '');
+    }
+
     $queryParams = array(
       'module' => 'Home',
       'action' => 'index',    
     );
+
     SugarApplication::redirect('index.php?' . http_build_query($queryParams)); 
 
     return;
@@ -44,6 +50,11 @@ elseif(!empty($_GET['back_to_sudo']) && !empty($_SESSION['sudo_user_id']))
     $GLOBALS['current_user'] = $user_focus;
     $_SESSION['authenticated_user_id'] = $user_focus->id;
     echo "Successfully logged back to sudo user: " . $GLOBALS['current_user']->user_name;
+
+    if(!empty($_SESSION['breadCrumbs']))
+    {
+      $_SESSION['breadCrumbs'] = new BreadCrumbStack($user_focus->id, '');
+    }
 
     $queryParams = array(
       'module' => 'Home',

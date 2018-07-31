@@ -37,6 +37,31 @@ array (
         'width' => '10%',
         'name' => 'activity_type_c',
       ),
+      'date_from_c' => 
+      array (
+        'type' => 'date',
+        'default' => true,
+        'label' => 'LBL_DATE_FROM',
+        'width' => '10%',
+        'name' => 'date_from_c',
+      ),
+      'date_to_c' => 
+      array (
+        'type' => 'date',
+        'default' => true,
+        'label' => 'LBL_DATE_TO',
+        'width' => '10%',
+        'name' => 'date_to_c',
+      ),
+      'related_to_c' => 
+      array (
+        'type' => 'enum',
+        'default' => true,
+        'studio' => 'visible',
+        'label' => 'LBL_RELATED_TO',
+        'width' => '10%',
+        'name' => 'related_to_c',
+      ),
     ),
     'advanced_search' => 
     array (

@@ -55,8 +55,31 @@ class CustomSAR_SalesActivityReportViewList extends ViewList
         parent::preDisplay();
     }
 
+    function listViewProcess()
+    {
+        $this->processSearchForm();
+        $this->lv->searchColumns = $this->searchForm->searchColumns;
+
+        if (!$this->headers)
+            return;
+        if (empty($_REQUEST['search_form_only']) || $_REQUEST['search_form_only'] == false) {
+            $this->lv->ss->assign("SEARCH", true);
+            $this->lv->ss->assign('savedSearchData', $this->searchForm->getSavedSearchData());
+            $this->lv->setup($this->seed, 'custom/modules/SAR_SalesActivityReport/ListView/ListViewGenericReports.tpl', $this->where, $this->params);
+            $savedSearchName = empty($_REQUEST['saved_search_select_name']) ? '' : (' - ' . $_REQUEST['saved_search_select_name']);
+            echo $this->lv->display();
+        }
+    }
+
+    function prepareSearchForm(){
+        parent::prepareSearchForm();
+        $this->searchForm->displaySavedSearch = false;
+    }
+
     function display()
     {
+        global $current_user;
+
         $this->lv->export = false;
         $this->lv->delete = false;
         $this->lv->select = false;
@@ -68,13 +91,22 @@ class CustomSAR_SalesActivityReportViewList extends ViewList
         $this->lv->contextMenus = false;
         $this->lv->showMassupdateFields = false;
 
+        $this->lv->ss->assign("current_user_name", $current_user->first_name . " " . $current_user->last_name);
+
+
         parent::display();
 
-        //$_SESSION['SalesActivityReportQuery'] = $this->seed->create_new_list_query($this->params, $this->where);
+        echo <<<EOF
+            <style ype="text/css">
+                #massassign_form {display: none;} 
 
-        //var_dump($this->sort_order);
+                .columnsFilterLink {display: none;}
 
-        echo '<style type="text/css">#massassign_form {display: none;} .columnsFilterLink {display: none;}</style>';
+                .advanced{
+                    display: none !important;
+                }
+            </style>
+EOF;
 
         echo <<<EOF
             <script type="text/javascript">

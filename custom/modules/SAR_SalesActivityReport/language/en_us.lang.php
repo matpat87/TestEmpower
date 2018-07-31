@@ -1,8 +1,8 @@
 <?php
-// created: 2018-07-20 06:19:33
+// created: 2018-07-30 05:42:04
 $mod_strings = array (
   'LBL_ASSIGNED_TO_USER_ID' => 'User (related User ID)',
-  'LBL_ASSIGNED_TO' => 'User',
+  'LBL_ASSIGNED_TO' => 'Assigned User',
   'LBL_ASSIGNED_ACCOUNT_ACCOUNT_ID' => 'Account (related Account ID)',
   'LBL_ASSIGNED_ACCOUNT' => 'Account',
   'LBL_ACTIVITY_TYPE' => 'Activity Type',

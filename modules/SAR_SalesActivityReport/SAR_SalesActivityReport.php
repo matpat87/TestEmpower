@@ -164,8 +164,20 @@ class SAR_SalesActivityReport extends Basic
 
         $_SESSION['SalesActivityReportQuery'] = $return_array;
 
+        // var_dump(parent::create_new_list_query($order_by, $where, $filter,
+        //     $params, $show_deleted, $join_type,
+        //     $return_array, $parentbean, $singleSelect,
+        //     $ifListForExport));
+
         return $return_array;
 
+    }
+
+    function create_list_count_query($query)
+    {
+        $count_query = "select count(*) as c from (" . $query . ") as report_count";
+
+        return $count_query;
     }
 	
 }

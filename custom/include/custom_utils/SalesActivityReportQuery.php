@@ -11,7 +11,8 @@ CONCAT(u.first_name, ' ', u.last_name) AS 'assigned_to_name_c',
 activity.date 'date_start_c',
 activity.name AS 'name',
 a.name AS 'account_name_c',
-activity.parent_type AS 'related_to_c'
+activity.parent_type AS 'related_to_c',
+activity.description 
 EOF;
 		}
 
@@ -29,7 +30,8 @@ FROM
       assigned_user_id,
       date_start AS 'date',
       parent_id,
-      parent_type 
+      parent_type,
+      description
     FROM
       calls 
     WHERE deleted = 0) 
@@ -42,7 +44,8 @@ FROM
       assigned_user_id,
       date_start AS 'date',
       parent_id,
-      parent_type 
+      parent_type,
+      description
     FROM
       meetings 
     WHERE deleted = 0) 
@@ -55,7 +58,8 @@ FROM
       assigned_user_id,
       date_start AS 'date',
       parent_id,
-      parent_type 
+      parent_type,
+      description
     FROM
       tasks 
     WHERE deleted = 0) 
@@ -68,7 +72,8 @@ FROM
       assigned_user_id,
       date_entered AS 'date',
       '' AS parent_id,
-      '' AS parent_type 
+      '' AS parent_type,
+      '' as description
     FROM
       emails 
     WHERE deleted = 0)

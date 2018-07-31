@@ -13,10 +13,7 @@
 	if(isset($_SESSION['SalesActivityReportQuery']) && !empty($_SESSION['SalesActivityReportQuery']))
 	{
 		$salesActivityReportQuery = $_SESSION['SalesActivityReportQuery'];
-		//unset($_SESSION['SalesActivityReportQuery']);
 	}
-
-	//var_dump($salesActivityReportQuery);
 
 	$query = $salesActivityReportQuery['select'] . $salesActivityReportQuery['from'] . $salesActivityReportQuery['where'] . $salesActivityReportQuery['order_by'];
 
@@ -40,6 +37,14 @@
 			<td style="width: 13%">'. $row['account_name_c'] .'</td>
 			<td style="width: 15%">'. $row['related_to_c'] .'</td>
 		</tr>';
+
+		if(!empty($row['description'])){
+			$trHTML .= '<tr>
+				<td></td>
+				<td></td>
+				<td colspan="4">'. $row['description'] .'</td>
+			</tr>';
+		}
 	}
 
 	

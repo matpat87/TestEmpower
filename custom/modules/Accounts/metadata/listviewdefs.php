@@ -50,6 +50,14 @@ array (
     'label' => 'LBL_ORDER_CYCLE',
     'width' => '10%',
   ),
+  'CURR_MONTH_BUDGET_C' => 
+  array (
+    'type' => 'currency',
+    'default' => true,
+    'label' => 'LBL_CURR_MONTH_BUDGET_C',
+    'currency_format' => true,
+    'width' => '10%',
+  ),
   'YTD_BUDGET_C' => 
   array (
     'type' => 'currency',

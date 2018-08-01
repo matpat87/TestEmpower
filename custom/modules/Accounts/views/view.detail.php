@@ -37,6 +37,7 @@ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
  ********************************************************************************/
 
 require_once('include/MVC/View/views/view.detail.php');
+require_once('custom/modules/Accounts/helpers/accountHelper.php');
 
 class AccountsViewDetail extends ViewDetail {
 
@@ -59,6 +60,12 @@ class AccountsViewDetail extends ViewDetail {
         self::__construct();
     }
 
+    public function preDisplay()
+    {
+    	$currentYTDBudget = AccountHelper::retrieveCurrentYTDBudget($this->bean);
+    	$this->bean->ytd_budget_c = $currentYTDBudget;
+        parent::preDisplay();
+    }
 
  	/**
  	 * display

@@ -70,7 +70,28 @@ class OTR_OnTrack extends Issue
     public $priority;
     public $resolution;
     public $work_log;
-	
+   
+    function set_notification_body($xtpl, $otr_ontrack)
+    {
+        global $mod_strings, $app_list_strings, $sugar_config;                      
+
+        $xtpl->assign("OTR_ISSUE_URL", $sugar_config['site_url'] . '/index.php?module=OTR_OnTrack&action=DetailView&record=' . $otr_ontrack->id);
+        $xtpl->assign("OTR_ISSUE_NUMBER", $otr_ontrack->otr_ontrack_number);
+        $xtpl->assign("OTR_APPLICATION", $app_list_strings['application_list'][$otr_ontrack->application_c]);
+        $xtpl->assign("OTR_MODULE", "On Track");
+        $xtpl->assign("OBJECT", "On Track");
+        $xtpl->assign("OTR_PHASE", $app_list_strings['phase_list'][$otr_ontrack->application_c]);
+        $xtpl->assign("OTR_STATUS", $app_list_strings['bug_status_dom'][$otr_ontrack->status]); // dont change this, it will refer to bug status dom
+        $xtpl->assign("OTR_TYPE", $app_list_strings['bug_type_dom'][$otr_ontrack->type]); // dont change this, it will refer to bug type dom
+        $xtpl->assign("OTR_SEVERITY", $app_list_strings['severity_list'][$otr_ontrack->severity_c]);
+        $xtpl->assign("OTR_PRIORITY", $app_list_strings['priority_c_list'][$otr_ontrack->priority_c]);
+        $xtpl->assign("OTR_SUBJECT", $otr_ontrack->name);
+        $xtpl->assign("OTR_DESCRIPTION", $otr_ontrack->description);
+        $xtpl->assign("OTR_WORK_LOG", $otr_ontrack->work_log);                        
+
+        return $xtpl;
+    }
+    
     public function bean_implements($interface)
     {
         switch($interface)
@@ -81,5 +102,5 @@ class OTR_OnTrack extends Issue
 
         return false;
     }
-	
-}
+    
+}

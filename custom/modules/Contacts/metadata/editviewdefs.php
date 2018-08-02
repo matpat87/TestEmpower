@@ -124,7 +124,7 @@ array (
           array (
             'name' => 'primary_address_street',
             'hideLabel' => true,
-            'type' => 'address',
+            'type' => 'DropdownCountryAddress',
             'displayParams' => 
             array (
               'key' => 'primary',
@@ -137,7 +137,7 @@ array (
           array (
             'name' => 'alt_address_street',
             'hideLabel' => true,
-            'type' => 'address',
+            'type' => 'DropdownCountryAddress',
             'displayParams' => 
             array (
               'key' => 'alt',

@@ -52,8 +52,9 @@
 	//die();
 
 define ('CUSTOM_PDF_MARGIN_TOP', 20);
+define ('CUSTOM_PDF_PAGE_ORIENTATION', 'L');
 
-$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'LETTER', true, 'UTF-8', false);
+$pdf = new TCPDF(CUSTOM_PDF_PAGE_ORIENTATION, PDF_UNIT, 'LETTER', true, 'UTF-8', false);
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);

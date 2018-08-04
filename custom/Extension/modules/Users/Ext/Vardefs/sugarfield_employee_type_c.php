@@ -27,7 +27,6 @@ $dictionary['User']['fields']['employee_type_c'] = array (
 	'studio' => 'visible',
 	'dependency' => false,
 	'id' => 'Usersemployee_type_c',
-	'custom_module' => 'Users',
 );
 
 ?>

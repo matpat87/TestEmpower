@@ -112,9 +112,12 @@ EOF;
             <script type="text/javascript">
                 var paginationActionButtons = $('.paginationActionButtons:eq(0)');
                 var paginationActionButtonsHTML = paginationActionButtons.html();
-                var buttonHTML = '<ul class="clickMenu selectmenu columnsFilterLink SugarActionMenu listViewLinkButton listViewLinkButton_top">' +
+                var buttonHTML = '<ul class="clickMenu selectmenu columnsFilterLink SugarActionMenu listViewLinkButton listViewLinkButton_top export-pdf">' +
                     '<li class="sugar_action_button">' +
-                    '<a href="index.php?entryPoint=SalesActivityReport" class="glyphicon glyphicon-export" title="Export as PDF" target="_blank"></a></li></ul>';
+                    '<a href="index.php?entryPoint=SalesActivityReport" title="Export as PDF" class="parent-dropdown-handler" target="_blank">' +
+                        '<span class="glyphicon glyphicon-export glyphicon-icon-cstm"></span>&nbsp;' +
+                        '<span>Export PDF</span>' +
+                    '</a></li></ul>';
 
                 $('.paginationActionButtons:eq(0)').html(paginationActionButtonsHTML + buttonHTML);
                 $('.paginationActionButtons:eq(4)').html(paginationActionButtonsHTML + buttonHTML);

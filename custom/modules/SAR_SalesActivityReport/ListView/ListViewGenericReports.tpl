@@ -54,6 +54,16 @@
         color: #534d64 !important;
     }
 
+    .export-pdf a{
+        padding: 2px 6px 7px 7px !important;
+        
+    }
+
+    .glyphicon-icon-cstm{
+        
+        font-size: 12px;
+    }
+
 {/literal}
 </style>
 

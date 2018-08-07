@@ -86,17 +86,47 @@ class SAR_SalesActivityReport extends Basic
         $singleSelect = false,
         $ifListForExport = false)
     {       
-        global $log;
+        global $log, $current_user;
 
         $salesActivityReportQuery = new SalesActivityReportQuery();
 
         $return_array = Array();
 
         $return_array['select'] = $salesActivityReportQuery->get_select_query();   
-        $return_array['from'] = $salesActivityReportQuery->get_from_query();                               
+        $from_query = $salesActivityReportQuery->get_from_query();                               
         $return_array['where'] = " order by ";    
         $return_array['order_by'] = ' ';
         $contains = false;
+
+        $security_group = new SecurityGroup();
+        $security_groups_per_user = $security_group->getUserSecurityGroups($current_user->id);
+        $salesperson_securitygroup = $this->get_salesperson_securitygroup($security_groups_per_user);
+        $salesmanager_securitygroup = $this->get_salesmanager_securitygroup($security_groups_per_user);
+
+        //check if Sales Manager
+        if(!$current_user->is_admin && !empty($salesmanager_securitygroup))
+        {
+            $from_query .= " INNER JOIN users AS u 
+                ON (u.id = activity.assigned_user_id
+                    and u.reports_to_id = '". $current_user->id ."') OR 
+                    (u.id = activity.assigned_user_id and activity.assigned_user_id = '". $current_user->id ."') ";
+        }
+        else
+        {
+            $from_query .= " LEFT JOIN users AS u 
+                ON u.id = activity.assigned_user_id ";
+        }
+
+        //check if Sales Person
+        if(!$current_user->is_admin && !empty($salesperson_securitygroup))
+        {
+            $from_query .= " INNER JOIN securitygroups_records AS sgr
+                ON sgr.module = 'Accounts'
+                AND sgr.`record_id` = a.id
+                AND sgr.securitygroup_id = '". $salesperson_securitygroup['id'] ."' ";
+        }
+
+        $return_array['from'] = $from_query;
 
         if(!empty($where))
         {
@@ -178,6 +208,42 @@ class SAR_SalesActivityReport extends Basic
         $count_query = "select count(*) as c from (" . $query . ") as report_count";
 
         return $count_query;
+    }
+
+    private function get_salesperson_securitygroup($security_groups_per_user)
+    {
+        $alesperson_securitygroup = array();
+
+        if(!empty($security_groups_per_user))
+        {
+            foreach ($security_groups_per_user as $key => $value) {
+
+                if($value['name'] == 'Salesperson')
+                {
+                    $alesperson_securitygroup = $value;
+                }
+            }
+        } 
+
+        return $alesperson_securitygroup;
+    }
+
+    private function get_salesmanager_securitygroup($security_groups_per_user)
+    {
+        $salesmanager_securitygroup = array();
+
+        if(!empty($security_groups_per_user))
+        {
+            foreach ($security_groups_per_user as $key => $value) {
+
+                if($value['name'] == 'CSR / Sales Manager')
+                {
+                    $salesmanager_securitygroup = $value;
+                }
+            }
+        } 
+
+        return $salesmanager_securitygroup;
     }
 	
 }

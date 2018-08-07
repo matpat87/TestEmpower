@@ -45,7 +45,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 require_once('include/Dashlets/DashletGeneric.php');
 require_once('modules/MKT_Markets/MKT_Markets.php');
 
-class MKTMKT_MarketsDashlet extends DashletGeneric {
+class MKT_MarketsDashlet extends DashletGeneric {
     function __construct($id, $def = null)
     {
         global $current_user, $app_strings;
@@ -57,8 +57,8 @@ class MKTMKT_MarketsDashlet extends DashletGeneric {
             $this->title = translate('LBL_HOMEPAGE_TITLE', 'MKT_Markets');
         }
 
-        $this->searchFields = $dashletData['MKTMKT_MarketsDashlet']['searchFields'];
-        $this->columns = $dashletData['MKTMKT_MarketsDashlet']['columns'];
+        $this->searchFields = $dashletData['MKT_MarketsDashlet']['searchFields'];
+        $this->columns = $dashletData['MKT_MarketsDashlet']['columns'];
 
         $this->seedBean = new MKT_Markets();        
     }

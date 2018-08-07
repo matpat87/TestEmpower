@@ -44,7 +44,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['COMPCOMPCOMPCOMP_CompetitionDashlet'] = array(
+$dashletMeta['COMP_CompetitionDashlet'] = array(
     'module' => 'COMP_Competition',
     'title' => translate('LBL_HOMEPAGE_TITLE', 'COMP_Competition'),
     'description' => 'A customizable view into COMP_Competition',

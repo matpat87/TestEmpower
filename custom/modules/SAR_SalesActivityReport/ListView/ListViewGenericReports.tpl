@@ -64,6 +64,12 @@
         font-size: 12px;
     }
 
+    @-moz-document url-prefix() {
+        .export-pdf{
+            margin-top: -18.5px !important;
+        }
+    }
+
 {/literal}
 </style>
 

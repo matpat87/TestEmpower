@@ -1,8 +1,29 @@
 <?php
- // created: 2018-08-07 17:59:10
-$dictionary['Account']['fields']['last_activity_date_c']['inline_edit']='';
-$dictionary['Account']['fields']['last_activity_date_c']['options']='date_range_search_dom';
-$dictionary['Account']['fields']['last_activity_date_c']['labelValue']='Last Activity Date';
-$dictionary['Account']['fields']['last_activity_date_c']['enable_range_search']='1';
-
- ?>
+	// Manually added codes to generate dropdown list (retrieved and modified from cache\Modules\Accounts\Accountvardefs.php)
+	$dictionary['Account']['fields']['last_activity_date_c'] = array (
+		'inline_edit' => '',
+		'options' => 'date_range_search_dom',
+		'labelValue' => 'Last Activity Date',
+		'enable_range_search' => '1',
+		'required' => false,
+		'source' => 'custom_fields',
+		'name' => 'last_activity_date_c',
+		'vname' => 'LBL_LAST_ACTIVITY_DATE',
+		'type' => 'datetimecombo',
+		'massupdate' => '0',
+		'default' => '',
+		'no_default' => false,
+		'comments' => 'The use of this field is will be automatically updated once Account or relationship of Account has been updated.',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'disabled',
+		'duplicate_merge_dom_value' => '0',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'size' => '20',
+		'dbType' => 'datetime',
+		'id' => 'Accountslast_activity_date_c',
+	);
+?>

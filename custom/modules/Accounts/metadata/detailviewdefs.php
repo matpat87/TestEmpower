@@ -282,6 +282,15 @@ array (
             'label' => 'LBL_CR_HOLD',
           ),
         ),
+        8 => 
+        array (
+          0 => 
+          array (
+            'name' => 'last_activity_date_c',
+            'label' => 'LBL_LAST_ACTIVITY_DATE',
+          ),
+          1 => '',
+        ),
       ),
       'LBL_PANEL_ASSIGNMENT' => 
       array (

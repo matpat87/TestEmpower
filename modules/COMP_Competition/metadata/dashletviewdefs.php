@@ -43,7 +43,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 }
 
 global $current_user;
-$dashletData['COMPCOMPCOMPCOMP_CompetitionDashlet']['searchFields'] = array(
+$dashletData['COMP_CompetitionDashlet']['searchFields'] = array(
     'date_entered' => array('default' => ''),
     'date_modified' => array('default' => ''),
     'assigned_user_id' => array(
@@ -51,7 +51,7 @@ $dashletData['COMPCOMPCOMPCOMP_CompetitionDashlet']['searchFields'] = array(
         'default' => $current_user->name
     )
 );
-$dashletData['COMPCOMPCOMPCOMP_CompetitionDashlet']['columns'] = array(
+$dashletData['COMP_CompetitionDashlet']['columns'] = array(
     'name' => array(
         'width' => '40',
         'label' => 'LBL_LIST_NAME',

@@ -45,7 +45,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 require_once('include/Dashlets/DashletGeneric.php');
 require_once('modules/COMP_Competition/COMP_Competition.php');
 
-class COMPCOMPCOMPCOMP_CompetitionDashlet extends DashletGeneric {
+class COMP_CompetitionDashlet extends DashletGeneric {
     function __construct($id, $def = null)
     {
         global $current_user, $app_strings;
@@ -57,8 +57,8 @@ class COMPCOMPCOMPCOMP_CompetitionDashlet extends DashletGeneric {
             $this->title = translate('LBL_HOMEPAGE_TITLE', 'COMP_Competition');
         }
 
-        $this->searchFields = $dashletData['COMPCOMPCOMPCOMP_CompetitionDashlet']['searchFields'];
-        $this->columns = $dashletData['COMPCOMPCOMPCOMP_CompetitionDashlet']['columns'];
+        $this->searchFields = $dashletData['COMP_CompetitionDashlet']['searchFields'];
+        $this->columns = $dashletData['COMP_CompetitionDashlet']['columns'];
 
         $this->seedBean = new COMP_Competition();        
     }

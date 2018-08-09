@@ -44,7 +44,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['MKTMKT_MarketsDashlet'] = array(
+$dashletMeta['MKT_MarketsDashlet'] = array(
     'module' => 'MKT_Markets',
     'title' => translate('LBL_HOMEPAGE_TITLE', 'MKT_Markets'),
     'description' => 'A customizable view into MKT_Markets',

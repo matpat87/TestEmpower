@@ -44,7 +44,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $current_user;
 
-$dashletData['MKTMKT_MarketsDashlet']['searchFields'] = array(
+$dashletData['MKT_MarketsDashlet']['searchFields'] = array(
     'date_entered' => array('default' => ''),
     'date_modified' => array('default' => ''),
     'assigned_user_id' => array(
@@ -52,7 +52,7 @@ $dashletData['MKTMKT_MarketsDashlet']['searchFields'] = array(
         'default' => $current_user->name
     )
 );
-$dashletData['MKTMKT_MarketsDashlet']['columns'] = array(
+$dashletData['MKT_MarketsDashlet']['columns'] = array(
     'name' => array(
         'width' => '40',
         'label' => 'LBL_LIST_NAME',

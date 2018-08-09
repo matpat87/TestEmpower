@@ -50,7 +50,7 @@ class GlobalAfterSaveHooks{
 
         $module = $_REQUEST['module'] ?? '';
         $parentModules = ['Accounts']; // Add other modules as needed. Make sure they have the same last_activity_date_c field to prevent issues
-        $relatedModules = ['Calls', 'Tasks', 'Meetings', 'Notes', 'Projects', 'Documents'];
+        $relatedModules = ['Calls', 'Tasks', 'Meetings', 'Notes', 'Project', 'Documents'];
         $action = $_REQUEST['action'] ?? '';
         $recordID = $_REQUEST['record'] ?? '';
 

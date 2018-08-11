@@ -3,5 +3,3 @@
 $mod_strings['LBL_DOCUMENTS_OTR_ONTRACK_1_FROM_DOCUMENTS_TITLE'] = 'Documents';
 $mod_strings['LBL_OTR_ONTRACK_CONTACTS_1_FROM_CONTACTS_TITLE'] = 'Contacts';
 $mod_strings['LBL_OTR_ONTRACK_ACCOUNTS_1_FROM_ACCOUNTS_TITLE'] = 'Accounts';
-$mod_strings['LBL_OTR_ONTRACK_CASES_1_FROM_CASES_TITLE'] = 'Cases';
-$mod_strings['LBL_OTR_ONTRACK_PROJECT_1_FROM_PROJECT_TITLE'] = 'Projects';

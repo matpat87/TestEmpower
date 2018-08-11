@@ -73,7 +73,9 @@ class OTR_OnTrack extends Issue
    
     function set_notification_body($xtpl, $otr_ontrack)
     {
-        global $mod_strings, $app_list_strings, $sugar_config;                      
+        global $mod_strings, $app_list_strings, $sugar_config; 
+
+        $work_log = string_replace_all("\n", "<br/>", $otr_ontrack->work_log); //replace all \n with <br> so that Work Log will be readable            
 
         $xtpl->assign("OTR_ISSUE_URL", $sugar_config['site_url'] . '/index.php?module=OTR_OnTrack&action=DetailView&record=' . $otr_ontrack->id);
         $xtpl->assign("OTR_ISSUE_NUMBER", $otr_ontrack->otr_ontrack_number);
@@ -87,7 +89,7 @@ class OTR_OnTrack extends Issue
         $xtpl->assign("OTR_PRIORITY", $app_list_strings['priority_c_list'][$otr_ontrack->priority_c]);
         $xtpl->assign("OTR_SUBJECT", $otr_ontrack->name);
         $xtpl->assign("OTR_DESCRIPTION", $otr_ontrack->description);
-        $xtpl->assign("OTR_WORK_LOG", $otr_ontrack->work_log);                        
+        $xtpl->assign("OTR_WORK_LOG", $work_log);
 
         return $xtpl;
     }

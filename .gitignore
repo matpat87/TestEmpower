@@ -95,7 +95,10 @@ tests/_output/*
 BrowserStackLocal
 browserstack.err
 cache/
-custom/application/**/
+custom/application/EntryPointRegistry/**/
+custom/application/Include/**/
+custom/application/Language/**/
+custom/application/LogicHooks/**/
 custom/blowfish/**/
 custom/history/**/
 .sass-cache/

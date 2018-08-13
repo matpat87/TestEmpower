@@ -95,10 +95,10 @@ tests/_output/*
 BrowserStackLocal
 browserstack.err
 cache/
-custom/application/EntryPointRegistry/**/
-custom/application/Include/**/
-custom/application/Language/**/
-custom/application/LogicHooks/**/
+custom/application/Ext/EntryPointRegistry/*
+custom/application/Ext/Include/*
+custom/application/Ext/Language/*
+custom/application/Ext/LogicHooks/*
 custom/blowfish/**/
 custom/history/**/
 .sass-cache/

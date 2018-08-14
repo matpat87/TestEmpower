@@ -1,5 +1,5 @@
 <?php
-// created: 2018-08-07 17:59:10
+// created: 2018-08-14 17:32:41
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
@@ -91,11 +91,22 @@ $mod_strings = array (
   'LBL_YTD_BUDGET' => 'YTD Budget',
   'LBL_GROSS_MARGIN' => 'Margin',
   'LBL_PANEL_FORECASTS' => 'FORECASTS',
-  'LBL_DETAILVIEW_PANEL1' => 'New Panel 1',
+  'LBL_DETAILVIEW_PANEL1' => 'QF39 Part 2',
   'LBL_DETAILVIEW_PANEL2' => 'FORECASTS',
   'LBL_DETAILVIEW_PANEL3' => 'Margin Forecast (%)',
   'LBL_CUST_NUM' => 'Customer Number',
   'LBL_ERP_DB' => 'ERP DB',
   'LBL_ALT_SYS_ID' => 'ALT SYS ID',
   'LBL_LAST_ACTIVITY_DATE' => 'Last Activity Date',
+  'LBL_CERTIFICATION_NOTE' => 'Certification Note',
+  'LBL_COLOR_READINGS_NOTE' => 'Color Readings Note',
+  'LBL_SPC_NOTE' => 'SPC Note',
+  'LBL_PROBE_NOTE' => 'Probe Note',
+  'LBL_POST_BLEND_NOTE' => 'Post Blend Note',
+  'LBL_ASH_TEST_NOTE' => 'Ash Test Note',
+  'LBL_MELT_FLOW_NOTE' => 'Melt Flow Note',
+  'LBL_BULK_DENSITY_NOTE' => 'Bulk Density Note',
+  'LBL_CHIP_NOTE' => 'Chip Note',
+  'LBL_OTHER_NOTE' => 'Other Note',
+  'LBL_EDITVIEW_PANEL1' => 'QF39 Part 2',
 );

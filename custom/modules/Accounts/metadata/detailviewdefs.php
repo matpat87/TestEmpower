@@ -81,6 +81,11 @@ array (
           'newTab' => true,
           'panelDefault' => 'expanded',
         ),
+        'LBL_DETAILVIEW_PANEL1' => 
+        array (
+          'newTab' => true,
+          'panelDefault' => 'expanded',
+        ),
       ),
     ),
     'panels' => 
@@ -637,6 +642,84 @@ array (
           array (
             'name' => 'budget_cost_12_dec_c',
             'label' => 'LBL_BUDGET_COST_12_DEC',
+          ),
+        ),
+      ),
+      'lbl_detailview_panel1' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'name' => 'certification_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CERTIFICATION_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'color_readings_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_COLOR_READINGS_NOTE',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'spc_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SPC_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'probe_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_PROBE_NOTE',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'post_blend_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_POST_BLEND_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'ash_test_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ASH_TEST_NOTE',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
+            'name' => 'melt_flow_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MELT_FLOW_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'bulk_density_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_BULK_DENSITY_NOTE',
+          ),
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'chip_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CHIP_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'other_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OTHER_NOTE',
           ),
         ),
       ),

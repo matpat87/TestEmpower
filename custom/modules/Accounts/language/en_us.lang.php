@@ -1,5 +1,5 @@
 <?php
-// created: 2018-08-14 17:32:41
+// created: 2018-08-18 18:45:17
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
@@ -109,4 +109,6 @@ $mod_strings = array (
   'LBL_CHIP_NOTE' => 'Chip Note',
   'LBL_OTHER_NOTE' => 'Other Note',
   'LBL_EDITVIEW_PANEL1' => 'QF39 Part 2',
+  'LBL_CASES' => 'Customer Issues',
+  'LBL_CASES_SUBPANEL_TITLE' => 'Customer Issues',
 );

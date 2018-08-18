@@ -1,4 +1,5 @@
 <?php
+// created: 2018-08-18 18:45:17
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',

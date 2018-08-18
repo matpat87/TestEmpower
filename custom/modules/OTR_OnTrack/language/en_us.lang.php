@@ -1,5 +1,5 @@
 <?php
-// created: 2018-08-11 09:38:27
+// created: 2018-08-18 18:45:16
 $mod_strings = array (
   'LBL_STATUS' => 'Status:',
   'LBL_APPLICATION' => 'Application',

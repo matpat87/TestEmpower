@@ -1,0 +1,30 @@
+<?php
+	// created: 2018-08-18 19:04:25
+	$dictionary['SecurityGroup']['fields']['type_c'] = array (
+		'inline_edit' => '1',
+		'labelValue' => 'Type',
+		'required' => false,
+		'source' => 'custom_fields',
+		'name' => 'type_c',
+		'vname' => 'LBL_TYPE',
+		'type' => 'enum',
+		'massupdate' => '0',
+		'default' => NULL,
+		'no_default' => false,
+		'comments' => '',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'disabled',
+		'duplicate_merge_dom_value' => '0',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'len' => 100,
+		'size' => '20',
+		'options' => 'sec_group_type_dom',
+		'studio' => 'visible',
+		'dependency' => false,
+		'id' => 'SecurityGroupstype_c',
+	);
+?>

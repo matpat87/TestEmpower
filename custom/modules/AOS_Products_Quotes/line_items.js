@@ -792,7 +792,6 @@ function calculateAllLines() {
   $('.product_group').each(function(productGroupkey, productGroupValue) {
       $(productGroupValue).find('tbody').each(function(productKey, productValue) {
         calculateLine(productKey, "product_");
-        setCustomFieldsDefaultValue(productKey, "product_");
       });
   });
 

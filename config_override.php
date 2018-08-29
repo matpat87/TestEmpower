@@ -23,10 +23,11 @@ $sugar_config['SAML_logouturl'] = '';
 $sugar_config['SAML_X509Cert'] = '';
 $sugar_config['authenticationClass'] = '';
 $sugar_config['securitysuite_inbound_email'] = false;
-$sugar_config['developerMode'] = true;
+$sugar_config['developerMode'] = false;
 $sugar_config['addAjaxBannedModules'][0] = 'SecurityGroups';
 $sugar_config['addAjaxBannedModules'][1] = 'Opportunities';
 $sugar_config['addAjaxBannedModules'][2] = 'RPT_CRMReports';
 $sugar_config['addAjaxBannedModules'][3] = 'SAR_SalesActivityReport';
 $sugar_config['addAjaxBannedModules'][4] = 'RE_Regulatory';
+$sugar_config['aos']['lineItems']['enableGroups'] = false;
 /***CONFIGURATOR***/

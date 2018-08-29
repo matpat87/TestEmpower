@@ -130,69 +130,70 @@ function display_lines($focus, $field, $value, $view){
                 $groupStart .= "<td class='tabDetailViewDL' colspan='7' style='text-align: left;padding:2px;'>".$group_item->name."</td>";
                 $groupStart .= "</tr>";
 
-                // $groupEnd = "<tr><td colspan='9' nowrap='nowrap'><br></td></tr>";
-                // $groupEnd .= "<tr>";
-                // $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_TOTAL_AMT'].":&nbsp;&nbsp;</td>";
-                // $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->total_amt, $params)."</td>";
-                // $groupEnd .= "</tr>";
-                // $groupEnd .= "<tr>";
-                // $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_DISCOUNT_AMOUNT'].":&nbsp;&nbsp;</td>";
-                // $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->discount_amount, $params)."</td>";
-                // $groupEnd .= "</tr>";
-                // $groupEnd .= "<tr>";
-                // $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_SUBTOTAL_AMOUNT'].":&nbsp;&nbsp;</td>";
-                // $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->subtotal_amount, $params)."</td>";
-                // $groupEnd .= "</tr>";
-                // $groupEnd .= "<tr>";
-                // $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_TAX_AMOUNT'].":&nbsp;&nbsp;</td>";
-                // $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->tax_amount, $params)."</td>";
-                // $groupEnd .= "</tr>";
-                // $groupEnd .= "<tr>";
-                // $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_GRAND_TOTAL'].":&nbsp;&nbsp;</td>";
-                // $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->total_amount, $params)."</td>";
-                // $groupEnd .= "</tr>";
+                $groupEnd = "<tr><td colspan='9' nowrap='nowrap'><br></td></tr>";
+                $groupEnd .= "<tr>";
+                $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_TOTAL_AMT'].":&nbsp;&nbsp;</td>";
+                $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->total_amt, $params)."</td>";
+                $groupEnd .= "</tr>";
+                $groupEnd .= "<tr>";
+                $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_DISCOUNT_AMOUNT'].":&nbsp;&nbsp;</td>";
+                $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->discount_amount, $params)."</td>";
+                $groupEnd .= "</tr>";
+                $groupEnd .= "<tr>";
+                $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_SUBTOTAL_AMOUNT'].":&nbsp;&nbsp;</td>";
+                $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->subtotal_amount, $params)."</td>";
+                $groupEnd .= "</tr>";
+                $groupEnd .= "<tr>";
+                $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_TAX_AMOUNT'].":&nbsp;&nbsp;</td>";
+                $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->tax_amount, $params)."</td>";
+                $groupEnd .= "</tr>";
+                $groupEnd .= "<tr>";
+                $groupEnd .= "<td class='tabDetailViewDL' colspan='8' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_GRAND_TOTAL'].":&nbsp;&nbsp;</td>";
+                $groupEnd .= "<td class='tabDetailViewDL' style='text-align: right;padding:2px;'>".currency_format_number($group_item->total_amount, $params)."</td>";
+                $groupEnd .= "</tr>";
             }
             if($line_item->product_id != '0' && $line_item->product_id != null){
                 if($productCount == 0)
                 {
                     $product .= "<tr>";
-                    $product .= "<td width='5%' class='tabDetailViewDL' style='text-align: left;padding:2px;' scope='row'>&nbsp;</td>";
-                    $product .= "<td width='10%' class='tabDetailViewDL' style='text-align: left;padding:2px;' scope='row'>".$mod_strings['LBL_PRODUCT_QUANITY']."</td>";
-                    $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: left;padding:2px;' scope='row'>".$mod_strings['LBL_PRODUCT_NAME']."</td>";
-                    $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: left;padding:2px;' scope='row'>".$mod_strings['LBL_CUSTOMER_ID']."</td>";
-                    $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: left;padding:2px;' scope='row'>".$mod_strings['LBL_LDR']."</td>";
-                    $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: left;padding:2px;' scope='row'>".$mod_strings['LBL_RESIN']."</td>";
+                    $product .= "<td width='5%' class='tabDetailViewDL'  style='padding:2px;' scope='row'>&nbsp;</td>";
+                    $product .= "<td width='10%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_PRODUCT_QUANITY']."</td>";
+                    $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_PRODUCT_NAME']."</td>";
+                    $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_CUSTOMER_ID']."</td>";
+                    $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_LDR']."</td>";
+                    $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_RESIN']."</td>";
                     // $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_LIST_PRICE']."</td>";
                     // $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_DISCOUNT_AMT']."</td>";
-                    $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_UNIT_PRICE']."</td>";
+                    $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_UNIT_PRICE']."</td>";
                     // $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_VAT']."</td>";
                     // $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_VAT_AMT']."</td>";
-                    $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_TOTAL_PRICE']."</td>";
+                    $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_TOTAL_PRICE']."</td>";
                     $product .= "</tr>";
                 }
 
                 $product .= "<tr>";
+                $product_description = wordwrap($line_item->item_description,40,"<br />\n");
                 $product_note = wordwrap($line_item->description,40,"<br />\n");
                 $product .= "<td class='tabDetailViewDF' style='text-align: left; padding:2px;'>".++$productCount."</td>";
                 $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".stripDecimalPointsAndTrailingZeroes(format_number($line_item->product_qty),$sep[1])."</td>";
 
-                $product .= "<td class='tabDetailViewDF' style='padding:2px;'><a href='index.php?module=AOS_Products&action=DetailView&record=".$line_item->product_id."' class='tabDetailViewDFLink'>".$line_item->name."</a><br />".$product_note."</td>";
+                $product .= "<td class='tabDetailViewDF' style='padding:2px;'><a href='index.php?module=AOS_Products&action=DetailView&record=".$line_item->product_id."' class='tabDetailViewDFLink'>".$line_item->name."</a></td>";
                 // $product .= "<td class='tabDetailViewDF' style='text-align: right; padding:2px;'>".currency_format_number($line_item->product_list_price,$params)."</td>";
 
                 $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->customer_id_c."</td>";
-                $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->ldr_c."</td>";
+                $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->ldr_c." %</td>";
                 $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->resin_c."</td>";
 
                 // $product .= "<td class='tabDetailViewDF' style='text-align: right; padding:2px;'>".get_discount_string($line_item->discount, $line_item->product_discount, $params, $locale, $sep)."</td>";
 
-                $product .= "<td class='tabDetailViewDF' style='text-align: right; padding:2px;'>".currency_format_number($line_item->product_unit_price,$params )."</td>";
+                $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".currency_format_number($line_item->product_unit_price,$params )."</td>";
                 // if($locale->getPrecision()){
                 //     $product .= "<td class='tabDetailViewDF' style='text-align: right; padding:2px;'>".rtrim(rtrim(format_number($line_item->vat), '0'),$sep[1])."%</td>";
                 // } else {
                 //     $product .= "<td class='tabDetailViewDF' style='text-align: right; padding:2px;'>".format_number($line_item->vat)."%</td>";
                 // }
                 // $product .= "<td class='tabDetailViewDF' style='text-align: right; padding:2px;'>".currency_format_number($line_item->vat_amt,$params )."</td>";
-                $product .= "<td class='tabDetailViewDF' style='text-align: right; padding:2px;'>".currency_format_number($line_item->product_total_price,$params )."</td>";
+                $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".currency_format_number($line_item->product_total_price,$params )."</td>";
                 $product .= "</tr>";
             } else {
                 if($serviceCount == 0)

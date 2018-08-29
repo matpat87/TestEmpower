@@ -169,13 +169,13 @@ function insertProductLine(tableid, groupid) {
   // Custom Fields
   
   var c = x.insertCell(4);
-  c.innerHTML = "<input type='text' name='product_customer_id_c[" + prodln + "]' id='product_customer_id_c" + prodln + "' onblur='setCustomFieldsDefaultValue(" + prodln + ",\"product_\");'>"
+  c.innerHTML = "<input type='text' name='product_customer_id_c[" + prodln + "]' id='product_customer_id_c" + prodln + "' maxlength='10'>"
 
   var c1 = x.insertCell(5);
-  c1.innerHTML = "<input type='text' name='product_ldr_c[" + prodln + "]' id='product_ldr_c" + prodln + "' onblur='setCustomFieldsDefaultValue(" + prodln + ",\"product_\");'>"
+  c1.innerHTML = "<input type='text' name='product_ldr_c[" + prodln + "]' id='product_ldr_c" + prodln + "' maxlength='6'>"
 
   var c2 = x.insertCell(6);
-  c2.innerHTML = "<input type='text' name='product_resin_c[" + prodln + "]' id='product_resin_c" + prodln + "' onblur='setCustomFieldsDefaultValue(" + prodln + ",\"product_\");'>"
+  c2.innerHTML = "<input type='text' name='product_resin_c[" + prodln + "]' id='product_resin_c" + prodln + "' maxlength='20'>"
 
   // End of Custom Fields
 
@@ -225,18 +225,22 @@ function insertProductLine(tableid, groupid) {
   y.id = 'product_note_line' + prodln;
 
   var h1 = y.insertCell(0);
-  h1.colSpan = "5";
-  h1.style.color = "rgb(68,68,68)";
-  h1.innerHTML = "<span style='vertical-align: top;' class='product_item_description_label'>" + SUGAR.language.get(module_sugar_grp1, 'LBL_PRODUCT_DESCRIPTION') + " :&nbsp;&nbsp;</span>";
-  h1.innerHTML += "<textarea tabindex='116' name='product_item_description[" + prodln + "]' id='product_item_description" + prodln + "' rows='2' cols='23' class='product_item_description'></textarea>&nbsp;&nbsp;";
+  // var h1 = y.insertCell(0);
+  // h1.colSpan = "5";
+  // h1.style.color = "rgb(68,68,68)";
+  // h1.innerHTML = "<span style='vertical-align: top;' class='product_item_description_label'>" + SUGAR.language.get(module_sugar_grp1, 'LBL_PRODUCT_DESCRIPTION') + " :&nbsp;&nbsp;</span>";
+  // h1.innerHTML += "<textarea tabindex='116' name='product_item_description[" + prodln + "]' id='product_item_description" + prodln + "' rows='2' cols='23' class='product_item_description'></textarea>&nbsp;&nbsp;";
 
-  var i = y.insertCell(1);
-  i.colSpan = "5";
-  i.style.color = "rgb(68,68,68)";
-  i.innerHTML = "<span style='vertical-align: top;' class='product_description_label'>"  + SUGAR.language.get(module_sugar_grp1, 'LBL_PRODUCT_NOTE') + " :&nbsp;</span>";
-  i.innerHTML += "<textarea tabindex='116' name='product_description[" + prodln + "]' id='product_description" + prodln + "' rows='2' cols='23' class='product_description'></textarea>&nbsp;&nbsp;"
+  // var i = y.insertCell(1);
+  // i.colSpan = "5";
+  // i.style.color = "rgb(68,68,68)";
+  // i.innerHTML = "<span style='vertical-align: top;' class='product_description_label'>"  + SUGAR.language.get(module_sugar_grp1, 'LBL_PRODUCT_NOTE') + " :&nbsp;</span>";
+  // i.innerHTML += "<textarea tabindex='116' name='product_description[" + prodln + "]' id='product_description" + prodln + "' rows='2' cols='23' class='product_description'></textarea>&nbsp;&nbsp;"
 
   addToValidate('EditView','product_product_id'+prodln,'id',true,"Please choose a product");
+  addToValidate('EditView','product_customer_id_c'+prodln,'varchar',true,"Customer ID");
+  addToValidate('EditView','product_ldr_c'+prodln,'decimal',true,"LDR");
+  addToValidate('EditView','product_resin_c'+prodln,'varchar',true,"Resin");
 
   addAlignedLabels(prodln, 'product');
 
@@ -575,54 +579,54 @@ function insertGroup()
   footer_cell.scope="row";
   footer_cell.colSpan="20";
   footer_cell.innerHTML="<input type='button' tabindex='116' class='button add_product_line' value='"+SUGAR.language.get(module_sugar_grp1, 'LBL_ADD_PRODUCT_LINE')+"' id='"+productTable.id+"addProductLine' onclick='insertProductLine(\""+productTable.id+"\",\""+groupn+"\")' />";
-  footer_cell.innerHTML+=" <input type='button' tabindex='116' class='button add_service_line' value='"+SUGAR.language.get(module_sugar_grp1, 'LBL_ADD_SERVICE_LINE')+"' id='"+serviceTable.id+"addServiceLine' onclick='insertServiceLine(\""+serviceTable.id+"\",\""+groupn+"\")' />";
-  // if(enable_groups){
-  //   footer_cell.innerHTML+="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_TOTAL_AMT')+":</label><input name='group_total_amt[]' id='"+ table.id +"total_amt' class='group_total_amt' maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
+  // footer_cell.innerHTML+=" <input type='button' tabindex='116' class='button add_service_line' value='"+SUGAR.language.get(module_sugar_grp1, 'LBL_ADD_SERVICE_LINE')+"' id='"+serviceTable.id+"addServiceLine' onclick='insertServiceLine(\""+serviceTable.id+"\",\""+groupn+"\")' />";
+  if(enable_groups){
+    footer_cell.innerHTML+="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_TOTAL_AMT')+":</label><input name='group_total_amt[]' id='"+ table.id +"total_amt' class='group_total_amt' maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
 
-  //   var footer_row2=tablefooter.insertRow(-1);
-  //   var footer_cell2 = footer_row2.insertCell(0);
-  //   footer_cell2.scope="row";
-  //   footer_cell2.colSpan="20";
-  //   footer_cell2.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_DISCOUNT_AMOUNT')+":</label><input name='group_discount_amount[]' id='"+ table.id +"discount_amount' class='group_discount_amount' maxlength='26' value='' title='' tabindex='120' type='text' readonly></label>";
+    var footer_row2=tablefooter.insertRow(-1);
+    var footer_cell2 = footer_row2.insertCell(0);
+    footer_cell2.scope="row";
+    footer_cell2.colSpan="20";
+    footer_cell2.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_DISCOUNT_AMOUNT')+":</label><input name='group_discount_amount[]' id='"+ table.id +"discount_amount' class='group_discount_amount' maxlength='26' value='' title='' tabindex='120' type='text' readonly></label>";
 
-  //   var footer_row3=tablefooter.insertRow(-1);
-  //   var footer_cell3 = footer_row3.insertCell(0);
-  //   footer_cell3.scope="row";
-  //   footer_cell3.colSpan="20";
-  //   footer_cell3.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_SUBTOTAL_AMOUNT')+":</label><input name='group_subtotal_amount[]' id='"+ table.id +"subtotal_amount' class='group_subtotal_amount'  maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
+    var footer_row3=tablefooter.insertRow(-1);
+    var footer_cell3 = footer_row3.insertCell(0);
+    footer_cell3.scope="row";
+    footer_cell3.colSpan="20";
+    footer_cell3.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_SUBTOTAL_AMOUNT')+":</label><input name='group_subtotal_amount[]' id='"+ table.id +"subtotal_amount' class='group_subtotal_amount'  maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
 
-  //   var footer_row4=tablefooter.insertRow(-1);
-  //   var footer_cell4 = footer_row4.insertCell(0);
-  //   footer_cell4.scope="row";
-  //   footer_cell4.colSpan="20";
-  //   footer_cell4.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_TAX_AMOUNT')+":</label><input name='group_tax_amount[]' id='"+ table.id +"tax_amount' class='group_tax_amount' maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
+    var footer_row4=tablefooter.insertRow(-1);
+    var footer_cell4 = footer_row4.insertCell(0);
+    footer_cell4.scope="row";
+    footer_cell4.colSpan="20";
+    footer_cell4.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_TAX_AMOUNT')+":</label><input name='group_tax_amount[]' id='"+ table.id +"tax_amount' class='group_tax_amount' maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
 
-  //   if(document.getElementById('subtotal_tax_amount') !== null){
-  //     var footer_row5=tablefooter.insertRow(-1);
-  //     var footer_cell5 = footer_row5.insertCell(0);
-  //     footer_cell5.scope="row";
-  //     footer_cell5.colSpan="20";
-  //     footer_cell5.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_SUBTOTAL_TAX_AMOUNT')+":</label><input name='group_subtotal_tax_amount[]' id='"+ table.id +"subtotal_tax_amount' class='group_subtotal_tax_amount' maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
+    if(document.getElementById('subtotal_tax_amount') !== null){
+      var footer_row5=tablefooter.insertRow(-1);
+      var footer_cell5 = footer_row5.insertCell(0);
+      footer_cell5.scope="row";
+      footer_cell5.colSpan="20";
+      footer_cell5.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_SUBTOTAL_TAX_AMOUNT')+":</label><input name='group_subtotal_tax_amount[]' id='"+ table.id +"subtotal_tax_amount' class='group_subtotal_tax_amount' maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
 
-  //     if (typeof currencyFields !== 'undefined'){
-  //       currencyFields.push("" + table.id+ 'subtotal_tax_amount');
-  //     }
-  //   }
+      if (typeof currencyFields !== 'undefined'){
+        currencyFields.push("" + table.id+ 'subtotal_tax_amount');
+      }
+    }
 
-  //   var footer_row6=tablefooter.insertRow(-1);
-  //   var footer_cell6 = footer_row6.insertCell(0);
-  //   footer_cell6.scope="row";
-  //   footer_cell6.colSpan="20";
-  //   footer_cell6.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_GROUP_TOTAL')+":</label><input name='group_total_amount[]' id='"+ table.id +"total_amount' class='group_total_amount'  maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
+    var footer_row6=tablefooter.insertRow(-1);
+    var footer_cell6 = footer_row6.insertCell(0);
+    footer_cell6.scope="row";
+    footer_cell6.colSpan="20";
+    footer_cell6.innerHTML="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_GROUP_TOTAL')+":</label><input name='group_total_amount[]' id='"+ table.id +"total_amount' class='group_total_amount'  maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
 
-  //   if (typeof currencyFields !== 'undefined'){
-  //     currencyFields.push("" + table.id+ 'total_amt');
-  //     currencyFields.push("" + table.id+ 'discount_amount');
-  //     currencyFields.push("" + table.id+ 'subtotal_amount');
-  //     currencyFields.push("" + table.id+ 'tax_amount');
-  //     currencyFields.push("" + table.id+ 'total_amount');
-  //   }
-  // }
+    if (typeof currencyFields !== 'undefined'){
+      currencyFields.push("" + table.id+ 'total_amt');
+      currencyFields.push("" + table.id+ 'discount_amount');
+      currencyFields.push("" + table.id+ 'subtotal_amount');
+      currencyFields.push("" + table.id+ 'tax_amount');
+      currencyFields.push("" + table.id+ 'total_amount');
+    }
+  }
   groupn++;
   return groupn -1;
 }
@@ -1017,20 +1021,6 @@ function formatNumber(n, num_grp_sep, dec_sep, round, precision) {
     n[0] = n[0].toString().replace(regex, "$1" + num_grp_sep + "$2");
   }
   return n[0] + (n.length > 1 && n[1] !== "" ? dec_sep + n[1] : "");
-}
-
-function setCustomFieldsDefaultValue(ln, key) {
-  if(!document.getElementById(key + 'customer_id_c' + ln).value) {
-    document.getElementById(key + 'customer_id_c' + ln).value = '-';
-  }
-
-  if(!document.getElementById(key + 'ldr_c' + ln).value) {
-    document.getElementById(key + 'ldr_c' + ln).value = 0.00;
-  }
-
-  if(!document.getElementById(key + 'resin_c' + ln).value) {
-    document.getElementById(key + 'resin_c' + ln).value = '-';
-  }
 }
 
 function check_form(formname) {

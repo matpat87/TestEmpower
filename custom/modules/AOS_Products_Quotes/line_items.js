@@ -237,11 +237,6 @@ function insertProductLine(tableid, groupid) {
   // i.innerHTML = "<span style='vertical-align: top;' class='product_description_label'>"  + SUGAR.language.get(module_sugar_grp1, 'LBL_PRODUCT_NOTE') + " :&nbsp;</span>";
   // i.innerHTML += "<textarea tabindex='116' name='product_description[" + prodln + "]' id='product_description" + prodln + "' rows='2' cols='23' class='product_description'></textarea>&nbsp;&nbsp;"
 
-  addToValidate('EditView','product_product_id'+prodln,'id',true,"Please choose a product");
-  addToValidate('EditView','product_customer_id_c'+prodln,'varchar',true,"Customer ID");
-  addToValidate('EditView','product_ldr_c'+prodln,'decimal',true,"LDR");
-  addToValidate('EditView','product_resin_c'+prodln,'varchar',true,"Resin");
-
   addAlignedLabels(prodln, 'product');
 
   prodln++;
@@ -792,6 +787,7 @@ function calculateAllLines() {
   $('.product_group').each(function(productGroupkey, productGroupValue) {
       $(productGroupValue).find('tbody').each(function(productKey, productValue) {
         calculateLine(productKey, "product_");
+        validateFields(productKey);
       });
   });
 
@@ -1020,6 +1016,13 @@ function formatNumber(n, num_grp_sep, dec_sep, round, precision) {
     n[0] = n[0].toString().replace(regex, "$1" + num_grp_sep + "$2");
   }
   return n[0] + (n.length > 1 && n[1] !== "" ? dec_sep + n[1] : "");
+}
+
+function validateFields(prodln) {
+  addToValidate('EditView','product_product_id'+prodln,'id',true,"Please choose a product");
+  addToValidate('EditView','product_customer_id_c'+prodln,'varchar',true,"Customer ID");
+  addToValidate('EditView','product_ldr_c'+prodln,'decimal',true,"LDR");
+  addToValidate('EditView','product_resin_c'+prodln,'varchar',true,"Resin");
 }
 
 function check_form(formname) {

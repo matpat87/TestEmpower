@@ -1,20 +1,17 @@
 <?php
-// created: 2018-08-13 04:16:04
+// created: 2018-09-03 02:57:26
 $mod_strings = array (
   'LNK_LIST' => 'View CRM Reports',
-  'LBL_DIVISION' => 'division',
-  'LBL_SALES_REPRESENTATIVE' => 'sales representative',
-  'LBL_ACCOUNT_ACCOUNT_ID' => 'Account (related Account ID)',
-  'LBL_ACCOUNT' => 'Account',
-  'LBL_SALES_STAGE' => 'sales stage',
+  'LBL_DIVISION' => 'Division',
+  'LBL_SALES_REPRESENTATIVE' => 'Sales Representative',
+  'LBL_SALES_STAGE' => 'Sales Stage',
   'LBL_STATUS' => 'Status',
   'LBL_AMOUNT' => 'Amount (&gt;=)',
   'LBL_DATE_FROM' => 'Date From',
   'LBL_DATE_TO' => 'Date To',
   'LBL_PROBABILITY' => 'Probability % (&gt;=)',
-  'LBL_CAMPAIGN_CAMPAIGN_ID' => 'campaign (related Campaign ID)',
-  'LBL_CAMPAIGN' => 'campaign',
-  'LBL_MARKET_MKT_MARKETS_ID' => 'market (related  ID)',
-  'LBL_MARKET' => 'market',
   'LBL_TYPE' => 'Type',
+  'LBL_ACCOUNT' => 'Account',
+  'LBL_CAMPAIGN' => 'Campaign',
+  'LBL_MARKET' => 'Market',
 );

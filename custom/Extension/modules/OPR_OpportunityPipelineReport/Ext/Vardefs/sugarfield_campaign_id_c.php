@@ -1,5 +1,0 @@
-<?php
- // created: 2018-08-13 04:10:52
-$dictionary['OPR_OpportunityPipelineReport']['fields']['campaign_id_c']['inline_edit']=1;
-
- ?>

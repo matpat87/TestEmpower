@@ -1,5 +1,5 @@
 <?php
-// created: 2018-08-13 04:10:01
+// created: 2018-09-03 03:00:37
 $searchFields['OPR_OpportunityPipelineReport'] = array (
   'name' => 
   array (

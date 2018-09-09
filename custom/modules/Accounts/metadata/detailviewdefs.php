@@ -295,7 +295,12 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_OEM',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'manufacturing_type_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MANUFACTURING_TYPE',
+          ),
         ),
         9 => 
         array (

@@ -179,6 +179,16 @@ array (
             'label' => 'LBL_CR_HOLD',
           ),
         ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'oem_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OEM',
+          ),
+          1 => '',
+        ),
       ),
       'lbl_editview_panel1' => 
       array (

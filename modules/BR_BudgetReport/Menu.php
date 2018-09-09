@@ -43,10 +43,7 @@
 }
 
 global $mod_strings, $app_strings, $sugar_config;
- 
-if(ACLController::checkAccess('BR_BudgetReport', 'edit', true)){
-    $module_menu[]=array('index.php?module=BR_BudgetReport&action=EditView&return_module=BR_BudgetReport&return_action=DetailView', $mod_strings['LNK_NEW_RECORD'], 'Add', 'BR_BudgetReport');
-}
+
 if(ACLController::checkAccess('BR_BudgetReport', 'list', true)){
-    $module_menu[]=array('index.php?module=BR_BudgetReport&action=index&return_module=BR_BudgetReport&return_action=DetailView', $mod_strings['LNK_LIST'],'View', 'BR_BudgetReport');
+    $module_menu[]=array('index.php?module=RPT_CRMReports&action=index', $mod_strings['LNK_LIST'],'View', 'SAR_SalesActivityReport');
 }

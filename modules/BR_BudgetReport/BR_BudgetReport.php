@@ -75,4 +75,93 @@ class BR_BudgetReport extends Basic
         return false;
     }
 	
-}
+    function create_new_list_query($order_by,
+        $where,
+        $filter = array(),
+        $params = array(),
+        $show_deleted = 0,
+        $join_type = '',
+        $return_array = false,
+        $parentbean = null,
+        $singleSelect = false,
+        $ifListForExport = false)
+    {       
+        global $log, $current_user;
+
+        $budgetReportQuery = new BudgetReportQuery();
+
+        $return_array = Array();
+
+        $return_array['select'] = $budgetReportQuery->get_select_query();   
+        $from_query = $budgetReportQuery->get_from_query();                               
+
+        $return_array['from'] = $from_query;
+        
+        $customUserList = $budgetReportQuery->retrieve_sales_group_user_list();
+        
+        $arrayUserIDs = [];
+        foreach ($customUserList as $key => $value) {
+           array_push($arrayUserIDs, "'" . $key . "'");
+        }
+
+        $stringUserIDs = implode(', ', $arrayUserIDs);
+
+        if($where) {
+            $where = str_replace('br_budgetreport', "accounts", $where);
+            $return_array['where'] = "WHERE " . $where;
+        } else {
+            $return_array['where'] = "WHERE accounts.assigned_user_id IN (".$stringUserIDs.")";
+        }
+
+        $return_array['group_by'] = ' GROUP BY accounts.id ';
+        $return_array['order_by'] = $return_array['group_by'];
+        $return_array['order_by'] .= 'ORDER BY '.  $order_by;
+
+        $_SESSION['BudgetReportQuery'] = $return_array;
+        return $return_array;
+
+    }
+
+    function create_list_count_query($query)
+    {
+        $count_query = "select count(*) as c from (" . $query . ") as report_count";
+
+        return $count_query;
+    }
+
+    private function get_salesperson_securitygroup($security_groups_per_user)
+    {
+        $alesperson_securitygroup = array();
+
+        if(!empty($security_groups_per_user))
+        {
+            foreach ($security_groups_per_user as $key => $value) {
+
+                if($value['name'] == 'Salesperson')
+                {
+                    $alesperson_securitygroup = $value;
+                }
+            }
+        } 
+
+        return $alesperson_securitygroup;
+    }
+
+    private function get_salesmanager_securitygroup($security_groups_per_user)
+    {
+        $salesmanager_securitygroup = array();
+
+        if(!empty($security_groups_per_user))
+        {
+            foreach ($security_groups_per_user as $key => $value) {
+
+                if($value['name'] == 'CSR / Sales Manager')
+                {
+                    $salesmanager_securitygroup = $value;
+                }
+            }
+        } 
+
+        return $salesmanager_securitygroup;
+    }
+}

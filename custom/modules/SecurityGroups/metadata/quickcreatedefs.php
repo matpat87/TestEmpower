@@ -2,19 +2,10 @@
 $module_name = 'SecurityGroups';
 $viewdefs [$module_name] = 
 array (
-  'DetailView' => 
+  'QuickCreate' => 
   array (
     'templateMeta' => 
     array (
-      'form' => 
-      array (
-        'buttons' => 
-        array (
-          0 => 'EDIT',
-          1 => 'DUPLICATE',
-          2 => 'DELETE',
-        ),
-      ),
       'maxColumns' => '2',
       'widths' => 
       array (
@@ -29,12 +20,12 @@ array (
           'field' => '30',
         ),
       ),
-      'useTabs' => true,
+      'useTabs' => false,
       'tabDefs' => 
       array (
         'DEFAULT' => 
         array (
-          'newTab' => true,
+          'newTab' => false,
           'panelDefault' => 'expanded',
         ),
       ),
@@ -45,15 +36,17 @@ array (
       array (
         0 => 
         array (
-          0 => 'name',
+          0 => 
+          array (
+            'name' => 'name',
+            'displayParams' => 
+            array (
+              'required' => true,
+            ),
+          ),
           1 => 'assigned_user_name',
         ),
         1 => 
-        array (
-          0 => 'date_entered',
-          1 => 'date_modified',
-        ),
-        2 => 
         array (
           0 => 'noninheritable',
           1 => 
@@ -63,7 +56,7 @@ array (
             'label' => 'LBL_TYPE',
           ),
         ),
-        3 => 
+        2 => 
         array (
           0 => 'description',
         ),

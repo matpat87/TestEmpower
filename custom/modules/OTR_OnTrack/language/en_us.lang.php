@@ -1,5 +1,4 @@
 <?php
-// created: 2018-06-26 18:23:27
 $mod_strings = array (
   'LBL_STATUS' => 'Status:',
   'LBL_APPLICATION' => 'Application',
@@ -14,4 +13,9 @@ $mod_strings = array (
   'LBL_OVERVIEW' => 'Overview',
   'LBL_SEVERITY' => 'Severity',
   'LBL_PRIORITY_C' => 'Priority',
+  'LBL_DOCUMENTS_OTR_ONTRACK_1_FROM_DOCUMENTS_TITLE' => 'Documents',
+  'LBL_OTR_ONTRACK_ACCOUNTS_1_FROM_ACCOUNTS_TITLE' => 'Accounts',
+  'LBL_OTR_ONTRACK_CASES_1_FROM_CASES_TITLE' => 'Customer Issues',
+  'LBL_OTR_ONTRACK_CONTACTS_1_FROM_CONTACTS_TITLE' => 'Contacts',
+  'LBL_OTR_ONTRACK_PROJECT_1_FROM_PROJECT_TITLE' => 'Projects',
 );

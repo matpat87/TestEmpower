@@ -139,7 +139,12 @@ class M2MRelationship extends SugarRelationship
     	//Need to hijack this as security groups will not contain a link on the module side
     	//due to the way the module works. Plus it would remove the relative ease of adding custom module support
     	
-    	if(get_class($rhs) != 'User' && get_class($rhs) != 'ACLRole' && get_class($lhs) == 'SecurityGroup') {
+        // Modified Hijacked code by security groups to fix select action for custom relationship subpanels
+        // Note: Case module is displayed as aCase in backend
+        // Modified by: Ralph Julian B. Siasat
+        $moduleList = ['User', 'ACLRole', 'Account', 'aCase', 'Contact', 'Opportunity'];
+
+    	if(!in_array(get_class($rhs), $moduleList) && get_class($lhs) == 'SecurityGroup') {
 			$rhs->$rhsLinkName->addBean($lhs);			
 			$this->callBeforeAdd($rhs, $lhs, $rhsLinkName);
 
@@ -147,7 +152,7 @@ class M2MRelationship extends SugarRelationship
 			$this->addRow($dataToInsert);
     		$rhs->$rhsLinkName->addBean($lhs);
     		$this->callAfterAdd($lhs, $rhs, $lhsLinkName);
-    	} else if(get_class($lhs) != 'User' && get_class($lhs) != 'ACLRole' && get_class($rhs) == 'SecurityGroup') {
+    	} else if(!in_array(get_class($lhs), $moduleList) && get_class($rhs) == 'SecurityGroup') {
 			$lhs->$lhsLinkName->addBean($rhs);			
 			$this->callBeforeAdd($lhs, $rhs, $lhsLinkName);
 

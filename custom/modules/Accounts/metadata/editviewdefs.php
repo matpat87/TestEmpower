@@ -138,6 +138,11 @@ array (
         ),
         5 => 
         array (
+          0 => 'account_type',
+          1 => 'parent_name',
+        ),
+        6 => 
+        array (
           0 => 
           array (
             'name' => 'assigned_user_name',
@@ -153,20 +158,15 @@ array (
       array (
         0 => 
         array (
-          0 => 'account_type',
-          1 => 'industry',
-        ),
-        1 => 
-        array (
           0 => 'annual_revenue',
           1 => 'employees',
         ),
-        2 => 
+        1 => 
         array (
-          0 => 'parent_name',
+          0 => 'industry',
           1 => 'campaign_name',
         ),
-        3 => 
+        2 => 
         array (
           0 => 
           array (
@@ -179,7 +179,7 @@ array (
             'label' => 'LBL_CR_HOLD',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (

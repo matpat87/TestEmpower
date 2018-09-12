@@ -171,6 +171,20 @@ array (
         array (
           0 => 
           array (
+            'name' => 'account_type',
+            'comment' => 'The Company is of this type',
+            'label' => 'LBL_TYPE',
+          ),
+          1 => 
+          array (
+            'name' => 'parent_name',
+            'label' => 'LBL_MEMBER_OF',
+          ),
+        ),
+        6 => 
+        array (
+          0 => 
+          array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
           ),
@@ -186,18 +200,28 @@ array (
         array (
           0 => 
           array (
-            'name' => 'account_type',
-            'comment' => 'The Company is of this type',
-            'label' => 'LBL_TYPE',
+            'name' => 'annual_revenue',
+            'comment' => 'Annual revenue for this company',
+            'label' => 'LBL_ANNUAL_REVENUE',
           ),
           1 => 
           array (
-            'name' => 'erp_db_c',
-            'studio' => 'visible',
-            'label' => 'LBL_ERP_DB',
+            'name' => 'employees',
+            'comment' => 'Number of employees, varchar to accomodate for both number (100) or range (50-100)',
+            'label' => 'LBL_EMPLOYEES',
           ),
         ),
         1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'industry',
+            'comment' => 'The company belongs in this industry',
+            'label' => 'LBL_INDUSTRY',
+          ),
+          1 => 'campaign_name',
+        ),
+        2 => 
         array (
           0 => 
           array (
@@ -210,37 +234,13 @@ array (
             'label' => 'LBL_ALT_SYS_ID',
           ),
         ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'parent_name',
-            'label' => 'LBL_MEMBER_OF',
-          ),
-          1 => 
-          array (
-            'name' => 'employees',
-            'comment' => 'Number of employees, varchar to accomodate for both number (100) or range (50-100)',
-            'label' => 'LBL_EMPLOYEES',
-          ),
-        ),
         3 => 
         array (
-          0 => 'campaign_name',
-          1 => 
-          array (
-            'name' => 'annual_revenue',
-            'comment' => 'Annual revenue for this company',
-            'label' => 'LBL_ANNUAL_REVENUE',
-          ),
-        ),
-        4 => 
-        array (
           0 => 
           array (
-            'name' => 'industry',
-            'comment' => 'The company belongs in this industry',
-            'label' => 'LBL_INDUSTRY',
+            'name' => 'erp_db_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ERP_DB',
           ),
           1 => 
           array (
@@ -248,7 +248,7 @@ array (
             'label' => 'LBL_ORDER_CYCLE',
           ),
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -261,7 +261,7 @@ array (
             'label' => 'LBL_CR_LIMIT',
           ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -274,7 +274,7 @@ array (
             'label' => 'LBL_LAST_SOLD_DT',
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -287,7 +287,7 @@ array (
             'label' => 'LBL_CR_HOLD',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (
@@ -302,7 +302,7 @@ array (
             'label' => 'LBL_MANUFACTURING_TYPE',
           ),
         ),
-        9 => 
+        8 => 
         array (
           0 => 
           array (

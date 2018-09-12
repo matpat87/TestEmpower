@@ -3,68 +3,78 @@
 
 	if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
-	$salesActivityReportQuery = new SalesActivityReportQuery();
+	$budgetReportQuery = new BudgetReportQuery();
 	$trHTML = '';
-	$salesActivityReportQuery = array('select' => $salesActivityReportQuery->get_select_query(), 'from' => $salesActivityReportQuery->get_from_query(), 
+	$budgetReportQuery = array('select' => $budgetReportQuery->get_select_query(), 'from' => $budgetReportQuery->get_from_query(), 
 		'where' => '');
 	$oder_by = '';
 
 
-	if(isset($_SESSION['SalesActivityReportQuery']) && !empty($_SESSION['SalesActivityReportQuery']))
+	if(isset($_SESSION['BudgetReportQuery']) && !empty($_SESSION['BudgetReportQuery']))
 	{
-		$salesActivityReportQuery = $_SESSION['SalesActivityReportQuery'];
+		$budgetReportQuery = $_SESSION['BudgetReportQuery'];
 	}
 
-	$query = $salesActivityReportQuery['select'] . $salesActivityReportQuery['from'] . $salesActivityReportQuery['where'] . $salesActivityReportQuery['order_by'];
-
+	$query = $budgetReportQuery['select'] . $budgetReportQuery['from'] . $budgetReportQuery['where'] . $budgetReportQuery['order_by'];
 	$db = DBManagerFactory::getInstance();
 	$result = $db->query($query);
 
 	while( $row = $db->fetchByAssoc($result)){ 
-		$date_start_c = '';
-
-		if(!empty($row['date_start_c']))
-		{
-			$date_start_c = new DateTime($row['date_start_c']);
-			$date_start_c = $date_start_c->format('m/d/Y');
-		}
-
-		$trHTML .= '<tr style="">
-			<td style="width: 13%">'. $row['status_c'] .'</td>
-			<td style="width: 15%">'. $row['assigned_to_name_c'] .'</td>
-			<td style="width: 13%">'. $date_start_c .'</td>
-			<td style="width: 31%">'. $row['name'] .'</td>
-			<td style="width: 13%">'. $row['account_name_c'] .'</td>
-			<td style="width: 15%">'. $row['related_to_c'] .'</td>
+		$trHTML .= '<tr>
+			<td style="width: 6.66%" align="left">'. $row['account_name_non_db'] .'</td>
+			<td style="width: 6.66%" align="center">'. $row['customer_number_non_db'] .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['january_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['february_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['march_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['april_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['may_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['june_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['july_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['august_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['september_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['october_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['november_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['december_non_db'], 2) .'</td>
+			<td style="width: 6.66%" align="right">$'. number_format($row['total_budget_non_db'], 2) .'</td>
 		</tr>';
-
-		if(!empty($row['description'])){
-			$trHTML .= '<tr>
-				<td></td>
-				<td></td>
-				<td colspan="4">'. $row['description'] .'</td>
-			</tr>';
-		}
 	}
 
-	
+	$budgetReportQuerySum = $_SESSION['BudgetReportQuerySum'];
+	if($budgetReportQuerySum) {
+		$trHTML .= '<tr height="20">
+            <td style="font-weight: bold; width: 13.32%" align="left">TOTAL PER MONTH</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[0], 2).'</td>     
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[1], 2).'</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[2], 2).'</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[3], 2).'</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[4], 2).'</td> 
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[5], 2).'</td> 
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[6], 2).'</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[7], 2).'</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[8], 2).'</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[9], 2).'</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[10], 2).'</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[11], 2).'</td>
+            <td style="font-weight: bold; width: 6.66%" align="right">$'.number_format($budgetReportQuerySum[12], 2).'</td>
+        </tr>';
+	}
 
 	//die();
 
 define ('CUSTOM_PDF_MARGIN_TOP', 20);
 define ('CUSTOM_PDF_PAGE_ORIENTATION', 'L');
 
-$pdf = new TCPDF(CUSTOM_PDF_PAGE_ORIENTATION, PDF_UNIT, 'LETTER', true, 'UTF-8', false);
+$pdf = new TCPDF(CUSTOM_PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Empower');
-$pdf->SetTitle('Sales Activity Report');
+$pdf->SetTitle('Budget Report');
 $pdf->SetSubject('TCPDF Tutorial');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
-$pdf->SetHeaderData('', 0, 'Sales Activity Report', '');
+$pdf->SetHeaderData('', 0, 'Budget Report', '');
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -95,7 +105,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // set font
-$pdf->SetFont(PDF_FONT_NAME_MAIN, '', 10);
+$pdf->SetFont(PDF_FONT_NAME_MAIN, '', 7.75);
 
 // add a page
 $pdf->AddPage();
@@ -107,21 +117,21 @@ $pdf->AddPage();
 $html = '<table cellpadding="6" style="width: 100%">
 	<thead>
 		<tr>
-			<th style="font-weight: bold; width: 13%">Account Name</th>
-			<th style="font-weight: bold; width: 15%">Customer Number</th>
-			<th style="font-weight: bold; width: 13%">January</th>
-			<th style="font-weight: bold; width: 31%">February</th>
-			<th style="font-weight: bold; width: 13%">March</th>
-			<th style="font-weight: bold; width: 13%">April</th>
-			<th style="font-weight: bold; width: 13%">May</th>
-			<th style="font-weight: bold; width: 13%">June</th>
-			<th style="font-weight: bold; width: 13%">July</th>
-			<th style="font-weight: bold; width: 13%">August</th>
-			<th style="font-weight: bold; width: 13%">September</th>
-			<th style="font-weight: bold; width: 13%">October</th>
-			<th style="font-weight: bold; width: 13%">November</th>
-			<th style="font-weight: bold; width: 13%">December</th>
-			<th style="font-weight: bold; width: 13%">Total Budget</th>
+			<th style="font-weight: bold; width: 6.66%" align="left">Account Name</th>
+			<th style="font-weight: bold; width: 6.66%" align="center">Customer Number</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">January</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">February</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">March</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">April</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">May</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">June</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">July</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">August</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">September</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">October</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">November</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">December</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Total Budget</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -138,5 +148,5 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_006.pdf', 'I');
+$pdf->Output('BudgetReport' . date('Y-m-d') . strtotime(date('h:i:s')) . '.pdf', 'I');
 ?>

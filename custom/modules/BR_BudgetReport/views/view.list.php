@@ -92,6 +92,8 @@ class CustomBR_BudgetReportViewList extends ViewList
         $this->lv->showMassupdateFields = false;
         
         $sum = BudgetReportQuery::budgetReportSumQuery($this);
+        $_SESSION['BudgetReportQuerySum'] = $sum;
+        
         $this->lv->ss->assign("sum", $sum);
         $defaultConfigMaxEntries = $sugar_config['list_max_entries_per_page'];
 

@@ -119,18 +119,18 @@ $html = '<table cellpadding="6" style="width: 100%">
 		<tr>
 			<th style="font-weight: bold; width: 6.66%" align="left">Account Name</th>
 			<th style="font-weight: bold; width: 6.66%" align="center">Customer Number</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">January</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">February</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">March</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">April</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">May</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">June</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">July</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">August</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">September</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">October</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">November</th>
-			<th style="font-weight: bold; width: 6.66%" align="right">December</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Jan $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Feb $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Mar $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Apr $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">May $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Jun $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Jul $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Aug $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Sept $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Oct $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Nov $</th>
+			<th style="font-weight: bold; width: 6.66%" align="right">Dec $</th>
 			<th style="font-weight: bold; width: 6.66%" align="right">Total Budget</th>
 		</tr>
 	</thead>

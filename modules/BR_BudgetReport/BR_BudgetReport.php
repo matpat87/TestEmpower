@@ -106,11 +106,13 @@ class BR_BudgetReport extends Basic
 
         $stringUserIDs = implode(', ', $arrayUserIDs);
 
+        $return_array['where'] = " WHERE accounts.deleted = 0 ";
+
         if($where) {
             $where = str_replace('br_budgetreport', "accounts", $where);
-            $return_array['where'] = "WHERE " . $where;
+            $return_array['where'] .= "AND " . $where;
         } else {
-            $return_array['where'] = "WHERE accounts.assigned_user_id IN (".$stringUserIDs.")";
+            $return_array['where'] .= "AND accounts.assigned_user_id IN (".$stringUserIDs.")";
         }
 
         $return_array['group_by'] = ' GROUP BY accounts.id ';
@@ -127,41 +129,5 @@ class BR_BudgetReport extends Basic
         $count_query = "select count(*) as c from (" . $query . ") as report_count";
 
         return $count_query;
-    }
-
-    private function get_salesperson_securitygroup($security_groups_per_user)
-    {
-        $alesperson_securitygroup = array();
-
-        if(!empty($security_groups_per_user))
-        {
-            foreach ($security_groups_per_user as $key => $value) {
-
-                if($value['name'] == 'Salesperson')
-                {
-                    $alesperson_securitygroup = $value;
-                }
-            }
-        } 
-
-        return $alesperson_securitygroup;
-    }
-
-    private function get_salesmanager_securitygroup($security_groups_per_user)
-    {
-        $salesmanager_securitygroup = array();
-
-        if(!empty($security_groups_per_user))
-        {
-            foreach ($security_groups_per_user as $key => $value) {
-
-                if($value['name'] == 'CSR / Sales Manager')
-                {
-                    $salesmanager_securitygroup = $value;
-                }
-            }
-        } 
-
-        return $salesmanager_securitygroup;
     }
 }

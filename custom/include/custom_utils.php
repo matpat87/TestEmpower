@@ -1,5 +1,8 @@
 <?php
 	require_once('custom/include/custom_utils/SalesActivityReportQuery.php');
+	require_once('custom/include/custom_utils/BudgetReportQuery.php');
+
+	require_once('custom/include/custom_utils/TimeAndDate.php');
 
 	function string_replace_all($find, $replace, $string)
 	{

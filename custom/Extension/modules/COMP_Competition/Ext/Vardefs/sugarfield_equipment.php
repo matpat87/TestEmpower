@@ -1,10 +1,9 @@
 <?php
-	$dictionary['COMP_Competition']['fields']['equipment_c'] = array (
+	$dictionary['COMP_Competition']['fields']['equipment'] = array (
 		'inline_edit' => '1',
 		'labelValue' => 'Equipment',
 		'required' => false,
-		'source' => 'custom_fields',
-		'name' => 'equipment_c',
+		'name' => 'equipment',
 		'vname' => 'LBL_EQUIPMENT',
 		'type' => 'multienum',
 		'massupdate' => '0',
@@ -23,6 +22,6 @@
 		'options' => 'equipment_list',
 		'studio' => 'visible',
 		'isMultiSelect' => true,
-		'id' => 'COMP_Competitionequipment_c',
+		'id' => 'COMP_Competitionequipment',
 	);
 ?>

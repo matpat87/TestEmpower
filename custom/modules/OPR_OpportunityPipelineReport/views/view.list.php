@@ -38,7 +38,7 @@
  * display the words  "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
+// error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 require_once('include/MVC/View/views/view.list.php');
 
@@ -57,26 +57,42 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
 
     function getData()
     {
+        $data = array();
         global $db, $current_user;
 
         $query = "SELECT ac.`division_c`,
-                    a.`name`,
-                    o.`name`
+                    a.`name` AS account_name,
+                    o.`name` AS opportunity_name,
+                    u.`user_name` AS assigned_user_name,
+                    o.`amount` AS full_year_amount,
+                    o.`date_closed`,
+                    o.`sales_stage`,
+                    o.`next_step`
                 FROM accounts AS a
                 INNER JOIN accounts_cstm AS ac
                     ON ac.`id_c` = a.`id`
                 INNER JOIN accounts_opportunities AS ao
-                    ON ao.`account_id` = ao.`account_id`
+                    ON ao.`account_id` = a.`id`
                     AND ao.`deleted` = 0
                 INNER JOIN opportunities AS o
                     ON o.`id` = ao.`opportunity_id`
                     AND o.`deleted` = 0
                 INNER JOIN opportunities_cstm AS oc
                     ON oc.`id_c` = o.`id`
+                INNER JOIN users AS u
+                    ON u.id = o.`assigned_user_id`
                 WHERE a.`deleted` = 0
                     AND ac.`division_c` <> NULL 
                     OR ac.`division_c` <> ''
                 GROUP BY ac.`division_c`";
+
+        $result = $db->query($query);
+
+        while( $row = $db->fetchByAssoc($result)){
+            $data[] = $row;
+        }
+
+        return $data;
     }
 
     function listViewProcess()
@@ -117,7 +133,18 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
 
         $this->lv->ss->assign("current_user_name", $current_user->first_name . " " . $current_user->last_name);
 
-        $this->getData();
+        $data = $this->getData();
+        $salesStage = array();
+
+        for($i = 1; $i < 10; $i++)
+        {
+            $salesStage[] = $i;
+        }
+
+        var_dump($data);
+
+        $this->lv->ss->assign("tableData", $data);
+        $this->lv->ss->assign("salesStage", $salesStage);
 
 
         parent::display();

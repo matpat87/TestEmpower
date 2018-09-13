@@ -115,6 +115,8 @@
 {assign var="singularModule" value = $moduleListSingular.$currentModule}
 {assign var="moduleName" value = $moduleList.$currentModule}
 {assign var="hideTable" value=false}
+{assign var="salesStageStart" value=1}
+{assign var="salesStageEnd" value=10}
 
 {if $form.headerTpl}
     {sugar_include type="smarty" file=$form.headerTpl}
@@ -163,6 +165,7 @@
 {$multiSelectData}
 {*$data|var_dump*}
 {if $hideTable == false}
+
     <div class="list-view-rounded-corners">
         <table cellpadding='0' cellspacing='0' border='0' class='list view table-responsive'>
     <thead>
@@ -176,7 +179,7 @@
         {include file='themes/SuiteP/include/ListView/ListViewPaginationTop.tpl'}
 
     </thead>
-    <tbody>
+    <tbody style="border: 2px solid black; display: block;">
         <tr style="width: 100%">
             <td>
                 <table id="pipeline-info">
@@ -187,35 +190,6 @@
                     <tr>
                         <td>Corporate</td>
                         <td>$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>CareFree</td>
-                        <td>$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>CASE</td>
-                        <td>$3,350,000.00</td>
-                    </tr>
-                    <tr>
-                        <td>Rubber</td>
-                        <td>$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>Tirefill</td>
-                        <td>$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>Sprayfoam</td>
-                        <td>$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>Roofing</td>
-                        <td>$0.00</td>
-                    </tr>
-                    <tr>
-                        <td>Tolling</td>
-                        <td>$0.00</td>
-                    </tr>
                 </table>
             </td>
             <td style="vertical-align: top;">
@@ -234,6 +208,7 @@
         </tr>
         <tr style="width: 100%">
             <td style="width: 100%" colspan="3">
+
                 <table id="list-rows" style="width: 100%;">
                     <thead>
                         <tr>
@@ -276,31 +251,30 @@
                         <tr>
                             <td colspan="8" class="border-cell">CASE</td>
                         </tr>
+                        {foreach name=rowIteration from=$tableData key=id item=rowData}
                         <tr>
-                            <td class="border-cell">ACCELLA POLYURETHANE SYSTEMS LLC</td>
-                            <td class="border-cell">UV topcoat for Spray Elastomers</td>
+                            <td class="border-cell">{$rowData.account_name}</td>
+                            <td class="border-cell">{$rowData.opportunity_name}</td>
                             <td class="border-cell"></td>
-                            <td class="border-cell">AVERMILLION</td>
-                            <td class="border-cell"><font style="margin-left: 10px;">$250,000</font></td>
-                            <td class="border-cell">10/01/18</td>
+                            <td class="border-cell">{$rowData.assigned_user_name}</td>
+                            <td class="border-cell"><font style="margin-left: 10px;">{$rowData.full_year_amount}</font></td>
+                            <td class="border-cell">{$rowData.date_closed}</td>
                             <td class="border-cell" style="padding: 0%;">
                                 <table class="list-rows-sales-stage" style="width: 100%; height: 100%; ">
                                     <tr style="height: 100% !important">
-                                        <td class="border-cell">-</td>
-                                        <td class="border-cell">-</td>
-                                        <td class="border-cell">-</td>
-                                        <td class="border-cell" style="background-color: #80B440;">X</td>
-                                        <td class="border-cell">-</td>
-                                        <td class="border-cell">-</td>
-                                        <td class="border-cell">-</td>
-                                        <td class="border-cell">-</td>
-                                        <td class="border-cell">-</td>
-                                        <td class="border-cell">-</td>
+                                        {foreach name=salesStageIteration from=$salesStage key=id item=salesStageValue}
+                                            {if $salesStageValue == 0}
+                                                <td class="border-cell" style="background-color: #80B440;">X</td>
+                                            {else}
+                                                <td class="border-cell">-</td>
+                                            {/if}
+                                        {/foreach}
                                     </tr>
                                 </table>
                             </td>
-                            <td class="border-cell">Run QUV testing on potential UV topcoat product</td>
+                            <td class="border-cell">{$rowData.next_step}</td>
                         </tr>
+                        {/foreach}
                         <tr>
                             <td colspan="4" class="border-cell" style="text-align: right;"><font style="margin-right: 10px; font-weight: bold;">SubTotal</font></td>
                             <td colspan="4" class="border-cell" style="text-align: left;"><font style="margin-left: 10px;">$250,000</font></td>

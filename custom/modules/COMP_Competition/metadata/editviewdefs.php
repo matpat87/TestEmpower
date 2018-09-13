@@ -100,21 +100,26 @@ array (
         array (
           0 => 
           array (
-            'name' => 'division',
-            'studio' => 'visible',
-            'label' => 'LBL_DIVISION',
-          ),
-          1 => 
-          array (
             'name' => 'manufacturing_type_c',
             'studio' => 'visible',
             'label' => 'LBL_MANUFACTURING_TYPE',
+          ),
+          1 => 
+          array (
+            'name' => 'equipment_c',
+            'studio' => 'visible',
+            'label' => 'LBL_EQUIPMENT',
           ),
         ),
         7 => 
         array (
           0 => 'assigned_user_name',
-          1 => '',
+          1 => 
+          array (
+            'name' => 'division',
+            'studio' => 'visible',
+            'label' => 'LBL_DIVISION',
+          ),
         ),
       ),
       'lbl_address_information' => 

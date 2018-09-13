@@ -101,7 +101,7 @@ array (
           ),
           1 => 
           array (
-            'name' => 'manufacturing_type_c',
+            'name' => 'manufacturing_type',
             'studio' => 'visible',
             'label' => 'LBL_MANUFACTURING_TYPE',
           ),

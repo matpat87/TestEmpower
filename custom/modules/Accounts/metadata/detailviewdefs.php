@@ -116,9 +116,9 @@ array (
           ),
           1 => 
           array (
-            'name' => 'phone_fax',
-            'comment' => 'The fax phone number of this company',
-            'label' => 'LBL_FAX',
+            'name' => 'division_c',
+            'studio' => 'visible',
+            'label' => 'LBL_DIVISION',
           ),
         ),
         2 => 
@@ -129,6 +129,7 @@ array (
             'studio' => 'false',
             'label' => 'LBL_EMAIL',
           ),
+          1 => '',
         ),
         3 => 
         array (

@@ -59,7 +59,24 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
     {
         global $db, $current_user;
 
-        $query = "select ";
+        $query = "SELECT ac.`division_c`,
+                    a.`name`,
+                    o.`name`
+                FROM accounts AS a
+                INNER JOIN accounts_cstm AS ac
+                    ON ac.`id_c` = a.`id`
+                INNER JOIN accounts_opportunities AS ao
+                    ON ao.`account_id` = ao.`account_id`
+                    AND ao.`deleted` = 0
+                INNER JOIN opportunities AS o
+                    ON o.`id` = ao.`opportunity_id`
+                    AND o.`deleted` = 0
+                INNER JOIN opportunities_cstm AS oc
+                    ON oc.`id_c` = o.`id`
+                WHERE a.`deleted` = 0
+                    AND ac.`division_c` <> NULL 
+                    OR ac.`division_c` <> ''
+                GROUP BY ac.`division_c`";
     }
 
     function listViewProcess()
@@ -99,6 +116,8 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
         $this->lv->showMassupdateFields = false;
 
         $this->lv->ss->assign("current_user_name", $current_user->first_name . " " . $current_user->last_name);
+
+        $this->getData();
 
 
         parent::display();

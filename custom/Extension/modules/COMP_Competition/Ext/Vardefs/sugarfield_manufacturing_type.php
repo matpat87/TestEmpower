@@ -1,10 +1,9 @@
 <?php
-	$dictionary['COMP_Competition']['fields']['manufacturing_type_c'] = array (
+	$dictionary['COMP_Competition']['fields']['manufacturing_type'] = array (
 		'inline_edit' => '1',
 		'labelValue' => 'Mfg Type',
 		'required' => false,
-		'source' => 'custom_fields',
-		'name' => 'manufacturing_type_c',
+		'name' => 'manufacturing_type',
 		'vname' => 'LBL_MANUFACTURING_TYPE',
 		'type' => 'enum',
 		'massupdate' => '0',
@@ -24,6 +23,6 @@
 		'options' => 'manufacturing_type_list',
 		'studio' => 'visible',
 		'dependency' => false,
-		'id' => 'COMP_Competitionmanufacturing_type_c',
+		'id' => 'COMP_Competitionmanufacturing_type',
 	);
 ?>

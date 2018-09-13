@@ -95,26 +95,21 @@ array (
         array (
           0 => 
           array (
-            'name' => 'manufacturing_type_c',
+            'name' => 'division',
             'studio' => 'visible',
-            'label' => 'LBL_MANUFACTURING_TYPE',
+            'label' => 'LBL_DIVISION',
           ),
           1 => 
           array (
-            'name' => 'equipment_c',
+            'name' => 'manufacturing_type',
             'studio' => 'visible',
-            'label' => 'LBL_EQUIPMENT',
+            'label' => 'LBL_MANUFACTURING_TYPE',
           ),
         ),
         7 => 
         array (
           0 => 'assigned_user_name',
-          1 => 
-          array (
-            'name' => 'division',
-            'studio' => 'visible',
-            'label' => 'LBL_DIVISION',
-          ),
+          1 => '',
         ),
       ),
       'lbl_address_information' => 

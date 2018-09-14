@@ -81,10 +81,7 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
                     ON oc.`id_c` = o.`id`
                 INNER JOIN users AS u
                     ON u.id = o.`assigned_user_id`
-                WHERE a.`deleted` = 0
-                    AND ac.`division_c` <> NULL 
-                    OR ac.`division_c` <> ''
-                GROUP BY ac.`division_c`";
+                WHERE a.`deleted` = 0";
 
         $result = $db->query($query);
 

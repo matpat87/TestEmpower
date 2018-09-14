@@ -185,11 +185,8 @@
                 <table id="pipeline-info">
                     <tr>
                         <td>Pipeline Total</td>
-                        <td>$3,350,000.00</td>
+                        <td>{$fullYearAmountTotal}</td>
                     </tr>
-                    <tr>
-                        <td>Corporate</td>
-                        <td>$0.00</td>
                 </table>
             </td>
             <td style="vertical-align: top;">
@@ -248,17 +245,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td colspan="8" class="border-cell">CASE</td>
-                        </tr>
                         {foreach name=rowIteration from=$tableData key=id item=rowData}
                         <tr>
-                            <td class="border-cell">{$rowData.account_name}</td>
-                            <td class="border-cell">{$rowData.opportunity_name}</td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.account_name}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.opportunity_name}</div></td>
                             <td class="border-cell"></td>
-                            <td class="border-cell">{$rowData.assigned_user_name}</td>
-                            <td class="border-cell"><font style="margin-left: 10px;">{$rowData.full_year_amount}</font></td>
-                            <td class="border-cell">{$rowData.date_closed}</td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.assigned_user_name}</div></td>
+                            <td class="border-cell" style="text-align: right;"><div style="margin-right: 5px;">{$rowData.full_year_amount_formatted}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.date_closed}</div></td>
                             <td class="border-cell" style="padding: 0%;">
                                 <table class="list-rows-sales-stage" style="width: 100%; height: 100%; ">
                                     <tr style="height: 100% !important">
@@ -272,31 +266,16 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td class="border-cell">{$rowData.next_step}</td>
+                            <td class="border-cell next-step"><div style="margin-left: 5px;">{$rowData.next_step}</div></td>
                         </tr>
                         {/foreach}
                         <tr>
-                            <td colspan="4" class="border-cell" style="text-align: right;"><font style="margin-right: 10px; font-weight: bold;">SubTotal</font></td>
-                            <td colspan="4" class="border-cell" style="text-align: left;"><font style="margin-left: 10px;">$250,000</font></td>
-                        </tr>
-                        <tr>
                             <td colspan="4" class="border-cell" style="text-align: right; background-color: black;">
-                                <font style="margin-right: 10px; color: white; font-size: 14px;">Total CASE</font>
+                                <font style="margin-right: 10px; color: white; font-size: 14px;">CONSOLIDATED TOTAL</font>
                             </td>
                             <td colspan="4" class="border-cell" style="text-align: left; background-color: black;">
-                                <font style="margin-left: 10px; font-weight: bold; color: white; font-size: 14px;">$250,000</font>
+                                <font style="margin-left: 10px; font-weight: bold; color: white; font-size: 14px;">{$fullYearAmountTotal}</font>
                             </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="border-cell" style="text-align: right;">
-                                <font style="margin-right: 10px; font-size: 15px;">CONSOLIDATED TOTAL</font>
-                            </td>
-                            <td colspan="4" class="border-cell" style="text-align: left;">
-                                <font style="margin-left: 10px; font-weight: bold; font-size: 15px;">$250,000</font>
-                            </td>
-                        </tr>
-                        <tr>
-                            
                         </tr>
                     </tbody>
                 </table>
@@ -345,6 +324,24 @@ function lvg_nav(m,id,act,offset,t){
 <script type="text/javascript" src="include/InlineEditing/inlineEditing.js"></script>
 {/if}
 
+{literal}
+<script type="text/javascript">
+    $(document).ready(function(e){
+        var intervalID = setInterval(function(){
+            if($('#list-rows').html().length > 0)
+            {
+                $('.next-step').each(function(index, value){
+                    var htmlValue = $(value).html();
+                    $(this).html(htmlValue);
+                });
+
+
+                clearInterval(intervalID);
+            }
+        }, 200);
+    });
+</script>
+{/literal}
 
 {if $form.footerTpl}
     {sugar_include type="smarty" file=$form.headerTpl}

@@ -21,4 +21,9 @@
 		return $string;
 	}
 
+	function convert_to_money($string_money)
+	{
+		return "$" . number_format($string_money, 2, '.', ',');
+	}
+
 ?>

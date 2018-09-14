@@ -89,6 +89,8 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
         $result = $db->query($query);
 
         while( $row = $db->fetchByAssoc($result)){
+            $row['next_step'] = htmlspecialchars_decode ($row['next_step']);
+            $row['full_year_amount_formatted'] = convert_to_money($row['full_year_amount']);
             $data[] = $row;
         }
 
@@ -116,6 +118,17 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
         $this->searchForm->displaySavedSearch = false;
     }
 
+    function totalPipeline($data)
+    {
+        $total = 0;
+
+        foreach ($data as $row) {
+            $total += $row['full_year_amount'];
+        }
+
+        return $total;
+    }
+
     function display()
     {
         global $current_user;
@@ -135,16 +148,16 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
 
         $data = $this->getData();
         $salesStage = array();
+        $fullYearAmountTotal = convert_to_money($this->totalPipeline($data));
 
         for($i = 1; $i < 10; $i++)
         {
             $salesStage[] = $i;
         }
 
-        var_dump($data);
-
         $this->lv->ss->assign("tableData", $data);
         $this->lv->ss->assign("salesStage", $salesStage);
+        $this->lv->ss->assign("fullYearAmountTotal", $fullYearAmountTotal);
 
 
         parent::display();

@@ -69,7 +69,7 @@ array (
       ),
       'date_to_c' => 
       array (
-        'type' => 'datetimecombo',
+        'type' => 'date',
         'default' => true,
         'label' => 'LBL_DATE_TO',
         'width' => '10%',
@@ -77,7 +77,7 @@ array (
       ),
       'probability_c' => 
       array (
-        'type' => 'datetimecombo',
+        'type' => 'float',
         'default' => true,
         'label' => 'LBL_PROBABILITY',
         'width' => '10%',

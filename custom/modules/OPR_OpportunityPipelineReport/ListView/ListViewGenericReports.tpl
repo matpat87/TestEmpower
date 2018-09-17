@@ -245,14 +245,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {foreach name=rowIteration from=$tableData key=id item=rowData}
+                        {foreach name=rowIteration from=$data key=id item=rowData}
+                        
                         <tr>
-                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.account_name}</div></td>
-                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.opportunity_name}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.ACCOUNT_C}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.OPPORTUNITY_NAME}</div></td>
                             <td class="border-cell"></td>
-                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.assigned_user_name}</div></td>
-                            <td class="border-cell" style="text-align: right;"><div style="margin-right: 5px;">{$rowData.full_year_amount_formatted}</div></td>
-                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.date_closed}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.SALES_REP}</div></td>
+                            <td class="border-cell" style="text-align: right;"><div style="margin-right: 5px;">{$rowData.FULL_YEAR_AMOUNT}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.DATE_CLOSED}</div></td>
                             <td class="border-cell" style="padding: 0%;">
                                 <table class="list-rows-sales-stage" style="width: 100%; height: 100%; ">
                                     <tr style="height: 100% !important">
@@ -266,7 +267,7 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td class="border-cell next-step"><div style="margin-left: 5px;">{$rowData.next_step}</div></td>
+                            <td class="border-cell next-step"><div style="margin-left: 5px;">{$rowData.NEXT_STEP}</div></td>
                         </tr>
                         {/foreach}
                         <tr>
@@ -323,25 +324,6 @@ function lvg_nav(m,id,act,offset,t){
 </script>
 <script type="text/javascript" src="include/InlineEditing/inlineEditing.js"></script>
 {/if}
-
-{literal}
-<script type="text/javascript">
-    $(document).ready(function(e){
-        var intervalID = setInterval(function(){
-            if($('#list-rows').html().length > 0)
-            {
-                $('.next-step').each(function(index, value){
-                    var htmlValue = $(value).html();
-                    $(this).html(htmlValue);
-                });
-
-
-                clearInterval(intervalID);
-            }
-        }, 200);
-    });
-</script>
-{/literal}
 
 {if $form.footerTpl}
     {sugar_include type="smarty" file=$form.headerTpl}

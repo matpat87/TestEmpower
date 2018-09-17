@@ -74,5 +74,31 @@ class OPR_OpportunityPipelineReport extends Basic
 
         return false;
     }
+
+    function create_new_list_query($order_by,
+        $where,
+        $filter = array(),
+        $params = array(),
+        $show_deleted = 0,
+        $join_type = '',
+        $return_array = false,
+        $parentbean = null,
+        $singleSelect = false,
+        $ifListForExport = false)
+    { 
+        $return_array = Array();
+
+        $return_array['select'] = getSelectQueryForOpportunityPipeline();   
+        $return_array['from'] = getWhereQueryrForOpportunityPipeline();
+        $return_array['where'] = " where a.deleted = 0 order by ";
+        $return_array['order_by'] = ' a.name asc';
+
+        // return parent::create_new_list_query($order_by, $where, $filter,
+        //     $params, $show_deleted, $join_type,
+        //     $return_array, $parentbean, $singleSelect,
+        //     $ifListForExport);
+
+        return $return_array;
+    }
 	
-}
+}

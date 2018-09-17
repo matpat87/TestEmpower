@@ -6,15 +6,6 @@ array (
   array (
     'basic_search' => 
     array (
-      'division_c' => 
-      array (
-        'type' => 'enum',
-        'default' => true,
-        'studio' => 'visible',
-        'label' => 'LBL_DIVISION',
-        'width' => '10%',
-        'name' => 'division_c',
-      ),
       'sales_representative_c' => 
       array (
         'type' => 'enum',

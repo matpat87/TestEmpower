@@ -60,7 +60,8 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
         $data = array();
         global $db, $current_user;
 
-        $query = "SELECT ac.`division_c`,
+        $query = "SELECT a.`id`,
+                    ac.`division_c`,
                     a.`name` AS account_name,
                     o.`name` AS opportunity_name,
                     u.`user_name` AS assigned_user_name,

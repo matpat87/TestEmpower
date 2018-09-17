@@ -188,10 +188,7 @@ array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
           ),
-          1 => 
-          array (
-            'name' => 'mkt_markets_accounts_1_name',
-          ),
+          1 => '',
         ),
       ),
       'LBL_PANEL_ADVANCED' => 
@@ -200,18 +197,34 @@ array (
         array (
           0 => 
           array (
-            'name' => 'annual_revenue',
-            'comment' => 'Annual revenue for this company',
-            'label' => 'LBL_ANNUAL_REVENUE',
-          ),
-          1 => 
-          array (
-            'name' => 'employees',
-            'comment' => 'Number of employees, varchar to accomodate for both number (100) or range (50-100)',
-            'label' => 'LBL_EMPLOYEES',
+            'name' => 'marketing_information_non_db',
+            'label' => 'Marketing Information',
           ),
         ),
         1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'mkt_markets_accounts_1_name',
+          ),
+          1 => 
+          array (
+            'name' => 'oem_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OEM',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'manufacturing_type_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MANUFACTURING_TYPE',
+          ),
+          1 => '',
+        ),
+        3 => 
         array (
           0 => 
           array (
@@ -221,34 +234,43 @@ array (
           ),
           1 => 'campaign_name',
         ),
-        2 => 
+        4 => 
         array (
           0 => 
           array (
-            'name' => 'cust_num_c',
-            'label' => 'LBL_CUST_NUM',
+            'name' => 'employees',
+            'comment' => 'Number of employees, varchar to accomodate for both number (100) or range (50-100)',
+            'label' => 'LBL_EMPLOYEES',
           ),
           1 => 
           array (
-            'name' => 'alt_sys_id_c',
-            'label' => 'LBL_ALT_SYS_ID',
+            'name' => 'annual_revenue',
+            'comment' => 'Annual revenue for this company',
+            'label' => 'LBL_ANNUAL_REVENUE',
           ),
         ),
-        3 => 
+        5 => 
         array (
           0 => 
           array (
-            'name' => 'erp_db_c',
-            'studio' => 'visible',
-            'label' => 'LBL_ERP_DB',
+            'name' => 'erp_data_non_db',
+            'label' => 'ERP Data',
           ),
-          1 => 
+        ),
+        6 => 
+        array (
+          0 => 
           array (
             'name' => 'order_cycle_c',
             'label' => 'LBL_ORDER_CYCLE',
           ),
+          1 => 
+          array (
+            'name' => 'cust_num_c',
+            'label' => 'LBL_CUST_NUM',
+          ),
         ),
-        4 => 
+        7 => 
         array (
           0 => 
           array (
@@ -257,11 +279,11 @@ array (
           ),
           1 => 
           array (
-            'name' => 'cr_limit_c',
-            'label' => 'LBL_CR_LIMIT',
+            'name' => 'last_sold_dt_c',
+            'label' => 'LBL_LAST_SOLD_DT',
           ),
         ),
-        5 => 
+        8 => 
         array (
           0 => 
           array (
@@ -270,16 +292,30 @@ array (
           ),
           1 => 
           array (
-            'name' => 'last_sold_dt_c',
-            'label' => 'LBL_LAST_SOLD_DT',
+            'name' => 'balance_c',
+            'label' => 'LBL_BALANCE',
           ),
         ),
-        6 => 
+        9 => 
         array (
           0 => 
           array (
-            'name' => 'balance_c',
-            'label' => 'LBL_BALANCE',
+            'name' => 'company_no_c',
+            'studio' => 'visible',
+            'label' => 'LBL_COMPANY_NO',
+          ),
+          1 => 
+          array (
+            'name' => 'alt_sys_id_c',
+            'label' => 'LBL_ALT_SYS_ID',
+          ),
+        ),
+        10 => 
+        array (
+          0 => 
+          array (
+            'name' => 'cr_limit_c',
+            'label' => 'LBL_CR_LIMIT',
           ),
           1 => 
           array (
@@ -287,22 +323,7 @@ array (
             'label' => 'LBL_CR_HOLD',
           ),
         ),
-        7 => 
-        array (
-          0 => 
-          array (
-            'name' => 'oem_c',
-            'studio' => 'visible',
-            'label' => 'LBL_OEM',
-          ),
-          1 => 
-          array (
-            'name' => 'manufacturing_type_c',
-            'studio' => 'visible',
-            'label' => 'LBL_MANUFACTURING_TYPE',
-          ),
-        ),
-        8 => 
+        11 => 
         array (
           0 => 
           array (

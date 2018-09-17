@@ -103,17 +103,22 @@ class AccountsViewDetail extends ViewDetail {
 			sugar_die($app_strings['ERROR_NO_RECORD']);
 		}
 
+		echo $this->dv->display();
+
 		// Hide input fields so that custom non-db fields will display labels only
 		// Added by: Ralph Julian Siasat
 		echo 
 		"<script>
-			var panel_bg_color = $('.panel-default > .panel-heading').css('background');
+			$(document).ready(function(){
+				var panel_bg_color = $('.panel-default > .panel-heading').css('background');
 	
-			$(\"div[field='margin_forecast_percent_non_db'],div[field='sales_forecast_percent_non_db'],div[field='volume_forecast_lb_non_db'],div[field='budget_cost_non_db']\").prev().removeClass('col-sm-2').addClass('col-sm-12').addClass('col-md-12').addClass('col-lg-12').css('background-color', panel_bg_color).css('color', '#FFF').css('margin-top', '15px');
-			$(\"div[field='margin_forecast_percent_non_db'],div[field='sales_forecast_percent_non_db'],div[field='volume_forecast_lb_non_db'],div[field='budget_cost_non_db']\").addClass('hidden');
-		</script>";
+				$(\"div[field='marketing_information_non_db'],div[field='erp_data_non_db'],div[field='margin_forecast_percent_non_db'],div[field='sales_forecast_percent_non_db'],div[field='volume_forecast_lb_non_db'],div[field='budget_cost_non_db']\").prev().removeClass('col-sm-2').addClass('col-sm-12').addClass('col-md-12').addClass('col-lg-12').css('background-color', panel_bg_color).css('color', '#FFF').css('margin-top', '15px');
 
-		echo $this->dv->display();
+				$(\"div[field='marketing_information_non_db'], div[field='margin_forecast_percent_non_db']\").prev().css('margin-top', '0px');
+
+				$(\"div[field='marketing_information_non_db'],div[field='erp_data_non_db'],div[field='margin_forecast_percent_non_db'],div[field='sales_forecast_percent_non_db'],div[field='volume_forecast_lb_non_db'],div[field='budget_cost_non_db']\").addClass('hidden');
+			});
+		</script>";
  	}
 
 	function generatePushCode($param)

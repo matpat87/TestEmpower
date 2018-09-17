@@ -148,25 +148,61 @@ array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
           ),
-          1 => 
-          array (
-            'name' => 'mkt_markets_accounts_1_name',
-          ),
+          1 => '',
         ),
       ),
       'LBL_PANEL_ADVANCED' => 
       array (
         0 => 
         array (
-          0 => 'annual_revenue',
-          1 => 'employees',
+          0 => 
+          array (
+            'name' => 'marketing_information_non_db',
+            'label' => 'Marketing Information',
+          ),
         ),
         1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'mkt_markets_accounts_1_name',
+          ),
+          1 => 
+          array (
+            'name' => 'oem_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OEM',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'manufacturing_type_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MANUFACTURING_TYPE',
+          ),
+          1 => '',
+        ),
+        3 => 
         array (
           0 => 'industry',
           1 => 'campaign_name',
         ),
-        2 => 
+        4 => 
+        array (
+          0 => 'employees',
+          1 => 'annual_revenue',
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
+            'name' => 'erp_data_non_db',
+            'label' => 'ERP Data',
+          ),
+        ),
+        6 => 
         array (
           0 => 
           array (
@@ -175,23 +211,61 @@ array (
           ),
           1 => 
           array (
-            'name' => 'cr_hold_c',
-            'label' => 'LBL_CR_HOLD',
+            'name' => 'cust_num_c',
+            'label' => 'LBL_CUST_NUM',
           ),
         ),
-        3 => 
+        7 => 
         array (
           0 => 
           array (
-            'name' => 'oem_c',
-            'studio' => 'visible',
-            'label' => 'LBL_OEM',
+            'name' => 'terms_c',
+            'label' => 'LBL_TERMS',
           ),
           1 => 
           array (
-            'name' => 'manufacturing_type_c',
+            'name' => 'last_sold_dt_c',
+            'label' => 'LBL_LAST_SOLD_DT',
+          ),
+        ),
+        8 => 
+        array (
+          0 => 
+          array (
+            'name' => 'last_sale_amt_c',
+            'label' => 'LBL_LAST_SALE_AMT',
+          ),
+          1 => 
+          array (
+            'name' => 'balance_c',
+            'label' => 'LBL_BALANCE',
+          ),
+        ),
+        9 => 
+        array (
+          0 => 
+          array (
+            'name' => 'company_no_c',
             'studio' => 'visible',
-            'label' => 'LBL_MANUFACTURING_TYPE',
+            'label' => 'LBL_COMPANY_NO',
+          ),
+          1 => 
+          array (
+            'name' => 'alt_sys_id_c',
+            'label' => 'LBL_ALT_SYS_ID',
+          ),
+        ),
+        10 => 
+        array (
+          0 => 
+          array (
+            'name' => 'cr_limit_c',
+            'label' => 'LBL_CR_LIMIT',
+          ),
+          1 => 
+          array (
+            'name' => 'cr_hold_c',
+            'label' => 'LBL_CR_HOLD',
           ),
         ),
       ),

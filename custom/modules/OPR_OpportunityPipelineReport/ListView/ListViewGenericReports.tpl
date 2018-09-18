@@ -117,6 +117,7 @@
 {assign var="hideTable" value=false}
 {assign var="salesStageStart" value=1}
 {assign var="salesStageEnd" value=10}
+{assign var="salesStageEnd" value=10}
 
 {if $form.headerTpl}
     {sugar_include type="smarty" file=$form.headerTpl}
@@ -256,9 +257,10 @@
                             <td class="border-cell"><div style="margin-left: 5px;">{$rowData.DATE_CLOSED}</div></td>
                             <td class="border-cell" style="padding: 0%;">
                                 <table class="list-rows-sales-stage" style="width: 100%; height: 100%; ">
+
                                     <tr style="height: 100% !important">
                                         {foreach name=salesStageIteration from=$salesStage key=id item=salesStageValue}
-                                            {if $salesStageValue == 0}
+                                            {if $salesStageValue == ($rowData.SALES_STAGE + 1)}
                                                 <td class="border-cell" style="background-color: #80B440;">X</td>
                                             {else}
                                                 <td class="border-cell">-</td>

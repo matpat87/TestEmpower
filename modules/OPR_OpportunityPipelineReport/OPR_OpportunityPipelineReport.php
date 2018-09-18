@@ -89,9 +89,73 @@ class OPR_OpportunityPipelineReport extends Basic
         $return_array = Array();
 
         $return_array['select'] = getSelectQueryForOpportunityPipeline();   
-        $return_array['from'] = getWhereQueryrForOpportunityPipeline();
+        $return_array['from'] = getFromQueryrForOpportunityPipeline();
         $return_array['where'] = " where a.deleted = 0 order by ";
         $return_array['order_by'] = ' a.name asc';
+        $contains = false;
+
+        if(!empty($where))
+        {
+            if(strpos($where, 'opr_opportunitypipelinereport_cstm.sales_representative_c') !== false)
+            {
+                $where = string_replace_all("opr_opportunitypipelinereport_cstm.sales_representative_c", "u.id", $where);
+                $contains = true;
+            }
+
+            if(strpos($where, 'opr_opportunitypipelinereport_cstm.account_c') !== false)
+            {
+                $where = string_replace_all("opr_opportunitypipelinereport_cstm.account_c", "a.id", $where);
+                $contains = true;
+            }
+
+            if(strpos($where, 'opr_opportunitypipelinereport_cstm.sales_stage_c') !== false)
+            {
+                $where = string_replace_all("opr_opportunitypipelinereport_cstm.sales_stage_c", "o.sales_stage", $where);
+                $contains = true;
+            }
+
+            if(strpos($where, 'opr_opportunitypipelinereport_cstm.market_c') !== false)
+            {
+                $where = string_replace_all("opr_opportunitypipelinereport_cstm.market_c", "mm.id", $where);
+                $contains = true;
+            }
+
+            if(strpos($where, 'opr_opportunitypipelinereport_cstm.type_c') !== false)
+            {
+                $where = string_replace_all("opr_opportunitypipelinereport_cstm.type_c", "o.opportunity_type", $where);
+                $contains = true;
+            }
+
+            if(strpos($where, 'opr_opportunitypipelinereport_cstm.amount_c =') !== false)
+            {
+                $where = string_replace_all("opr_opportunitypipelinereport_cstm.amount_c =", "o.amount >=", $where);
+                $contains = true;
+            }
+
+            if(strpos($where, "DATE_FORMAT(opr_opportunitypipelinereport_cstm.date_from_c,'%Y-%m-%d') =") !== false)
+            {
+                $where = string_replace_all("DATE_FORMAT(opr_opportunitypipelinereport_cstm.date_from_c,'%Y-%m-%d') =", "o.date_closed >=", $where);
+                $contains = true;
+            }
+
+            if(strpos($where, "DATE_FORMAT(opr_opportunitypipelinereport_cstm.date_to_c,'%Y-%m-%d') =") !== false)
+            {
+                $where = string_replace_all("DATE_FORMAT(opr_opportunitypipelinereport_cstm.date_to_c,'%Y-%m-%d') =", "o.date_closed <=", $where);
+                $contains = true;
+            }
+
+            if(strpos($where, 'opr_opportunitypipelinereport_cstm.probability_c =') !== false)
+            {
+                $where = string_replace_all("opr_opportunitypipelinereport_cstm.probability_c =", "o.probability >=", $where);
+                $contains = true;
+            }
+
+            if($contains)
+            {
+                $return_array['where'] = ' where ' . $where;
+                $return_array['where'] .= ' order by ';
+            }
+        }
 
         // return parent::create_new_list_query($order_by, $where, $filter,
         //     $params, $show_deleted, $join_type,

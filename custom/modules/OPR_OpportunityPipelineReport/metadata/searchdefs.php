@@ -26,21 +26,12 @@ array (
       ),
       'sales_stage_c' => 
       array (
-        'type' => 'multienum',
+        'type' => 'enum',
         'default' => true,
         'studio' => 'visible',
         'label' => 'LBL_SALES_STAGE',
         'width' => '10%',
         'name' => 'sales_stage_c',
-      ),
-      'status_c' => 
-      array (
-        'type' => 'multienum',
-        'default' => true,
-        'studio' => 'visible',
-        'label' => 'LBL_STATUS',
-        'width' => '10%',
-        'name' => 'status_c',
       ),
       'amount_c' => 
       array (
@@ -74,15 +65,6 @@ array (
         'width' => '10%',
         'name' => 'probability_c',
       ),
-      'campaign_c' => 
-      array (
-        'type' => 'enum',
-        'default' => true,
-        'studio' => 'visible',
-        'label' => 'LBL_CAMPAIGN',
-        'width' => '10%',
-        'name' => 'campaign_c',
-      ),
       'market_c' => 
       array (
         'type' => 'enum',
@@ -94,7 +76,7 @@ array (
       ),
       'type_c' => 
       array (
-        'type' => 'multienum',
+        'type' => 'enum',
         'default' => true,
         'studio' => 'visible',
         'label' => 'LBL_TYPE',

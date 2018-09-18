@@ -1,14 +1,12 @@
 <?php
-// created: 2018-09-17 02:34:34
+// created: 2018-09-18 01:26:05
 $mod_strings = array (
   'LNK_LIST' => 'View CRM Reports',
   'LBL_DIVISION' => 'Division',
   'LBL_SALES_REPRESENTATIVE' => 'Sales Representative',
-  'LBL_SALES_STAGE' => 'Sales Stage',
   'LBL_STATUS' => 'Status',
   'LBL_AMOUNT' => 'Amount (&gt;=)',
   'LBL_DATE_FROM' => 'Date From',
-  'LBL_TYPE' => 'Type',
   'LBL_ACCOUNT' => 'Account',
   'LBL_CAMPAIGN' => 'Campaign',
   'LBL_MARKET' => 'Market',
@@ -20,4 +18,6 @@ $mod_strings = array (
   'LBL_FULL_YEAR_AMOUNT' => 'Full Year Amount',
   'LBL_DATE_CLOSED' => 'Date Closed',
   'LBL_NEXT_STEP' => 'Next Step',
+  'LBL_SALES_STAGE' => 'Sales Stage',
+  'LBL_TYPE' => 'Type',
 );

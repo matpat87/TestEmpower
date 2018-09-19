@@ -148,7 +148,7 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
         $salesStage = array();
         $fullYearAmountTotal = convert_to_money($this->totalPipeline($data));
 
-        for($i = 1; $i < 10; $i++)
+        for($i = 1; $i <= 10; $i++)
         {
             $salesStage[] = $i;
         }
@@ -178,7 +178,7 @@ EOF;
                 var paginationActionButtonsHTML = paginationActionButtons.html();
                 var buttonHTML = '<ul class="clickMenu selectmenu columnsFilterLink SugarActionMenu listViewLinkButton listViewLinkButton_top export-pdf">' +
                     '<li class="sugar_action_button">' +
-                    '<a href="index.php?entryPoint=SalesActivityReport" title="Export as PDF" class="parent-dropdown-handler" target="_blank">' +
+                    '<a href="index.php?entryPoint=OpportunityPipelineReport" title="Export as PDF" class="parent-dropdown-handler" target="_blank">' +
                         '<span class="glyphicon glyphicon-export glyphicon-icon-cstm"></span>&nbsp;' +
                         '<span>Export PDF</span>' +
                     '</a></li></ul>';

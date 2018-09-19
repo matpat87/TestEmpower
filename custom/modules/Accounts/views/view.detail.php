@@ -110,7 +110,7 @@ class AccountsViewDetail extends ViewDetail {
 		echo 
 		"<script>
 			$(document).ready(function(){
-				var panel_bg_color = $('.panel-default > .panel-heading').css('background');
+				var panel_bg_color = $('.panel-default > .panel-heading').css('background-color');
 	
 				$(\"div[field='marketing_information_non_db'],div[field='erp_data_non_db'],div[field='margin_forecast_percent_non_db'],div[field='sales_forecast_percent_non_db'],div[field='volume_forecast_lb_non_db'],div[field='budget_cost_non_db']\").prev().removeClass('col-sm-2').addClass('col-sm-12').addClass('col-md-12').addClass('col-lg-12').css('background-color', panel_bg_color).css('color', '#FFF').css('margin-top', '15px');
 

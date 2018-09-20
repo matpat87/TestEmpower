@@ -158,7 +158,7 @@ $pdf = new TCPDF(CUSTOM_PDF_PAGE_ORIENTATION, PDF_UNIT, 'FOOLSCAP', true, 'UTF-8
 	// set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Empower');
-$pdf->SetTitle('Sales Activity Report');
+$pdf->SetTitle('Opportunity Pipeline Report');
 $pdf->SetSubject('TCPDF Tutorial');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 

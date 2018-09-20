@@ -157,6 +157,8 @@ class OPR_OpportunityPipelineReport extends Basic
             }
         }
 
+        $_SESSION['OpportunityPipelineReportQuery'] = $return_array;
+
         // return parent::create_new_list_query($order_by, $where, $filter,
         //     $params, $show_deleted, $join_type,
         //     $return_array, $parentbean, $singleSelect,

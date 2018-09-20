@@ -129,7 +129,7 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
 
     function display()
     {
-        global $current_user;
+        global $current_user, $app_list_strings;
 
         $this->lv->export = false;
         $this->lv->delete = false;
@@ -156,6 +156,7 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
         $this->lv->ss->assign("tableData", $data);
         $this->lv->ss->assign("salesStage", $salesStage);
         $this->lv->ss->assign("fullYearAmountTotal", $fullYearAmountTotal);
+        $this->lv->ss->assign("salesStageDOM", $app_list_strings["sales_stage_dom"]);
 
 
         parent::display();

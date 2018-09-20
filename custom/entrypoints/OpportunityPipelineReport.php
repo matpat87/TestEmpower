@@ -4,18 +4,49 @@ require_once('custom/include/TCPDF/tcpdf.php');
 
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
-$html = "<table>";
+global $app_list_strings;
+
+$opportunityPipelineReportQuery = array('select' => getSelectQueryForOpportunityPipeline(), 
+	'from' => getFromQueryrForOpportunityPipeline(),
+	'where' => '',
+);
+
+if(isset($_SESSION['OpportunityPipelineReportQuery']) && !empty($_SESSION['OpportunityPipelineReportQuery']))
+{
+	$opportunityPipelineReportQuery = $_SESSION['OpportunityPipelineReportQuery'];
+}
+
+$query = $opportunityPipelineReportQuery['select'] . $opportunityPipelineReportQuery['from'] . $opportunityPipelineReportQuery['where'] . 
+	$opportunityPipelineReportQuery['order_by'];
+
+$db = DBManagerFactory::getInstance();
+$result = $db->query($query);
+$data = array();
+$fullYearAmountTotal = 0;
+
+while($row = $db->fetchByAssoc($result)){ 
+	$fullYearAmountTotal += $row['full_year_amount'];
+	$row['full_year_amount'] = convert_to_money($row['full_year_amount']);
+	$row['next_step'] = htmlspecialchars_decode($row['next_step']);
+	$row['sales_stage'] = get_dropdown_index("sales_stage_dom", $row['sales_stage']);
+
+	$data[] = $row;
+}
+
+$fullYearAmountTotal = convert_to_money($fullYearAmountTotal);
+
+$html = '<table>';
 
 $html .= '<tr>
-	<td style="width: 30%">
+	<td style="width: 30%; border: 1px solid black; height: 80px;">
         <table>
             <tr>
                 <td style="border: 1px solid black; width: 30%;">Pipeline Total</td>
-                <td style="border: 1px solid black; width: 60%; text-align: right"><div style="margin-right: 20px;">{$fullYearAmountTotal}</div></td>
+                <td style="border: 1px solid black; width: 60%; text-align: right"><div style="margin-right: 20px;">'. $fullYearAmountTotal .'</div></td>
             </tr>
         </table>
 	</td>
-	<td style="vertical-align: top; text-align: center;">
+	<td style="vertical-align: top; text-align: center; border: 1px solid black;">
         <table>
             <tr>
                 <td style="text-align: center;"><img style="margin-top: 20px;" src="themes/default/images/company_logo.png" /></td>
@@ -27,7 +58,7 @@ $html .= '<tr>
             </tr>
         </table>
 	</td>
-	<td style="vertical-align: top; text-align: right; font-weight: bold; font-size: 16px">CONFIDENTIAL</td>
+	<td style="vertical-align: top; text-align: right; font-weight: bold; font-size: 16px; border: 1px solid black;">CONFIDENTIAL</td>
 	</tr>
 	<tr>
 		<td colspan="3">
@@ -56,31 +87,66 @@ $html .= '<tr>
 	                    <th style="width: 2%; padding: 0%; border: 1px solid black; text-align: center;">10</th>
                     </tr>
                 </thead>
-                <tbody>
-                	<tr>
-                		<td style="border: 1px solid black;"><div style="margin-left: 5px;">{$rowData.ACCOUNT_C}</div></td>
-                		<td style="border: 1px solid black;"><div style="margin-left: 5px;">{$rowData.OPPORTUNITY_NAME}</div></td>
-                		<td style="border: 1px solid black;"></td>
-                		<td style="border: 1px solid black;"><div style="margin-left: 5px;">{$rowData.SALES_REP}</div></td>
-                		<td style="text-align: right; border: 1px solid black;"><div style="margin-right: 5px;">{$rowData.FULL_YEAR_AMOUNT}</div></td>
-                		<td style="border: 1px solid black;"><div style="margin-left: 5px;">{$rowData.DATE_CLOSED}</div></td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black; text-align: center;">-</td>
-                		<td style="border: 1px solid black;"><div style="margin-left: 5px;">{$rowData.NEXT_STEP}</div></td>
-                	</tr>
-                </tbody>
+                <tbody>';
+
+                		foreach ($data as $key => $rowData) {
+                			$html .= '<tr>';
+                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['account_c'] .'</div></td>';
+                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['opportunity_name'] .'</div></td>';
+                			$html .= '<td style="border: 1px solid black;"></td>';
+                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['sales_rep'] .'</div></td>';
+                			$html .= '<td style="text-align: right; border: 1px solid black;"><div style="margin-right: 5px;">'. $rowData['full_year_amount'] .'</div></td>';
+                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['date_closed']  .'</div></td>';
+
+                			for($i = 1; $i <= 10; $i++)
+                			{
+                				if($i == ($rowData['sales_stage'] + 1) )
+                				{
+                					$html .= '<td class="border-cell" style="background-color: #80B440;">X</td>';
+                				}
+                				else{
+                					$html .= '<td style="border: 1px solid black; text-align: center;">-</td>';
+                				}
+                			}
+
+                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['next_step'] .'</div></td>';
+                			$html .= '</tr>';
+                		}
+
+                		$html .= '<tr>
+                           <td colspan="4" class="border-cell" style="text-align: right; background-color: black; height:30px; line-height: 25px;">
+                                <font style="color: white; font-size: 14px;">CONSOLIDATED TOTAL</font>
+                            </td>
+                            <td colspan="13" class="border-cell" style="text-align: left; background-color: black; height:30px; line-height: 25px;">
+                                <font style="font-weight: bold; color: white; font-size: 14px;">'. $fullYearAmountTotal .'</font>
+                            </td>';
+
+                		$html .= '</tr>';
+
+                $html .='</tbody>
 			</table>
 		</td>
 	</tr>
-';
+	<tr>
+		<td colspan="3" style="font-size: 11px;">* Sales Stages (NOTE: Some stages may occur out of order or not at all):</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<table>';
+
+			$i = 0;
+			$html .= '<tr>';
+			foreach ($app_list_strings['sales_stage_dom'] as $key => $salesStage) {
+				$html .= '<td style="font-size: 11px;">'. ($i + 1) . ') ' . $salesStage .'</td>';
+				$i++;
+			}
+			$html .= '</tr>';
+			
+
+			$html .= '</table>
+		</td>
+	</tr>
+	';
 
 $html .= "</table>";
 

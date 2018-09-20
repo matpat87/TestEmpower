@@ -280,6 +280,23 @@
                                 <font style="margin-left: 10px; font-weight: bold; color: white; font-size: 14px;">{$fullYearAmountTotal}</font>
                             </td>
                         </tr>
+                        <tr>
+                            <td colspan="10" style="font-size: 11px;">* Sales Stages (NOTE: Some stages may occur out of order or not at all):</td>
+                        </tr>
+                        <tr>
+                            <td colspan="10">
+                                <table>
+                                    <tr>
+                                        {assign var="ctrSalesStageDOM" value="1"}
+                                        {foreach name=salesStageDOMIteration from=$salesStageDOM key=id item=salesStageValue}
+                                        
+                                            <td style="font-size: 11px;">{$ctrSalesStageDOM}) {$salesStageValue}</td>
+                                            {assign var=ctrSalesStageDOM value=$ctrSalesStageDOM+1}
+                                        {/foreach}
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </td>

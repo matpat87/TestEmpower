@@ -102,7 +102,7 @@ $html .= '<tr>
                 			{
                 				if($i == ($rowData['sales_stage'] + 1) )
                 				{
-                					$html .= '<td class="border-cell" style="background-color: #80B440;">X</td>';
+                					$html .= '<td class="border-cell" style="background-color: #80B440; text-align: center;">X</td>';
                 				}
                 				else{
                 					$html .= '<td style="border: 1px solid black; text-align: center;">-</td>';

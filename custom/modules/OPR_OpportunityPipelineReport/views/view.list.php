@@ -144,6 +144,8 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
 
         $this->lv->ss->assign("current_user_name", $current_user->first_name . " " . $current_user->last_name);
 
+        var_dump(getRoles());
+
         $data = $this->getData();
         $salesStage = array();
         $fullYearAmountTotal = convert_to_money($this->totalPipeline($data));

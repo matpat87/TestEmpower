@@ -5,10 +5,33 @@
 		global $db, $current_user;
 
 		$user_representatives = array();
-		$query = "SELECT id, 
-					CONCAT(first_name, ' ',last_name) AS name
-				  FROM users
-				  WHERE deleted = 0";
+		$user_roles = getRoles();
+
+		$query = "SELECT u.id, 
+					CONCAT(u.first_name, ' ', u.last_name) AS name
+					FROM users as u
+					INNER JOIN users_cstm as uc
+						on uc.id_c = u.id
+					WHERE u.deleted = 0";
+
+		if(in_array("Admin", $user_roles))
+		{
+
+		}
+		else if(in_array("Executive", $user_roles))
+		{
+
+		}
+		else if(in_array("Supervisor", $user_roles))
+		{
+			$query .=  " AND u.reports_to_id = '{$current_user->id}'";
+		}
+		else if(in_array("Salesperson", $user_roles))
+		{
+			$query .=  " AND 1=0";
+		}
+
+		
 		$result = $db->query($query, false);
 
 		while (($row = $db->fetchByAssoc($result)) != null) {
@@ -129,6 +152,27 @@
 				    ON mm.id = mmo.mkt_markets_opportunities_1mkt_markets_ida";
 
         return $query;
+	}
+
+	function getRoles()
+	{
+		global $current_user;
+		$roles = array();
+		include_once("modules/ACLRoles/ACLRole.php");
+		$acl_role = new ACLRole();
+		$roleNames = $acl_role->getUserRoleNames($current_user->id);
+		
+		foreach($roleNames as $roleName)
+		{
+			$roles[] = $roleName;
+		}
+
+		if($current_user->is_admin)
+		{
+			$role[] = "Admin";
+		}
+
+		return $roles;
 	}
 
 ?>

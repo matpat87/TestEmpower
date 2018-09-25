@@ -74,5 +74,24 @@ class RPT_CRMReports extends Basic
 
         return false;
     }
+
+     function create_new_list_query($order_by,
+        $where,
+        $filter = array(),
+        $params = array(),
+        $show_deleted = 0,
+        $join_type = '',
+        $return_array = false,
+        $parentbean = null,
+        $singleSelect = false,
+        $ifListForExport = false)
+    {
+        $return_array = array();
+        $return_array['select'] = "SELECT * ";
+        $return_array['from'] = "FROM rpt_crmreports LEFT JOIN rpt_crmreports_cstm ON rpt_crmreports.id = rpt_crmreports_cstm.id_c ";
+        $return_array['where'] = "WHERE rpt_crmreports.deleted = 0 ";
+        $return_array['order_by'] = "ORDER by rpt_crmreports.name ASC";
+        return $return_array;
+    }
 	
-}
+}

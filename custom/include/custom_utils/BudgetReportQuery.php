@@ -37,25 +37,17 @@ EOF;
 
       $db = DBManagerFactory::getInstance();
 
-      $sql = "SELECT users.id AS userID, CONCAT(first_name, ' ', last_name) AS userName FROM users
-              LEFT JOIN securitygroups_users
-                ON users.id = securitygroups_users.user_id
-              LEFT JOIN securitygroups
-                ON securitygroups.id = securitygroups_users.securitygroup_id
-              LEFT JOIN securitygroups_cstm
-                ON securitygroups_cstm.id_c = securitygroups.id
-              WHERE securitygroups.assigned_user_id = '".$current_user->id."'
-                AND securitygroups_cstm.type_c = 'Sales Group'
+      $sql = "SELECT users.id AS userID, CONCAT(first_name, ' ', last_name) AS userName FROM users WHERE employee_status = 'Active' AND deleted = 0";
+      
+      if(!$current_user->isAdmin()) {
+        $sql .= " AND id = '".$current_user->id."'";
+      }
 
-              UNION
+      $sql .= " ORDER BY userName ASC";
 
-              SELECT users.id AS userID, CONCAT(first_name, ' ', last_name) AS userName FROM users 
-              WHERE id = '".$current_user->id."'
-
-              GROUP BY userID ORDER BY userName ASC";
       $result = $db->query($sql);
-
       $array = [];
+
       while($row = $db->fetchByAssoc($result)) {
         $array[$row['userID']] = $row['userName'];
       }

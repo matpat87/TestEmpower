@@ -155,7 +155,7 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
 
         $this->lv->ss->assign("tableData", $data);
         $this->lv->ss->assign("salesStage", $salesStage);
-        $this->lv->ss->assign("fullYearAmountTotal", $fullYearAmountTotal);
+        //$this->lv->ss->assign("fullYearAmountTotal", $fullYearAmountTotal);
         $this->lv->ss->assign("salesStageDOM", $app_list_strings["sales_stage_dom"]);
 
 

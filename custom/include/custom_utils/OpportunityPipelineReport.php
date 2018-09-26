@@ -36,6 +36,7 @@
 							AND u.deleted = 0
 					WHERE s.deleted = 0
 						AND assigned_user_id = '{$current_user->id}'
+						AND ar.name = 'SALESPERSON'
 					ORDER by name asc";
 		}
 
@@ -84,8 +85,9 @@
 						INNER JOIN accounts AS a
 							ON a.assigned_user_id = u.id
 								AND a.deleted = 0
-						AND s.deleted = 0
+						WHERE s.deleted = 0
 							AND s.assigned_user_id = '{$current_user->id}'
+							AND ar.name = 'SALESPERSON'
 						ORDER by a.name asc";
 		}
 
@@ -151,8 +153,9 @@
 						INNER JOIN mkt_markets AS m
 							ON m.`assigned_user_id` = u.id
 								AND m.deleted = 0
-						AND s.deleted = 0
+						WHERE s.deleted = 0
 							AND s.assigned_user_id = '{$current_user->id}'
+							AND ar.name = 'SALESPERSON'
 						ORDER by m.name asc";
 		}
 
@@ -189,6 +192,7 @@
 		$query = "SELECT a.id,
 					ac.division_c,
                     a.name AS account_c,
+                    o.id AS opportunity_id,
                     o.name AS opportunity_name,
                     u.user_name AS sales_rep,
                     o.amount AS full_year_amount,

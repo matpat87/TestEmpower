@@ -142,5 +142,5 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('SalesActivityReport' . date('Y-m-d') . strtotime(date('h:i:s')) . '.pdf', 'I');
+$pdf->Output('SalesActivityReport' . date('Y-m-d') . strtotime(date('h:i:s')) . '.pdf', 'D');
 ?>

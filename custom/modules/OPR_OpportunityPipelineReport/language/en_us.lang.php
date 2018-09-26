@@ -20,4 +20,6 @@ $mod_strings = array (
   'LBL_NEXT_STEP' => 'Next Step',
   'LBL_SALES_STAGE' => 'Sales Stage',
   'LBL_TYPE' => 'Type',
+  'LBL_CUSTOM_AMOUNT' => 'Amount',
+  'LBL_OPPORTUNITY_LINK' => 'Opoortunity Link',
 );

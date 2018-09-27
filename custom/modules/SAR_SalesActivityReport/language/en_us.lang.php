@@ -1,10 +1,6 @@
 <?php
-// created: 2018-07-30 05:42:04
+// created: 2018-09-27 01:55:13
 $mod_strings = array (
-  'LBL_ASSIGNED_TO_USER_ID' => 'User (related User ID)',
-  'LBL_ASSIGNED_TO' => 'Assigned User',
-  'LBL_ASSIGNED_ACCOUNT_ACCOUNT_ID' => 'Account (related Account ID)',
-  'LBL_ASSIGNED_ACCOUNT' => 'Account',
   'LBL_ACTIVITY_TYPE' => 'Activity Type',
   'LBL_RELATED_TO' => 'Related To',
   'LBL_DATE_FROM' => 'Date From',
@@ -15,4 +11,6 @@ $mod_strings = array (
   'LBL_ACCOUNT_NAME' => 'Account',
   'LBL_NAME' => 'Subject',
   'LNK_LIST' => 'View CRM Reports',
+  'LBL_ASSIGNED_USER' => 'Assigned User',
+  'LBL_ASSIGNED_ACCOUNT' => 'Account',
 );

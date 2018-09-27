@@ -74,6 +74,17 @@ class CustomSAR_SalesActivityReportViewList extends ViewList
     function prepareSearchForm(){
         parent::prepareSearchForm();
         $this->searchForm->displaySavedSearch = false;
+
+        $this->searchForm->fieldDefs['date_from_c_basic']['value'] = '09/28/2018';
+        $this->searchForm->populateFromRequest();
+        echo '<pre>';
+        //print_r($this->searchForm->fieldDefs['date_from_c_basic']);
+        $this->storeQuery->query['date_from_c_basic'] = '09-28-2018';
+         $this->searchForm->populateFromArray($this->storeQuery->query);
+        print_r($this->storeQuery->query);
+        echo '</pre>';
+
+
     }
 
     function display()
@@ -93,6 +104,7 @@ class CustomSAR_SalesActivityReportViewList extends ViewList
 
         $this->lv->ss->assign("current_user_name", $current_user->first_name . " " . $current_user->last_name);
 
+        $this->lv->date_from_c_basic = "12312";
 
         parent::display();
 

@@ -8,24 +8,18 @@ array (
     array (
       'assigned_to_c' => 
       array (
-        'type' => 'relate',
-        'default' => true,
-        'studio' => 'visible',
-        'label' => 'LBL_ASSIGNED_TO',
-        'id' => 'USER_ID_C',
-        'link' => true,
+        'type' => 'enum',
+        'label' => 'LBL_ASSIGNED_USER',
         'width' => '10%',
+        'default' => true,
         'name' => 'assigned_to_c',
       ),
       'assigned_account_c' => 
       array (
-        'type' => 'relate',
-        'default' => true,
-        'studio' => 'visible',
+        'type' => 'enum',
         'label' => 'LBL_ASSIGNED_ACCOUNT',
-        'id' => 'ACCOUNT_ID_C',
-        'link' => true,
         'width' => '10%',
+        'default' => true,
         'name' => 'assigned_account_c',
       ),
       'activity_type_c' => 

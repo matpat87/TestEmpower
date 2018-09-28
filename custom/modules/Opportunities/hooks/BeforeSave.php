@@ -11,10 +11,12 @@ class BeforeSave{
     {
         global $current_user;
         $next_step = "";
+        $time_and_date = new TimeAndDateCustom();
+        $current_datetime_timestamp = $time_and_date->get_timestamp($time_and_date->new_york_format);
 
         if($bean->next_step_temp_c != ""){
             $conjunction = "<br/>";
-            $next_step = '<div>' . $bean->next_step_temp_c . '</div>' . ' <div style="font-size: 10px;">(' . $current_user->user_name . '-' . date("Y-m-d H:i:s") . ')</div>';
+            $next_step = '<div>' . $bean->next_step_temp_c . '</div>' . ' <div style="font-size: 10px;">(' . $current_user->user_name . '-' . $current_datetime_timestamp . ')</div>';
 
             if($bean->next_step != "")
             {

@@ -47,6 +47,11 @@ array (
           'newTab' => false,
           'panelDefault' => 'expanded',
         ),
+        'LBL_EDITVIEW_PANEL1' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
       ),
     ),
     'panels' => 
@@ -92,6 +97,12 @@ array (
             'studio' => 'false',
             'label' => 'LBL_EMAIL',
           ),
+          1 => 
+          array (
+            'name' => 'division_c',
+            'studio' => 'visible',
+            'label' => 'LBL_DIVISION',
+          ),
         ),
         3 => 
         array (
@@ -133,35 +144,71 @@ array (
         ),
         5 => 
         array (
+          0 => 'account_type',
+          1 => 'parent_name',
+        ),
+        6 => 
+        array (
           0 => 
           array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
           ),
-          1 => 
-          array (
-            'name' => 'mkt_markets_accounts_1_name',
-          ),
+          1 => '',
         ),
       ),
       'LBL_PANEL_ADVANCED' => 
       array (
         0 => 
         array (
-          0 => 'account_type',
-          1 => 'industry',
+          0 => 
+          array (
+            'name' => 'marketing_information_non_db',
+            'label' => 'Marketing Information',
+          ),
         ),
         1 => 
         array (
-          0 => 'annual_revenue',
-          1 => 'employees',
+          0 => 
+          array (
+            'name' => 'mkt_markets_accounts_1_name',
+          ),
+          1 => 
+          array (
+            'name' => 'oem_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OEM',
+          ),
         ),
         2 => 
         array (
-          0 => 'parent_name',
-          1 => 'campaign_name',
+          0 => 
+          array (
+            'name' => 'manufacturing_type_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MANUFACTURING_TYPE',
+          ),
+          1 => '',
         ),
         3 => 
+        array (
+          0 => 'industry',
+          1 => 'campaign_name',
+        ),
+        4 => 
+        array (
+          0 => 'employees',
+          1 => 'annual_revenue',
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
+            'name' => 'erp_data_non_db',
+            'label' => 'ERP Data',
+          ),
+        ),
+        6 => 
         array (
           0 => 
           array (
@@ -170,8 +217,139 @@ array (
           ),
           1 => 
           array (
+            'name' => 'cust_num_c',
+            'label' => 'LBL_CUST_NUM',
+          ),
+        ),
+        7 => 
+        array (
+          0 => 
+          array (
+            'name' => 'terms_c',
+            'label' => 'LBL_TERMS',
+          ),
+          1 => 
+          array (
+            'name' => 'last_sold_dt_c',
+            'label' => 'LBL_LAST_SOLD_DT',
+          ),
+        ),
+        8 => 
+        array (
+          0 => 
+          array (
+            'name' => 'last_sale_amt_c',
+            'label' => 'LBL_LAST_SALE_AMT',
+          ),
+          1 => 
+          array (
+            'name' => 'balance_c',
+            'label' => 'LBL_BALANCE',
+          ),
+        ),
+        9 => 
+        array (
+          0 => 
+          array (
+            'name' => 'company_no_c',
+            'studio' => 'visible',
+            'label' => 'LBL_COMPANY_NO',
+          ),
+          1 => 
+          array (
+            'name' => 'alt_sys_id_c',
+            'label' => 'LBL_ALT_SYS_ID',
+          ),
+        ),
+        10 => 
+        array (
+          0 => 
+          array (
+            'name' => 'cr_limit_c',
+            'label' => 'LBL_CR_LIMIT',
+          ),
+          1 => 
+          array (
             'name' => 'cr_hold_c',
             'label' => 'LBL_CR_HOLD',
+          ),
+        ),
+      ),
+      'lbl_editview_panel1' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'name' => 'certification_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CERTIFICATION_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'color_readings_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_COLOR_READINGS_NOTE',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'spc_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SPC_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'probe_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_PROBE_NOTE',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'post_blend_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_POST_BLEND_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'ash_test_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ASH_TEST_NOTE',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
+            'name' => 'melt_flow_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MELT_FLOW_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'bulk_density_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_BULK_DENSITY_NOTE',
+          ),
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'chip_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CHIP_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'other_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OTHER_NOTE',
           ),
         ),
       ),

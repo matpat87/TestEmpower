@@ -94,8 +94,7 @@ class SAR_SalesActivityReport extends Basic
 
         $return_array['select'] = $salesActivityReportQuery->get_select_query();   
         $from_query = $salesActivityReportQuery->get_from_query();                               
-        $return_array['where'] = " order by ";    
-        $return_array['order_by'] = ' ';
+        $return_array['where'] = " ";    
         $contains = false;
 
         $securityGroupBean = BeanFactory::getBean('SecurityGroups');
@@ -190,8 +189,7 @@ class SAR_SalesActivityReport extends Basic
 
             if($contains)
             {
-                $return_array['where'] = 'where ' . $where;
-                $return_array['where'] .= ' order by ';
+                $return_array['where'] = 'WHERE ' . $where . ' ';
             }
         }
 
@@ -200,7 +198,7 @@ class SAR_SalesActivityReport extends Basic
             $order_by = string_replace_all("date_entered", "date_start_c", $order_by);
         }
 
-        $return_array['order_by'] = $order_by;
+        $return_array['order_by'] = ' ORDER BY ' . $order_by;
 
         $_SESSION['SalesActivityReportQuery'] = $return_array;
 

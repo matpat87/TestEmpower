@@ -56,6 +56,12 @@ array (
         2 => 
         array (
           0 => 'noninheritable',
+          1 => 
+          array (
+            'name' => 'type_c',
+            'studio' => 'visible',
+            'label' => 'LBL_TYPE',
+          ),
         ),
         3 => 
         array (

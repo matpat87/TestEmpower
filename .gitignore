@@ -95,7 +95,12 @@ tests/_output/*
 BrowserStackLocal
 browserstack.err
 cache/
-custom/**/
+custom/application/Ext/EntryPointRegistry/*
+custom/application/Ext/Include/*
+custom/application/Ext/Language/*
+custom/application/Ext/LogicHooks/*
+custom/blowfish/**/
+custom/history/**/
 .sass-cache/
 .php_cs.cache
 

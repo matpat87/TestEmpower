@@ -81,6 +81,11 @@ array (
           'newTab' => true,
           'panelDefault' => 'expanded',
         ),
+        'LBL_DETAILVIEW_PANEL1' => 
+        array (
+          'newTab' => true,
+          'panelDefault' => 'expanded',
+        ),
       ),
     ),
     'panels' => 
@@ -129,6 +134,12 @@ array (
             'studio' => 'false',
             'label' => 'LBL_EMAIL',
           ),
+          1 => 
+          array (
+            'name' => 'division_c',
+            'studio' => 'visible',
+            'label' => 'LBL_DIVISION',
+          ),
         ),
         3 => 
         array (
@@ -166,13 +177,24 @@ array (
         array (
           0 => 
           array (
-            'name' => 'assigned_user_name',
-            'label' => 'LBL_ASSIGNED_TO',
+            'name' => 'account_type',
+            'comment' => 'The Company is of this type',
+            'label' => 'LBL_TYPE',
           ),
           1 => 
           array (
-            'name' => 'mkt_markets_accounts_1_name',
+            'name' => 'parent_name',
+            'label' => 'LBL_MEMBER_OF',
           ),
+        ),
+        6 => 
+        array (
+          0 => 
+          array (
+            'name' => 'assigned_user_name',
+            'label' => 'LBL_ASSIGNED_TO',
+          ),
+          1 => '',
         ),
       ),
       'LBL_PANEL_ADVANCED' => 
@@ -181,55 +203,34 @@ array (
         array (
           0 => 
           array (
-            'name' => 'account_type',
-            'comment' => 'The Company is of this type',
-            'label' => 'LBL_TYPE',
-          ),
-          1 => 
-          array (
-            'name' => 'erp_db_c',
-            'studio' => 'visible',
-            'label' => 'LBL_ERP_DB',
+            'name' => 'marketing_information_non_db',
+            'label' => 'Marketing Information',
           ),
         ),
         1 => 
         array (
           0 => 
           array (
-            'name' => 'cust_num_c',
-            'label' => 'LBL_CUST_NUM',
+            'name' => 'mkt_markets_accounts_1_name',
           ),
           1 => 
           array (
-            'name' => 'alt_sys_id_c',
-            'label' => 'LBL_ALT_SYS_ID',
+            'name' => 'oem_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OEM',
           ),
         ),
         2 => 
         array (
           0 => 
           array (
-            'name' => 'parent_name',
-            'label' => 'LBL_MEMBER_OF',
+            'name' => 'manufacturing_type_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MANUFACTURING_TYPE',
           ),
-          1 => 
-          array (
-            'name' => 'employees',
-            'comment' => 'Number of employees, varchar to accomodate for both number (100) or range (50-100)',
-            'label' => 'LBL_EMPLOYEES',
-          ),
+          1 => '',
         ),
         3 => 
-        array (
-          0 => 'campaign_name',
-          1 => 
-          array (
-            'name' => 'annual_revenue',
-            'comment' => 'Annual revenue for this company',
-            'label' => 'LBL_ANNUAL_REVENUE',
-          ),
-        ),
-        4 => 
         array (
           0 => 
           array (
@@ -237,13 +238,45 @@ array (
             'comment' => 'The company belongs in this industry',
             'label' => 'LBL_INDUSTRY',
           ),
+          1 => 'campaign_name',
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'employees',
+            'comment' => 'Number of employees, varchar to accomodate for both number (100) or range (50-100)',
+            'label' => 'LBL_EMPLOYEES',
+          ),
           1 => 
+          array (
+            'name' => 'annual_revenue',
+            'comment' => 'Annual revenue for this company',
+            'label' => 'LBL_ANNUAL_REVENUE',
+          ),
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
+            'name' => 'erp_data_non_db',
+            'label' => 'ERP Data',
+          ),
+        ),
+        6 => 
+        array (
+          0 => 
           array (
             'name' => 'order_cycle_c',
             'label' => 'LBL_ORDER_CYCLE',
           ),
+          1 => 
+          array (
+            'name' => 'cust_num_c',
+            'label' => 'LBL_CUST_NUM',
+          ),
         ),
-        5 => 
+        7 => 
         array (
           0 => 
           array (
@@ -252,11 +285,11 @@ array (
           ),
           1 => 
           array (
-            'name' => 'cr_limit_c',
-            'label' => 'LBL_CR_LIMIT',
+            'name' => 'last_sold_dt_c',
+            'label' => 'LBL_LAST_SOLD_DT',
           ),
         ),
-        6 => 
+        8 => 
         array (
           0 => 
           array (
@@ -265,22 +298,45 @@ array (
           ),
           1 => 
           array (
-            'name' => 'last_sold_dt_c',
-            'label' => 'LBL_LAST_SOLD_DT',
+            'name' => 'balance_c',
+            'label' => 'LBL_BALANCE',
           ),
         ),
-        7 => 
+        9 => 
         array (
           0 => 
           array (
-            'name' => 'balance_c',
-            'label' => 'LBL_BALANCE',
+            'name' => 'company_no_c',
+            'studio' => 'visible',
+            'label' => 'LBL_COMPANY_NO',
+          ),
+          1 => 
+          array (
+            'name' => 'alt_sys_id_c',
+            'label' => 'LBL_ALT_SYS_ID',
+          ),
+        ),
+        10 => 
+        array (
+          0 => 
+          array (
+            'name' => 'cr_limit_c',
+            'label' => 'LBL_CR_LIMIT',
           ),
           1 => 
           array (
             'name' => 'cr_hold_c',
             'label' => 'LBL_CR_HOLD',
           ),
+        ),
+        11 => 
+        array (
+          0 => 
+          array (
+            'name' => 'last_activity_date_c',
+            'label' => 'LBL_LAST_ACTIVITY_DATE',
+          ),
+          1 => '',
         ),
       ),
       'LBL_PANEL_ASSIGNMENT' => 
@@ -628,6 +684,84 @@ array (
           array (
             'name' => 'budget_cost_12_dec_c',
             'label' => 'LBL_BUDGET_COST_12_DEC',
+          ),
+        ),
+      ),
+      'lbl_detailview_panel1' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'name' => 'certification_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CERTIFICATION_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'color_readings_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_COLOR_READINGS_NOTE',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'spc_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SPC_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'probe_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_PROBE_NOTE',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'post_blend_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_POST_BLEND_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'ash_test_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ASH_TEST_NOTE',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
+            'name' => 'melt_flow_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MELT_FLOW_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'bulk_density_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_BULK_DENSITY_NOTE',
+          ),
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'chip_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CHIP_NOTE',
+          ),
+          1 => 
+          array (
+            'name' => 'other_note_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OTHER_NOTE',
           ),
         ),
       ),

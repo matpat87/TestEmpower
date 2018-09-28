@@ -28,5 +28,7 @@ $sugar_config['addAjaxBannedModules'][0] = 'SecurityGroups';
 $sugar_config['addAjaxBannedModules'][1] = 'Opportunities';
 $sugar_config['addAjaxBannedModules'][2] = 'RPT_CRMReports';
 $sugar_config['addAjaxBannedModules'][3] = 'SAR_SalesActivityReport';
-$sugar_config['addAjaxBannedModules'][4] = 'RE_Regulatory';
+$sugar_config['addAjaxBannedModules'][4] = 'BR_BudgetReport';
+$sugar_config['addAjaxBannedModules'][5] = 'RE_Regulatory';
+$sugar_config['aos']['lineItems']['enableGroups'] = false;
 /***CONFIGURATOR***/

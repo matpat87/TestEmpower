@@ -45,7 +45,7 @@ class MKT_Markets extends Basic
     public $module_dir = 'MKT_Markets';
     public $object_name = 'MKT_Markets';
     public $table_name = 'mkt_markets';
-    public $importable = false;
+    public $importable = true;
 
     public $id;
     public $name;
@@ -100,4 +100,4 @@ class MKT_Markets extends Basic
         return false;
     }
 	
-}
+}

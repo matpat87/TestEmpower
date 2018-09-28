@@ -66,6 +66,13 @@ array (
     'currency_format' => true,
     'width' => '10%',
   ),
+  'LAST_ACTIVITY_DATE_C' => 
+  array (
+    'type' => 'datetimecombo',
+    'default' => true,
+    'label' => 'LBL_LAST_ACTIVITY_DATE',
+    'width' => '10%',
+  ),
   'DATE_ENTERED' => 
   array (
     'width' => '5%',

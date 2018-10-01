@@ -15,19 +15,19 @@
 		$salesActivityReportQuery = $_SESSION['SalesActivityReportQuery'];
 	}
 
-	$activitiesStringIDs = $_REQUEST['uid'];
-	$activityArrayIDs = explode(',', $activitiesStringIDs);
-	$stringActivityIDs = implode(', ', $activityArrayIDs);
+	// $activitiesStringIDs = $_REQUEST['uid'];
+	// $activityArrayIDs = explode(',', $activitiesStringIDs);
+	// $stringActivityIDs = implode(', ', $activityArrayIDs);
 
-	$newArray = [];
-	foreach ($activityArrayIDs as $key => $value) {
-       array_push($newArray, "'" . $value . "'");
-    }
+	// $newArray = [];
+	// foreach ($activityArrayIDs as $key => $value) {
+ //       array_push($newArray, "'" . $value . "'");
+ //    }
 
-    $newString = implode(', ', $newArray);
-    $andOrWhere = trim($salesActivityReportQuery['where']) ? 'AND' : 'WHERE';
+ //    $newString = implode(', ', $newArray);
+ //    $andOrWhere = trim($salesActivityReportQuery['where']) ? 'AND' : 'WHERE';
 
-	$salesActivityReportQuery['where'] .= $andOrWhere . ' (activity.id IN ('.$newString.')) ';
+	//$salesActivityReportQuery['where'] .= $andOrWhere . ' (activity.id IN ('.$newString.')) ';
 	$query = $salesActivityReportQuery['select'] . $salesActivityReportQuery['from'] . $salesActivityReportQuery['where'] . $salesActivityReportQuery['order_by'];
 
 	$db = DBManagerFactory::getInstance();

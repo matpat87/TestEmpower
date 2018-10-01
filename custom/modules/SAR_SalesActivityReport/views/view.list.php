@@ -72,31 +72,51 @@ class CustomSAR_SalesActivityReportViewList extends ViewList
     }
 
     function prepareSearchForm(){
+        
+
         parent::prepareSearchForm();
         $this->searchForm->displaySavedSearch = false;
 
-        $this->searchForm->fieldDefs['date_from_c_basic']['value'] = '09/28/2018';
-        $this->searchForm->populateFromRequest();
-        echo '<pre>';
-        //print_r($this->searchForm->fieldDefs['date_from_c_basic']);
-        $this->storeQuery->query['date_from_c_basic'] = '09-28-2018';
-         $this->searchForm->populateFromArray($this->storeQuery->query);
-        print_r($this->storeQuery->query);
-        echo '</pre>';
+        if(!array_key_exists('date_from_c_basic', $_REQUEST))
+        {
+            $date_format = 'm/d/Y';
+            $date = new DateTime('now');
+            $date_7days = new DateTime($date->format($date_format));
+            $date_7days = $date_7days->add(new DateInterval('P7D'));
+
+            $request =  array('module' => 'SAR_SalesActivityReport',
+              'action' => 'index',
+              'searchFormTab' => 'basic_search',
+              'query' => 'true',
+              'orderBy' => '',
+              'sortOrder' => '',
+              'date_from_c_basic' => $date->format($date_format),
+              'date_to_c_basic' => $date_7days->format($date_format),
+              'button' => 'Search',);
+             $this->searchForm->populateFromArray($request);
+             $this->searchForm->populateFromArray($this->searchForm->storeQuery);
+
+             $array_link = http_build_query($request);
+        }
+    }
+
+    function processSearchForm()
+    {
 
 
+        parent::processSearchForm();
     }
 
     function display()
     {
-        global $current_user;
+        global $current_user, $sugar_config;
 
         $this->lv->export = false;
         $this->lv->delete = false;
         $this->lv->select = true;
         $this->lv->mailMerge = false;
         $this->lv->email = false;
-        $this->lv->multiSelect = true;
+        $this->lv->multiSelect = false;
         $this->lv->quickViewLinks = false;
         $this->lv->mergeduplicates = false;
         $this->lv->contextMenus = false;
@@ -104,12 +124,12 @@ class CustomSAR_SalesActivityReportViewList extends ViewList
 
         $this->lv->ss->assign("current_user_name", $current_user->first_name . " " . $current_user->last_name);
 
-        $this->lv->date_from_c_basic = "12312";
+        $sales_activity_report_pdf_link = $sugar_config['site_url'] . '/index.php?entryPoint=SalesActivityReport';
 
         parent::display();
 
         echo <<<EOF
-            <style ype="text/css">
+            <style type="text/css">
                 #massassign_form {display: none;} 
 
                 .columnsFilterLink {display: none;}
@@ -121,7 +141,7 @@ class CustomSAR_SalesActivityReportViewList extends ViewList
                 .SugarActionMenu:first-child .sugar_action_button:first-child {margin-right: 0px;}
             </style>
 EOF;
-
+        
         echo <<<EOF
             <script type="text/javascript">
                 $("#actionLinkTop").remove();
@@ -130,7 +150,7 @@ EOF;
                 var paginationActionButtonsHTML = paginationActionButtons.html();
                 var buttonHTML = '<ul class="clickMenu selectmenu columnsFilterLink SugarActionMenu listViewLinkButton listViewLinkButton_top export-pdf">' +
                     '<li class="sugar_action_button">' +
-                    '<a href="javascript:void(0)" class="parent-dropdown-action-handler custom-export-pdf-btn disabled" id="export_listview_top">' +
+                    '<a href="{$sales_activity_report_pdf_link}" class="parent-dropdown-action-handler custom-export-pdf-btn" id="export_listview_top" target="_blank">' +
                         '<span class="glyphicon glyphicon-export glyphicon-icon-cstm"></span>&nbsp;' +
                         '<span>Export PDF</span>' +
                     '</a></li></ul>';
@@ -141,23 +161,12 @@ EOF;
                 $('.columnsFilterLink:eq(0)').css('display', 'none');
                 $('.columnsFilterLink:eq(2)').css('display', 'none');
                 
-                /*
-                    li.sugar_action_button > .bootstrap-checkbox - Column checkbox
-                    ul#selectLinkTop li.sugar_action_button ul.subnav li > a.menuItem - Column header "Select This Page", "Select All", "Deselect All"
-                    .listview-checkbox - List View Checkbox
-                */
                 $("li.sugar_action_button > .bootstrap-checkbox, ul#selectLinkTop li.sugar_action_button ul.subnav li > a.menuItem, .listview-checkbox").on('click', function() {
 
                     setTimeout(function(){ 
-                        if($(".listview-checkbox:checked").length < 1) {
-                            $(".custom-export-pdf-btn")
-                            .addClass('disabled')
-                            .removeAttr('onclick');
-                        } else {
-                            $(".custom-export-pdf-btn")
-                            .removeClass('disabled')
-                            .attr('onclick', "return sListView.send_form(true, `SAR_SalesActivityReport`, `index.php?entryPoint=SalesActivityReport`,`Please select at least 1 record to proceed.`)");
-                        };
+
+
+
                     }, 10);
                 })
             </script>

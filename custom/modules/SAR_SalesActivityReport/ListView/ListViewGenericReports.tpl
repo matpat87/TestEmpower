@@ -142,7 +142,7 @@
     </div>
 {/if}
 {$multiSelectData}
-{*$data|var_dump*}
+
 {if $hideTable == false}
     <div class="list-view-rounded-corners">
         <table cellpadding='0' cellspacing='0' border='0' class='list view table-responsive'>

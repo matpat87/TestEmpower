@@ -78,9 +78,6 @@ FROM
       emails 
     WHERE deleted = 0)
   ) AS activity 
-  LEFT JOIN accounts AS a 
-    ON a.id = activity.parent_id 
-    AND activity.parent_type = 'Accounts' 
   LEFT JOIN leads AS l 
     ON l.id = activity.parent_id 
     AND activity.parent_type = 'Leads' 

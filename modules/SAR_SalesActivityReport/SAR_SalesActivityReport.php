@@ -98,41 +98,42 @@ class SAR_SalesActivityReport extends Basic
         $contains = false;
 
         $securityGroupBean = BeanFactory::getBean('SecurityGroups');
-        $security_groups_assiged = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id), false, false);
+        $security_groups_assigned = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id), false, false);
 
         if(!$current_user->is_admin)
         {
-            $from_query .= " INNER JOIN users AS u 
-                ON u.id = activity.assigned_user_id";
-
-            if(!empty($security_groups_assiged)){
-                $from_query .= " AND (u.id in (SELECT u2.id
-                            FROM securitygroups AS s
-                            INNER JOIN securitygroups_acl_roles AS sar
-                                ON sar.securitygroup_id = s.id
-                                    AND sar.deleted = 0
-                            INNER JOIN acl_roles AS ar
-                                ON ar.id = sar.role_id
-                                    AND ar.deleted = 0
-                            INNER JOIN acl_roles_users AS aru
-                                ON aru.role_id = ar.id
-                                    AND aru.deleted = 0
-                            INNER JOIN users AS u2
-                                ON u2.id = aru.user_id
-                                    AND u2.deleted = 0
-                            WHERE s.deleted = 0
-                                AND assigned_user_id = '{$current_user->id}')
-
-                            OR u.id = '{$current_user->id}') ";
-            }
-            else{
-                $from_query .= " AND u.id = '{$current_user->id}' ";
-            }
+            $from_query .= " LEFT JOIN users AS u 
+                ON u.id = '{$current_user->id}' ";
         }
         else
         {
             $from_query .= " LEFT JOIN users AS u 
                 ON u.id = activity.assigned_user_id ";
+        }
+
+        /**
+     LEFT JOIN accounts AS a 
+    ON a.id = activity.parent_id 
+    AND activity.parent_type = 'Accounts' 
+        **/
+
+        if(!empty($security_groups_assigned))
+        {
+            $from_query .= " INNER JOIN securitygroups AS s
+                                ON s.assigned_user_id = '{$current_user->id}'
+                                    AND s.deleted = 0
+                            INNER JOIN securitygroups_records AS sr
+                                ON sr.securitygroup_id = s.id
+                            INNER JOIN accounts AS a
+                                ON a.id = sr.record_id
+                                    AND a.deleted = 0
+                                    AND a.id = activity.parent_id
+                                    AND activity.parent_type = 'Accounts' ";
+        }
+        else{
+            $from_query .= " LEFT JOIN accounts AS a 
+                            ON a.id = activity.parent_id 
+                            AND activity.parent_type = 'Accounts' ";
         }
 
         $return_array['from'] = $from_query;

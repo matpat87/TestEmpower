@@ -1,5 +1,5 @@
 <?php
-// created: 2018-10-04 17:46:15
+// created: 2018-10-04 17:51:37
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
@@ -113,4 +113,5 @@ $mod_strings = array (
   'LBL_CASES_SUBPANEL_TITLE' => 'Customer Issues',
   'LBL_OEM' => 'OEM',
   'LBL_MANUFACTURING_TYPE' => 'Manufacturing Type',
+  'LBL_TYPE' => 'Type:',
 );

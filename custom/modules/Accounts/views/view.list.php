@@ -17,6 +17,8 @@ class AccountsViewList extends ViewList
         parent::preDisplay();
 
         if(!$current_user->isAdmin() && !isset($_REQUEST['assigned_user_id_advanced'])) {
+        	$_REQUEST['searchFormTab'] = "advanced_search";
+    		$_REQUEST['query'] = "true";
         	$_REQUEST['assigned_user_id_advanced'][0] = $current_user->id;
         }
         

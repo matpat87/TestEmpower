@@ -1,0 +1,10 @@
+	#searchDialog > .modal-dialog{
+		width: 85% !important;
+		height: 85% !important;
+		margin: auto;
+	}
+
+.row-equal-height
+{
+	min-height: 140px;
+}

@@ -57,11 +57,11 @@
     });
     {/literal}
 </script>
-<div class="row">
+<div class="row col-xs-12">
     {{assign var='accesskeycount' value=0}}  {{assign var='ACCKEY' value=''}}
     {{foreach name=colIteration from=$formData key=col item=colData}}
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-advanced-search">
-        <div class="">
+    <div class="col-lg-6">
+
             {{math assign="accesskeycount" equation="$accesskeycount + 1"}}
             {{if $accesskeycount==1}} {{assign var='ACCKEY' value=$APP.LBL_FIRST_INPUT_SEARCH_KEY}} {{else}} {{assign var='ACCKEY' value=''}} {{/if}}
 
@@ -85,7 +85,7 @@
                 {{sugar_field parentFieldArray='fields' accesskey=$ACCKEY vardef=$fields[$colData.field.name] displayType=$displayType displayParams=$colData.field.displayParams typeOverride=$colData.field.type formName=$form_name}}
                 {{/if}}
             </div>
-        </div>
+
     </div>
     {{/foreach}}
 

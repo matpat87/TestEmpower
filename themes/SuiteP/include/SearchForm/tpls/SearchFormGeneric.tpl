@@ -65,7 +65,7 @@
 	});
 {/literal}
 </script>
-<div class="row">
+<div class="row col-xs-12">
 {{foreach name=colIteration from=$formData key=col item=colData}}
     {{math assign="accesskeycount" equation="$accesskeycount + 1"}}
     {{if $accesskeycount==1}} {{assign var='ACCKEY' value=$APP.LBL_FIRST_INPUT_SEARCH_KEY}} {{else}} {{assign var='ACCKEY' value=''}} {{/if}}
@@ -76,15 +76,15 @@
           right=$basicMaxColumns
           assign=modVal
     }
-	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 search_fields_basic">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+	<div class="col-lg-6 row-equal-height">
+		<div class="col-xs-12">
 			{{if isset($colData.field.label)}}
 			<label for='{{$colData.field.name}}' >{sugar_translate label='{{$colData.field.label}}' module='{{$module}}'}</label>
 			{{elseif isset($fields[$colData.field.name])}}
 			<label for='{{$fields[$colData.field.name].name}}'> {sugar_translate label='{{$fields[$colData.field.name].vname}}' module='{{$module}}'}</label>
 			{{/if}}
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+		<div class="col-xs-12">
 		{{sugar_field parentFieldArray='fields' vardef=$fields[$colData.field.name] accesskey=$ACCKEY displayType='searchView' displayParams=$colData.field.displayParams typeOverride=$colData.field.type formName=$form_name}}
 		</div>
 		<div class="search-clear"></div>

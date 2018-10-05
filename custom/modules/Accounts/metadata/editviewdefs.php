@@ -141,6 +141,12 @@ array (
             'name' => 'description',
             'label' => 'LBL_DESCRIPTION',
           ),
+          1 => 
+          array (
+            'name' => 'client_potential_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CLIENT_POTENTIAL',
+          ),
         ),
         5 => 
         array (

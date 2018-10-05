@@ -16,7 +16,7 @@ class AccountsViewList extends ViewList
         formLetter::LVPopupHtml('Accounts');
         parent::preDisplay();
 
-        if(!isset($_REQUEST['assigned_user_id_advanced'])) {
+        if(!$current_user->isAdmin() && !isset($_REQUEST['assigned_user_id_advanced'])) {
         	$_REQUEST['assigned_user_id_advanced'][0] = $current_user->id;
         }
         

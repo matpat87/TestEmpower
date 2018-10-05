@@ -28,6 +28,8 @@ class AccountsViewList extends ViewList
 
         // Set default filter to logged user (if not admin) when accessing accounts list view
         if(!$current_user->isAdmin() && !isset($_REQUEST['assigned_user_id_advanced'])) {
+        	$_REQUEST['searchFormTab'] = "advanced_search";
+    		$_REQUEST['query'] = "true";
         	$_REQUEST['assigned_user_id_advanced'][0] = $current_user->id;
         }
 

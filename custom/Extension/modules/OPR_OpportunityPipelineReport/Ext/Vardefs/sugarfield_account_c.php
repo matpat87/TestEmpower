@@ -3,6 +3,6 @@
 $dictionary['OPR_OpportunityPipelineReport']['fields']['account_c']['inline_edit']='1';
 $dictionary['OPR_OpportunityPipelineReport']['fields']['account_c']['labelValue']='Account';
 $dictionary['OPR_OpportunityPipelineReport']['fields']['account_c']['options']='';
-$dictionary['OPR_OpportunityPipelineReport']['fields']['account_c']['function']='getAccountsForOpportunityPipeline';
+$dictionary['OPR_OpportunityPipelineReport']['fields']['account_c']['function']='getAccountsForReports';
 
  ?>

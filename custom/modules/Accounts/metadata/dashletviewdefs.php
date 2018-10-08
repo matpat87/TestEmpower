@@ -1,5 +1,9 @@
 <?php
 $dashletData['AccountsDashlet']['searchFields'] = array (
+  'name' => 
+  array (
+    'default' => '',
+  ),
   'date_entered' => 
   array (
     'default' => '',
@@ -12,15 +16,9 @@ $dashletData['AccountsDashlet']['searchFields'] = array (
   array (
     'default' => '',
   ),
-  'billing_address_country' => 
-  array (
-    'default' => '',
-  ),
   'assigned_user_id' => 
   array (
-    'type' => 'assigned_user_name',
-    'default' => 'Ralph Siasat',
-    'label' => 'LBL_ASSIGNED_TO',
+    'default' => '',
   ),
 );
 $dashletData['AccountsDashlet']['columns'] = array (

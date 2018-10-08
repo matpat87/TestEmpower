@@ -175,7 +175,10 @@
         {assign var="actionsLink" value=$actionsLinkTop}
         {assign var="selectLink" value=$selectLinkTop}
         {assign var="action_menu_location" value="top"}
-
+        {assign var="fullYearAmountTotal" value=0}
+        {assign var="rowCtr" value=0}
+        {assign var="salesPersonName" value=""}
+        {assign var="subTotal" value=0}
 
         {include file='themes/SuiteP/include/ListView/ListViewPaginationTop.tpl'}
 
@@ -185,15 +188,23 @@
             <td>
                 <table id="pipeline-info">
                     <tr>
+                        {foreach name=rowIteration from=$data key=id item=rowData}
+                            {if $rowCtr == 0}
+                                {assign var="salesPersonName" value=$rowData.SALES_REP}
+                            {/if}
+
+                            {assign var="fullYearAmountTotal" value=$fullYearAmountTotal+$rowData.AMOUNT_VALUE}
+                            {assign var="rowCtr" value=$rowCtr+1}
+                        {/foreach}
                         <td>Pipeline Total</td>
-                        <td>{$fullYearAmountTotal}</td>
+                        <td>${$fullYearAmountTotal|number_format:2:".":","}</td>
                     </tr>
                 </table>
             </td>
             <td style="vertical-align: top;">
                 <table>
                     <tr>
-                        <td style="text-align: center;"><img style="margin-top: 20px;" src="themes/default/images/company_logo.png" /></td>
+                        <td style="text-align: center;"></td>
                     </tr>
                     <tr>
                        <td style="font-weight: bold; font-size: 18px;">
@@ -210,12 +221,8 @@
                 <table id="list-rows" style="width: 100%;">
                     <thead>
                         <tr>
-                        <th style="width: 20% !important; text-align: center;" class="border-cell">Account</th>
-                        <th style="width: 20% !important; text-align: center;" class="border-cell">Opportunity</th>
-                        <th style="width: 5% !important; text-align: center;" class="border-cell">Status</th>
-                        <th style="width: 5%; text-align: center;" class="border-cell">Sales Rep</th>
-                        <th style="width: 8% text-align: center;" class="border-cell">Full-Year Value</th>
-                        <th style="width: 5%; text-align: center;" class="border-cell"><div style="text-align: center;">Initial</div><div>Order Date</div></th>
+                        <th style="width: 15% !important; text-align: center;" class="border-cell">Account</th>
+                        <th style="width: 15% !important; text-align: center;" class="border-cell">Opportunity</th>
                         <th style="width: 20%; padding: 0%;" class="border-cell">
                             <table style="width: 100%; padding: 0%;">
                                 <tr>
@@ -242,19 +249,33 @@
                             </table>
                             
                         </th>
-                        <th style="width: 17%" class="border-cell"><font style="word-wrap:break-word;">Next Actions, Status - specific, measurable, dates</font></th>
+                        <th style="width: 10%; text-align: center;" class="border-cell">Sales Rep</th>
+                        <th style="width: 10% text-align: center;" class="border-cell">Full-Year Value</th>
+                        <th style="width: 10%; text-align: center;" class="border-cell"><div style="text-align: center;">Initial</div><div>Order Date</div></th>
+
+                        <th style="width: 20%" class="border-cell"><font style="word-wrap:break-word;">Next Actions, Status - specific, measurable, dates</font></th>
                         </tr>
                     </thead>
                     <tbody>
                         {foreach name=rowIteration from=$data key=id item=rowData}
+
+                        {if $salesPersonName != $rowData.SALES_REP}
+                            <tr>
+                                <td colspan="4" class="border-cell" style="text-align: right; background-color: white;">
+                                    <font style="margin-right: 10px; color: black; font-size: 12px;">SubTotal</font>
+                                </td>
+                                <td colspan="3" class="border-cell" style="text-align: left; background-color: white;">
+                                    <font style="margin-left: 10px; font-weight: bold; color: black; font-size: 12px;">${$subTotal|number_format:2:".":","}</font>
+                                </td>
+                            </tr>
+
+                            {assign var="subTotal" value=0}
+                            {assign var="salesPersonName" value=$rowData.SALES_REP}
+                        {/if}
                         
                         <tr>
                             <td class="border-cell"><div style="margin-left: 5px;">{$rowData.ACCOUNT_C}</div></td>
-                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.OPPORTUNITY_NAME}</div></td>
-                            <td class="border-cell"></td>
-                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.SALES_REP}</div></td>
-                            <td class="border-cell" style="text-align: right;"><div style="margin-right: 5px;">{$rowData.FULL_YEAR_AMOUNT}</div></td>
-                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.DATE_CLOSED}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;"><a href="{$rowData.OPPORTUNITY_LINK}">{$rowData.OPPORTUNITY_NAME}</a></div></td>
                             <td class="border-cell" style="padding: 0%;">
                                 <table class="list-rows-sales-stage" style="width: 100%; height: 100%; ">
 
@@ -269,15 +290,53 @@
                                     </tr>
                                 </table>
                             </td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.SALES_REP}</div></td>
+                            <td class="border-cell" style="text-align: right;"><div style="margin-right: 5px;">{$rowData.FULL_YEAR_AMOUNT}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.DATE_CLOSED}</div></td>
+                            
                             <td class="border-cell next-step"><div style="margin-left: 5px;">{$rowData.NEXT_STEP}</div></td>
                         </tr>
+
+                        {assign var="subTotal" value=$subTotal+$rowData.AMOUNT_VALUE}
+                        {assign var="rowCtr" value=$rowCtr+1}
                         {/foreach}
+
+                        {if $subTotal >= 0}
+                            <tr>
+                                <td colspan="4" class="border-cell" style="text-align: right; background-color: white;">
+                                    <font style="margin-right: 10px; color: black; font-size: 12px;">SubTotal</font>
+                                </td>
+                                <td colspan="3" class="border-cell" style="text-align: left; background-color: white;">
+                                    <font style="margin-left: 10px; font-weight: bold; color: black; font-size: 12px;">${$subTotal|number_format:2:".":","}</font>
+                                </td>
+                            </tr>
+
+                            {assign var="subTotal" value=0}
+                            {assign var="salesPersonName" value=$rowData.SALES_REP}
+                        {/if}
                         <tr>
                             <td colspan="4" class="border-cell" style="text-align: right; background-color: black;">
                                 <font style="margin-right: 10px; color: white; font-size: 14px;">CONSOLIDATED TOTAL</font>
                             </td>
-                            <td colspan="4" class="border-cell" style="text-align: left; background-color: black;">
-                                <font style="margin-left: 10px; font-weight: bold; color: white; font-size: 14px;">{$fullYearAmountTotal}</font>
+                            <td colspan="3" class="border-cell" style="text-align: left; background-color: black;">
+                                <font style="margin-left: 10px; font-weight: bold; color: white; font-size: 14px;">${$fullYearAmountTotal|number_format:2:".":","}</font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="9" style="font-size: 11px;">* Sales Stages (NOTE: Some stages may occur out of order or not at all):</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">
+                                <table>
+                                    <tr>
+                                        {assign var="ctrSalesStageDOM" value=1}
+                                        {foreach name=salesStageDOMIteration from=$salesStageDOM key=id item=salesStageValue}
+                                        
+                                            <td style="font-size: 11px;">{$ctrSalesStageDOM}) {$salesStageValue}</td>
+                                            {assign var="ctrSalesStageDOM" value=$ctrSalesStageDOM+1}
+                                        {/foreach}
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                     </tbody>

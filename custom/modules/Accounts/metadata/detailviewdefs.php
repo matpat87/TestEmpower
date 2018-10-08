@@ -102,22 +102,18 @@ array (
           ),
           1 => 
           array (
-            'name' => 'phone_office',
-            'comment' => 'The office phone number',
-            'label' => 'LBL_PHONE_OFFICE',
+            'name' => 'status_c',
+            'studio' => 'visible',
+            'label' => 'LBL_STATUS',
           ),
         ),
         1 => 
         array (
           0 => 
           array (
-            'name' => 'website',
-            'type' => 'link',
-            'label' => 'LBL_WEBSITE',
-            'displayParams' => 
-            array (
-              'link_target' => '_blank',
-            ),
+            'name' => 'phone_office',
+            'comment' => 'The office phone number',
+            'label' => 'LBL_PHONE_OFFICE',
           ),
           1 => 
           array (
@@ -133,6 +129,16 @@ array (
             'name' => 'email1',
             'studio' => 'false',
             'label' => 'LBL_EMAIL',
+          ),
+          1 => 
+          array (
+            'name' => 'website',
+            'type' => 'link',
+            'label' => 'LBL_WEBSITE',
+            'displayParams' => 
+            array (
+              'link_target' => '_blank',
+            ),
           ),
         ),
         3 => 
@@ -185,10 +191,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'division_c',
+            'studio' => 'visible',
+            'label' => 'LBL_DIVISION',
+          ),
+          1 => 
+          array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
           ),
-          1 => '',
         ),
       ),
       'LBL_PANEL_ADVANCED' => 

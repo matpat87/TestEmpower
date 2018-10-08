@@ -91,7 +91,7 @@ class OPR_OpportunityPipelineReport extends Basic
         $return_array['select'] = getSelectQueryForOpportunityPipeline();   
         $return_array['from'] = getFromQueryrForOpportunityPipeline();
         $return_array['where'] = " where a.deleted = 0 order by ";
-        $return_array['order_by'] = ' a.name asc';
+        $return_array['order_by'] = ' sales_rep asc, a.name asc';
         $contains = false;
 
         if(!empty($where))
@@ -156,6 +156,8 @@ class OPR_OpportunityPipelineReport extends Basic
                 $return_array['where'] .= ' order by ';
             }
         }
+
+        $_SESSION['OpportunityPipelineReportQuery'] = $return_array;
 
         // return parent::create_new_list_query($order_by, $where, $filter,
         //     $params, $show_deleted, $join_type,

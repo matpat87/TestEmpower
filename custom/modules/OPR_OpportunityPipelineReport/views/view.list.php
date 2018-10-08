@@ -129,7 +129,7 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
 
     function display()
     {
-        global $current_user;
+        global $current_user, $app_list_strings;
 
         $this->lv->export = false;
         $this->lv->delete = false;
@@ -148,14 +148,15 @@ class OPR_OpportunityPipelineReportViewList extends ViewList
         $salesStage = array();
         $fullYearAmountTotal = convert_to_money($this->totalPipeline($data));
 
-        for($i = 1; $i < 10; $i++)
+        for($i = 1; $i <= 10; $i++)
         {
             $salesStage[] = $i;
         }
 
         $this->lv->ss->assign("tableData", $data);
         $this->lv->ss->assign("salesStage", $salesStage);
-        $this->lv->ss->assign("fullYearAmountTotal", $fullYearAmountTotal);
+        //$this->lv->ss->assign("fullYearAmountTotal", $fullYearAmountTotal);
+        $this->lv->ss->assign("salesStageDOM", $app_list_strings["sales_stage_dom"]);
 
 
         parent::display();
@@ -178,7 +179,7 @@ EOF;
                 var paginationActionButtonsHTML = paginationActionButtons.html();
                 var buttonHTML = '<ul class="clickMenu selectmenu columnsFilterLink SugarActionMenu listViewLinkButton listViewLinkButton_top export-pdf">' +
                     '<li class="sugar_action_button">' +
-                    '<a href="index.php?entryPoint=SalesActivityReport" title="Export as PDF" class="parent-dropdown-handler" target="_blank">' +
+                    '<a href="index.php?entryPoint=OpportunityPipelineReport" title="Export as PDF" class="parent-dropdown-handler" target="_blank">' +
                         '<span class="glyphicon glyphicon-export glyphicon-icon-cstm"></span>&nbsp;' +
                         '<span>Export PDF</span>' +
                     '</a></li></ul>';

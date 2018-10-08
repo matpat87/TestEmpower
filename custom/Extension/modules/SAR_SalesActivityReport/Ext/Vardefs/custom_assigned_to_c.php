@@ -6,7 +6,7 @@ $dictionary['SAR_SalesActivityReport']['fields']['assigned_to_c']= array(
         'type' => 'enum',
         'source' => 'non-db',
         'options' => '',
-        'function' => 'getUserRepresentatives'
+        'function' => 'getUserRepresentativesForReports'
 );
 
  ?>

@@ -40,7 +40,23 @@ EOF;
       $sql = "SELECT users.id AS userID, CONCAT(first_name, ' ', last_name) AS userName FROM users WHERE employee_status = 'Active' AND deleted = 0";
       
       if(!$current_user->isAdmin()) {
-        $sql .= " AND id = '".$current_user->id."'";
+        $sql .= " AND id = '".$current_user->id."'
+
+                  UNION
+
+                  SELECT users.id AS userID, CONCAT(first_name, ' ', last_name) AS userName FROM users
+                  LEFT JOIN securitygroups_users
+                    ON users.id = securitygroups_users.user_id
+                  LEFT JOIN securitygroups
+                    ON securitygroups.id = securitygroups_users.securitygroup_id
+                  LEFT JOIN securitygroups_cstm
+                    ON securitygroups_cstm.id_c = securitygroups.id
+                  WHERE users.employee_status = 'Active' 
+                    AND users.deleted = 0
+                    AND securitygroups.name = '".$current_user->first_name." ".$current_user->last_name." Group'
+                    AND securitygroups_cstm.type_c = 'Sales Group'
+                    AND securitygroups.deleted = 0
+                  GROUP BY userID";
       }
 
       $sql .= " ORDER BY userName ASC";

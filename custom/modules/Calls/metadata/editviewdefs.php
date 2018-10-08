@@ -9,7 +9,7 @@ array (
       array (
         0 => 
         array (
-          'file' => 'modules/Reminders/Reminders.js',
+          'file' => 'custom/modules/Reminders/Reminders.js',
         ),
         1 =>
         array (

@@ -98,12 +98,33 @@ class SAR_SalesActivityReport extends Basic
         $contains = false;
 
         $securityGroupBean = BeanFactory::getBean('SecurityGroups');
-        $security_groups_assigned = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id), false, false);
+        $security_groups_assiged = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id), false, false);
 
         if(!$current_user->is_admin)
         {
-            $from_query .= " LEFT JOIN users AS u 
-                ON u.id = '{$current_user->id}' ";
+            $from_query .= " INNER JOIN users AS u 
+                ON u.id = activity.assigned_user_id";
+
+            if(!empty($security_groups_assiged)){
+                $from_query .= " AND (u.id in (SELECT u.id
+                                    FROM securitygroups AS s
+                                    INNER JOIN securitygroups_cstm AS sc
+                                        ON sc.id_c = s.id
+                                    INNER JOIN securitygroups_users AS su
+                                        ON su.securitygroup_id = s.id
+                                        AND su.deleted = 0
+                                    INNER JOIN users AS u
+                                        ON u.id = su.user_id
+                                        AND u.deleted = 0
+                                    WHERE s.deleted = 0
+                                        AND sc.type_c = 'Sales Group'
+                                        AND s.assigned_user_id = '{$current_user->id}')
+
+                                        OR u.id = '{$current_user->id}') ";
+            }
+            else{
+                $from_query .= " AND u.id = '{$current_user->id}' ";
+            }
         }
         else
         {
@@ -111,44 +132,23 @@ class SAR_SalesActivityReport extends Basic
                 ON u.id = activity.assigned_user_id ";
         }
 
-        /**
-     LEFT JOIN accounts AS a 
-    ON a.id = activity.parent_id 
-    AND activity.parent_type = 'Accounts' 
-        **/
-
-        if(!empty($security_groups_assigned))
-        {
-            $from_query .= " INNER JOIN securitygroups AS s
-                                ON s.assigned_user_id = '{$current_user->id}'
-                                    AND s.deleted = 0
-                            INNER JOIN securitygroups_records AS sr
-                                ON sr.securitygroup_id = s.id
-                            INNER JOIN accounts AS a
-                                ON a.id = sr.record_id
-                                    AND a.deleted = 0
-                                    AND a.id = activity.parent_id
-                                    AND activity.parent_type = 'Accounts' ";
-        }
-        else{
-            $from_query .= " LEFT JOIN accounts AS a 
-                            ON a.id = activity.parent_id 
-                            AND activity.parent_type = 'Accounts' ";
-        }
+        $from_query .= " INNER JOIN accounts as a
+                            ON a.assigned_user_id = u.id ";
 
         $return_array['from'] = $from_query;
 
         if(!empty($where))
         {
-            if(strpos($where, 'assigned_to_c') !== false)
+
+            if(strpos($where, 'sar_salesactivityreport_cstm.assigned_to_c') !== false)
             {
-                $where = string_replace_all('assigned_to_c', "u.id", $where);
+                $where = string_replace_all('sar_salesactivityreport_cstm.assigned_to_c', "u.id", $where);
                 $contains = true;
             }
 
-            if(strpos($where, 'assigned_account_c') !== false)
+            if(strpos($where, 'sar_salesactivityreport_cstm.assigned_account_c') !== false)
             {
-                $where = string_replace_all('assigned_account_c', "a.id", $where);
+                $where = string_replace_all('sar_salesactivityreport_cstm.assigned_account_c', "a.id", $where);
                 $contains = true;
             }
 
@@ -192,6 +192,9 @@ class SAR_SalesActivityReport extends Basic
             {
                 $return_array['where'] = 'WHERE ' . $where . ' ';
             }
+        }
+        else{
+            $return_array['where'] = 'WHERE 1=0 ';
         }
 
         if(!empty($order_by) && strpos($order_by, 'date_entered') !== false)

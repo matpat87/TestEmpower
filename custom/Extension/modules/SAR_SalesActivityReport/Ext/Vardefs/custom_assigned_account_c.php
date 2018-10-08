@@ -6,7 +6,7 @@ $dictionary['SAR_SalesActivityReport']['fields']['assigned_account_c']= array(
         'type' => 'enum',
         'source' => 'non-db',
         'options' => '',
-        'function' => 'getAccountsForOpportunityPipeline'
+        'function' => 'getAccountsForReports'
 );
 
  ?>

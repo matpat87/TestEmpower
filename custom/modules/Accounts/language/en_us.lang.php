@@ -1,5 +1,5 @@
 <?php
-// created: 2018-09-09 16:44:16
+// created: 2018-10-04 17:51:37
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Account Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
@@ -91,7 +91,7 @@ $mod_strings = array (
   'LBL_YTD_BUDGET' => 'YTD Budget',
   'LBL_GROSS_MARGIN' => 'Margin',
   'LBL_PANEL_FORECASTS' => 'FORECASTS',
-  'LBL_DETAILVIEW_PANEL1' => 'QF39 Part 2',
+  'LBL_DETAILVIEW_PANEL1' => 'CUSTOMER NOTES',
   'LBL_DETAILVIEW_PANEL2' => 'FORECASTS',
   'LBL_DETAILVIEW_PANEL3' => 'Margin Forecast (%)',
   'LBL_CUST_NUM' => 'Customer Number',
@@ -108,9 +108,10 @@ $mod_strings = array (
   'LBL_BULK_DENSITY_NOTE' => 'Bulk Density Note',
   'LBL_CHIP_NOTE' => 'Chip Note',
   'LBL_OTHER_NOTE' => 'Other Note',
-  'LBL_EDITVIEW_PANEL1' => 'QF39 Part 2',
+  'LBL_EDITVIEW_PANEL1' => 'CUSTOMER NOTES',
   'LBL_CASES' => 'Customer Issues',
   'LBL_CASES_SUBPANEL_TITLE' => 'Customer Issues',
   'LBL_OEM' => 'OEM',
   'LBL_MANUFACTURING_TYPE' => 'Manufacturing Type',
+  'LBL_TYPE' => 'Type:',
 );

@@ -90,7 +90,6 @@
 					ORDER by name asc";
 		}
 
-		
 		$result = $db->query($query, false);
 
 		while (($row = $db->fetchByAssoc($result)) != null) {

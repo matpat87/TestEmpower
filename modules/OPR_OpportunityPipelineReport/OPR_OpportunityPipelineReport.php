@@ -86,11 +86,12 @@ class OPR_OpportunityPipelineReport extends Basic
         $singleSelect = false,
         $ifListForExport = false)
     { 
+        global $log, $current_user;
         $return_array = Array();
 
         $return_array['select'] = getSelectQueryForOpportunityPipeline();   
         $return_array['from'] = getFromQueryrForOpportunityPipeline();
-        $return_array['where'] = " where a.deleted = 0 order by ";
+        $return_array['where'] = " where a.deleted = 0 ";
         $return_array['order_by'] = ' sales_rep asc, a.name asc';
         $contains = false;
 
@@ -152,10 +153,39 @@ class OPR_OpportunityPipelineReport extends Basic
 
             if($contains)
             {
-                $return_array['where'] = ' where ' . $where;
-                $return_array['where'] .= ' order by ';
+                $return_array['where'] .= ' and ' . $where;
             }
         }
+
+        $securityGroupBean = BeanFactory::getBean('SecurityGroups');
+        $security_groups_assigned = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id, 'type_c' => 'Sales Group'), false, false);
+
+        if(!$current_user->is_admin)
+        {
+            if(!empty($security_groups_assigned))
+            {
+                $return_array['where'] .= " AND (u.id in (SELECT u.id
+                                    FROM securitygroups AS s
+                                    INNER JOIN securitygroups_cstm AS sc
+                                        ON sc.id_c = s.id
+                                    INNER JOIN securitygroups_users AS su
+                                        ON su.securitygroup_id = s.id
+                                        AND su.deleted = 0
+                                    INNER JOIN users AS u
+                                        ON u.id = su.user_id
+                                        AND u.deleted = 0
+                                    WHERE s.deleted = 0 
+                                        AND sc.type_c = 'Sales Group'
+                                        AND s.assigned_user_id = '{$current_user->id}')
+
+                                        OR u.id = '{$current_user->id}') ";
+            }
+            else{
+                $return_array['where'] .= " AND u.id = '{$current_user->id}' ";
+            }
+        }
+
+        $return_array['where'] .= ' order by ';
 
         $_SESSION['OpportunityPipelineReportQuery'] = $return_array;
 

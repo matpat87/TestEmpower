@@ -223,7 +223,11 @@
                         <tr>
                         <th style="width: 15% !important; text-align: center;" class="border-cell">Account</th>
                         <th style="width: 15% !important; text-align: center;" class="border-cell">Opportunity</th>
-                        <th style="width: 20%; padding: 0%;" class="border-cell">
+                        <th style="width: 10%">Status</th>
+                        <th style="width: 10%; text-align: center;" class="border-cell">Sales Rep</th>
+                        <th style="width: 10% text-align: center;" class="border-cell">Full-Year Value</th>
+                        <th style="width: 10%; text-align: center;" class="border-cell"><div style="text-align: center;">Initial</div><div>Order Date</div></th>
+                        <th style="width: 15%; padding: 0%;" class="border-cell">
                             <table style="width: 100%; padding: 0%;">
                                 <tr>
                                     <td style="text-align: center;">Sales Stage*</td>
@@ -247,13 +251,8 @@
                                     </td>
                                 </tr>
                             </table>
-                            
                         </th>
-                        <th style="width: 10%; text-align: center;" class="border-cell">Sales Rep</th>
-                        <th style="width: 10% text-align: center;" class="border-cell">Full-Year Value</th>
-                        <th style="width: 10%; text-align: center;" class="border-cell"><div style="text-align: center;">Initial</div><div>Order Date</div></th>
-
-                        <th style="width: 20%" class="border-cell"><font style="word-wrap:break-word;">Next Actions, Status - specific, measurable, dates</font></th>
+                        <th style="width: 15%" class="border-cell"><font style="word-wrap:break-word;">Next Actions, Status - specific, measurable, dates</font></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -276,6 +275,10 @@
                         <tr>
                             <td class="border-cell"><div style="margin-left: 5px;">{$rowData.ACCOUNT_C}</div></td>
                             <td class="border-cell"><div style="margin-left: 5px;"><a href="{$rowData.OPPORTUNITY_LINK}">{$rowData.OPPORTUNITY_NAME}</a></div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.STATUS}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.SALES_REP}</div></td>
+                            <td class="border-cell" style="text-align: right;"><div style="margin-right: 5px;">{$rowData.FULL_YEAR_AMOUNT}</div></td>
+                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.DATE_CLOSED}</div></td>
                             <td class="border-cell" style="padding: 0%;">
                                 <table class="list-rows-sales-stage" style="width: 100%; height: 100%; ">
 
@@ -290,10 +293,6 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.SALES_REP}</div></td>
-                            <td class="border-cell" style="text-align: right;"><div style="margin-right: 5px;">{$rowData.FULL_YEAR_AMOUNT}</div></td>
-                            <td class="border-cell"><div style="margin-left: 5px;">{$rowData.DATE_CLOSED}</div></td>
-                            
                             <td class="border-cell next-step"><div style="margin-left: 5px;">{$rowData.NEXT_STEP}</div></td>
                         </tr>
 
@@ -306,7 +305,7 @@
                                 <td colspan="4" class="border-cell" style="text-align: right; background-color: white;">
                                     <font style="margin-right: 10px; color: black; font-size: 12px;">SubTotal</font>
                                 </td>
-                                <td colspan="3" class="border-cell" style="text-align: left; background-color: white;">
+                                <td colspan="4" class="border-cell" style="text-align: left; background-color: white;">
                                     <font style="margin-left: 10px; font-weight: bold; color: black; font-size: 12px;">${$subTotal|number_format:2:".":","}</font>
                                 </td>
                             </tr>
@@ -318,7 +317,7 @@
                             <td colspan="4" class="border-cell" style="text-align: right; background-color: black;">
                                 <font style="margin-right: 10px; color: white; font-size: 14px;">CONSOLIDATED TOTAL</font>
                             </td>
-                            <td colspan="3" class="border-cell" style="text-align: left; background-color: black;">
+                            <td colspan="4" class="border-cell" style="text-align: left; background-color: black;">
                                 <font style="margin-left: 10px; font-weight: bold; color: white; font-size: 14px;">${$fullYearAmountTotal|number_format:2:".":","}</font>
                             </td>
                         </tr>

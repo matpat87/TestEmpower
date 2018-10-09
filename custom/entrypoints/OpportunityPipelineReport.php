@@ -30,6 +30,7 @@ while($row = $db->fetchByAssoc($result)){
 	$row['amount_value'] = $row['full_year_amount'];
 	$row['full_year_amount'] = convert_to_money($row['full_year_amount']);
 	$row['next_step'] = htmlspecialchars_decode($row['next_step']);
+	$row['status'] = $row['sales_stage'];
 	$row['sales_stage'] = get_dropdown_index("sales_stage_dom", $row['sales_stage']);
 
 	$data[] = $row;
@@ -68,12 +69,13 @@ $html .= '<tr>
                 <thead>
                     <tr>
 	                    <th rowspan="2" style="width: 15% !important; text-align: center; border: 1px solid black;">Account</th>
-	                    <th rowspan="2" style="width: 15% !important; text-align: center; border: 1px solid black;">Opportunity</th>
-	                    <th rowspan="1" colspan="10" style="width: 20%; border: 1px solid black; text-align: center;">Sales Stage*</th>
+	                    <th rowspan="2" style="width: 10% !important; text-align: center; border: 1px solid black;">Opportunity</th>
+	                    <th rowspan="2" style="width: 10% !important; text-align: center; border: 1px solid black;">Status</th>
 	                    <th rowspan="2" style="width: 10%; text-align: center; border: 1px solid black;">Sales Rep</th>
 	                    <th rowspan="2" style="width: 10%; text-align: center; border: 1px solid black;">Full-Year Value</th>
 	                    <th rowspan="2" style="width: 10%; text-align: center; border: 1px solid black;">Initial Order Date</th>
-	                    <th rowspan="2" style="width: 20%; border: 1px solid black; text-align: center;"><font style="word-wrap:break-word;">Next Actions, Status - specific, measurable, dates</font></th>
+	                    <th rowspan="1" colspan="10" style="width: 20%; border: 1px solid black; text-align: center;">Sales Stage*</th>
+	                    <th rowspan="2" style="width: 15%; border: 1px solid black; text-align: center;"><font style="word-wrap:break-word;">Next Actions, Status - specific, measurable, dates</font></th>
                     </tr>
                     <tr>
 	                    <th style="width: 2%; padding: 0%; border: 1px solid black; text-align: center;">1</th>
@@ -96,10 +98,10 @@ $html .= '<tr>
                 			if($salesPersonName != $rowData['sales_rep'])
                 			{
 		                		$html .= '<tr>
-		                           <td colspan="12" class="border-cell" style="text-align: right; background-color: white; border: 1px solid black;">
+		                           <td colspan="4" class="border-cell" style="text-align: right; background-color: white; border: 1px solid black;">
 		                                <font style="color: black;">SubTotal &nbsp;</font>
 		                            </td>
-		                            <td colspan="4" class="border-cell" style="text-align: left; background-color: white; border: 1px solid black;">
+		                            <td colspan="13" class="border-cell" style="text-align: left; background-color: white; border: 1px solid black;">
 		                                <font style="font-weight: bold; color: black;">'. convert_to_money($subTotal) .'</font>
 		                            </td>
 		                            </tr>';
@@ -111,6 +113,10 @@ $html .= '<tr>
                 			$html .= '<tr>';
                 			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['account_c'] .'</div></td>';
                 			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['opportunity_name'] .'</div></td>';
+                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['status'] .'</div></td>';
+                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['sales_rep'] .'</div></td>';
+                			$html .= '<td style="text-align: right; border: 1px solid black;"><div style="margin-right: 5px;">'. $rowData['full_year_amount'] .' &nbsp;</div></td>';
+                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['date_closed']  .'</div></td>';
 
                 			for($i = 1; $i <= 10; $i++)
                 			{
@@ -123,9 +129,6 @@ $html .= '<tr>
                 				}
                 			}
 
-                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['sales_rep'] .'</div></td>';
-                			$html .= '<td style="text-align: right; border: 1px solid black;"><div style="margin-right: 5px;">'. $rowData['full_year_amount'] .' &nbsp;</div></td>';
-                			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['date_closed']  .'</div></td>';
                 			$html .= '<td style="border: 1px solid black;"><div style="margin-left: 5px;">'. $rowData['next_step'] .'</div></td>';
                 			$html .= '</tr>';
 
@@ -135,10 +138,10 @@ $html .= '<tr>
             			if($subTotal > 0)
             			{
 	                		$html .= '<tr>
-	                           <td colspan="12" class="border-cell" style="text-align: right; background-color: white; border-right: 1px solid black; border: 1px solid black;">
+	                           <td colspan="4" class="border-cell" style="text-align: right; background-color: white; border-right: 1px solid black; border: 1px solid black;">
 	                                <font style="color: black;">SubTotal &nbsp;</font>
 	                            </td>
-	                            <td colspan="4" class="border-cell" style="text-align: left; background-color: white; border: 1px solid black;">
+	                            <td colspan="13" class="border-cell" style="text-align: left; background-color: white; border: 1px solid black;">
 	                                <font style="font-weight: bold; color: black;">'. convert_to_money($subTotal) .'</font>
 	                            </td>
 	                            </tr>';
@@ -148,10 +151,10 @@ $html .= '<tr>
             			}
 
                 		$html .= '<tr>
-                           <td colspan="12" class="border-cell" style="text-align: right; background-color: black; height:30px; line-height: 25px;">
+                           <td colspan="4" class="border-cell" style="text-align: right; background-color: black; height:30px; line-height: 25px;">
                                 <font style="color: white; font-size: 14px;">CONSOLIDATED TOTAL</font>
                             </td>
-                            <td colspan="4" class="border-cell" style="text-align: left; background-color: black; height:30px; line-height: 25px;">
+                            <td colspan="13" class="border-cell" style="text-align: left; background-color: black; height:30px; line-height: 25px;">
                                 <font style="font-weight: bold; color: white; font-size: 14px;">'. $fullYearAmountTotal .'</font>
                             </td>
                             </tr>';

@@ -22,10 +22,6 @@ $layout_defs["RE_Regulatory"]["subpanel_setup"]['activities'] = array (
     array (
       'widget_class' => 'SubPanelTopScheduleCallButton',
     ),
-    3 => 
-    array (
-      'widget_class' => 'SubPanelTopComposeEmailButton',
-    ),
   ),
   'collection_list' => 
   array (

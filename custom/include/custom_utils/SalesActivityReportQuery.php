@@ -93,6 +93,35 @@ FROM
     OR c.id = mc.contact_id 
 EOF;
 		}
+
+    public function retrieveActivityStatusList() {
+      global $app_list_strings;
+
+      $appointmentStatusList = $app_list_strings['meeting_status_dom'];
+      $callStatusList = $app_list_strings['call_status_dom'];
+      $taskStatusList = $app_list_strings['task_status_dom'];
+      $emailStatusList = [
+        'draft'  => 'Email - Draft',
+        'read'   => 'Email - Read',
+        'sent'   => 'Email - Sent',
+        'unread' => 'Email - Unread',
+      ];
+
+      foreach ($appointmentStatusList as $key => $value) {
+        $appointmentStatusList[$key] = 'Appointment / Call - '. $value;
+      }
+
+      foreach ($callStatusList as $key => $value) {
+        $callStatusList[$key] = 'Appointment / Call - '. $value;
+      }
+
+      foreach ($taskStatusList as $key => $value) {
+        $taskStatusList[$key] = 'Task - '. $value;
+      }
+
+      $activitiesStatusList = array_merge($appointmentStatusList, $callStatusList, $emailStatusList, $taskStatusList);
+      return $activitiesStatusList;
+    }
 	}
 
 ?>

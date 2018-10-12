@@ -79,7 +79,7 @@
 
         	if(!empty($security_groups_assigned))
         	{
-        		$or_clause .= " OR u.id = '{$current_user->id} ";
+        		$or_clause .= " OR u.id = '{$current_user->id}' ";
         	}
 
 			$query = "SELECT u.id,
@@ -95,7 +95,7 @@
                         AND u.deleted = 0
                     WHERE s.deleted = 0
                         AND sc.type_c = 'Sales Group'
-                        AND (s.assigned_user_id = '{$current_user->id}' {$or_clause}')
+                        AND (s.assigned_user_id = '{$current_user->id}' {$or_clause})
 					ORDER by name asc";
 		}
 

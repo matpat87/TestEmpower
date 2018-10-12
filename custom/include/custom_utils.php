@@ -60,6 +60,7 @@
 
 		$user_representatives = array();
 		$query = "";
+		$or_clause = "";
 
 		if($current_user->is_admin)
 		{
@@ -73,6 +74,14 @@
 		}
 		else
 		{
+			$securityGroupBean = BeanFactory::getBean('SecurityGroups');
+        	$security_groups_assigned = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id, 'type_c' => 'Sales Group'), false, false);
+
+        	if(!empty($security_groups_assigned))
+        	{
+        		$or_clause .= " OR u.id = '{$current_user->id} ";
+        	}
+
 			$query = "SELECT u.id,
 						CONCAT(u.first_name, ' ', u.last_name) AS name
                     FROM securitygroups AS s
@@ -86,7 +95,7 @@
                         AND u.deleted = 0
                     WHERE s.deleted = 0
                         AND sc.type_c = 'Sales Group'
-                        AND s.assigned_user_id = '{$current_user->id}'
+                        AND (s.assigned_user_id = '{$current_user->id}' {$or_clause}')
 					ORDER by name asc";
 		}
 

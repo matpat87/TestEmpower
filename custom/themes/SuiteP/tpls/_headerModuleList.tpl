@@ -474,7 +474,7 @@
             <ul id="toolbar" class="toolbar">
                 <li id="quickcreatetop" class="create dropdown nav navbar-nav quickcreatetop">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        QUICK ACTIONS<span class="suitepicon suitepicon-action-caret"></span>
+                        QUICK CREATE<span class="suitepicon suitepicon-action-caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="index.php?module=Opportunities&action=EditView&return_module=Opportunities&return_action=DetailView">Create Opportunity</a></li>
@@ -555,7 +555,7 @@
             <ul id="toolbar" class="toolbar">
                 <li id="quickcreatetop" class="create dropdown nav navbar-nav quickcreatetop">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        QUICK ACTIONS<span class="suitepicon suitepicon-action-caret"></span>
+                        QUICK CREATE<span class="suitepicon suitepicon-action-caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="index.php?module=Opportunities&action=EditView&return_module=Opportunities&return_action=DetailView">Create Opportunity</a></li>
@@ -637,7 +637,7 @@
             <ul id="toolbar" class="toolbar">
                 <li id="quickcreatetop" class="create dropdown nav navbar-nav quickcreatetop">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        QUICK ACTIONS<span class="suitepicon suitepicon-action-caret"></span>
+                        QUICK CREATE<span class="suitepicon suitepicon-action-caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="index.php?module=Opportunities&action=EditView&return_module=Opportunities&return_action=DetailView">Create Opportunity</a></li>

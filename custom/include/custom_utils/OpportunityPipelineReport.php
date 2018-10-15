@@ -106,15 +106,15 @@
 	{
 		global $db, $current_user;
 
-		$query = "FROM accounts AS a
-            INNER JOIN accounts_cstm AS ac
-                ON ac.id_c = a.id
-            INNER JOIN accounts_opportunities AS ao
-                ON ao.account_id = a.id
+		$query = " FROM opportunities AS o
+            LEFT JOIN accounts_opportunities AS ao
+                ON ao.opportunity_id = o.id
                 AND ao.deleted = 0
-            INNER JOIN opportunities AS o
-                ON o.id = ao.opportunity_id
-                AND o.deleted = 0
+			LEFT JOIN accounts AS a
+				ON a.id = ao.account_id
+				AND a.deleted = 0
+            LEFT JOIN accounts_cstm AS ac
+                ON ac.id_c = a.id
             INNER JOIN opportunities_cstm AS oc
                 ON oc.id_c = o.id
             INNER JOIN users AS u

@@ -91,7 +91,7 @@ class OPR_OpportunityPipelineReport extends Basic
 
         $return_array['select'] = getSelectQueryForOpportunityPipeline();   
         $return_array['from'] = getFromQueryrForOpportunityPipeline();
-        $return_array['where'] = " where a.deleted = 0 ";
+        $return_array['where'] = " where o.deleted = 0 ";
         $return_array['order_by'] = ' sales_rep asc, a.name asc';
         $contains = false;
 

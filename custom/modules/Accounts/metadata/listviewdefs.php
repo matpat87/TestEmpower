@@ -8,46 +8,59 @@ array (
     'link' => true,
     'default' => true,
   ),
-  'BILLING_ADDRESS_CITY' => 
+  'CLIENT_POTENTIAL_C' => 
+  array (
+    'type' => 'enum',
+    'default' => true,
+    'studio' => 'visible',
+    'label' => 'LBL_CLIENT_POTENTIAL',
+    'width' => '10%',
+  ),
+  'LAST_ACTIVITY_DATE_C' => 
+  array (
+    'type' => 'datetimecombo',
+    'default' => true,
+    'label' => 'LBL_LAST_ACTIVITY_DATE',
+    'width' => '10%',
+  ),
+  'SHIPPING_ADDRESS_CITY' => 
   array (
     'width' => '10%',
-    'label' => 'LBL_LIST_CITY',
+    'label' => 'LBL_SHIPPING_ADDRESS_CITY',
     'default' => true,
   ),
-  'BILLING_ADDRESS_COUNTRY' => 
+  'SHIPPING_ADDRESS_STATE' => 
   array (
+    'width' => '7%',
+    'label' => 'LBL_SHIPPING_ADDRESS_STATE',
+    'default' => true,
+  ),
+  'CR_HOLD_C' => 
+  array (
+    'type' => 'varchar',
+    'default' => true,
+    'label' => 'LBL_CR_HOLD',
     'width' => '10%',
-    'label' => 'LBL_BILLING_ADDRESS_COUNTRY',
-    'default' => true,
   ),
-  'PHONE_OFFICE' => 
+  'CURR_YEAR_MARGIN_C' => 
   array (
+    'type' => 'decimal',
+    'default' => true,
+    'label' => 'LBL_CURR_YEAR_MARGIN_C',
     'width' => '10%',
-    'label' => 'LBL_LIST_PHONE',
-    'default' => true,
   ),
-  'ASSIGNED_USER_NAME' => 
+  'LAST_SOLD_DT_C' => 
   array (
+    'type' => 'date',
+    'default' => true,
+    'label' => 'LBL_LAST_SOLD_DT',
     'width' => '10%',
-    'label' => 'LBL_LIST_ASSIGNED_USER',
-    'module' => 'Employees',
-    'id' => 'ASSIGNED_USER_ID',
-    'default' => true,
   ),
-  'EMAIL1' => 
+  'LAST_SALE_AMT_C' => 
   array (
-    'width' => '15%',
-    'label' => 'LBL_EMAIL_ADDRESS',
-    'sortable' => false,
-    'link' => true,
-    'customCode' => '{$EMAIL1_LINK}',
+    'type' => 'decimal',
     'default' => true,
-  ),
-  'ORDER_CYCLE_C' => 
-  array (
-    'type' => 'int',
-    'default' => true,
-    'label' => 'LBL_ORDER_CYCLE',
+    'label' => 'LBL_LAST_SALE_AMT',
     'width' => '10%',
   ),
   'CURR_MONTH_BUDGET_C' => 
@@ -58,6 +71,13 @@ array (
     'currency_format' => true,
     'width' => '10%',
   ),
+  'SLS_YTD_C' => 
+  array (
+    'type' => 'decimal',
+    'default' => true,
+    'label' => 'LBL_SLS_YTD',
+    'width' => '10%',
+  ),
   'YTD_BUDGET_C' => 
   array (
     'type' => 'currency',
@@ -66,12 +86,34 @@ array (
     'currency_format' => true,
     'width' => '10%',
   ),
-  'LAST_ACTIVITY_DATE_C' => 
+  'CUST_NUM_C' => 
   array (
-    'type' => 'datetimecombo',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_LAST_ACTIVITY_DATE',
+    'label' => 'LBL_CUST_NUM',
     'width' => '10%',
+  ),
+  'STATUS_C' => 
+  array (
+    'type' => 'enum',
+    'default' => true,
+    'studio' => 'visible',
+    'label' => 'LBL_STATUS',
+    'width' => '10%',
+  ),
+  'ACCOUNT_TYPE' => 
+  array (
+    'width' => '10%',
+    'label' => 'LBL_TYPE',
+    'default' => true,
+  ),
+  'ASSIGNED_USER_NAME' => 
+  array (
+    'width' => '10%',
+    'label' => 'LBL_LIST_ASSIGNED_USER',
+    'module' => 'Employees',
+    'id' => 'ASSIGNED_USER_ID',
+    'default' => true,
   ),
   'DATE_ENTERED' => 
   array (
@@ -79,10 +121,38 @@ array (
     'label' => 'LBL_DATE_ENTERED',
     'default' => true,
   ),
-  'ACCOUNT_TYPE' => 
+  'ORDER_CYCLE_C' => 
+  array (
+    'type' => 'int',
+    'default' => false,
+    'label' => 'LBL_ORDER_CYCLE',
+    'width' => '10%',
+  ),
+  'EMAIL1' => 
+  array (
+    'width' => '15%',
+    'label' => 'LBL_EMAIL_ADDRESS',
+    'sortable' => false,
+    'link' => true,
+    'customCode' => '{$EMAIL1_LINK}',
+    'default' => false,
+  ),
+  'PHONE_OFFICE' => 
   array (
     'width' => '10%',
-    'label' => 'LBL_TYPE',
+    'label' => 'LBL_LIST_PHONE',
+    'default' => false,
+  ),
+  'BILLING_ADDRESS_COUNTRY' => 
+  array (
+    'width' => '10%',
+    'label' => 'LBL_BILLING_ADDRESS_COUNTRY',
+    'default' => false,
+  ),
+  'BILLING_ADDRESS_CITY' => 
+  array (
+    'width' => '10%',
+    'label' => 'LBL_LIST_CITY',
     'default' => false,
   ),
   'INDUSTRY' => 
@@ -125,18 +195,6 @@ array (
   array (
     'width' => '15%',
     'label' => 'LBL_SHIPPING_ADDRESS_STREET',
-    'default' => false,
-  ),
-  'SHIPPING_ADDRESS_CITY' => 
-  array (
-    'width' => '10%',
-    'label' => 'LBL_SHIPPING_ADDRESS_CITY',
-    'default' => false,
-  ),
-  'SHIPPING_ADDRESS_STATE' => 
-  array (
-    'width' => '7%',
-    'label' => 'LBL_SHIPPING_ADDRESS_STATE',
     'default' => false,
   ),
   'SHIPPING_ADDRESS_POSTALCODE' => 

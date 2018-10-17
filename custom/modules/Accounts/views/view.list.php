@@ -16,13 +16,16 @@ class AccountsViewList extends ViewList
         formLetter::LVPopupHtml('Accounts');
 
         // Clear filters if accessed via Menu or "View Accounts"
-        if(isset($_REQUEST['parentTab']) || (isset($_REQUEST['return_module']) && isset($_REQUEST['return_action'])) ) {
+        if( (isset($_REQUEST['parentTab']) && !empty($_REQUEST['parentTab'])) || ((isset($_REQUEST['return_module']) && !empty($_REQUEST['return_module'])) && (isset($_REQUEST['return_action']) && !empty($_REQUEST['return_action']))) ) {
+
 	        $_REQUEST = [
 	        	'action' => 'index',
 			    'module' => 'Accounts',
 			    'searchFormTab' => 'advanced_search',
 			    'query' => 'true',
-			    'clear_query' => 'true'
+			    'clear_query' => 'true',
+                'orderBy' => 'NAME',
+                'sortOrder' => 'ASC'
 	        ];
         }
 

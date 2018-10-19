@@ -98,7 +98,7 @@ class SAR_SalesActivityReport extends Basic
         $contains = false;
 
         $securityGroupBean = BeanFactory::getBean('SecurityGroups');
-        $security_groups_assiged = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id), false, false);
+        $security_groups_assiged = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id, 'type_c' => 'Sales Group'), false, false);
 
         if(!$current_user->is_admin)
         {
@@ -132,8 +132,10 @@ class SAR_SalesActivityReport extends Basic
                 ON u.id = activity.assigned_user_id ";
         }
 
-        $from_query .= " INNER JOIN accounts as a
-                            ON a.assigned_user_id = u.id ";
+        $from_query .= " LEFT JOIN accounts as a
+                            ON a.assigned_user_id = u.id
+                                AND a.id = activity.parent_id
+                                AND activity.parent_type = 'Accounts' ";
 
         $return_array['from'] = $from_query;
 

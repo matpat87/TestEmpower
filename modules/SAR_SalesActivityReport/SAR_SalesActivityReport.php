@@ -166,6 +166,12 @@ class SAR_SalesActivityReport extends Basic
                 $contains = true;
             }
 
+            if(strpos($where, 'sar_salesactivityreport_cstm.status_c') !== false)
+            {
+                $where = string_replace_all('sar_salesactivityreport_cstm.status_c', "activity.status", $where);
+                $contains = true;
+            }
+
             if(strpos($where, 'sar_salesactivityreport_cstm.related_to_c IS NULL') !== false)
             {
                 $where = str_replace('sar_salesactivityreport_cstm.related_to_c IS NULL', "sar_salesactivityreport_cstm.related_to_c IS NULL OR 1=1", $where);

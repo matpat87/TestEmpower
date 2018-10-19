@@ -31,6 +31,14 @@ array (
         'width' => '10%',
         'name' => 'activity_type_c',
       ),
+      'status_c' => 
+      array (
+        'type' => 'enum',
+        'label' => 'LBL_STATUS',
+        'width' => '10%',
+        'default' => true,
+        'name' => 'status_c',
+      ),
       'date_from_c' => 
       array (
         'type' => 'date',

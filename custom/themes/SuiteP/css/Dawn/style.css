@@ -1,10 +1,53 @@
-	#searchDialog > .modal-dialog{
-		width: 85% !important;
-		height: 85% !important;
-		margin: auto;
-	}
+#searchDialog > .modal-dialog{
+	width: 85% !important;
+	height: 85% !important;
+	margin: auto;
+}
+
+.row-container
+{
+  white-space: nowrap !important;
+  max-width: 100%;
+  overflow: auto;
+  padding: 0px !important;
+}
+
+
+.modal-search .basic .col-xs-12
+{
+	width: auto !important;
+	min-width: 50%;
+}
+
+
+@media (max-width : 320px) {
+    .modal-search .col-xs-12{
+    	width: 100% !important;
+
+    }
+}
 
 .row-equal-height
 {
-	min-height: 140px;
+	min-height: 140px !important;
+}
+
+.row-field, .row-label{
+	float: none !important;
+	display: inline-block !important;
+}
+
+.advanced .col-xs-12
+{
+	float: none;
+}
+
+.col-advanced-search
+{
+	float: left;
+}
+
+.modal-search .submitButtonsAdvanced, .modal-search .submitButtons
+{
+	float: left !important;
 }

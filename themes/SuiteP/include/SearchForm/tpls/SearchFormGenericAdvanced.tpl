@@ -73,7 +73,7 @@
             assign=modVal
             }
 
-            <div class="col-xs-12">
+            <div class="col-xs-12 row-label">
                 {{if isset($colData.field.label)}}
                 <label for='{{$colData.field.name}}'>{sugar_translate label='{{$colData.field.label}}' module='{{$module}}'}</label>
                 {{elseif isset($fields[$colData.field.name])}}
@@ -89,7 +89,7 @@
     </div>
     {{/foreach}}
 
-    <div>
+    <div class="row">
         <div>
             &nbsp;
         </div>
@@ -108,11 +108,11 @@
                     <p>
                 </div>
             {/if}
-            <div class="" scope='row' width='10%' nowrap="nowrap">
+            <div class="row" scope='row'>
                 <div class="col-xs-12">
                     <label>{sugar_translate label='LBL_SAVE_SEARCH_AS' module='SavedSearch'}:</label>
                 </div>
-                <div class="form-item" width='30%' nowrap>
+                <div class="col-md-6">
                     <input type='text' name='saved_search_name'>
                     <input type='hidden' name='search_module' value=''>
                     <input type='hidden' name='saved_search_action' value=''>

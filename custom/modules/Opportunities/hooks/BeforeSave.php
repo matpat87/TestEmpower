@@ -9,7 +9,7 @@ class BeforeSave{
     **/
     function next_step_edited_before_save(&$bean, $event, $arguments)
     {
-        global $current_user;
+        global $current_user, $log;
         $next_step = "";
         $time_and_date = new TimeAndDateCustom();
         $current_datetime_timestamp = $time_and_date->get_timestamp($time_and_date->new_york_format);
@@ -24,6 +24,7 @@ class BeforeSave{
             }
 
             $bean->next_step = $next_step;
+            $bean->next_step_temp_c = "";
         }
     }
 }

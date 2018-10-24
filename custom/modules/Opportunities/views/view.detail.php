@@ -19,9 +19,10 @@ class CustomOpportunitiesViewDetail extends OpportunitiesViewDetail
 
     public function preDisplay()
     {
-        global $current_user, $app_strings, $sugar_config;
-        parent::preDisplay();
-        
+      $metadataFile = $this->getMetaDataFile();
+      $this->dv = new DetailView2();
+      $this->dv->ss =&  $this->ss;
+      $this->dv->setup($this->module, $this->bean, $metadataFile, 'include/DetailView/DetailView.tpl');
     }
 
     public function display()
@@ -32,6 +33,9 @@ class CustomOpportunitiesViewDetail extends OpportunitiesViewDetail
         $bean_amount = "$" . number_format($this->bean->amount, 2, '.', ',');
         $this->ss->assign('AMOUNT', $bean_amount);
       }
+
+      //SKY 10/24 - enables the next_step html to be shown in UI 
+      $this->bean->next_step = htmlspecialchars_decode($this->bean->next_step);
 
       parent::display();
 

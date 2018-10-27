@@ -49,9 +49,12 @@ class SugarWidgetSubPanelTopCreateNoteButton extends SugarWidgetSubPanelTopButto
 	{
 		global $app_strings;
 		global $currentModule;
-
+		
 		$this->module="Notes";
-		$this->subpanelDiv = "custom_notes_history"; // changed from history to custom_notes_history
+
+		// Change from history to custom_notes_history if not in acitivity modules array list
+		$activityModulesArray = array('Calls', 'Tasks', 'Meetings');
+		$this->subpanelDiv = (in_array($currentModule, $activityModulesArray)) ? 'history' : 'custom_notes_history';
 
 		// Create the additional form fields with real values if they were not passed in
 		if(empty($additionalFormFields) && $this->additional_form_fields)

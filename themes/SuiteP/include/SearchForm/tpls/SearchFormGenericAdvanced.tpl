@@ -96,7 +96,7 @@
     </div>
 
     {if $DISPLAY_SAVED_SEARCH}
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-advanced-search">
+        <div class="col-md-6">
             {if !$searchFormInPopup}
                 <div>
                     <a class='tabFormAdvLink' onhover href='javascript:toggleInlineSearch()'>
@@ -112,7 +112,7 @@
                 <div class="col-xs-12">
                     <label>{sugar_translate label='LBL_SAVE_SEARCH_AS' module='SavedSearch'}:</label>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-12">
                     <input type='text' name='saved_search_name'>
                     <input type='hidden' name='search_module' value=''>
                     <input type='hidden' name='saved_search_action' value=''>
@@ -138,7 +138,7 @@
                        type='button'>
             </div>
         </div>
-        <div>
+        <div class="col-md-6">
             <div colspan='6'>
                 <div{if !$searchFormInPopup} style='{$DISPLAYSS}'{/if} id='inlineSavedSearch'>
                     {$SAVED_SEARCH}

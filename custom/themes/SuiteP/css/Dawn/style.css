@@ -51,3 +51,13 @@
 {
 	float: left !important;
 }
+
+.modal-search .form-item
+{
+	width: 90%;
+}
+
+.search_form .view .col-xs-12 input[type="text"]
+{
+	width: 90%;
+}

@@ -12,19 +12,31 @@
   padding: 0px !important;
 }
 
-
-.modal-search .basic .col-xs-12
+.modal-search .form-item
 {
-	width: auto !important;
-	min-width: 50%;
+	width: 80%;
 }
 
+.search_form .view .col-xs-12 input[type="text"]
+{
+	width: 80%;
+}
 
 @media (max-width : 320px) {
     .modal-search .col-xs-12{
     	width: 100% !important;
 
     }
+
+    .modal-search .form-item
+	{
+		width: 100%;
+	}
+
+	.search_form .view .col-xs-12 input[type="text"]
+	{
+		width: 100%;
+	}
 }
 
 .row-equal-height
@@ -50,14 +62,4 @@
 .modal-search .submitButtonsAdvanced, .modal-search .submitButtons
 {
 	float: left !important;
-}
-
-.modal-search .form-item
-{
-	width: 90%;
-}
-
-.search_form .view .col-xs-12 input[type="text"]
-{
-	width: 90%;
 }

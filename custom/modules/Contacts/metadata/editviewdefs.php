@@ -65,26 +65,25 @@ array (
         array (
           0 => 
           array (
-            'name' => 'phone_work',
-            'comment' => 'Work phone number of the contact',
-            'label' => 'LBL_OFFICE_PHONE',
-          ),
-          1 => 
-          array (
-            'name' => 'phone_mobile',
-            'comment' => 'Mobile phone number of the contact',
-            'label' => 'LBL_MOBILE_PHONE',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
             'name' => 'title',
             'comment' => 'The title of the contact',
             'label' => 'LBL_TITLE',
           ),
-          1 => 'department',
+          1 => 
+          array (
+            'name' => 'phone_work',
+            'comment' => 'Work phone number of the contact',
+            'label' => 'LBL_OFFICE_PHONE',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 'department',
+          1 => 
+          array (
+            'name' => 'ext_c',
+            'label' => 'LBL_EXT',
+          ),
         ),
         3 => 
         array (
@@ -104,12 +103,22 @@ array (
           ),
           1 => 
           array (
+            'name' => 'phone_mobile',
+            'comment' => 'Mobile phone number of the contact',
+            'label' => 'LBL_MOBILE_PHONE',
+          ),
+        ),
+        4 => 
+        array (
+          0 => '',
+          1 => 
+          array (
             'name' => 'phone_fax',
             'comment' => 'Contact fax number',
             'label' => 'LBL_FAX_PHONE',
           ),
         ),
-        4 => 
+        5 => 
         array (
           0 => 
           array (
@@ -118,7 +127,7 @@ array (
             'label' => 'LBL_EMAIL_ADDRESS',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -148,7 +157,7 @@ array (
             ),
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -157,7 +166,7 @@ array (
           ),
           1 => '',
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (

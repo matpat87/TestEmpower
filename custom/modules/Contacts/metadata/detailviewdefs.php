@@ -178,16 +178,16 @@ array (
           ),
           1 => 
           array (
-            'name' => 'phone_work',
-            'label' => 'LBL_OFFICE_PHONE',
+            'name' => 'department',
+            'label' => 'LBL_DEPARTMENT',
           ),
         ),
         2 => 
         array (
           0 => 
           array (
-            'name' => 'department',
-            'label' => 'LBL_DEPARTMENT',
+            'name' => 'phone_work',
+            'label' => 'LBL_OFFICE_PHONE',
           ),
           1 => 
           array (
@@ -199,23 +199,23 @@ array (
         array (
           0 => 
           array (
-            'name' => 'account_name',
-            'label' => 'LBL_ACCOUNT_NAME',
-          ),
-          1 => 
-          array (
             'name' => 'phone_mobile',
             'label' => 'LBL_MOBILE_PHONE',
           ),
-        ),
-        4 => 
-        array (
-          0 => '',
           1 => 
           array (
             'name' => 'phone_fax',
             'label' => 'LBL_FAX_PHONE',
           ),
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'account_name',
+            'label' => 'LBL_ACCOUNT_NAME',
+          ),
+          1 => '',
         ),
         5 => 
         array (

@@ -140,6 +140,14 @@ class SAR_SalesActivityReport extends Basic
                                         WHERE deleted = 0
                                             and opportunity_id = o.id
                                         LIMIT 1
+                                    )
+                                    or a.id = (
+                                        SELECT bean_id
+                                        from emails_beans
+                                        where deleted = 0 
+                                            and email_id = activity.id
+                                            and bean_module = 'Accounts'
+                                            and activity.type = 'Email'
                                     ) ";
 
         $return_array['from'] = $from_query;

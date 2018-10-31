@@ -328,7 +328,7 @@
                 <tr style="background-color: white">
                     <td></td>
                     <td></td>
-                    <td colspan="5">{sugar_field parentFieldArray=$rowData vardef=$params displayType=ListView field='description'}</td>
+                    <td colspan="5" style="max-width: 300px !important; word-wrap:break-word;">{sugar_field parentFieldArray=$rowData vardef=$params displayType=ListView field='description'}</td>
                 </tr>
                 {/if}
 

@@ -65,18 +65,20 @@ FROM
     WHERE deleted = 0) 
     UNION
     (SELECT 
-      id,
-      NAME,
+      e.id,
+      e.NAME,
       'Email' AS 'type',
-      STATUS,
-      assigned_user_id,
-      date_entered AS 'date',
-      '' AS parent_id,
-      '' AS parent_type,
-      '' as description
-    FROM
-      emails 
-    WHERE deleted = 0)
+      e.STATUS,
+      e.assigned_user_id,
+      e.date_entered AS 'date',
+      e.parent_id,
+      e.parent_type,
+      et.description
+    FROM emails as e
+    INNER join emails_text as et
+      ON et.deleted = 0
+        AND et.email_id = e.id
+    WHERE e.deleted = 0)
   ) AS activity 
   LEFT JOIN leads AS l 
     ON l.id = activity.parent_id 

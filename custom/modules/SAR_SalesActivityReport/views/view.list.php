@@ -116,7 +116,7 @@ class CustomSAR_SalesActivityReportViewList extends ViewList
         $this->lv->select = true;
         $this->lv->mailMerge = false;
         $this->lv->email = false;
-        $this->lv->multiSelect = false;
+        $this->lv->multiSelect = true;
         $this->lv->quickViewLinks = false;
         $this->lv->mergeduplicates = false;
         $this->lv->contextMenus = false;
@@ -150,7 +150,7 @@ EOF;
                 var paginationActionButtonsHTML = paginationActionButtons.html();
                 var buttonHTML = '<ul class="clickMenu selectmenu columnsFilterLink SugarActionMenu listViewLinkButton listViewLinkButton_top export-pdf">' +
                     '<li class="sugar_action_button">' +
-                    '<a href="{$sales_activity_report_pdf_link}" class="parent-dropdown-action-handler custom-export-pdf-btn" id="export_listview_top" target="_blank">' +
+                    '<a href="javascript:void(0)" class="parent-dropdown-action-handler custom-export-pdf-btn disabled" id="export_listview_top">' +
                         '<span class="glyphicon glyphicon-export glyphicon-icon-cstm"></span>&nbsp;' +
                         '<span>Export PDF</span>' +
                     '</a></li></ul>';
@@ -161,14 +161,26 @@ EOF;
                 $('.columnsFilterLink:eq(0)').css('display', 'none');
                 $('.columnsFilterLink:eq(2)').css('display', 'none');
                 
+                /*
+                    li.sugar_action_button > .bootstrap-checkbox - Column checkbox
+                    ul#selectLinkTop li.sugar_action_button ul.subnav li > a.menuItem - Column header "Select This Page", "Select All", "Deselect All"
+                    .listview-checkbox - List View Checkbox
+                */
                 $("li.sugar_action_button > .bootstrap-checkbox, ul#selectLinkTop li.sugar_action_button ul.subnav li > a.menuItem, .listview-checkbox").on('click', function() {
 
                     setTimeout(function(){ 
-
-
-
+                        if($(".listview-checkbox:checked").length < 1) {
+                            $(".custom-export-pdf-btn")
+                            .addClass('disabled')
+                            .removeAttr('onclick');
+                        } else {
+                            $(".custom-export-pdf-btn")
+                            .removeClass('disabled')
+                            .attr('onclick', "return sListView.send_form(true, `SAR_SalesActivityReport`, `index.php?entryPoint=SalesActivityReport`,`Please select at least 1 record to proceed.`)");
+                        };
                     }, 10);
                 })
+
             </script>
 EOF;
         

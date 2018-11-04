@@ -1,5 +1,5 @@
 <?php
-// created: 2018-08-07 17:59:10
+// created: 2018-11-04 14:32:40
 $searchFields['Accounts'] = array (
   'name' => 
   array (
@@ -262,6 +262,57 @@ $searchFields['Accounts'] = array (
     'is_date_field' => true,
   ),
   'end_range_last_activity_date' => 
+  array (
+    'query_type' => 'default',
+    'enable_range_search' => true,
+    'is_date_field' => true,
+  ),
+  'range_ytd_budget_c' => 
+  array (
+    'query_type' => 'default',
+    'enable_range_search' => true,
+  ),
+  'start_range_ytd_budget_c' => 
+  array (
+    'query_type' => 'default',
+    'enable_range_search' => true,
+  ),
+  'end_range_ytd_budget_c' => 
+  array (
+    'query_type' => 'default',
+    'enable_range_search' => true,
+  ),
+  'range_last_activity_date_c' => 
+  array (
+    'query_type' => 'default',
+    'enable_range_search' => true,
+    'is_date_field' => true,
+  ),
+  'start_range_last_activity_date_c' => 
+  array (
+    'query_type' => 'default',
+    'enable_range_search' => true,
+    'is_date_field' => true,
+  ),
+  'end_range_last_activity_date_c' => 
+  array (
+    'query_type' => 'default',
+    'enable_range_search' => true,
+    'is_date_field' => true,
+  ),
+  'range_last_sold_dt_c' => 
+  array (
+    'query_type' => 'default',
+    'enable_range_search' => true,
+    'is_date_field' => true,
+  ),
+  'start_range_last_sold_dt_c' => 
+  array (
+    'query_type' => 'default',
+    'enable_range_search' => true,
+    'is_date_field' => true,
+  ),
+  'end_range_last_sold_dt_c' => 
   array (
     'query_type' => 'default',
     'enable_range_search' => true,

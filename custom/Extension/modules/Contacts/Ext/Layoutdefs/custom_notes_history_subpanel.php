@@ -1,5 +1,5 @@
 <?php
-	$layout_defs["Accounts"]["subpanel_setup"]['custom_notes_history'] = array (
+	$layout_defs["Contacts"]["subpanel_setup"]['custom_notes_history'] = array (
 		'order' => 20,
         'sort_order' => 'desc',
         'sort_by' => 'date_entered',

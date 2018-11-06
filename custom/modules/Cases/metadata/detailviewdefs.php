@@ -1,10 +1,20 @@
 <?php
 $viewdefs ['Cases'] = 
 array (
-  'EditView' => 
+  'DetailView' => 
   array (
     'templateMeta' => 
     array (
+      'form' => 
+      array (
+        'buttons' => 
+        array (
+          0 => 'EDIT',
+          1 => 'DUPLICATE',
+          2 => 'DELETE',
+          3 => 'FIND_DUPLICATES',
+        ),
+      ),
       'maxColumns' => '2',
       'widths' => 
       array (
@@ -19,43 +29,24 @@ array (
           'field' => '30',
         ),
       ),
-      'includes' => 
-      array (
-        0 => 
-        array (
-          'file' => 'include/javascript/bindWithDelay.js',
-        ),
-        1 => 
-        array (
-          'file' => 'modules/AOK_KnowledgeBase/AOK_KnowledgeBase_SuggestionBox.js',
-        ),
-        2 => 
-        array (
-          'file' => 'include/javascript/qtip/jquery.qtip.min.js',
-        ),
-      ),
-      'useTabs' => false,
+      'useTabs' => true,
       'tabDefs' => 
       array (
         'LBL_CASE_INFORMATION' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
         'LBL_EDITVIEW_PANEL1' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
         'LBL_EDITVIEW_PANEL5' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
-      ),
-      'form' => 
-      array (
-        'enctype' => 'multipart/form-data',
       ),
     ),
     'panels' => 
@@ -67,7 +58,7 @@ array (
           0 => 
           array (
             'name' => 'case_number',
-            'type' => 'readonly',
+            'label' => 'LBL_CASE_NUMBER',
           ),
           1 => 'account_name',
         ),
@@ -86,10 +77,7 @@ array (
         ),
         2 => 
         array (
-          0 => 
-          array (
-            'name' => 'description',
-          ),
+          0 => 'description',
         ),
         3 => 
         array (
@@ -112,7 +100,11 @@ array (
             'name' => 'close_date_c',
             'label' => 'LBL_CLOSE_DATE',
           ),
-          1 => 'assigned_user_name',
+          1 => 
+          array (
+            'name' => 'assigned_user_name',
+            'label' => 'LBL_ASSIGNED_TO',
+          ),
         ),
         5 => 
         array (

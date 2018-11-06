@@ -1,5 +1,5 @@
 <?php
-// created: 2018-11-05 17:39:44
+// created: 2018-11-06 16:46:44
 $mod_strings = array (
   'LNK_NEW_CASE' => 'Create Customer Issue',
   'LNK_CASE_LIST' => 'View Customer Issues',
@@ -22,8 +22,6 @@ $mod_strings = array (
   'LBL_DUE_DATE' => 'Due Date',
   'LBL_SOURCE' => 'Source',
   'LBL_CLOSE_DATE' => 'Close Date',
-  'LBL_SALES_REP_USER_ID' => 'Sales Rep (related User ID)',
-  'LBL_SALES_REP' => 'Sales Rep',
   'LBL_QUALITY_ISSUE' => 'Quality Issue',
   'LBL_CASE_INFORMATION' => 'GENERAL',
   'LBL_CUSTOMER_NAME' => 'Customer Name',
@@ -31,8 +29,8 @@ $mod_strings = array (
   'LBL_EDITVIEW_PANEL2' => 'HEADER',
   'LBL_DEPARTMENT' => 'Department',
   'LBL_ASSIGNED_TO_ID' => 'Assigned to:',
-  'LBL_ASSIGNED_TO_NAME' => 'Assigned to',
-  'LBL_ASSIGNED_TO' => 'Assigned t',
+  'LBL_ASSIGNED_TO_NAME' => 'Sales Rep',
+  'LBL_ASSIGNED_TO' => 'Sales Rep',
   'LBL_EDITVIEW_PANEL3' => 'CUSTOMER PROCESS',
   'LBL_ASSIGNED_TO_PERSON_USER_ID' => 'Assigned to Person (related User ID)',
   'LBL_ASSIGNED_TO_PERSON' => 'Assigned to Person',

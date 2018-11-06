@@ -103,9 +103,11 @@ class GlobalAfterSaveHooks{
     }
 
     function parentBeanUpdateLastActivityDate($module, $id) {
-        $parentBean = BeanFactory::getBean($module, $id);
-        $parentBean->last_activity_date_c = date('Y-m-d H:i:s');
-        $parentBean->save();
+        if(!empty($module) && !empty($id)) {
+            $parentBean = BeanFactory::getBean($module, $id);
+            $parentBean->last_activity_date_c = date('Y-m-d H:i:s');
+            $parentBean->save();
+        }
     }
 }
 

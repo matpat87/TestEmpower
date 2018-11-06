@@ -52,3 +52,22 @@ $GLOBALS['app_list_strings']['status_list']=array (
   'Responded' => 'Responded',
   'Closed' => 'Closed',
 );
+$GLOBALS['app_list_strings']['source_list']=array (
+  '' => '',
+  'CustomerComplaint' => 'Customer Complaint',
+  'InternalAudit' => 'Internal Audit',
+  'InternalObservation' => 'Internal Observation',
+  'Other' => 'Other',
+);
+$GLOBALS['app_list_strings']['department_list']=array (
+  '' => '',
+  'CustomerService' => 'Customer Service',
+  'Accounting' => 'Accounting',
+  'Manufacturing' => 'Manufacturing',
+  'Purchasing' => 'Purchasing',
+  'Lab' => 'Lab',
+  'QualityControl' => 'Quality Control',
+  'Shipping' => 'Shipping',
+  'Receiving' => 'Receiving',
+  'InventoryControl' => 'Inventory Control',
+);

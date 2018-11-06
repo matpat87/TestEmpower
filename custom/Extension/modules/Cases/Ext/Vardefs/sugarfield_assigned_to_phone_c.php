@@ -1,0 +1,26 @@
+<?php
+	$dictionary['Case']['fields']['assigned_to_phone_c'] = array (
+		'inline_edit' => '1',
+		'labelValue' => 'Assigned to Phone',
+		'required' => false,
+		'source' => 'custom_fields',
+		'name' => 'assigned_to_phone_c',
+		'vname' => 'LBL_ASSIGNED_TO_PHONE',
+		'type' => 'varchar',
+		'massupdate' => '0',
+		'default' => '',
+		'no_default' => false,
+		'comments' => '',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'disabled',
+		'duplicate_merge_dom_value' => '0',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'len' => '50',
+		'size' => '20',
+		'id' => 'Casesassigned_to_phone_c',
+	);
+?>

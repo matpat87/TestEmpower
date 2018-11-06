@@ -1,0 +1,28 @@
+<?php
+	$dictionary['Case']['fields']['lbs_matl_to_replace_c'] = array (
+		'inline_edit' => '1',
+		'labelValue' => 'LBS Matl to Replace',
+		'required' => false,
+		'source' => 'custom_fields',
+		'name' => 'lbs_matl_to_replace_c',
+		'vname' => 'LBL_LBS_MATL_TO_REPLACE',
+		'type' => 'decimal',
+		'massupdate' => '0',
+		'default' => '',
+		'no_default' => false,
+		'comments' => '',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'disabled',
+		'duplicate_merge_dom_value' => '0',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'len' => '18',
+		'size' => '20',
+		'enable_range_search' => false,
+		'precision' => '2',
+		'id' => 'Caseslbs_matl_to_replace_c',
+	);
+?>

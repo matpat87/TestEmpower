@@ -1,0 +1,26 @@
+<?php
+	$dictionary['Case']['fields']['number_of_cavities_c'] = array (
+		'inline_edit' => '1',
+		'labelValue' => 'No. of Cavities',
+		'required' => false,
+		'source' => 'custom_fields',
+		'name' => 'number_of_cavities_c',
+		'vname' => 'LBL_NUMBER_OF_CAVITIES',
+		'type' => 'varchar',
+		'massupdate' => '0',
+		'default' => '',
+		'no_default' => false,
+		'comments' => '',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'disabled',
+		'duplicate_merge_dom_value' => '0',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'len' => '255',
+		'size' => '20',
+		'id' => 'Casesnumber_of_cavities_c',
+	);
+?>

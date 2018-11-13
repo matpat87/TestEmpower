@@ -6,7 +6,7 @@
 		'type' => 'parent_type',
 		'dbType' => 'varchar',
 		'group' => 'parent_name',
-		'options' => 'parent_type_display',
+		'options' => 'documents_parent_type_display',
 		'required' => false,
 		'len' => '255',
 		'source' => 'non-db',
@@ -22,7 +22,7 @@
 		'type' => 'parent',
 		'group' => 'parent_name',
 		'source' => 'non-db',
-		'options' => 'parent_type_display',
+		'options' => 'documents_parent_type_display',
 		'required' => true,
 	);
 

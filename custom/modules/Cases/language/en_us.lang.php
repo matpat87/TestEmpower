@@ -1,5 +1,5 @@
 <?php
-// created: 2018-11-06 16:46:44
+// created: 2018-11-19 13:35:33
 $mod_strings = array (
   'LNK_NEW_CASE' => 'Create Customer Issue',
   'LNK_CASE_LIST' => 'View Customer Issues',
@@ -24,7 +24,7 @@ $mod_strings = array (
   'LBL_CLOSE_DATE' => 'Close Date',
   'LBL_QUALITY_ISSUE' => 'Quality Issue',
   'LBL_CASE_INFORMATION' => 'GENERAL',
-  'LBL_CUSTOMER_NAME' => 'Customer Name',
+  'LBL_CUSTOMER_NAME' => 'Contact Name',
   'LBL_EDITVIEW_PANEL1' => 'PRODUCT',
   'LBL_EDITVIEW_PANEL2' => 'HEADER',
   'LBL_DEPARTMENT' => 'Department',

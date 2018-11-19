@@ -1,7 +1,7 @@
 <?php
 	$dictionary['Case']['fields']['customer_name_c'] = array (
 		'inline_edit' => '1',
-		'labelValue' => 'Customer Name',
+		'labelValue' => 'Contact Name',
 		'required' => false,
 		'source' => 'custom_fields',
 		'name' => 'customer_name_c',

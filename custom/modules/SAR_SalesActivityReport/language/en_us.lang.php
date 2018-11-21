@@ -10,7 +10,7 @@ $mod_strings = array (
   'LBL_ASSIGNED_TO_NAME' => 'Assigned To',
   'LBL_ACCOUNT_NAME' => 'Account',
   'LBL_NAME' => 'Subject',
-  'LNK_LIST' => 'View CRM Reports',
+  'LNK_LIST' => 'View Empower Reports',
   'LBL_ASSIGNED_USER' => 'Assigned User',
   'LBL_ASSIGNED_ACCOUNT' => 'Account',
 );

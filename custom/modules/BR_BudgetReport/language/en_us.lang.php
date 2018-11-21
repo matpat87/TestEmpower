@@ -16,5 +16,5 @@ $mod_strings = array (
   'LBL_NOVEMBER_NON_DB' => 'Nov $',
   'LBL_DECEMBER_NON_DB' => ' Dec $',
   'LBL_TOTAL_BUDGET_NON_DB' => 'Total Budget',
-  'LNK_LIST' => 'View CRM Reports',
+  'LNK_LIST' => 'View Empower Reports',
 );

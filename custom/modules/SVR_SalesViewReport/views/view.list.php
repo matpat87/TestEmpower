@@ -43,6 +43,20 @@ require_once('include/MVC/View/views/view.list.php');
 class CustomSVR_SalesViewReportViewList extends ViewList
 {
 
+    function preDisplay() {
+        global $current_user;
+
+        parent::preDisplay();
+
+        $url = file_get_contents("http://corp01db/Reports/report/Sales%20Reports/SalesView?ReportType=2&UserBased=Y&rc:Toolbar=false&Usr_Id=" . $current_user->user_name);
+        echo '<div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        '.$url.'
+                    </div>
+                </div>
+              </div>';
+    }
     function CustomSVR_SalesViewReportViewList()
     {
         parent::ViewList();
@@ -50,8 +64,6 @@ class CustomSVR_SalesViewReportViewList extends ViewList
 
     function display()
     {
-        global $current_user;
-
         $this->lv->multiSelect = false;
         $this->lv->delete = false;
         $this->lv->select = false;
@@ -60,17 +72,6 @@ class CustomSVR_SalesViewReportViewList extends ViewList
         $this->lv->email = false;
         $this->lv->quickViewLinks = false;
 
-        parent::display();
-        
-        $url = "http://corp01db/Reports/report/Sales%20Reports/SalesView?ReportType=2&UserBased=Y&rc:Toolbar=false&Usr_Id=" . $current_user->user_name;
-
-        echo 
-        '<script>
-            $(document).ready(function(){
-                $(".list").append(`<iframe src="'.$url.'" style="height:100vh;width:100%;"></iframe>`)
-            })
-        </script>';
         echo '<style type="text/css">.list .filterContainer {display: none;} .list p.msg {display:none;} .view {background: transparent;} .paginationTable {display: none;} #MassAssign_SecurityGroups {display: none;}</style>';
-
-    } 
+    }
 }

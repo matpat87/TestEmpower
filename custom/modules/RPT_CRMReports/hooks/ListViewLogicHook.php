@@ -30,7 +30,7 @@ class ListViewLogicHook {
     	//change URL if chromacolors
     	if(strpos($_SERVER['SERVER_NAME'], 'chromacolors') !== false)
     	{
-    		$site_url = string_replace_all("carolinacolor", "chromacolors", $_SERVER['SERVER_NAME']);
+    		$site_url = string_replace_all("carolinacolor", "chromacolors", $site_url);
     	}
 
         $url = $site_url . '/index.php?action=index&' . $array_link;

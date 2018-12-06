@@ -1,5 +1,5 @@
 <?php
-// created: 2018-06-12 07:41:09
+// created: 2018-12-06 15:14:31
 $mod_strings = array (
   'LBL_BUSINESSUNIT' => 'Business Unit',
   'LBL_DIVISION' => 'Division',
@@ -9,4 +9,6 @@ $mod_strings = array (
   'LBL_MARITAL_STATUS' => 'Marital Status',
   'LBL_SALESREGION' => 'Sales Region',
   'LBL_SITES' => 'Sites',
+  'LBL_SITE' => 'Site',
+  'LBL_ROLE' => 'Role',
 );

@@ -58,13 +58,9 @@ $layout_defs["RE_Regulatory"]["subpanel_setup"]['history'] = array (
   array (
     0 => 
     array (
-      'widget_class' => 'SubPanelTopCreateNoteButton',
-    ),
-    1 => 
-    array (
       'widget_class' => 'SubPanelTopArchiveEmailButton',
     ),
-    2 => 
+    1 => 
     array (
       'widget_class' => 'SubPanelTopSummaryButton',
     ),
@@ -88,12 +84,6 @@ $layout_defs["RE_Regulatory"]["subpanel_setup"]['history'] = array (
       'module' => 'Calls',
       'subpanel_name' => 'ForHistory',
       'get_subpanel_data' => 're_regulatory_activities_1_calls',
-    ),
-    'notes' => 
-    array (
-      'module' => 'Notes',
-      'subpanel_name' => 'ForHistory',
-      'get_subpanel_data' => 're_regulatory_activities_1_notes',
     ),
     'emails' => 
     array (

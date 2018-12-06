@@ -120,6 +120,11 @@ array (
         array (
           0 => 
           array (
+            'name' => 'parent_name',
+            'label' => 'LBL_LIST_RELATED_TO',
+          ),
+          1 => 
+          array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO_NAME',
           ),

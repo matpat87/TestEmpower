@@ -31,4 +31,5 @@ $sugar_config['addAjaxBannedModules'][3] = 'SAR_SalesActivityReport';
 $sugar_config['addAjaxBannedModules'][4] = 'BR_BudgetReport';
 $sugar_config['addAjaxBannedModules'][5] = 'RE_Regulatory';
 $sugar_config['aos']['lineItems']['enableGroups'] = false;
+$sugar_config['aod']['enable_aod'] = false;
 /***CONFIGURATOR***/

@@ -29,7 +29,12 @@ class AccountsViewList extends ViewList
 	        ];
         }
 
-        // Set default filter to logged user (if not admin) when accessing accounts list view
+        // Set filter of both admin and regular users to show 'Active' accounts by default
+        if(!isset($_REQUEST['status_c_advanced'])) {
+            $_REQUEST['status_c_advanced'][0] = 'Active';
+        }
+
+        // Set filter of regular users to display their assigned accounts by default
         if(!$current_user->isAdmin() && !isset($_REQUEST['assigned_user_id_advanced'])) {
         	$_REQUEST['searchFormTab'] = "advanced_search";
     		$_REQUEST['query'] = "true";

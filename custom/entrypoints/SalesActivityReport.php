@@ -15,19 +15,23 @@
 		$salesActivityReportQuery = $_SESSION['SalesActivityReportQuery'];
 	}
 
-	$activitiesStringIDs = $_REQUEST['uid'];
-	$activityArrayIDs = explode(',', $activitiesStringIDs);
-	$stringActivityIDs = implode(', ', $activityArrayIDs);
+	$activitiesStringIDs = isset($_REQUEST['uid']) ? $_REQUEST['uid'] : '';
 
-	$newArray = [];
-	foreach ($activityArrayIDs as $key => $value) {
-       array_push($newArray, "'" . $value . "'");
-    }
+	if($activitiesStringIDs) {
+		$activityArrayIDs = explode(',', $activitiesStringIDs);
+		$stringActivityIDs = implode(', ', $activityArrayIDs);
 
-    $newString = implode(', ', $newArray);
-    $andOrWhere = trim($salesActivityReportQuery['where']) ? 'AND' : 'WHERE';
+		$newArray = [];
+		foreach ($activityArrayIDs as $key => $value) {
+	       array_push($newArray, "'" . $value . "'");
+	    }
 
-	$salesActivityReportQuery['where'] .= $andOrWhere . ' (activity.id IN ('.$newString.')) ';
+	    $newString = implode(', ', $newArray);
+	    $andOrWhere = trim($salesActivityReportQuery['where']) ? 'AND' : 'WHERE';
+
+		$salesActivityReportQuery['where'] .= $andOrWhere . ' (activity.id IN ('.$newString.')) ';
+	}
+
 	$query = $salesActivityReportQuery['select'] . $salesActivityReportQuery['from'] . $salesActivityReportQuery['where'] . $salesActivityReportQuery['order_by'];
 
 	$db = DBManagerFactory::getInstance();
@@ -142,5 +146,5 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('SalesActivityReport' . date('Y-m-d') . strtotime(date('h:i:s')) . '.pdf', 'I');
+$pdf->Output('SalesActivityReport' . date('Y-m-d') . strtotime(date('h:i:s')) . '.pdf', 'D');
 ?>

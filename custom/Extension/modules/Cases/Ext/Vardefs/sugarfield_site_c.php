@@ -2,7 +2,7 @@
 	$dictionary['Case']['fields']['site_c'] = array (
 		'inline_edit' => '1',
 		'labelValue' => 'Site',
-		'required' => false,
+		'required' => true,
 		'source' => 'custom_fields',
 		'name' => 'site_c',
 		'vname' => 'LBL_SITE',

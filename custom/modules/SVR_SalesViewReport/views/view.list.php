@@ -48,7 +48,8 @@ class CustomSVR_SalesViewReportViewList extends ViewList
 
         parent::preDisplay();
 
-        $url = file_get_contents("http://corp01db.corp.local/Reports/report/Sales%20Reports/SalesView?ReportType=2&UserBased=Y&rc:Toolbar=false&Usr_Id=" . $current_user->user_name);
+        $lowercasedUsername = strtolower($current_user->user_name);
+        $url = file_get_contents("http://corp01db.corp.local/Reports/report/Sales%20Reports/SalesView?ReportType=2&UserBased=Y&rc:Toolbar=false&Usr_Id=" . $lowercasedUsername);
         echo '<div class="container">
                 <div class="row">
                     <div class="col-md-12">

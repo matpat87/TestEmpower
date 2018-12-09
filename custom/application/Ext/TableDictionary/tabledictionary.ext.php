@@ -57,6 +57,11 @@ include('custom/metadata/mkt_markets_prospectlists_1MetaData.php');
 
  
  //WARNING: The contents of this file are auto-generated
+include('custom/metadata/users_cases_1MetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
 include('custom/metadata/ehs_ehs_documents_1MetaData.php');
 
 

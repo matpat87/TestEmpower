@@ -158,9 +158,7 @@ array (
         array (
           0 => 
           array (
-            'name' => 'assigned_to_person_c',
-            'studio' => 'visible',
-            'label' => 'LBL_ASSIGNED_TO_PERSON',
+            'name' => 'users_cases_1_name',
           ),
           1 => 
           array (
@@ -413,7 +411,6 @@ array (
             'name' => 'credit_amount_c',
             'label' => 'LBL_CREDIT_AMOUNT',
           ),
-          1 => '',
         ),
         20 => 
         array (

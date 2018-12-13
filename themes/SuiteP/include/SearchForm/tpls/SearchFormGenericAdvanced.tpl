@@ -60,7 +60,7 @@
 <div class="row col-xs-12">
     {{assign var='accesskeycount' value=0}}  {{assign var='ACCKEY' value=''}}
     {{foreach name=colIteration from=$formData key=col item=colData}}
-    <div class="col-lg-6">
+    <div class="col-lg-4">
 
             {{math assign="accesskeycount" equation="$accesskeycount + 1"}}
             {{if $accesskeycount==1}} {{assign var='ACCKEY' value=$APP.LBL_FIRST_INPUT_SEARCH_KEY}} {{else}} {{assign var='ACCKEY' value=''}} {{/if}}

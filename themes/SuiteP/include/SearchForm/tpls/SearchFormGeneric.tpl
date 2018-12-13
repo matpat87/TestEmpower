@@ -76,7 +76,7 @@
           right=$basicMaxColumns
           assign=modVal
     }
-	<div class="col-md-6 row-equal-height">
+	<div class="col-lg-4 row-equal-height">
 		<div class="col-xs-12">
 			{{if isset($colData.field.label)}}
 			<label for='{{$colData.field.name}}' >{sugar_translate label='{{$colData.field.label}}' module='{{$module}}'}</label>

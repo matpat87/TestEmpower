@@ -90,6 +90,30 @@ class CasesViewEdit extends ViewEdit {
                     $('#addFileButton').closest('.edit-view-row-item').hide();
                     $('#case_update_form_label').closest('.edit-view-row-item').hide();
                     tinyMCE.execCommand('mceAddControl', false, document.getElementById('description'));
+
+                    $("select[name='site_c']").on('change',function(event) {
+                        event.preventDefault();
+                        var selectedSite = $(this).val();
+
+                        $.ajax({
+                            url: "index.php?entryPoint=retrieveCaseSiteLabManagers&to_pdf=1",
+                            data: {
+                                selectedSite: selectedSite
+                            },
+                            success: function(result){
+                                var jsonResult = JSON.parse(result);
+
+                                if(jsonResult) {
+                                    $("#users_cases_1_name").val(jsonResult.first_name + ' ' + jsonResult.last_name);
+                                    $("#users_cases_1users_ida").val(jsonResult.id);
+                                } else {
+                                    $("#users_cases_1_name").val('');
+                                    $("#users_cases_1users_ida").val('');
+                                }
+                            }
+                        });
+                    })
+                    
                 });
             </script>
         <?php

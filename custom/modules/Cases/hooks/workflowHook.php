@@ -24,8 +24,10 @@
 
 			$recordURL = $sugar_config['site_url'] . '/index.php?module=Cases&action=DetailView&record=' . $bean->id;
 
+			$mail->Subject .= $sugar_config['isQA'] ? '[QA] ' : '';
+
 			if(!$bean->fetched_row['id']) {
-				$mail->Subject = 'Customer Issue - New Record';
+				$mail->Subject .= 'Customer Issue - New Record';
 				$customBodyContent = 'A new customer issue has been created and is assigned to '.$newAssignedUserName.'.';
 			} else {
 				
@@ -37,12 +39,12 @@
 
 				if($newAssignedTo != $currentAssignedTo && $newStatus == $currentStatus) {
 
-					$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Assigned User Update';
+					$mail->Subject .= 'Customer Issue #' .$bean->case_number. ' - Assigned User Update';
 					$customBodyContent = 'This record has now been assigned to '.$newAssignedUserName.' from '.$previousAssignedUserName.'.';
 					
 				} else if($newAssignedTo == $currentAssignedTo && $newStatus != $currentStatus) {
 
-					$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Status Update';
+					$mail->Subject .= 'Customer Issue #' .$bean->case_number. ' - Status Update';
 					$customBodyContent = 'The status of this record is now set to '.$newStatus.' from '.$currentStatus.'.';
 
 					if($newStatus == 'Responded') {
@@ -50,13 +52,13 @@
 						$siteLabManager = $this->retrieveSiteLabManager($bean->site_c, $bean->users_cases_1users_ida);
 						$siteLabManagerName = $siteLabManager->first_name . ' ' . $siteLabManager->last_name;
 						
-						$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Assigned User and Status Update';
+						$mail->Subject .= 'Customer Issue #' .$bean->case_number. ' - Assigned User and Status Update';
 						$customBodyContent = 'This record has now been assigned to '.$siteLabManagerName.' from '.$previousAssignedUserName.'.
 											  <br>
 											  The status of this record is now set to '.$newStatus.' from '.$currentStatus.'.';
 					}
 				} else if($newAssignedTo != $currentAssignedTo && $newStatus != $currentStatus) {
-					$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Assigned User and Status Update';
+					$mail->Subject .= 'Customer Issue #' .$bean->case_number. ' - Assigned User and Status Update';
 					$customBodyContent = 'This record has now been assigned to '.$newAssignedUserName.' from '.$previousAssignedUserName.'.
 										  <br>
 										  The status of this record is now set to '.$newStatus.' from '.$currentStatus.'.';
@@ -79,11 +81,12 @@
 
 			$mail->isHTML(true);
 			$mail->prepForOutbound();
-			$this->attachEmailRecipients($mail);
+			$recipientIDs = $this->retrieveEmailRecipients($bean);
+			$this->attachEmailRecipients($recipientIDs, $mail);			
 			$mail->Send();
 		}
 
-		public function retrieveSiteLabManager($site, $assigendUserID) {
+		public function retrieveSiteLabManager($site, $assignedUserID) {
 			global $db;
 
 			$sql = "SELECT id, first_name, last_name
@@ -94,7 +97,7 @@
 						AND deleted = 0
 						AND status = 'Active'
 						AND role_c LIKE '%^LabManager^%'
-						AND users.id = '".$assigendUserID."'
+						AND users.id = '".$assignedUserID."'
 					ORDER BY id ASC
 					LIMIT 1";
 
@@ -104,14 +107,48 @@
 			return $row;
 		}
 
-		public function attachEmailRecipients($mail) {
+		public function retrieveEmailRecipients($bean) {
 			global $db;
 
-			$recipientIDArray = [
-				'9f3c1966-b765-1858-ac55-5b39996f3389'
-			];
+			$sql = "SELECT users.id
+					FROM users 
+					LEFT JOIN users_cstm
+						ON users.id = users_cstm.id_c
+					WHERE (
+						-- Assigned To
+					    (users.id = '".$bean->users_cases_1users_ida."') OR
+						-- Site Lab Manager
+						(users_cstm.site_c = '".$bean->site_c."' AND users_cstm.role_c LIKE '%^LabManager^%') OR
+						-- Paul Legnetti
+						(users.first_name = 'Paul' and users.last_name = 'Legnetti') OR
+					    -- Sales Person
+					    (users.id = '".$bean->assigned_user_id."') OR
+						-- Sales Manager of Sales Person
+					    (users.id = (SELECT reports_to_id AS id FROM users WHERE users.id = '".$bean->assigned_user_id."' LIMIT 1)) OR
+					    -- Customer Service Manager
+					    (users_cstm.site_c = '".$bean->site_c."' AND users_cstm.role_c LIKE '%^CustomerServiceManager^%')
+					)
+						AND users.status = 'Active'
+						AND users.deleted = 0;";
 
-			$recipientIDs = implode(', ', $recipientIDArray);
+			$result = $db->query($sql);
+
+			$emailRecipientsArray = array();
+			
+			$recipientIDs = '';
+
+			while($row = $db->fetchByAssoc($result) )
+			{
+				array_push($emailRecipientsArray, "'" . $row['id'] . "'");
+			}
+
+			$recipientIDs = implode(', ', $emailRecipientsArray);
+
+			return $recipientIDs;
+		}
+
+		public function attachEmailRecipients($recipientIDs, $mail) {
+			global $db;
 
 			$sql = "SELECT email_address 
 					FROM email_addresses
@@ -121,15 +158,14 @@
 						ON email_addr_bean_rel.bean_id = users.id
 					WHERE email_addr_bean_rel.bean_module = 'Users'
 						AND users.status = 'Active'
-						AND users.id IN ('".$recipientIDs."')
+						AND users.id IN (".$recipientIDs.")
 						AND users.deleted = 0
 						AND email_addresses.deleted = 0
 						AND email_addr_bean_rel.deleted = 0;";
 
 			$result = $db->query($sql);
 
-			while($row = $GLOBALS['db']->fetchByAssoc($result) )
-			{
+			while($row = $db->fetchByAssoc($result)) {
 				$mail->AddAddress($row['email_address']);
 			}
 

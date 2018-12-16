@@ -24,7 +24,7 @@
 
 			$recordURL = $sugar_config['site_url'] . '/index.php?module=Cases&action=DetailView&record=' . $bean->id;
 
-			$mail->Subject .= $sugar_config['isQA'] ? '[QA] ' : '';
+			$mail->Subject = $sugar_config['isQA'] == true ? '[QA] ' : '';
 
 			if(!$bean->fetched_row['id']) {
 				$mail->Subject .= 'Customer Issue - New Record';

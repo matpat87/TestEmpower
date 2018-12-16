@@ -32,4 +32,5 @@ $sugar_config['addAjaxBannedModules'][4] = 'BR_BudgetReport';
 $sugar_config['addAjaxBannedModules'][5] = 'RE_Regulatory';
 $sugar_config['aos']['lineItems']['enableGroups'] = false;
 $sugar_config['aod']['enable_aod'] = false;
+$sugar_config['isQA'] = true; // Set to false if Prod and true for QA
 /***CONFIGURATOR***/

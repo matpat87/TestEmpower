@@ -72,8 +72,6 @@ abstract class Rsa extends BaseSigner
     /**
      * Returns the algorithm name
      *
-     * @internal
-     *
      * @return string
      */
     abstract public function getAlgorithm();

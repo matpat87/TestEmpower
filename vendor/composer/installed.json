@@ -1,5 +1,55 @@
 [
     {
+        "name": "chartblocks/php-ssrs",
+        "version": "1.0.13",
+        "version_normalized": "1.0.13.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ChartBlocks/php-ssrs.git",
+            "reference": "7bd04f0200f16e5e424a37016845da106aaa47da"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ChartBlocks/php-ssrs/zipball/7bd04f0200f16e5e424a37016845da106aaa47da",
+            "reference": "7bd04f0200f16e5e424a37016845da106aaa47da",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "mikey179/vfsstream": "*",
+            "phpunit/phpunit": "~3.7."
+        },
+        "suggest": {
+            "zendframework/zend-escaper": "Required for rendering forms with ZendFramework2",
+            "zendframework/zend-form": "Required for rendering forms with ZendFramework2",
+            "zendframework/zend-i18n": "Required for rendering forms with ZendFramework2",
+            "zendframework/zend-servicemanager": "Required for rendering forms with ZendFramework2",
+            "zendframework/zend-view": "Required for rendering forms with ZendFramework2"
+        },
+        "time": "2017-12-08T18:13:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "SSRS\\": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Arron Woods",
+                "email": "aw@chartblocks.com"
+            }
+        ],
+        "description": "PHP library for connecting to SSRS SOAP"
+    },
+    {
         "name": "container-interop/container-interop",
         "version": "1.2.0",
         "version_normalized": "1.2.0.0",

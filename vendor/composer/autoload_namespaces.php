@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'SSRS\\' => array($vendorDir . '/chartblocks/php-ssrs/library'),
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
 );

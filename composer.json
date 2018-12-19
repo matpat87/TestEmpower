@@ -24,7 +24,8 @@
     "league/oauth2-server": "^5.1",
     "justinrainbow/json-schema": "^5.2",
     "onelogin/php-saml": "3.0.0.x-dev as 3.0.0",
-    "google/recaptcha": "^1.1"
+    "google/recaptcha": "^1.1",
+    "chartblocks/php-ssrs": "~1.0"
   },
   "require-dev": {
     "leafo/scssphp": "dev-master",

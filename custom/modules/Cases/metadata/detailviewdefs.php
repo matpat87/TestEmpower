@@ -425,12 +425,21 @@ array (
         array (
           0 => 
           array (
+            'name' => 'investigation_results_c',
+            'studio' => 'visible',
+            'label' => 'LBL_INVESTIGATION_RESULTS',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
             'name' => 'root_cause_c',
             'studio' => 'visible',
             'label' => 'LBL_ROOT_CAUSE',
           ),
         ),
-        2 => 
+        3 => 
         array (
           0 => 
           array (

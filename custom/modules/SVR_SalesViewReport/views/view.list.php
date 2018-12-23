@@ -44,19 +44,7 @@ class CustomSVR_SalesViewReportViewList extends ViewList
 {
 
     function preDisplay() {
-        global $current_user;
-
         parent::preDisplay();
-
-        // $lowercasedUsername = strtolower($current_user->user_name);
-        // $url = file_get_contents("http://corp01db.corp.local/Reports/report/Sales%20Reports/SalesView?ReportType=2&UserBased=Y&rc:Toolbar=false&Usr_Id=" . $lowercasedUsername);
-        // echo '<div class="container">
-        //         <div class="row">
-        //             <div class="col-md-12">
-        //                 '.$url.'
-        //             </div>
-        //         </div>
-        //       </div>';
         $this->renderSSRSReport();
     }
 
@@ -64,24 +52,23 @@ class CustomSVR_SalesViewReportViewList extends ViewList
         global $current_user;
 
         $lowercasedUsername = strtolower($current_user->user_name);
-        $settings = [
-            'url' => 'http://corp01db.corp.local/',
+        $credentials = array(
             'username' => 'empowerreports',
             'password' => '3Mp0w3r87750'
-        ];
+        );
 
-        $ssrs = new \SSRS\Report($settings['url'], array('username' => $settings['username'], 'password' => $settings['password']));
-        $result = $ssrs->loadReport('/Reports/report/Sales%20Reports/SalesView');
-
+        // URL Sample Output: http://corp01db.corp.local/Reports/report/Sales%20Reports/SalesView?ReportType=2&UserBased=Y&rc:Toolbar=false&Usr_Id=RSIASAT
+        $ssrs = new \SSRS\Report('http://corp01db.corp.local/reportserver/', $credentials);
+        $result = $ssrs->loadReport('/Sales Reports/SalesView');
+    
         $reportParameters = array(
             'ReportType' => '2',
             'UserBased'  => 'Y',
-            'rc:Toolbar' => 'false',
             'Usr_Id'     => $lowercasedUsername
         );
 
-        $parameters = new SSRS_Object_ExecutionParameters($reportParameters);
-        
+        $parameters = new \SSRS\Object\ExecutionParameters($reportParameters);
+        $ssrs->setSessionId($result->executionInfo->ExecutionID)->setExecutionParameters($parameters);        
         $output = $ssrs->render('HTML4.0'); // PDF | XML | CSV
         echo $output;
     }

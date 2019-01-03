@@ -181,6 +181,16 @@ array (
         ),
         10 => 
         array (
+          0 => 
+          array (
+            'name' => 'sales_group_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SALES_GROUP',
+          ),
+          1 => '',
+        ),
+        11 => 
+        array (
           0 => 'description',
         ),
       ),

@@ -136,7 +136,12 @@ array (
         ),
         4 => 
         array (
-          0 => '',
+          0 => 
+          array (
+            'name' => 'sales_group_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SALES_GROUP',
+          ),
           1 => 'phone_fax',
         ),
         5 => 

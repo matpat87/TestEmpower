@@ -1,5 +1,5 @@
 <?php
-// created: 2018-07-24 16:01:36
+// created: 2019-01-03 16:50:20
 $mod_strings = array (
   'LBL_BUSINESSUNIT' => 'Business Unit',
   'LBL_DIVISION' => 'Division',
@@ -11,4 +11,5 @@ $mod_strings = array (
   'LBL_SITES' => 'Sites',
   'LBL_LOGIN_AS' => 'Login As',
   'LBL_EMPLOYEE_TYPE' => 'Employee Type',
+  'LBL_SALES_GROUP' => 'Sales Group',
 );

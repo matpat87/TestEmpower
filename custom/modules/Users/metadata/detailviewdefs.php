@@ -113,30 +113,20 @@ array (
         array (
           0 => 
           array (
-            'name' => 'site_c',
+            'name' => 'sales_group_c',
             'studio' => 'visible',
-            'label' => 'LBL_SITE',
+            'label' => 'LBL_SALES_GROUP',
           ),
           1 => 'phone_home',
         ),
         6 => 
         array (
-          0 => 'messenger_type',
-          1 => 'messenger_id',
-        ),
-        7 => 
-        array (
-          0 => 'address_street',
-          1 => 'address_city',
-        ),
-        8 => 
-        array (
-          0 => 'address_state',
-          1 => 'address_postalcode',
-        ),
-        9 => 
-        array (
-          0 => 'address_country',
+          0 => 
+          array (
+            'name' => 'site_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SITE',
+          ),
           1 => 
           array (
             'name' => 'employee_type_c',
@@ -144,7 +134,27 @@ array (
             'label' => 'LBL_EMPLOYEE_TYPE',
           ),
         ),
+        7 => 
+        array (
+          0 => 'messenger_type',
+          1 => 'messenger_id',
+        ),
+        8 => 
+        array (
+          0 => 'address_street',
+          1 => 'address_city',
+        ),
+        9 => 
+        array (
+          0 => 'address_state',
+          1 => 'address_postalcode',
+        ),
         10 => 
+        array (
+          0 => 'address_country',
+          1 => '',
+        ),
+        11 => 
         array (
           0 => 'description',
         ),

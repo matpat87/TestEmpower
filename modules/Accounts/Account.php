@@ -325,13 +325,22 @@ class Account extends Company implements EmailInterface {
                                 '' email_addresses_non_primary, " . // email_addresses_non_primary needed for get_field_order_mapping()
                                 "accounts.name as account_name,
                                 users.user_name as assigned_user_name ";
+
+                         // Add markets id and name for custom export       
+                         $query .= ", mkt_markets.id as mkt_markets_accounts_1mkt_markets_ida, mkt_markets.name as mkt_markets_accounts_1_name ";
             $query .= $custom_join['select'];
 
             $query .= implode('', $relatedSelects);
 
 						 $query .= " FROM accounts ";
                          $query .= "LEFT JOIN users
-	                                ON accounts.assigned_user_id=users.id ";
+	                                ON accounts.assigned_user_id=users.id";
+						 
+						 // Join markets table for custom export							
+						 $query .= " LEFT JOIN mkt_markets_accounts_1_c
+										ON accounts.id = mkt_markets_accounts_1accounts_idb
+									LEFT JOIN mkt_markets
+										ON mkt_markets_accounts_1mkt_markets_ida = mkt_markets.id ";
 
 						//join email address table too.
 						$query .=  ' LEFT JOIN  email_addr_bean_rel on accounts.id = email_addr_bean_rel.bean_id and email_addr_bean_rel.bean_module=\'Accounts\' and email_addr_bean_rel.deleted=0 and email_addr_bean_rel.primary_address=1 ';

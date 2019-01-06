@@ -239,19 +239,9 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_MANUFACTURING_TYPE',
           ),
-          1 => '',
-        ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'industry',
-            'comment' => 'The company belongs in this industry',
-            'label' => 'LBL_INDUSTRY',
-          ),
           1 => 'campaign_name',
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -266,7 +256,7 @@ array (
             'label' => 'LBL_ANNUAL_REVENUE',
           ),
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -274,7 +264,7 @@ array (
             'label' => 'ERP Data',
           ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -287,7 +277,7 @@ array (
             'label' => 'LBL_CUST_NUM',
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -300,7 +290,7 @@ array (
             'label' => 'LBL_LAST_SOLD_DT',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (
@@ -313,7 +303,7 @@ array (
             'label' => 'LBL_BALANCE',
           ),
         ),
-        9 => 
+        8 => 
         array (
           0 => 
           array (
@@ -327,7 +317,7 @@ array (
             'label' => 'LBL_ALT_SYS_ID',
           ),
         ),
-        10 => 
+        9 => 
         array (
           0 => 
           array (
@@ -340,7 +330,7 @@ array (
             'label' => 'LBL_CR_HOLD',
           ),
         ),
-        11 => 
+        10 => 
         array (
           0 => 
           array (

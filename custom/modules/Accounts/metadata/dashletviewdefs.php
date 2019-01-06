@@ -12,7 +12,7 @@ $dashletData['AccountsDashlet']['searchFields'] = array (
   array (
     'default' => '',
   ),
-  'industry' => 
+  'billing_address_country' => 
   array (
     'default' => '',
   ),

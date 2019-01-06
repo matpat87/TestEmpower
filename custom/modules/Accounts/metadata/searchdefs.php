@@ -103,12 +103,6 @@ array (
         'default' => true,
         'width' => '10%',
       ),
-      'industry' => 
-      array (
-        'name' => 'industry',
-        'default' => true,
-        'width' => '10%',
-      ),
       'status_c' => 
       array (
         'type' => 'enum',

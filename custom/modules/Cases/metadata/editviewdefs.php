@@ -70,9 +70,19 @@ array (
             'name' => 'case_number',
             'type' => 'readonly',
           ),
-          1 => 'status',
         ),
         1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'name',
+            'displayParams' => 
+            array (
+            ),
+          ),
+          1 => 'status',
+        ),
+        2 => 
         array (
           0 => 
           array (
@@ -81,7 +91,7 @@ array (
           ),
           1 => 'account_name',
         ),
-        2 => 
+        3 => 
         array (
           0 => 
           array (
@@ -94,7 +104,7 @@ array (
             'label' => 'LBL_CUSTOMER_NAME',
           ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (
@@ -103,14 +113,14 @@ array (
           ),
           1 => 'assigned_user_name',
         ),
-        4 => 
+        5 => 
         array (
           0 => 
           array (
             'name' => 'description',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -125,7 +135,7 @@ array (
             'label' => 'LBL_SOURCE',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 'type',
           1 => 
@@ -134,7 +144,7 @@ array (
             'label' => 'LBL_QUALITY_ISSUE',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 'priority',
           1 => 
@@ -144,7 +154,7 @@ array (
             'label' => 'LBL_DEPARTMENT',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 
           array (

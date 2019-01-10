@@ -239,7 +239,12 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_MANUFACTURING_TYPE',
           ),
-          1 => 'campaign_name',
+          1 => 
+          array (
+            'name' => 'account_class_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ACCOUNT_CLASS',
+          ),
         ),
         3 => 
         array (
@@ -258,13 +263,18 @@ array (
         ),
         4 => 
         array (
+          0 => 'campaign_name',
+          1 => '',
+        ),
+        5 => 
+        array (
           0 => 
           array (
             'name' => 'erp_data_non_db',
             'label' => 'ERP Data',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -277,7 +287,7 @@ array (
             'label' => 'LBL_CUST_NUM',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -290,7 +300,7 @@ array (
             'label' => 'LBL_LAST_SOLD_DT',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (
@@ -303,7 +313,7 @@ array (
             'label' => 'LBL_BALANCE',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 
           array (
@@ -317,7 +327,7 @@ array (
             'label' => 'LBL_ALT_SYS_ID',
           ),
         ),
-        9 => 
+        10 => 
         array (
           0 => 
           array (
@@ -330,7 +340,7 @@ array (
             'label' => 'LBL_CR_HOLD',
           ),
         ),
-        10 => 
+        11 => 
         array (
           0 => 
           array (

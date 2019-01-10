@@ -101,7 +101,7 @@ class MyRecentOrdersDashlet extends Dashlet
     	
         $ss->assign('myRecentOrders', $this->myRecentOrders);
     	
-    	return parent::display() . $ss->fetch('modules/Accounts/Dashlets/MyRecentOrdersDashlet/myRecentOrdersDashlet.tpl');
+    	return parent::display() . $ss->fetch('modules/Accounts/Dashlets/MyRecentOrdersDashlet/MyRecentOrdersDashlet.tpl');
     }
     
     /**

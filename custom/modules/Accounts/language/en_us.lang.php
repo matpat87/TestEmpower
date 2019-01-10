@@ -115,4 +115,5 @@ $mod_strings = array (
   'LBL_MANUFACTURING_TYPE' => 'Manufacturing Type',
   'LBL_TYPE' => 'Type:',
   'LBL_MY_TOP_TEN_ACCOUNTS_TITLE' => 'My Top Ten Accounts',
+  'LBL_MY_RECENT_ORDERS_TITLE' => 'My Recent Orders',
 );

@@ -45,12 +45,36 @@
 <table width="100%" border="0" align="center" class="list view" cellspacing="0" cellpadding="0">
 	<thead>
 		<tr>
-			<th align="center">{$lblAccountName}</th>
-			<th align="center">{$lblLastActivityDate}</td>
-			<th align="center">{$lblPhone}</td>
-			<th align="center">{$lblShippingCity}</td>
-			<th align="center">{$lblShippingState}</td>
-			<th align="center">{$lblShippingYTDSales}</td>
+			<th align="center">
+				<div style="white-space: normal; width:100%; text-align:left">
+					{$lblAccountName}
+				</div>
+			</th>
+			<th align="center">
+				<div style="white-space: normal; width:100%; text-align:left">
+					{$lblLastActivityDate}
+				</div>
+			</td>
+			<th align="center">
+				<div style="white-space: normal; width:100%; text-align:left">
+					{$lblPhone}
+				</div>
+			</td>
+			<th align="center">
+				<div style="white-space: normal; width:100%; text-align:left">
+					{$lblShippingCity}
+				</div>
+			</td>
+			<th align="center">
+				<div style="white-space: normal; width:100%; text-align:left">
+					{$lblShippingState}
+				</div>
+			</td>
+			<th align="center">
+				<div style="white-space: normal; width:100%; text-align:left">
+					{$lblShippingYTDSales}
+				</div>
+			</td>
 		</tr>
 	</thead>
 	{if $myTopTenAccounts}

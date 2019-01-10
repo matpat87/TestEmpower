@@ -69,7 +69,8 @@ class MyTopTenAccountsDashlet extends Dashlet
         $query = "SELECT * FROM accounts
                   LEFT JOIN accounts_cstm
                     ON accounts.id = accounts_cstm.id_c
-                  WHERE accounts.deleted = 0 ";
+                  WHERE accounts.deleted = 0
+                  AND accounts_cstm.sls_ytd_c IS NOT NULL ";
         $query .= "AND accounts.assigned_user_id =  '".$current_user->id."' ";
         $query .= "ORDER BY accounts_cstm.sls_ytd_c DESC LIMIT 10";
         $result = $db->query($query);

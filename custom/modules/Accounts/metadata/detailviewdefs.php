@@ -283,11 +283,26 @@ array (
           ),
           1 => 
           array (
-            'name' => 'cr_hold_c',
-            'label' => 'LBL_CR_HOLD',
+            'name' => 'oem_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OEM',
           ),
         ),
         8 => 
+        array (
+          0 => 
+          array (
+            'name' => 'cr_hold_c',
+            'label' => 'LBL_CR_HOLD',
+          ),
+          1 => 
+          array (
+            'name' => 'account_class_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ACCOUNT_CLASS',
+          ),
+        ),
+        9 => 
         array (
           0 => 
           array (

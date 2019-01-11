@@ -456,6 +456,15 @@ array (
             'label' => 'LBL_PREVENTATIVE_ACTION_PLAN',
           ),
         ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'internal_audit_results_c',
+            'studio' => 'visible',
+            'label' => 'LBL_INTERNAL_AUDIT_RESULTS',
+          ),
+        ),
       ),
     ),
   ),

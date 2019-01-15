@@ -8,6 +8,11 @@ include('custom/metadata/re_regulatory_activities_1_notesMetaData.php');
 
  
  //WARNING: The contents of this file are auto-generated
+include('custom/metadata/im_itemmaster_notes_1MetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
 include('custom/metadata/mkt_markets_opportunities_1MetaData.php');
 
 
@@ -62,6 +67,11 @@ include('custom/metadata/users_cases_1MetaData.php');
 
  
  //WARNING: The contents of this file are auto-generated
+include('custom/metadata/im_itemmaster_aos_product_categoriesMetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
 include('custom/metadata/ehs_ehs_documents_1MetaData.php');
 
 
@@ -73,6 +83,11 @@ include('custom/metadata/ehs_ehs_calls_1MetaData.php');
  
  //WARNING: The contents of this file are auto-generated
 include('custom/metadata/mkt_markets_accounts_1MetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
+include('custom/metadata/im_itemmaster_casesMetaData.php');
 
 
  
@@ -103,6 +118,11 @@ include('custom/metadata/otr_ontrack_project_1MetaData.php');
  
  //WARNING: The contents of this file are auto-generated
 include('custom/metadata/re_regulatory_activities_1_meetingsMetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
+include('custom/metadata/im_itemmaster_documentsMetaData.php');
 
 
  

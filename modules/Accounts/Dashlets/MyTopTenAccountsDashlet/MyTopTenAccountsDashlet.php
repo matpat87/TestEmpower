@@ -84,7 +84,7 @@ class MyTopTenAccountsDashlet extends Dashlet
             $this->myTopTenAccounts[$ctr]['phone_office'] = $row['phone_office'];            
             $this->myTopTenAccounts[$ctr]['shipping_address_city'] = $row['shipping_address_city'];
             $this->myTopTenAccounts[$ctr]['shipping_address_state'] = $row['shipping_address_state'];
-            $this->myTopTenAccounts[$ctr]['sls_ytd_c'] = '$' . number_format($row['sls_ytd_c'], 2);
+            $this->myTopTenAccounts[$ctr]['sls_ytd_c'] = '$' . number_format($row['sls_ytd_c']);
             $ctr++;
         }
     }

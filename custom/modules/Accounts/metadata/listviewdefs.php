@@ -73,7 +73,7 @@ array (
   ),
   'SLS_YTD_C' => 
   array (
-    'type' => 'decimal',
+    'type' => 'currency',
     'default' => true,
     'label' => 'LBL_SLS_YTD',
     'width' => '10%',

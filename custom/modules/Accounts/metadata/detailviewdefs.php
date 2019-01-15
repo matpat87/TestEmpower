@@ -418,6 +418,7 @@ array (
           array (
             'name' => 'sls_ytd_c',
             'label' => 'LBL_SLS_YTD',
+            'customCode' => '${$custom_ytd_sales}',
           ),
           1 => 
           array (

@@ -42,6 +42,7 @@
 <p>SuiteCRM Quote - {QUOTE_SUBJECT}</p>
 <!-- END: Quote_Subject -->
 <!-- BEGIN: Quote -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Quote to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Subject: {QUOTE_SUBJECT}<br/>
@@ -56,6 +57,7 @@ Description: {QUOTE_DESCRIPTION}
 <p>SuiteCRM Account - {ACCOUNT_NAME}</p>
 <!-- END: Account_Subject -->
 <!-- BEGIN: Account -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned an Account to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Name: {ACCOUNT_NAME}<br/>
@@ -69,6 +71,7 @@ Description: {ACCOUNT_DESCRIPTION}
 <p>SuiteCRM Case - {CASE_SUBJECT}</p>
 <!-- END: Case_Subject -->
 <!-- BEGIN: Case -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Case to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Subject: {CASE_SUBJECT}<br/>
@@ -83,6 +86,7 @@ Description: {CASE_DESCRIPTION}
 <p>SuiteCRM Task - {TASK_SUBJECT}</p>
 <!-- END: Task_Subject -->
 <!-- BEGIN: Task -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Task to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Subject: {TASK_SUBJECT}<br/>
@@ -98,6 +102,7 @@ Description: {TASK_DESCRIPTION}
 <p>SuiteCRM Meeting - {MEETING_SUBJECT}</p>
 <!-- END: Meeting_Subject -->
 <!-- BEGIN: Meeting -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p>To: {MEETING_TO}</p>
 <p><b>{ASSIGNER}</b> has invited you to a Meeting</p>
 <p>
@@ -111,6 +116,7 @@ End Date: {MEETING_ENDDATE}
 Meeting URL: {MEETING_URL}
 </p>
 <!-- END: Meeting_External_API -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p>Description: {MEETING_DESCRIPTION}<br/>
 </p>
 <p>---</p>
@@ -123,6 +129,7 @@ Meeting URL: {MEETING_URL}
 <p>SuiteCRM Meeting - {MEETING_SUBJECT}</p>
 <!-- END: MeetingSpecial_Subject -->
 <!-- BEGIN: MeetingSpecial -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Meeting to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Subject: {MEETING_SUBJECT}<br/>
@@ -139,6 +146,7 @@ Description: {MEETING_DESCRIPTION}
 <p>Meeting Reminder - {MEETING_SUBJECT}</p>
 <!-- END: MeetingSpecial_Subject -->
 <!-- BEGIN: MeetingReminder -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p>
 Title: {MEETING_SUBJECT}<br/>
 When: {MEETING_STARTDATE}<br/>
@@ -151,6 +159,7 @@ Created By: {MEETING_CREATED_BY}
 <p>SuiteCRM Email - {EMAIL_SUBJECT}</p>
 <!-- END: Email_Subject -->
 <!-- BEGIN: Email -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned an Email to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Subject: {EMAIL_SUBJECT}<br/>
@@ -163,6 +172,7 @@ Date Sent: {EMAIL_DATESENT}
 <p>SuiteCRM Contact - {CONTACT_NAME}</p>
 <!-- END: Contact_Subject -->
 <!-- BEGIN: Contact -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Contact to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Name: {CONTACT_NAME}<br/>
@@ -175,6 +185,7 @@ Description: {CONTACT_DESCRIPTION}
 <p>SuiteCRM Lead - {LEAD_NAME}</p>
 <!-- END: Lead_Subject -->
 <!-- BEGIN: Lead -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Lead to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Name: {LEAD_NAME}<br/>
@@ -189,6 +200,7 @@ Description: {LEAD_DESCRIPTION}
 <p>SuiteCRM Opportunity - {OPPORTUNITY_NAME}</p>
 <!-- END: Opportunity_Subject -->
 <!-- BEGIN: Opportunity -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned an Opportunity to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Name: {OPPORTUNITY_NAME}<br/>
@@ -204,6 +216,7 @@ Description: {OPPORTUNITY_DESCRIPTION}
 <p>SuiteCRM Bug - {BUG_SUBJECT}</p>
 <!-- END: Bug_Subject -->
 <!-- BEGIN: Bug -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Bug to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Bug Number: {BUG_BUG_NUMBER}<br/>
@@ -223,6 +236,7 @@ Work Log: {BUG_WORK_LOG}
 <p>SuiteCRM - Assigned {OBJECT}</p>
 <!-- END: Default_Subject -->
 <!-- BEGIN: Default -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a(n) {OBJECT} to <b>{ASSIGNED_USER}</b>.</p>
 <p>You may <a href={URL}>review this {OBJECT}</a>.</p>
 <!-- END: Default -->
@@ -231,6 +245,7 @@ Work Log: {BUG_WORK_LOG}
 <p>SuiteCRM Call - {CALL_SUBJECT}</p>
 <!-- END: Call_Subject -->
 <!-- BEGIN: Call -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p>To: {CALL_TO}</p>
 <p><b>{ASSIGNER}</b> has invited you to a Call</p>
 <p>
@@ -250,6 +265,7 @@ Description: {CALL_DESCRIPTION}<br/>
 <p>SuiteCRM Call - {CALL_SUBJECT}</p>
 <!-- END: CallSpecial_Subject -->
 <!-- BEGIN: CallSpecial -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Call to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Subject: {CALL_SUBJECT}<br/>
@@ -265,6 +281,7 @@ Description: {CALL_DESCRIPTION}
 <p>Call Reminder - {CALL_SUBJECT}</p>
 <!-- END: CallReminder_Subject -->
 <!-- BEGIN: CallReminder -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p>
 Title: {CALL_SUBJECT}<br/>
 When: {CALL_STARTDATE}<br/>
@@ -276,6 +293,7 @@ Created By: {CALL_CREATED_BY}
 <p>SuiteCRM Campaign - {CAMPAIGN_NAME}</p>
 <!-- END: Campaign_Subject -->
 <!-- BEGIN: Campaign -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Campaign to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Subject: {CAMPAIGN_NAME}<br/>
@@ -291,6 +309,7 @@ Description: {CAMPAIGN_DESCRIPTION}
 <p>SuiteCRM Quotas - Your Quota for {QUOTA_TIMEPERIOD}</p>
 <!-- END: Quota_Subject -->
 <!-- BEGIN: Quota -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Quota to <b>{ASSIGNED_USER}</b>.</p>
 <p>
     Amount: {QUOTA_AMOUNT}<br/>
@@ -303,6 +322,7 @@ Description: {CAMPAIGN_DESCRIPTION}
 <p>SuiteCRM Document - {KBDOCUMENT_NAME}</p>
 <!-- END: KBDocument_Subject -->
 <!-- BEGIN: KBDocument -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 {NOTIFICATION_MESSAGE}
 
 <p>
@@ -319,6 +339,7 @@ Description: {KBDOCUMENT_DESCRIPTION}
 <p>SuiteCRM Contract - {CONTRACT_NAME}</p>
 <!-- END: Contract_Subject -->
 <!-- BEGIN: Contract-->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a Contract to <b>{ASSIGNED_USER}</b>.</p>
 <p>You may <a href={URL}>review this Contract</a>.</p>
 <!-- END:Contract-->
@@ -327,6 +348,7 @@ Description: {KBDOCUMENT_DESCRIPTION}
 <p>SuiteCRM Contract - {CONTRACT_NAME}</p>
 <!-- END: ContractSpecial_Subject -->
 <!-- BEGIN: ContractSpecial -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p>Your Contract: {CONTRACT_NAME} will be out of date at {CONTRACT_END_DATE}.</p>
 <p>You may <a href={URL}>review this Contract</a>.</p>
 <!-- END:ContractSpecial-->
@@ -335,6 +357,7 @@ Description: {KBDOCUMENT_DESCRIPTION}
 <p>Assigned - OnTrack Issue [ #{OTR_ISSUE_NUMBER} - {OTR_SUBJECT} ] - Status [ {OTR_STATUS} ]</p>
 <!-- END: OTR_OnTrack_Subject -->
 <!-- BEGIN: OTR_OnTrack -->
+<span style="color:red">{FOR_QA_EMAIL}</span>
 <p><b>{ASSIGNER}</b> has assigned a(n) OnTrack issue to <b>{ASSIGNED_USER}</b>.</p>
 <p>
 Issue #: <a href="{OTR_ISSUE_URL}">{OTR_ISSUE_NUMBER}</a><br/>

@@ -1119,7 +1119,7 @@ function filterFieldsFromBeans($beans)
             //$cols_name = "{'".$field_def['vname']."'}";
             $col_arr = array();
             if((isset($field_def['required']) && $field_def['required'] != null && $field_def['required'] != 0)
-                || $field_def['name']=='last_name'
+                // || $field_def['name']=='last_name'
             ){
                 $cols_name=$field_def['vname'].' '.$app_strings['LBL_REQUIRED_SYMBOL'];
                 $col_arr[0]=$cols_name;

@@ -238,30 +238,16 @@ array (
         array (
           0 => 
           array (
-            'name' => 'industry',
-            'comment' => 'The company belongs in this industry',
-            'label' => 'LBL_INDUSTRY',
-          ),
-          1 => 
-          array (
             'name' => 'order_cycle_c',
             'label' => 'LBL_ORDER_CYCLE',
           ),
-        ),
-        5 => 
-        array (
-          0 => 
+          1 => 
           array (
             'name' => 'terms_c',
             'label' => 'LBL_TERMS',
           ),
-          1 => 
-          array (
-            'name' => 'cr_limit_c',
-            'label' => 'LBL_CR_LIMIT',
-          ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -274,6 +260,19 @@ array (
             'label' => 'LBL_LAST_SOLD_DT',
           ),
         ),
+        6 => 
+        array (
+          0 => 
+          array (
+            'name' => 'cr_limit_c',
+            'label' => 'LBL_CR_LIMIT',
+          ),
+          1 => 
+          array (
+            'name' => 'cr_hold_c',
+            'label' => 'LBL_CR_HOLD',
+          ),
+        ),
         7 => 
         array (
           0 => 
@@ -281,11 +280,7 @@ array (
             'name' => 'balance_c',
             'label' => 'LBL_BALANCE',
           ),
-          1 => 
-          array (
-            'name' => 'cr_hold_c',
-            'label' => 'LBL_CR_HOLD',
-          ),
+          1 => '',
         ),
         8 => 
         array (

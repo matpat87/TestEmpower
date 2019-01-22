@@ -155,12 +155,6 @@ array (
     'label' => 'LBL_LIST_CITY',
     'default' => false,
   ),
-  'INDUSTRY' => 
-  array (
-    'width' => '10%',
-    'label' => 'LBL_INDUSTRY',
-    'default' => false,
-  ),
   'ANNUAL_REVENUE' => 
   array (
     'width' => '10%',

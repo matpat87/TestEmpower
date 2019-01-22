@@ -97,6 +97,7 @@ class AccountsViewDetail extends ViewDetail {
 
 		$this->ss->assign("custom_code_billing", $push_billing);
 		$this->ss->assign("custom_code_shipping", $push_shipping);
+		$this->ss->assign("custom_ytd_sales", number_format($this->bean->sls_ytd_c));
 
         if(empty($this->bean->id)){
 			global $app_strings;

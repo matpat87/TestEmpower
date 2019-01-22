@@ -52,7 +52,7 @@ class App
      *
      * @var string
      */
-    const VERSION = '3.11.0';
+    const VERSION = '3.9.2';
 
     /**
      * Container
@@ -249,24 +249,6 @@ class App
     }
 
     /**
-     * Add a route that sends an HTTP redirect
-     *
-     * @param string              $from
-     * @param string|UriInterface $to
-     * @param int                 $status
-     *
-     * @return RouteInterface
-     */
-    public function redirect($from, $to, $status = 302)
-    {
-        $handler = function ($request, ResponseInterface $response) use ($to, $status) {
-            return $response->withHeader('Location', (string)$to)->withStatus($status);
-        };
-
-        return $this->get($from, $handler);
-    }
-
-    /**
      * Route Groups
      *
      * This method accepts a route pattern and a callback. All route
@@ -424,10 +406,8 @@ class App
         if (!headers_sent()) {
             // Headers
             foreach ($response->getHeaders() as $name => $values) {
-                $first = stripos($name, 'Set-Cookie') === 0 ? false : true;
                 foreach ($values as $value) {
-                    header(sprintf('%s: %s', $name, $value), $first);
-                    $first = false;
+                    header(sprintf('%s: %s', $name, $value), false);
                 }
             }
 
@@ -440,7 +420,7 @@ class App
                 $response->getProtocolVersion(),
                 $response->getStatusCode(),
                 $response->getReasonPhrase()
-            ), true, $response->getStatusCode());
+            ));
         }
 
         // Body

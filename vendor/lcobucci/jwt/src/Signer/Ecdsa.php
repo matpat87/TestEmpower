@@ -134,9 +134,7 @@ abstract class Ecdsa extends BaseSigner
     }
 
     /**
-     * Returns the length of signature parts
-     *
-     * @internal
+     * Returns the lenght of signature parts
      *
      * @return int
      */
@@ -144,8 +142,6 @@ abstract class Ecdsa extends BaseSigner
 
     /**
      * Returns the name of algorithm to be used to create the signing hash
-     *
-     * @internal
      *
      * @return string
      */

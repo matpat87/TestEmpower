@@ -1699,7 +1699,8 @@ class Email extends Basic
 
         if (count($return) > 0) {
             if (isset($return['from'])) {
-                $this->from_addr_name = implode(", ", $return['from']);
+                // Commented out core code since it causes an issue where archived emails won't display the values on the "From" field
+                // $this->from_addr_name = implode(", ", $return['from']);
             }
             if (isset($return['to'])) {
                 $this->to_addrs_names = implode(", ", $return['to']);

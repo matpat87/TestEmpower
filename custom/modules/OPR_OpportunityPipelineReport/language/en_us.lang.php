@@ -1,7 +1,7 @@
 <?php
 // created: 2018-09-18 01:26:05
 $mod_strings = array (
-  'LNK_LIST' => 'View CRM Reports',
+  'LNK_LIST' => 'View Empower Reports',
   'LBL_DIVISION' => 'Division',
   'LBL_SALES_REPRESENTATIVE' => 'Sales Representative',
   'LBL_STATUS' => 'Status',

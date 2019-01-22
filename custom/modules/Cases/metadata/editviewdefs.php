@@ -34,22 +34,22 @@ array (
           'file' => 'include/javascript/qtip/jquery.qtip.min.js',
         ),
       ),
-      'useTabs' => false,
+      'useTabs' => true,
       'tabDefs' => 
       array (
         'LBL_CASE_INFORMATION' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
         'LBL_EDITVIEW_PANEL1' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
         'LBL_EDITVIEW_PANEL5' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
       ),
@@ -57,6 +57,7 @@ array (
       array (
         'enctype' => 'multipart/form-data',
       ),
+      'syncDetailEditViews' => true,
     ),
     'panels' => 
     array (
@@ -69,7 +70,7 @@ array (
             'name' => 'case_number',
             'type' => 'readonly',
           ),
-          1 => 'account_name',
+          1 => 'status',
         ),
         1 => 
         array (
@@ -78,26 +79,14 @@ array (
             'name' => 'create_date_c',
             'label' => 'LBL_CREATE_DATE',
           ),
-          1 => 
-          array (
-            'name' => 'due_date_c',
-            'label' => 'LBL_DUE_DATE',
-          ),
+          1 => 'account_name',
         ),
         2 => 
         array (
           0 => 
           array (
-            'name' => 'description',
-          ),
-        ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'source_c',
-            'studio' => 'visible',
-            'label' => 'LBL_SOURCE',
+            'name' => 'due_date_c',
+            'label' => 'LBL_DUE_DATE',
           ),
           1 => 
           array (
@@ -105,7 +94,7 @@ array (
             'label' => 'LBL_CUSTOMER_NAME',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -113,6 +102,13 @@ array (
             'label' => 'LBL_CLOSE_DATE',
           ),
           1 => 'assigned_user_name',
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'description',
+          ),
         ),
         5 => 
         array (
@@ -122,16 +118,16 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_SITE',
           ),
-          1 => 'status',
+          1 => 
+          array (
+            'name' => 'source_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SOURCE',
+          ),
         ),
         6 => 
         array (
-          0 => 
-          array (
-            'name' => 'category_c',
-            'studio' => 'visible',
-            'label' => 'LBL_CATEGORY',
-          ),
+          0 => 'type',
           1 => 
           array (
             'name' => 'quality_issue_c',
@@ -141,22 +137,14 @@ array (
         7 => 
         array (
           0 => 'priority',
-          1 => '',
-        ),
-      ),
-      'lbl_editview_panel1' => 
-      array (
-        0 => 
-        array (
-          0 => 
+          1 => 
           array (
             'name' => 'department_c',
             'studio' => 'visible',
             'label' => 'LBL_DEPARTMENT',
           ),
-          1 => '',
         ),
-        1 => 
+        8 => 
         array (
           0 => 
           array (
@@ -170,7 +158,10 @@ array (
             'label' => 'LBL_ASSIGNED_TO_PHONE',
           ),
         ),
-        2 => 
+      ),
+      'lbl_editview_panel1' => 
+      array (
+        0 => 
         array (
           0 => 
           array (
@@ -178,7 +169,7 @@ array (
             'label' => 'Header',
           ),
         ),
-        3 => 
+        1 => 
         array (
           0 => 
           array (
@@ -191,7 +182,7 @@ array (
             'label' => 'LBL_CUSTOMER_PO',
           ),
         ),
-        4 => 
+        2 => 
         array (
           0 => 
           array (
@@ -204,7 +195,7 @@ array (
             'label' => 'LBL_LOT_NUMBER',
           ),
         ),
-        5 => 
+        3 => 
         array (
           0 => 
           array (
@@ -217,7 +208,7 @@ array (
             'label' => 'LBL_PRICE',
           ),
         ),
-        6 => 
+        4 => 
         array (
           0 => 
           array (
@@ -225,7 +216,7 @@ array (
             'label' => 'Customer Process',
           ),
         ),
-        7 => 
+        5 => 
         array (
           0 => 
           array (
@@ -239,7 +230,7 @@ array (
             'label' => 'LBL_PROCESS_TEXT',
           ),
         ),
-        8 => 
+        6 => 
         array (
           0 => 
           array (
@@ -252,7 +243,7 @@ array (
             'label' => 'LBL_BACK_PRESSURE',
           ),
         ),
-        9 => 
+        7 => 
         array (
           0 => 
           array (
@@ -265,7 +256,7 @@ array (
             'label' => 'LBL_RESIDENCE_TIME',
           ),
         ),
-        10 => 
+        8 => 
         array (
           0 => 
           array (
@@ -278,7 +269,7 @@ array (
             'label' => 'LBL_SHOT_SIZE',
           ),
         ),
-        11 => 
+        9 => 
         array (
           0 => 
           array (
@@ -291,7 +282,7 @@ array (
             'label' => 'LBL_HOT_RUNNER_TOOL',
           ),
         ),
-        12 => 
+        10 => 
         array (
           0 => 
           array (
@@ -304,7 +295,7 @@ array (
             'label' => 'LBL_RESIN_TYPE',
           ),
         ),
-        13 => 
+        11 => 
         array (
           0 => 
           array (
@@ -317,7 +308,7 @@ array (
             'label' => 'LBL_GRADE',
           ),
         ),
-        14 => 
+        12 => 
         array (
           0 => 
           array (
@@ -330,7 +321,7 @@ array (
             'label' => 'LBL_REGRIND',
           ),
         ),
-        15 => 
+        13 => 
         array (
           0 => 
           array (
@@ -343,7 +334,7 @@ array (
             'label' => 'LBL_VOLUMETRIC',
           ),
         ),
-        16 => 
+        14 => 
         array (
           0 => 
           array (
@@ -356,7 +347,7 @@ array (
             'label' => 'LBL_OTHER',
           ),
         ),
-        17 => 
+        15 => 
         array (
           0 => 
           array (
@@ -364,7 +355,7 @@ array (
             'label' => 'Disposition',
           ),
         ),
-        18 => 
+        16 => 
         array (
           0 => 
           array (
@@ -379,7 +370,7 @@ array (
             'label' => 'LBL_INTERNAL_MATERIAL_DISPO',
           ),
         ),
-        19 => 
+        17 => 
         array (
           0 => 
           array (
@@ -392,7 +383,7 @@ array (
             'label' => 'LBL_LBS_MATL_RETURNED',
           ),
         ),
-        20 => 
+        18 => 
         array (
           0 => 
           array (
@@ -405,7 +396,7 @@ array (
             'label' => 'LBL_LBS_MATL_REPLACED',
           ),
         ),
-        21 => 
+        19 => 
         array (
           0 => 
           array (
@@ -414,7 +405,7 @@ array (
           ),
           1 => '',
         ),
-        22 => 
+        20 => 
         array (
           0 => 
           array (

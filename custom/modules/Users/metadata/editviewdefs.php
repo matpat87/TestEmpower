@@ -138,15 +138,20 @@ array (
         array (
           0 => 
           array (
-            'name' => 'sales_group_c',
+            'name' => 'role_c',
             'studio' => 'visible',
-            'label' => 'LBL_SALES_GROUP',
+            'label' => 'LBL_ROLE',
           ),
           1 => 'phone_fax',
         ),
         5 => 
         array (
-          0 => '',
+          0 => 
+          array (
+            'name' => 'site_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SITE',
+          ),
           1 => 'phone_home',
         ),
         6 => 

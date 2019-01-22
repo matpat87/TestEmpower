@@ -67,7 +67,7 @@ class CasesViewEdit extends ViewEdit {
         echo 
         "<script>
             $(document).ready(function(){
-                var panel_bg_color = $('.panel-default > .panel-heading').css('background-color');
+                var panel_bg_color = $('li.active > a').first().css('background-color');
         
                 $(\"div[field='product_header_non_db'],div[field='product_customer_process_non_db'],div[field='product_disposition_non_db']\").prev().removeClass('col-sm-2').addClass('col-sm-12').addClass('col-md-12').addClass('col-lg-12').css('background-color', panel_bg_color).css('color', '#FFF').css('margin-top', '15px').css('padding', '0px 0px 8px 10px').parent().css('padding-left', '0px');
 

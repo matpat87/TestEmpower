@@ -1,14 +1,14 @@
 <?php
-	$dictionary['Case']['fields']['category_c'] = array (
+	$dictionary['User']['fields']['role_c'] = array (
 		'inline_edit' => '1',
-		'labelValue' => 'Category',
-		'required' => false,
+		'labelValue' => 'Role',
+		'required' => true,
 		'source' => 'custom_fields',
-		'name' => 'category_c',
-		'vname' => 'LBL_CATEGORY',
-		'type' => 'enum',
+		'name' => 'role_c',
+		'vname' => 'LBL_ROLE',
+		'type' => 'multienum',
 		'massupdate' => '0',
-		'default' => '',
+		'default' => NULL,
 		'no_default' => false,
 		'comments' => '',
 		'help' => '',
@@ -19,11 +19,10 @@
 		'reportable' => true,
 		'unified_search' => false,
 		'merge_filter' => 'disabled',
-		'len' => 100,
 		'size' => '20',
-		'options' => 'category_list',
+		'options' => 'role_list',
 		'studio' => 'visible',
-		'dependency' => false,
-		'id' => 'Casescategory_c',
+		'isMultiSelect' => true,
+		'id' => 'Usersrole_c',
 	);
 ?>

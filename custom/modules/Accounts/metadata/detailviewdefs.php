@@ -172,12 +172,6 @@ array (
             'comment' => 'Full text of the note',
             'label' => 'LBL_DESCRIPTION',
           ),
-          1 => 
-          array (
-            'name' => 'client_potential_c',
-            'studio' => 'visible',
-            'label' => 'LBL_CLIENT_POTENTIAL',
-          ),
         ),
         5 => 
         array (
@@ -256,15 +250,20 @@ array (
           ),
           1 => 
           array (
-            'name' => 'annual_revenue',
-            'comment' => 'Annual revenue for this company',
-            'label' => 'LBL_ANNUAL_REVENUE',
+            'name' => 'client_potential_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CLIENT_POTENTIAL',
           ),
         ),
         4 => 
         array (
           0 => 'campaign_name',
-          1 => '',
+          1 => 
+          array (
+            'name' => 'annual_revenue',
+            'comment' => 'Annual revenue for this company',
+            'label' => 'LBL_ANNUAL_REVENUE',
+          ),
         ),
         5 => 
         array (

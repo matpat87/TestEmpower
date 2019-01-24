@@ -141,12 +141,6 @@ array (
             'name' => 'description',
             'label' => 'LBL_DESCRIPTION',
           ),
-          1 => 
-          array (
-            'name' => 'client_potential_c',
-            'studio' => 'visible',
-            'label' => 'LBL_CLIENT_POTENTIAL',
-          ),
         ),
         5 => 
         array (
@@ -209,12 +203,17 @@ array (
         3 => 
         array (
           0 => 'employees',
-          1 => 'annual_revenue',
+          1 => 
+          array (
+            'name' => 'client_potential_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CLIENT_POTENTIAL',
+          ),
         ),
         4 => 
         array (
           0 => 'campaign_name',
-          1 => '',
+          1 => 'annual_revenue',
         ),
         5 => 
         array (

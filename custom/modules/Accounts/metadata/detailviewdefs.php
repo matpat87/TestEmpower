@@ -102,22 +102,18 @@ array (
           ),
           1 => 
           array (
-            'name' => 'phone_office',
-            'comment' => 'The office phone number',
-            'label' => 'LBL_PHONE_OFFICE',
+            'name' => 'status_c',
+            'studio' => 'visible',
+            'label' => 'LBL_STATUS',
           ),
         ),
         1 => 
         array (
           0 => 
           array (
-            'name' => 'website',
-            'type' => 'link',
-            'label' => 'LBL_WEBSITE',
-            'displayParams' => 
-            array (
-              'link_target' => '_blank',
-            ),
+            'name' => 'phone_office',
+            'comment' => 'The office phone number',
+            'label' => 'LBL_PHONE_OFFICE',
           ),
           1 => 
           array (
@@ -133,6 +129,16 @@ array (
             'name' => 'email1',
             'studio' => 'false',
             'label' => 'LBL_EMAIL',
+          ),
+          1 => 
+          array (
+            'name' => 'website',
+            'type' => 'link',
+            'label' => 'LBL_WEBSITE',
+            'displayParams' => 
+            array (
+              'link_target' => '_blank',
+            ),
           ),
         ),
         3 => 
@@ -171,12 +177,28 @@ array (
         array (
           0 => 
           array (
-            'name' => 'assigned_user_name',
-            'label' => 'LBL_ASSIGNED_TO',
+            'name' => 'account_type',
+            'comment' => 'The Company is of this type',
+            'label' => 'LBL_TYPE',
           ),
           1 => 
           array (
-            'name' => 'mkt_markets_accounts_1_name',
+            'name' => 'parent_name',
+            'label' => 'LBL_MEMBER_OF',
+          ),
+        ),
+        6 => 
+        array (
+          0 => 
+          array (
+            'name' => 'division_c',
+            'studio' => 'visible',
+            'label' => 'LBL_DIVISION',
+          ),
+          1 => 
+          array (
+            'name' => 'assigned_user_name',
+            'label' => 'LBL_ASSIGNED_TO',
           ),
         ),
       ),
@@ -186,45 +208,54 @@ array (
         array (
           0 => 
           array (
-            'name' => 'account_type',
-            'comment' => 'The Company is of this type',
-            'label' => 'LBL_TYPE',
-          ),
-          1 => 
-          array (
-            'name' => 'erp_db_c',
-            'studio' => 'visible',
-            'label' => 'LBL_ERP_DB',
+            'name' => 'marketing_information_non_db',
+            'label' => 'Marketing Information',
           ),
         ),
         1 => 
         array (
           0 => 
           array (
-            'name' => 'cust_num_c',
-            'label' => 'LBL_CUST_NUM',
+            'name' => 'mkt_markets_accounts_1_name',
           ),
           1 => 
           array (
-            'name' => 'alt_sys_id_c',
-            'label' => 'LBL_ALT_SYS_ID',
+            'name' => 'oem_c',
+            'studio' => 'visible',
+            'label' => 'LBL_OEM',
           ),
         ),
         2 => 
         array (
           0 => 
           array (
-            'name' => 'parent_name',
-            'label' => 'LBL_MEMBER_OF',
+            'name' => 'manufacturing_type_c',
+            'studio' => 'visible',
+            'label' => 'LBL_MANUFACTURING_TYPE',
           ),
           1 => 
+          array (
+            'name' => 'account_class_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ACCOUNT_CLASS',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 
           array (
             'name' => 'employees',
             'comment' => 'Number of employees, varchar to accomodate for both number (100) or range (50-100)',
             'label' => 'LBL_EMPLOYEES',
           ),
+          1 => 
+          array (
+            'name' => 'client_potential_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CLIENT_POTENTIAL',
+          ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 'campaign_name',
           1 => 
@@ -234,7 +265,15 @@ array (
             'label' => 'LBL_ANNUAL_REVENUE',
           ),
         ),
-        4 => 
+        5 => 
+        array (
+          0 => 
+          array (
+            'name' => 'erp_data_non_db',
+            'label' => 'ERP Data',
+          ),
+        ),
+        6 => 
         array (
           0 => 
           array (
@@ -243,11 +282,24 @@ array (
           ),
           1 => 
           array (
+            'name' => 'cust_num_c',
+            'label' => 'LBL_CUST_NUM',
+          ),
+        ),
+        7 => 
+        array (
+          0 => 
+          array (
             'name' => 'terms_c',
             'label' => 'LBL_TERMS',
           ),
+          1 => 
+          array (
+            'name' => 'last_sold_dt_c',
+            'label' => 'LBL_LAST_SOLD_DT',
+          ),
         ),
-        5 => 
+        8 => 
         array (
           0 => 
           array (
@@ -256,11 +308,25 @@ array (
           ),
           1 => 
           array (
-            'name' => 'last_sold_dt_c',
-            'label' => 'LBL_LAST_SOLD_DT',
+            'name' => 'balance_c',
+            'label' => 'LBL_BALANCE',
           ),
         ),
-        6 => 
+        9 => 
+        array (
+          0 => 
+          array (
+            'name' => 'company_no_c',
+            'studio' => 'visible',
+            'label' => 'LBL_COMPANY_NO',
+          ),
+          1 => 
+          array (
+            'name' => 'alt_sys_id_c',
+            'label' => 'LBL_ALT_SYS_ID',
+          ),
+        ),
+        10 => 
         array (
           0 => 
           array (
@@ -273,35 +339,7 @@ array (
             'label' => 'LBL_CR_HOLD',
           ),
         ),
-        7 => 
-        array (
-          0 => 
-          array (
-            'name' => 'balance_c',
-            'label' => 'LBL_BALANCE',
-          ),
-          1 => 
-          array (
-            'name' => 'oem_c',
-            'studio' => 'visible',
-            'label' => 'LBL_OEM',
-          ),
-        ),
-        8 => 
-        array (
-          0 => 
-          array (
-            'name' => 'cr_hold_c',
-            'label' => 'LBL_CR_HOLD',
-          ),
-          1 => 
-          array (
-            'name' => 'account_class_c',
-            'studio' => 'visible',
-            'label' => 'LBL_ACCOUNT_CLASS',
-          ),
-        ),
-        9 => 
+        11 => 
         array (
           0 => 
           array (

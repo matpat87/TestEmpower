@@ -59,7 +59,7 @@ class CustomSVIR_SalesViewItemReportViewList extends ViewList
         
         // URL Sample Output: http://corp01db.corp.local/Reports/report/Sales%20Reports/2fSalesViewItem?ReportType=2&UserBased=Y&rc:Toolbar=false&Usr_Id=RSIASAT
         $ssrs = new \SSRS\Report('http://corp01db.corp.local/reportserver/', $credentials);
-        $result = $ssrs->loadReport('/Sales Reports/2fSalesViewItem');
+        $result = $ssrs->loadReport('/Sales Reports/SalesViewItem');
     
         $reportParameters = array(
             'ReportType' => '2',

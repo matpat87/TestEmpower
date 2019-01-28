@@ -57,11 +57,11 @@
     });
     {/literal}
 </script>
-<div class="row">
+<div class="row col-xs-12">
     {{assign var='accesskeycount' value=0}}  {{assign var='ACCKEY' value=''}}
     {{foreach name=colIteration from=$formData key=col item=colData}}
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-advanced-search">
-        <div class="">
+    <div class="col-lg-4">
+
             {{math assign="accesskeycount" equation="$accesskeycount + 1"}}
             {{if $accesskeycount==1}} {{assign var='ACCKEY' value=$APP.LBL_FIRST_INPUT_SEARCH_KEY}} {{else}} {{assign var='ACCKEY' value=''}} {{/if}}
 
@@ -80,23 +80,23 @@
                 <label for='{{$fields[$colData.field.name].name}}'>{sugar_translate label='{{$fields[$colData.field.name].vname}}' module='{{$module}}'}</label>
                 {{/if}}
             </div>
-            <div class="form-item">
+            <div>
                 {{if $fields[$colData.field.name]}}
                 {{sugar_field parentFieldArray='fields' accesskey=$ACCKEY vardef=$fields[$colData.field.name] displayType=$displayType displayParams=$colData.field.displayParams typeOverride=$colData.field.type formName=$form_name}}
                 {{/if}}
             </div>
-        </div>
+
     </div>
     {{/foreach}}
 
-    <div>
+    <div class="row">
         <div>
             &nbsp;
         </div>
     </div>
 
     {if $DISPLAY_SAVED_SEARCH}
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-advanced-search">
+        <div class="col-md-6">
             {if !$searchFormInPopup}
                 <div>
                     <a class='tabFormAdvLink' onhover href='javascript:toggleInlineSearch()'>
@@ -108,11 +108,11 @@
                     <p>
                 </div>
             {/if}
-            <div class="" scope='row' width='10%' nowrap="nowrap">
+            <div class="row" scope='row'>
                 <div class="col-xs-12">
                     <label>{sugar_translate label='LBL_SAVE_SEARCH_AS' module='SavedSearch'}:</label>
                 </div>
-                <div class="form-item" width='30%' nowrap>
+                <div class="col-xs-12">
                     <input type='text' name='saved_search_name'>
                     <input type='hidden' name='search_module' value=''>
                     <input type='hidden' name='saved_search_action' value=''>
@@ -138,7 +138,7 @@
                        type='button'>
             </div>
         </div>
-        <div>
+        <div class="col-md-6">
             <div colspan='6'>
                 <div{if !$searchFormInPopup} style='{$DISPLAYSS}'{/if} id='inlineSavedSearch'>
                     {$SAVED_SEARCH}

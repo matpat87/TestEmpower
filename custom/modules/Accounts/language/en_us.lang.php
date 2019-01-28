@@ -1,5 +1,5 @@
 <?php
-// created: 2018-10-05 17:19:35
+// created: 2019-01-10 16:16:05
 $mod_strings = array (
   'LBL_CLIENT_POTENTIAL' => 'Potential',
   'LBL_ACCOUNTS_NEAR' => 'Account(s) Near 100 mile Radius',
@@ -116,4 +116,5 @@ $mod_strings = array (
   'LBL_TYPE' => 'Type:',
   'LBL_MY_TOP_TEN_ACCOUNTS_TITLE' => 'My Top Ten Accounts',
   'LBL_MY_RECENT_ORDERS_TITLE' => 'My Recent Orders',
+  'LBL_ACCOUNT_CLASS' => 'Account Class',
 );

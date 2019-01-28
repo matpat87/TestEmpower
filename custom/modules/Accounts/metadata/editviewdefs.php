@@ -199,6 +199,16 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_MANUFACTURING_TYPE',
           ),
+          1 => 
+          array (
+            'name' => 'account_class_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ACCOUNT_CLASS',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 'industry',
           1 => 'campaign_name',
         ),
         3 => 

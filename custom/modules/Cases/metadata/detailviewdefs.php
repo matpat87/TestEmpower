@@ -61,9 +61,17 @@ array (
             'name' => 'case_number',
             'label' => 'LBL_CASE_NUMBER',
           ),
-          1 => 'status',
         ),
         1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'name',
+            'label' => 'LBL_SUBJECT',
+          ),
+          1 => 'status',
+        ),
+        2 => 
         array (
           0 => 
           array (
@@ -72,7 +80,7 @@ array (
           ),
           1 => 'account_name',
         ),
-        2 => 
+        3 => 
         array (
           0 => 
           array (
@@ -85,7 +93,7 @@ array (
             'label' => 'LBL_CUSTOMER_NAME',
           ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (
@@ -98,11 +106,11 @@ array (
             'label' => 'LBL_ASSIGNED_TO',
           ),
         ),
-        4 => 
+        5 => 
         array (
           0 => 'description',
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -117,7 +125,7 @@ array (
             'label' => 'LBL_SOURCE',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 'type',
           1 => 
@@ -126,7 +134,7 @@ array (
             'label' => 'LBL_QUALITY_ISSUE',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 'priority',
           1 => 
@@ -136,7 +144,7 @@ array (
             'label' => 'LBL_DEPARTMENT',
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 
           array (
@@ -428,18 +436,36 @@ array (
         array (
           0 => 
           array (
-            'name' => 'root_cause_c',
+            'name' => 'investigation_results_c',
             'studio' => 'visible',
-            'label' => 'LBL_ROOT_CAUSE',
+            'label' => 'LBL_INVESTIGATION_RESULTS',
           ),
         ),
         2 => 
         array (
           0 => 
           array (
+            'name' => 'root_cause_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ROOT_CAUSE',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
             'name' => 'preventative_action_plan_c',
             'studio' => 'visible',
             'label' => 'LBL_PREVENTATIVE_ACTION_PLAN',
+          ),
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'internal_audit_results_c',
+            'studio' => 'visible',
+            'label' => 'LBL_INTERNAL_AUDIT_RESULTS',
           ),
         ),
       ),

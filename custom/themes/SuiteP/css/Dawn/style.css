@@ -19,7 +19,7 @@
 
 .search_form .view .col-xs-12 input[type="text"]
 {
-	width: 80%;
+	width: 70%;
 }
 
 @media (max-width : 320px) {
@@ -62,4 +62,9 @@
 .modal-search .submitButtonsAdvanced, .modal-search .submitButtons
 {
 	float: left !important;
+}
+
+.modal-search .col-lg-4
+{
+	width: 33.3333333333%;
 }

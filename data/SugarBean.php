@@ -3337,6 +3337,10 @@ class SugarBean
 
         $xtpl->assign("URL", $cleanUrl . "/index.php?module={$this->module_dir}&action=DetailView&record={$this->id}");
         $xtpl->assign("SUGAR", "Sugar v{$sugar_version}");
+
+        // NOTE: This for issue #166. This custom code allows us to globally append a "This is a test" string when testing in QA.
+        $xtpl->assign("FOR_QA_EMAIL", $sugar_config['isQA'] ? '** This is a test from the Empower QA System**' : '');
+
         $xtpl->parse($template_name);
         $xtpl->parse($template_name . "_Subject");
 

@@ -249,7 +249,8 @@ HTML;
      * @return string
      */
     private static function getFieldCharsHTML($fieldName, $fieldLabel, $fieldRequired, $webRequiredSymbol) {
-        $isRequired = $fieldName == 'last_name' || $fieldRequired;
+        // $isRequired = $fieldName == 'last_name' || $fieldRequired;
+        $isRequired = $fieldName == $fieldRequired;
         $_required = $isRequired ? ' required' : '';
         $html = self::getFieldLabelHTML($fieldLabel, $isRequired, $webRequiredSymbol);
         $_type = $fieldName == 'email1' || $fieldName == 'email2' ? 'email' : 'text';

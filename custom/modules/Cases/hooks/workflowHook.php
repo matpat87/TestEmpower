@@ -24,10 +24,8 @@
 
 			$recordURL = $sugar_config['site_url'] . '/index.php?module=Cases&action=DetailView&record=' . $bean->id;
 
-			$mail->Subject = $sugar_config['isQA'] == true ? '[QA] ' : '';
-
 			if(!$bean->fetched_row['id']) {
-				$mail->Subject .= 'Customer Issue - New Record';
+				$mail->Subject = 'Customer Issue - New Record';
 				$customBodyContent = 'A new customer issue has been created and is assigned to '.$newAssignedUserName.'.';
 			} else {
 				
@@ -39,12 +37,12 @@
 
 				if($newAssignedTo != $currentAssignedTo && $newStatus == $currentStatus) {
 
-					$mail->Subject .= 'Customer Issue #' .$bean->case_number. ' - Assigned User Update';
+					$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Assigned User Update';
 					$customBodyContent = 'This record has now been assigned to '.$newAssignedUserName.' from '.$previousAssignedUserName.'.';
 					
 				} else if($newAssignedTo == $currentAssignedTo && $newStatus != $currentStatus) {
 
-					$mail->Subject .= 'Customer Issue #' .$bean->case_number. ' - Status Update';
+					$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Status Update';
 					$customBodyContent = 'The status of this record is now set to '.$newStatus.' from '.$currentStatus.'.';
 
 					if($newStatus == 'Responded') {
@@ -52,36 +50,45 @@
 						$siteLabManager = $this->retrieveSiteLabManager($bean->site_c, $bean->users_cases_1users_ida);
 						$siteLabManagerName = $siteLabManager->first_name . ' ' . $siteLabManager->last_name;
 						
-						$mail->Subject .= 'Customer Issue #' .$bean->case_number. ' - Assigned User and Status Update';
+						$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Assigned User and Status Update';
 						$customBodyContent = 'This record has now been assigned to '.$siteLabManagerName.' from '.$previousAssignedUserName.'.
 											  <br>
 											  The status of this record is now set to '.$newStatus.' from '.$currentStatus.'.';
 					}
 				} else if($newAssignedTo != $currentAssignedTo && $newStatus != $currentStatus) {
-					$mail->Subject .= 'Customer Issue #' .$bean->case_number. ' - Assigned User and Status Update';
+					$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Assigned User and Status Update';
 					$customBodyContent = 'This record has now been assigned to '.$newAssignedUserName.' from '.$previousAssignedUserName.'.
 										  <br>
 										  The status of this record is now set to '.$newStatus.' from '.$currentStatus.'.';
 				}
 			}
 
-			$mail->Body = from_html('Hello,
+			$customQABanner = $sugar_config['isQA'] == true ? '<span style="color: red;">** This is a test from the Empower QA System**</span><br><br>' : '';
+
+			$emailRecipientsData = $this->retrieveEmailRecipients($bean);
+			$recipientIDs = $emailRecipientsData['recipientIDs'];
+			$recipientNames = $sugar_config['isQA'] == true ? '<span style="color: red;">Email Recipients: ' . $emailRecipientsData['recipientNames'] . '</span><br><br>' : '';
+
+			$mail->Body = from_html(
+				$customQABanner.
+				$recipientNames.
+				'Hello,
 				<br><br>
 				'.$customBodyContent.'
 
 				<br><br>
 
 				Click here to access the record: '.$recordURL.'
-
+				
 				<br><br>
 
-				Thanks,<br>
-				'.$defaults['name'].'
-			');
+				Thanks,<br>'
+				.$defaults['name']
+			);
 
 			$mail->isHTML(true);
 			$mail->prepForOutbound();
-			$recipientIDs = $this->retrieveEmailRecipients($bean);
+			
 			$this->attachEmailRecipients($recipientIDs, $mail);			
 			$mail->Send();
 		}
@@ -110,7 +117,7 @@
 		public function retrieveEmailRecipients($bean) {
 			global $db;
 
-			$sql = "SELECT users.id
+			$sql = "SELECT users.id, users.first_name, users.last_name
 					FROM users 
 					LEFT JOIN users_cstm
 						ON users.id = users_cstm.id_c
@@ -133,18 +140,26 @@
 
 			$result = $db->query($sql);
 
-			$emailRecipientsArray = array();
+			$emailRecipientIDsArray = array();
+			$emailRecipientNamesArray = array();
 			
 			$recipientIDs = '';
 
 			while($row = $db->fetchByAssoc($result) )
 			{
-				array_push($emailRecipientsArray, "'" . $row['id'] . "'");
+				array_push($emailRecipientIDsArray, "'" . $row['id'] . "'");
+				array_push($emailRecipientNamesArray, $row['first_name'] . ' ' . $row['last_name']);
 			}
 
-			$recipientIDs = implode(', ', $emailRecipientsArray);
+			$recipientIDs = implode(', ', $emailRecipientIDsArray);
+			$recipientNames = implode(', ', $emailRecipientNamesArray);
 
-			return $recipientIDs;
+			$recipientDataArray = [
+				'recipientIDs' => $recipientIDs,
+				'recipientNames' => $recipientNames
+			];
+
+			return $recipientDataArray;
 		}
 
 		public function attachEmailRecipients($recipientIDs, $mail) {

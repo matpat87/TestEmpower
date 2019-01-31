@@ -6,6 +6,7 @@ $dictionary['AAR_AccountActivityReport']['fields']['custom_related_to']= array(
         'type' => 'enum',
         'source' => 'non-db',
         'options' => 'account_related_to_list',
+        'inline_edit' => false,
 );
 
  ?> 

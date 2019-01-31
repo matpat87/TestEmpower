@@ -5,6 +5,7 @@ $dictionary['AAR_AccountActivityReport']['fields']['custom_status']= array(
         'vname' => 'LBL_CUSTOM_STATUS',
         'type' => 'text',
         'source' => 'non-db',
+        'inline_edit' => false,
 );
 
  ?> 

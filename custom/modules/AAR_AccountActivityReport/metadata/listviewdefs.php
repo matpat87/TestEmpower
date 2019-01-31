@@ -18,7 +18,7 @@ array (
     'width' => '10%',
     'default' => true,
   ),
-  'CUSTOM_DATE' => 
+  'DATE_START_C' => 
   array (
     'type' => 'text',
     'label' => 'LBL_CUSTOM_DATE',

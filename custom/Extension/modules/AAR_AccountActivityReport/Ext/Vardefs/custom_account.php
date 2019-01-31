@@ -6,7 +6,8 @@ $dictionary['AAR_AccountActivityReport']['fields']['custom_account']= array(
         'type' => 'enum',
         'source' => 'non-db',
         'options' => '',
-        'function' => 'getAccountsForReports'
+        'function' => 'getAccountsForReports',
+        'inline_edit' => false,
 );
 
  ?> 

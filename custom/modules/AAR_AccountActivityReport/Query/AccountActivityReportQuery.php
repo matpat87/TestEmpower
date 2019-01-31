@@ -8,7 +8,7 @@
 SELECT activity.id,
 CONCAT(activity.type, ' (', activity.status, ')') AS ' custom_status',
 CONCAT(u.first_name, ' ', u.last_name) AS 'custom_assigned_to',
-activity.date 'custom_date',
+DATE_FORMAT(activity.date,'%m/%d/%Y') AS 'date_start_c',
 activity.name AS 'name',
 a.name AS 'custom_account',
 activity.parent_type AS 'custom_related_to',

@@ -204,7 +204,12 @@ class AAR_AccountActivityReport extends Basic
             $return_array['where'] = 'WHERE 1=0 ';
         }
 
-        $return_array['order_by'] = ' ORDER BY a.' . $order_by;
+        if(!empty($order_by) && strpos($order_by, 'date_entered') !== false)
+        {
+            $order_by = string_replace_all("date_entered", "date_start_c", $order_by);
+        }
+
+        $return_array['order_by'] = ' ORDER BY ' . $order_by;
 
         $_SESSION['AccountActivityReportQuery'] = $return_array;
 

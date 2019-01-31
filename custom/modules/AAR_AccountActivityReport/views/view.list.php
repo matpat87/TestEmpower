@@ -93,10 +93,10 @@ class AAR_AccountActivityReportViewList extends ViewList
 
         $this->lv->export = false;
         $this->lv->delete = false;
-        $this->lv->select = false;
+        $this->lv->select = true;
         $this->lv->mailMerge = false;
         $this->lv->email = false;
-        $this->lv->multiSelect = false;
+        $this->lv->multiSelect = true;
         $this->lv->quickViewLinks = false;
         $this->lv->mergeduplicates = false;
         $this->lv->contextMenus = false;
@@ -115,6 +115,8 @@ class AAR_AccountActivityReportViewList extends ViewList
                 .advanced{
                     display: none !important;
                 }
+
+                .SugarActionMenu:first-child .sugar_action_button:first-child {margin-right: 0px;}
             </style>
 EOF;
 
@@ -124,7 +126,7 @@ EOF;
                 var paginationActionButtonsHTML = paginationActionButtons.html();
                 var buttonHTML = '<ul class="clickMenu selectmenu columnsFilterLink SugarActionMenu listViewLinkButton listViewLinkButton_top export-pdf">' +
                     '<li class="sugar_action_button">' +
-                    '<a href="index.php?entryPoint=AccountActivityReport" title="Export as PDF" class="parent-dropdown-handler" target="_blank">' +
+                    '<a href="javascript:void(0)" class="parent-dropdown-action-handler custom-export-pdf-btn disabled" id="export_listview_top">' +
                         '<span class="glyphicon glyphicon-export glyphicon-icon-cstm"></span>&nbsp;' +
                         '<span>Export PDF</span>' +
                     '</a></li></ul>';
@@ -134,6 +136,21 @@ EOF;
 
                 $('.columnsFilterLink:eq(0)').css('display', 'none');
                 $('.columnsFilterLink:eq(2)').css('display', 'none');
+
+                $("li.sugar_action_button > .bootstrap-checkbox, ul#selectLinkTop li.sugar_action_button ul.subnav li > a.menuItem, .listview-checkbox").on('click', function() {
+
+                    setTimeout(function(){ 
+                        if($(".listview-checkbox:checked").length < 1) {
+                            $(".custom-export-pdf-btn")
+                            .addClass('disabled')
+                            .removeAttr('onclick');
+                        } else {
+                            $(".custom-export-pdf-btn")
+                            .removeClass('disabled')
+                            .attr('onclick', "return sListView.send_form(true, `SAR_SalesActivityReport`, `index.php?entryPoint=AccountActivityReport`,`Please select at least 1 record to proceed.`)");
+                        };
+                    }, 10);
+                })
             </script>
 EOF;
         

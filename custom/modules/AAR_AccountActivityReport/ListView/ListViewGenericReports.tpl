@@ -70,25 +70,6 @@
         }
     }
 
-    #pipeline-info td{
-        border: 1px solid black;
-    }
-
-    .border-cell
-    {
-        border: 1px solid black !important;
-    }
-
-    #list-rows > tbody > tr > td {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .list-rows-sales-stage td{
-        text-align: center;
-        width: 10%;
-    }
-
 {/literal}
 </style>
 
@@ -134,7 +115,7 @@
                 {capture assign="importLink"}<a href="?module=Import&action=Step1&import_module={$pageData.bean.moduleDir}&return_module={$pageData.bean.moduleDir}&return_action=index">{$APP.LBL_IMPORT}</a>{/capture}
                 {capture assign="helpLink"}<a target="_blank" href='?module=Administration&action=SupportPortal&view=documentation&version={$sugar_info.sugar_version}&edition={$sugar_info.sugar_flavor}&lang=&help_module={$currentModule}&help_action=&key='>{$APP.LBL_CLICK_HERE}</a>{/capture}
                 <p class="msg">
-                    Please fill the filters in order to get data!
+                    {$APP.MSG_EMPTY_LIST_VIEW_NO_RESULTS|replace:"<item2>":$createLink|replace:"<item3>":$importLink}
                 </p>
         {elseif $query == "-advanced_search"}
             <p class="msg emptyResults">
@@ -161,9 +142,8 @@
     </div>
 {/if}
 {$multiSelectData}
-{*$data|var_dump*}
-{if $hideTable == false}
 
+{if $hideTable == false}
     <div class="list-view-rounded-corners">
         <table cellpadding='0' cellspacing='0' border='0' class='list view table-responsive'>
     <thead>
@@ -172,70 +152,195 @@
         {assign var="actionsLink" value=$actionsLinkTop}
         {assign var="selectLink" value=$selectLinkTop}
         {assign var="action_menu_location" value="top"}
-        {assign var="fullYearAmountTotal" value=0}
-        {assign var="rowCtr" value=0}
-        {assign var="salesPersonName" value=""}
-        {assign var="subTotal" value=0}
+
 
         {include file='themes/SuiteP/include/ListView/ListViewPaginationTop.tpl'}
+        <tr>
+            <th colspan="{$colCount}" class="thcstm">Account Activity Report for {$current_user_name}</th>
+        <tr>
+        <tr height='20'>
+            {if $prerow}
+                <th class="td_alt">&nbsp;</th>
+            {/if}
+            {if !(isset($options.hide_edit_link) && $options.hide_edit_link === true) && !empty($quickViewLinks)}
+                <th class='td_alt quick_view_links'>&nbsp;</th>
+            {/if}
+            {counter start=0 name="colCounter" print=false assign="colCounter"}
+            {assign var='datahide' value="xs sm"}
+            {foreach from=$displayColumns key=colHeader item=params}
+                {if $colCounter == '3'}{assign var='datahide' value="xs sm"}{/if}
+                {if $colCounter == '5'}{assign var='datahide' value="md"}{/if}
 
-    </thead>
-    <tbody style="border: 2px solid black;">
-        <tr style="width: 100%">
-            <td style="vertical-align: top; text-align: center; font-weight: bold; font-size: 13px">
-                Account Activity For {$current_user_name}
-            </td>
+                {if $colCounter == '0'}
+                    {assign var='hide' value=""}
+                {elseif $colHeader  == 'NAME' }
+                    {assign var='hide' value=""}
+                {elseif $colCounter  > '10' }
+                    {assign var='hide' value="hidden-xs hidden-sm hidden-md"}
+                {elseif $colCounter > '4' }
+                    {assign var='hide' value="hidden-xs hidden-sm"}
+                {elseif $colCounter > '0' }
+                    {assign var='hide' value="hidden-xs"}
+                {else}
+                    {assign var='hide' value=""}
+                {/if}
+                {if $colHeader == 'NAME' || $params.bold}
+                    <th scope='col' data-toggle="true" class="{$hide}">
+                {else}
+                    <th scope='col' data-breakpoints="{$datahide}" class="{$hide}">
+                {/if}
+                        <div>
+                        {if $params.sortable|default:true}
+                            {if $params.url_sort}
+                                <a href='{$pageData.urls.orderBy}{$params.orderBy|default:$colHeader|lower}' class='listViewThLinkS1'>
+                            {else}
+                                {if $params.orderBy|default:$colHeader|lower == $pageData.ordering.orderBy}
+                                    <a href='javascript:sListView.order_checks("{$pageData.ordering.sortOrder|default:ASCerror}", "{$params.orderBy|default:$colHeader|lower}" , "{$pageData.bean.moduleDir}{"2_"}{$pageData.bean.objectName|upper}{"_ORDER_BY"}")' class='listViewThLinkS1'>
+                                {else}
+                                    <a href='javascript:sListView.order_checks("ASC", "{$params.orderBy|default:$colHeader|lower}" , "{$pageData.bean.moduleDir}{"2_"}{$pageData.bean.objectName|upper}{"_ORDER_BY"}")' class='listViewThLinkS1'>
+                                {/if}
+                            {/if}
+                            {if isset($params.hide_header_label) && $params.hide_header_label == true}
+                            {else}
+                            {sugar_translate label=$params.label module=$pageData.bean.moduleDir}
+                        &nbsp;&nbsp;  {/if}
+                            {if $params.orderBy|default:$colHeader|lower == $pageData.ordering.orderBy}
+                                {if $pageData.ordering.sortOrder == 'ASC'}
+                                    {capture assign="imageName"}arrow_down.{$arrowExt}{/capture}
+                                    {capture assign="alt_sort"}{sugar_translate label='LBL_ALT_SORT_DESC'}{/capture}
+                                    <span class="suitepicon suitepicon-action-sorting-descending" title="{$alt_sort}"></span>
+                                {else}
+                                    {capture assign="imageName"}arrow_up.{$arrowExt}{/capture}
+                                    {capture assign="alt_sort"}{sugar_translate label='LBL_ALT_SORT_ASC'}{/capture}
+                                    <span class="suitepicon suitepicon-action-sorting-ascending" title="{$alt_sort}"></span>
+                                {/if}
+                            {else}
+                                {capture assign="imageName"}arrow.{$arrowExt}{/capture}
+                                {capture assign="alt_sort"}{sugar_translate label='LBL_ALT_SORT'}{/capture}
+                                <span class="suitepicon suitepicon-action-sorting-none" title="{$alt_sort}"></span>
+                            {/if}
+                            </a>
+                        {else}
+                            {if !isset($params.noHeader) || $params.noHeader == false}
+                                {if isset($params.hide_header_label) && $params.hide_header_label == true}
+                                {else}
+                                    {sugar_translate label=$params.label module=$pageData.bean.moduleDir}
+                                    &nbsp;&nbsp;  {/if}
+                            {/if}
+                        {/if}
+                        </div>
+                    </th>
+                {counter name="colCounter"}
+            {/foreach}
+            {* add extra column for icons*}
+            <th>{$pageData.additionalDetails.$id}</th>
         </tr>
-        <tr style="width: 100%">
-            <td style="width: 100%">
-                <table id="list-rows" style="width: 100%; table-layout: fixed;">
-                    <thead>
-                        <tr>
-                            <th style="width: 10% !important; text-align: center;" class="border-cell">Status</th>
-                            <th style="width: 20% !important; text-align: center;" class="border-cell">Assigned To</th>
-                            <th style="width: 10% !important; text-align: center;" class="border-cell">Date</th>
-                            <th style="width: 30% !important; text-align: center;" class="border-cell">Subject</th>
-                            <th style="width: 20% !important; text-align: center;" class="border-cell">Account</th>
-                            <th style="width: 10% !important; text-align: center;" class="border-cell">Related To</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {foreach name=rowIteration from=$data key=id item=rowData}
+    </thead>
+    <tbody>
+        {assign var='rowDataCount' value=0}
+        {counter start=$pageData.offsets.current print=false assign="offset" name="offset"}
+        {foreach name=rowIteration from=$data key=id item=rowData}
+            {counter name="offset" print=false}
+            {assign var='scope_row' value=true}
 
-                        <tr>
-                            <td class="border-cell" style="background-color: white">
-                                <div style="margin-left: 5px;">{$rowData.CUSTOM_STATUS}</div>
-                            </td>
-                            <td class="border-cell">
-                                <div style="margin-left: 5px;">{$rowData.CUSTOM_ASSIGNED_TO}</div>
-                            </td>
-                            <td class="border-cell">
-                                <div style="margin-left: 5px;">{$rowData.CUSTOM_DATE}</div>
-                            </td>
-                            <td class="border-cell">
-                                <div style="margin-left: 5px;">{$rowData.NAME}</div>
-                            </td>
-                            <td class="border-cell">
-                                <div style="margin-left: 5px;">{$rowData.CUSTOM_ACCOUNT}</div>
-                            </td>
-                            <td class="border-cell">
-                                <div style="margin-left: 5px;">{$rowData.CUSTOM_RELATED_TO}</div>
-                            </td>
-                        </tr>
 
-                        {if $rowData.DESCRIPTION != ''}
-                        <tr>
-                            <td class="border-cell"></td>
-                            <td class="border-cell" colspan="5" style="word-wrap: break-word;">{$rowData.DESCRIPTION}</td>
-                        </tr>
+
+            {if $smarty.foreach.rowIteration.iteration is odd}
+                {assign var='_rowColor' value=$rowColor[0]}
+            {else}
+                {assign var='_rowColor' value=$rowColor[1]}
+            {/if}
+            <tr height='20' class='{$_rowColor}S1'>
+                {if $prerow}
+                <td>
+                 {if !$is_admin && $is_admin_for_user && $rowData.IS_ADMIN==1}
+                        <input type='checkbox' disabled="disabled" class='listview-checkbox' value='{$rowData.ID}'>
+                 {else}
+                        <input title="{sugar_translate label='LBL_SELECT_THIS_ROW_TITLE'}" onclick='sListView.check_item(this, document.MassUpdate)' type='checkbox' class='listview-checkbox' name='mass[]' value='{$rowData.ID}'>
+                 {/if}
+                </td>
+                {/if}
+                {if !empty($quickViewLinks)}
+                {capture assign=linkModule}{if $params.dynamic_module}{$rowData[$params.dynamic_module]}{else}{$pageData.bean.moduleDir}{/if}{/capture}
+                {capture assign=action}{if $act}{$act}{else}EditView{/if}{/capture}
+                {if isset($options.hide_edit_link) && $options.hide_edit_link === true}
+                {else}
+                    <td>
+                        {if $pageData.rowAccess[$id].edit && !empty($quickViewLinks)}
+                            <a class="edit-link" title='{$editLinkString}' id="edit-{$rowData.ID}"
+                               href="index.php?module={$linkModule}&offset={$offset}&stamp={$pageData.stamp}&return_module={$linkModule}&action={$action}&record={$rowData.ID}"
+                            >
+                                {capture name='tmp1' assign='alt_edit'}{sugar_translate label="LNK_EDIT"}{/capture}
+                                <span class="suitepicon suitepicon-action-edit"></span></a>
+                        {/if}
+                    </td>
+                {/if}
+
+                {/if}
+                {counter start=0 name="colCounter" print=false assign="colCounter"}
+                {foreach from=$displayColumns key=col item=params}
+                    {if $colCounter == '0'}
+                        {assign var='hide' value=""}
+                    {elseif $col  == 'NAME' }
+                        {assign var='hide' value=""}
+                    {elseif $colCounter  > '10' }
+                        {assign var='hide' value="hidden-xs hidden-sm hidden-md"}
+                    {elseif $colCounter > '4' }
+                        {assign var='hide' value="hidden-xs hidden-sm"}
+                    {elseif $colCounter > '0' }
+                        {assign var='hide' value="hidden-xs"}
+                    {else}
+                        {assign var='hide' value=""}
+                    {/if}
+                    {$displayColumns[type]}
+                    {strip}
+                    <td {if $scope_row} scope='row' {/if} align='{$params.align|default:'left'}' valign="top" type="{$displayColumns.$col.type}" field="{$col|lower}" class="{$hide} {if $inline_edit && ($displayColumns.$col.inline_edit == 1 || !isset($displayColumns.$col.inline_edit))}inlineEdit{/if}{if ($params.type == 'teamset')}nowrap{/if}{if preg_match('/PHONE/', $col)} phone{/if}">
+                        {if $col == 'NAME' || $params.bold}<b>{/if}
+                        {if $params.link && !$params.customCode}
+                            {capture assign=linkModule}{if $params.dynamic_module}{$rowData[$params.dynamic_module]}{else}{$params.module|default:$pageData.bean.moduleDir}{/if}{/capture}
+                            {capture assign=action}{if $act}{$act}{else}DetailView{/if}{/capture}
+                            {capture assign=record}{$rowData[$params.id]|default:$rowData.ID}{/capture}
+                            {capture assign=url}index.php?module={$linkModule}&offset={$offset}&stamp={$pageData.stamp}&return_module={$linkModule}&action={$action}&record={$record}{/capture}
+                                                    <{$pageData.tag.$id[$params.ACLTag]|default:$pageData.tag.$id.MAIN} href="{sugar_ajax_url url=$url}">
                         {/if}
 
-                        {assign var="rowCtr" value=$rowCtr+1}
-                        {/foreach}
-                    </tbody>
-                </table>
+                        {if $params.customCode}
+                            {sugar_evalcolumn_old var=$params.customCode rowData=$rowData}
+                        {else}
+                           {sugar_field parentFieldArray=$rowData vardef=$params displayType=ListView field=$col}
+
+                        {/if}
+                        {if empty($rowData.$col) && empty($params.customCode)}{/if}
+                        {if $params.link && !$params.customCode}
+                            </{$pageData.tag.$id[$params.ACLTag]|default:$pageData.tag.$id.MAIN}>
+                        {/if}
+                        {if $inline_edit && ($displayColumns.$col.inline_edit == 1 || !isset($displayColumns.$col.inline_edit))}<div class="inlineEditIcon">{sugar_getimage name="inline_edit_icon.svg" attr='border="0" ' alt="$alt_edit"}</div>{/if}
+                    </td>
+                    {/strip}
+                    {assign var='scope_row' value=false}
+                    {counter name="colCounter"}
+
+                {/foreach}
+                <td align='right'>{$pageData.additionalDetails.$id}</td>
+                </tr>
+
+                {if !empty($data[$rowDataCount].DESCRIPTION)}
+                <tr style="background-color: white">
+                    <td></td>
+                    <td></td>
+                    <td colspan="6" style="max-width: 300px !important; word-wrap:break-word;">{sugar_field parentFieldArray=$rowData vardef=$params displayType=ListView field='description'}</td>
+                </tr>
+                {/if}
+
+                {assign var=rowDataCount value=$rowDataCount+1}
+        {foreachelse}
+        <tr height='20' class='{$rowColor[0]}S1'>
+            <td colspan="{$colCount}">
+                <em>{$APP.LBL_NO_DATA}</em>
             </td>
         </tr>
+        {/foreach}
+
         
     {assign var="link_select_id" value="selectLinkBottom"}
     {assign var="link_action_id" value="actionLinkBottom"}
@@ -278,6 +383,7 @@ function lvg_nav(m,id,act,offset,t){
 </script>
 <script type="text/javascript" src="include/InlineEditing/inlineEditing.js"></script>
 {/if}
+
 
 {if $form.footerTpl}
     {sugar_include type="smarty" file=$form.headerTpl}

@@ -18,6 +18,21 @@
 
 	$activitiesStringIDs = isset($_REQUEST['uid']) ? $_REQUEST['uid'] : '';
 
+	if($activitiesStringIDs) {
+		$activityArrayIDs = explode(',', $activitiesStringIDs);
+		$stringActivityIDs = implode(', ', $activityArrayIDs);
+
+		$newArray = [];
+		foreach ($activityArrayIDs as $key => $value) {
+	       array_push($newArray, "'" . $value . "'");
+	    }
+
+	    $newString = implode(', ', $newArray);
+	    $andOrWhere = trim($accountActivityReportQuery['where']) ? 'AND' : 'WHERE';
+
+		$accountActivityReportQuery['where'] .= $andOrWhere . ' (activity.id IN ('.$newString.')) ';
+	}
+
 	$query = $accountActivityReportQuery['select'] . $accountActivityReportQuery['from'] . $accountActivityReportQuery['where'] . $accountActivityReportQuery['order_by'];
 
 	$db = DBManagerFactory::getInstance();
@@ -132,5 +147,5 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('SalesActivityReport' . date('Y-m-d') . strtotime(date('h:i:s')) . '.pdf', 'D');
+$pdf->Output('AccountActivityReport' . date('Y-m-d') . strtotime(date('h:i:s')) . '.pdf', 'D');
 ?>

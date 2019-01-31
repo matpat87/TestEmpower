@@ -1,6 +1,32 @@
 <?php
- // created: 2019-01-15 15:17:19
-$dictionary['IM_ItemMaster']['fields']['project_c']['inline_edit']='1';
-$dictionary['IM_ItemMaster']['fields']['project_c']['labelValue']='Project';
-
- ?>
+	$dictionary['IM_ItemMaster']['fields']['project_c'] = array (
+		'inline_edit' => '1',
+		'labelValue' => 'Project',
+		'required' => false,
+		'source' => 'non-db',
+		'name' => 'project_c',
+		'vname' => 'LBL_PROJECT',
+		'type' => 'relate',
+		'massupdate' => '0',
+		'default' => NULL,
+		'no_default' => false,
+		'comments' => '',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'disabled',
+		'duplicate_merge_dom_value' => '0',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'len' => '255',
+		'size' => '20',
+		'id_name' => 'project_id_c',
+		'ext2' => 'Project',
+		'module' => 'Project',
+		'rname' => 'name',
+		'quicksearch' => 'enabled',
+		'studio' => 'visible',
+		'id' => 'IM_ItemMasterproject_c',
+	);
+?>

@@ -1,6 +1,32 @@
 <?php
- // created: 2019-01-15 15:17:01
-$dictionary['IM_ItemMaster']['fields']['opportunity_c']['inline_edit']='1';
-$dictionary['IM_ItemMaster']['fields']['opportunity_c']['labelValue']='Opportunity';
-
- ?>
+	$dictionary['IM_ItemMaster']['fields']['opportunity_c'] = array (
+		'inline_edit' => '1',
+		'labelValue' => 'Opportunity',
+		'required' => false,
+		'source' => 'non-db',
+		'name' => 'opportunity_c',
+		'vname' => 'LBL_OPPORTUNITY',
+		'type' => 'relate',
+		'massupdate' => '0',
+		'default' => NULL,
+		'no_default' => false,
+		'comments' => '',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'disabled',
+		'duplicate_merge_dom_value' => '0',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'len' => '255',
+		'size' => '20',
+		'id_name' => 'opportunity_id_c',
+		'ext2' => 'Opportunities',
+		'module' => 'Opportunities',
+		'rname' => 'name',
+		'quicksearch' => 'enabled',
+		'studio' => 'visible',
+		'id' => 'IM_ItemMasteropportunity_c',
+	);
+?>

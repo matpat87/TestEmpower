@@ -30,12 +30,19 @@ array (
           'field' => '30',
         ),
       ),
-      'useTabs' => false,
+      'includes' => 
+      array (
+        0 => 
+        array (
+          'file' => 'custom/modules/IM_ItemMaster/js/custom.js',
+        ),
+      ),
+      'useTabs' => true,
       'tabDefs' => 
       array (
         'DEFAULT' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
         'LBL_DETAILVIEW_PANEL1' => 
@@ -50,7 +57,7 @@ array (
         ),
         'LBL_DETAILVIEW_PANEL3' => 
         array (
-          'newTab' => false,
+          'newTab' => true,
           'panelDefault' => 'expanded',
         ),
       ),

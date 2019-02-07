@@ -1,134 +1,82 @@
 <?php
 /**
+ * Products, Quotations & Invoices modules.
+ * Extensions to SugarCRM
+ * @package Advanced OpenSales for SugarCRM
+ * @subpackage Products
+ * @copyright SalesAgility Ltd http://www.salesagility.com
  *
- * SugarCRM Community Edition is a customer relationship management program developed by
- * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
  *
- * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
- * Copyright (C) 2011 - 2017 SalesAgility Ltd.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
- * This program is free software; you can redistribute it and/or modify it under
- * the terms of the GNU Affero General Public License version 3 as published by the
- * Free Software Foundation with the addition of the following permission added
- * to Section 15 as permitted in Section 7(a): FOR ANY PART OF THE COVERED WORK
- * IN WHICH THE COPYRIGHT IS OWNED BY SUGARCRM, SUGARCRM DISCLAIMS THE WARRANTY
- * OF NON INFRINGEMENT OF THIRD PARTY RIGHTS.
+ * You should have received a copy of the GNU AFFERO GENERAL PUBLIC LICENSE
+ * along with this program; if not, see http://www.gnu.org/licenses
+ * or write to the Free Software Foundation,Inc., 51 Franklin Street,
+ * Fifth Floor, Boston, MA 02110-1301  USA
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more
- * details.
- *
- * You should have received a copy of the GNU Affero General Public License along with
- * this program; if not, see http://www.gnu.org/licenses or write to the Free
- * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
- * 02110-1301 USA.
- *
- * You can contact SugarCRM, Inc. headquarters at 10050 North Wolfe Road,
- * SW2-130, Cupertino, CA 95014, USA. or at email address contact@sugarcrm.com.
- *
- * The interactive user interfaces in modified source and object code versions
- * of this program must display Appropriate Legal Notices, as required under
- * Section 5 of the GNU Affero General Public License version 3.
- *
- * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
- * these Appropriate Legal Notices must retain the display of the "Powered by
- * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
- * reasonably feasible for  technical reasons, the Appropriate Legal Notices must
- * display the words  "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ * @author Salesagility Ltd <support@salesagility.com>
  */
 
+/**
+ * THIS CLASS IS FOR DEVELOPERS TO MAKE CUSTOMIZATIONS IN
+ */
+require_once('modules/CI_CustomerItems/CI_CustomerItems_sugar.php');
+class CI_CustomerItems extends CI_CustomerItems_sugar {
 
-class CI_CustomerItems extends Basic
-{
-    public $new_schema = true;
-    public $module_dir = 'CI_CustomerItems';
-    public $object_name = 'CI_CustomerItems';
-    public $table_name = 'ci_customeritems';
-    public $importable = false;
+	function __construct(){
+		parent::__construct();
+	}
 
-    public $id;
-    public $name;
-    public $date_entered;
-    public $date_modified;
-    public $modified_user_id;
-    public $modified_by_name;
-    public $created_by;
-    public $created_by_name;
-    public $description;
-    public $deleted;
-    public $created_by_link;
-    public $modified_user_link;
-    public $assigned_user_id;
-    public $assigned_user_name;
-    public $assigned_user_link;
-    public $SecurityGroups;
-    public $budget_apr;
-    public $currency_id;
-    public $budget_aug;
-    public $budget_jan;
-    public $budget_feb;
-    public $budget_mar;
-    public $budget_may;
-    public $budget_jun;
-    public $budget_jul;
-    public $budget_sep;
-    public $budget_oct;
-    public $budget_nov;
-    public $budget_dec;
-    public $budget_cost_01_jan;
-    public $budget_cost_02_feb;
-    public $budget_cost_03_mar;
-    public $budget_cost_04_apr;
-    public $budget_cost_05_may;
-    public $budget_cost_06_jun;
-    public $budget_cost_07_jul;
-    public $budget_cost_08_aug;
-    public $budget_cost_09_sep;
-    public $budget_cost_10_oct;
-    public $budget_cost_11_nov;
-    public $budget_cost_12_dec;
-    public $volume_01_jan;
-    public $volume_02_feb;
-    public $volume_03_mar;
-    public $volume_04_apr;
-    public $volume_05_may;
-    public $volume_06_jun;
-    public $volume_07_jul;
-    public $volume_08_aug;
-    public $volume_09_sep;
-    public $volume_10_oct;
-    public $volume_11_nov;
-    public $volume_12_dec;
-    public $weight_per_gal;
-    public $weight;
-    public $url;
-    public $unit_measure;
-    public $type;
-    public $status;
-    public $product_image;
-    public $price;
-    public $part_number;
-    public $material_cost_type;
-    public $margin;
-    public $maincode;
-    public $location;
-    public $division;
-    public $cost;
-    public $container;
-    public $company_no;
-    public $category;
-    public $cas;
-	
-    public function bean_implements($interface)
-    {
-        switch($interface)
-        {
-            case 'ACL':
-                return true;
+    /**
+     * @deprecated deprecated since version 7.6, PHP4 Style Constructors are deprecated and will be remove in 7.8, please update your code, use __construct instead
+     */
+    function CI_CustomerItems(){
+        $deprecatedMessage = 'PHP4 Style Constructors are deprecated and will be remove in 7.8, please update your code';
+        if(isset($GLOBALS['log'])) {
+            $GLOBALS['log']->deprecated($deprecatedMessage);
         }
-
-        return false;
+        else {
+            trigger_error($deprecatedMessage, E_USER_DEPRECATED);
+        }
+        self::__construct();
     }
-	
+
+
+	function save($check_notify=false){
+		global $sugar_config,$mod_strings;
+
+		if (isset($_POST['deleteAttachment']) && $_POST['deleteAttachment']=='1') {
+			$this->product_image = '';
+		}
+
+		require_once('include/upload_file.php');
+		$GLOBALS['log']->debug('UPLOADING PRODUCT IMAGE');
+		$upload_file = new UploadFile('uploadfile');
+
+		if (isset($_FILES['uploadimage']['tmp_name'])&&$_FILES['uploadimage']['tmp_name']!=""){
+
+            if($_FILES['uploadimage']['size'] > $sugar_config['upload_maxsize']) {
+                die($mod_strings['LBL_IMAGE_UPLOAD_FAIL'].$sugar_config['upload_maxsize']);
+
+            }
+            else {
+                $this->product_image=$sugar_config['site_url'].'/'.$sugar_config['upload_dir'].$_FILES['uploadimage']['name'];
+                move_uploaded_file($_FILES['uploadimage']['tmp_name'], $sugar_config['upload_dir'].$_FILES['uploadimage']['name']);
+
+            }
+	    }
+
+        require_once('modules/AOS_Products_Quotes/AOS_Utils.php');
+
+        perform_aos_save($this);
+
+	    parent::save($check_notify);
+    }
 }

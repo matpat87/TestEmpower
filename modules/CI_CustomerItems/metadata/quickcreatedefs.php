@@ -20,6 +20,18 @@ array (
           'field' => '30',
         ),
       ),
+      'form' => 
+      array (
+        'enctype' => 'multipart/form-data',
+        'headerTpl' => 'modules/CI_CustomerItems/tpls/EditViewHeader.tpl',
+      ),
+      'includes' => 
+      array (
+        0 => 
+        array (
+          'file' => 'modules/CI_CustomerItems/js/products.js',
+        ),
+      ),
       'useTabs' => false,
       'tabDefs' => 
       array (
@@ -121,7 +133,7 @@ array (
           0 => 
           array (
             'name' => 'product_image',
-            'label' => 'LBL_PRODUCT_IMAGE',
+            'customCode' => '{$PRODUCT_IMAGE}',
           ),
           1 => 
           array (

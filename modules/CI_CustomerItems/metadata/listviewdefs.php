@@ -6,6 +6,7 @@ array (
   array (
     'type' => 'varchar',
     'label' => 'LBL_PART_NUMBER',
+    'link' => true,
     'width' => '10%',
     'default' => true,
   ),
@@ -14,7 +15,7 @@ array (
     'width' => '15%',
     'label' => 'LBL_NAME',
     'default' => true,
-    'link' => true,
+    'link' => false,
   ),
   'STATUS' => 
   array (

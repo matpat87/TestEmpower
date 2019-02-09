@@ -1,0 +1,78 @@
+<?php
+// created: 2019-02-09 10:43:31
+$dictionary["odr_salesorders_aos_quotes"] = array (
+  'true_relationship_type' => 'many-to-many',
+  'relationships' => 
+  array (
+    'odr_salesorders_aos_quotes' => 
+    array (
+      'lhs_module' => 'ODR_SalesOrders',
+      'lhs_table' => 'odr_salesorders',
+      'lhs_key' => 'id',
+      'rhs_module' => 'AOS_Quotes',
+      'rhs_table' => 'aos_quotes',
+      'rhs_key' => 'id',
+      'relationship_type' => 'many-to-many',
+      'join_table' => 'odr_salesorders_aos_quotes_c',
+      'join_key_lhs' => 'odr_salesorders_aos_quotesodr_salesorders_ida',
+      'join_key_rhs' => 'odr_salesorders_aos_quotesaos_quotes_idb',
+    ),
+  ),
+  'table' => 'odr_salesorders_aos_quotes_c',
+  'fields' => 
+  array (
+    0 => 
+    array (
+      'name' => 'id',
+      'type' => 'varchar',
+      'len' => 36,
+    ),
+    1 => 
+    array (
+      'name' => 'date_modified',
+      'type' => 'datetime',
+    ),
+    2 => 
+    array (
+      'name' => 'deleted',
+      'type' => 'bool',
+      'len' => '1',
+      'default' => '0',
+      'required' => true,
+    ),
+    3 => 
+    array (
+      'name' => 'odr_salesorders_aos_quotesodr_salesorders_ida',
+      'type' => 'varchar',
+      'len' => 36,
+    ),
+    4 => 
+    array (
+      'name' => 'odr_salesorders_aos_quotesaos_quotes_idb',
+      'type' => 'varchar',
+      'len' => 36,
+    ),
+  ),
+  'indices' => 
+  array (
+    0 => 
+    array (
+      'name' => 'odr_salesorders_aos_quotesspk',
+      'type' => 'primary',
+      'fields' => 
+      array (
+        0 => 'id',
+      ),
+    ),
+    1 => 
+    array (
+      'name' => 'odr_salesorders_aos_quotes_alt',
+      'type' => 'alternate_key',
+      'fields' => 
+      array (
+        0 => 'odr_salesorders_aos_quotesodr_salesorders_ida',
+        1 => 'odr_salesorders_aos_quotesaos_quotes_idb',
+      ),
+    ),
+  ),
+);

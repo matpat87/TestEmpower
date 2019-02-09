@@ -228,6 +228,13 @@ array (
           array (
             'name' => 'discount_amount',
             'label' => 'LBL_DISCOUNT_AMOUNT',
+            'displayParams' => 
+            array (
+              'field' => 
+              array (
+                'onblur' => 'calculateTotal(\'lineItems\');',
+              ),
+            ),
           ),
         ),
         5 => 

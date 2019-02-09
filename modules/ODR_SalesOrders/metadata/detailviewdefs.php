@@ -14,6 +14,18 @@ array (
           1 => 'DUPLICATE',
           2 => 'DELETE',
           3 => 'FIND_DUPLICATES',
+          4 => 
+          array (
+            'customCode' => '<input type="button" class="button" onClick="showPopup(\'pdf\');" value="{$MOD.LBL_PRINT_AS_PDF}">',
+          ),
+          5 => 
+          array (
+            'customCode' => '<input type="button" class="button" onClick="showPopup(\'emailpdf\');" value="{$MOD.LBL_EMAIL_PDF}">',
+          ),
+          6 => 
+          array (
+            'customCode' => '<input type="button" class="button" onClick="showPopup(\'email\');" value="{$MOD.LBL_EMAIL_INVOICE}">',
+          ),
         ),
       ),
       'maxColumns' => '2',
@@ -33,11 +45,6 @@ array (
       'useTabs' => false,
       'tabDefs' => 
       array (
-        'DEFAULT' => 
-        array (
-          'newTab' => false,
-          'panelDefault' => 'expanded',
-        ),
         'LBL_EDITVIEW_PANEL1' => 
         array (
           'newTab' => false,
@@ -48,7 +55,12 @@ array (
           'newTab' => false,
           'panelDefault' => 'expanded',
         ),
-        'LBL_DETAILVIEW_PANEL3' => 
+        'LBL_EDITVIEW_PANEL3' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
+        'LBL_DETAILVIEW_PANEL4' => 
         array (
           'newTab' => false,
           'panelDefault' => 'expanded',
@@ -57,7 +69,7 @@ array (
     ),
     'panels' => 
     array (
-      'default' => 
+      'lbl_editview_panel1' => 
       array (
         0 => 
         array (
@@ -109,14 +121,13 @@ array (
           0 => 'description',
         ),
       ),
-      'lbl_editview_panel1' => 
+      'lbl_editview_panel2' => 
       array (
         0 => 
         array (
           0 => 
           array (
             'name' => 'billing_account',
-            'studio' => 'visible',
             'label' => 'LBL_BILLING_ACCOUNT',
           ),
           1 => '',
@@ -126,7 +137,6 @@ array (
           0 => 
           array (
             'name' => 'billing_contact',
-            'studio' => 'visible',
             'label' => 'LBL_BILLING_CONTACT',
           ),
           1 => '',
@@ -136,16 +146,26 @@ array (
           0 => 
           array (
             'name' => 'billing_address_street',
-            'label' => 'LBL_BILLING_ADDRESS_STREET',
+            'label' => 'LBL_BILLING_ADDRESS',
+            'type' => 'address',
+            'displayParams' => 
+            array (
+              'key' => 'billing',
+            ),
           ),
           1 => 
           array (
             'name' => 'shipping_address_street',
-            'label' => 'LBL_SHIPPING_ADDRESS_STREET',
+            'label' => 'LBL_SHIPPING_ADDRESS',
+            'type' => 'address',
+            'displayParams' => 
+            array (
+              'key' => 'shipping',
+            ),
           ),
         ),
       ),
-      'lbl_editview_panel2' => 
+      'lbl_editview_panel3' => 
       array (
         0 => 
         array (
@@ -155,16 +175,19 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_CURRENCY',
           ),
+            1 => '',
         ),
         1 => 
         array (
-          0 => '',
-          1 => '',
+          0 => 
+          array (
+            'name' => 'line_items',
+            'label' => 'LBL_LINE_ITEMS',
+          ),
         ),
         2 => 
         array (
           0 => '',
-          1 => '',
         ),
         3 => 
         array (
@@ -223,7 +246,7 @@ array (
           ),
         ),
       ),
-      'lbl_detailview_panel3' => 
+      'lbl_detailview_panel4' => 
       array (
         0 => 
         array (

@@ -2,7 +2,7 @@
 $module_name = 'ODR_SalesOrders';
 $viewdefs [$module_name] = 
 array (
-  'EditView' => 
+  'QuickCreate' => 
   array (
     'templateMeta' => 
     array (
@@ -51,7 +51,6 @@ array (
           array (
             'name' => 'number',
             'label' => 'LBL_NUMBER',
-            'customCode' => '{$fields.number.value}',
           ),
         ),
         1 => 
@@ -92,7 +91,12 @@ array (
         ),
         4 => 
         array (
-          0 => 'description',
+          0 => 
+          array (
+            'name' => 'description',
+            'comment' => 'Full text of the note',
+            'label' => 'LBL_DESCRIPTION',
+          ),
         ),
       ),
       'lbl_editview_panel2' => 
@@ -102,22 +106,8 @@ array (
           0 => 
           array (
             'name' => 'billing_account',
+            'studio' => 'visible',
             'label' => 'LBL_BILLING_ACCOUNT',
-            'displayParams' => 
-            array (
-              'key' => 
-              array (
-                0 => 'billing',
-                1 => 'shipping',
-              ),
-              'copy' => 
-              array (
-                0 => 'billing',
-                1 => 'shipping',
-              ),
-              'billingKey' => 'billing',
-              'shippingKey' => 'shipping',
-            ),
           ),
           1 => '',
         ),
@@ -126,11 +116,8 @@ array (
           0 => 
           array (
             'name' => 'billing_contact',
+            'studio' => 'visible',
             'label' => 'LBL_BILLING_CONTACT',
-            'displayParams' => 
-            array (
-              'initial_filter' => '&account_name="+this.form.{$fields.billing_account.name}.value+"',
-            ),
           ),
           1 => '',
         ),
@@ -139,30 +126,11 @@ array (
           0 => 
           array (
             'name' => 'billing_address_street',
-            'hideLabel' => true,
-            'type' => 'address',
-            'displayParams' => 
-            array (
-              'key' => 'billing',
-              'rows' => 2,
-              'cols' => 30,
-              'maxlength' => 150,
-            ),
             'label' => 'LBL_BILLING_ADDRESS_STREET',
           ),
           1 => 
           array (
             'name' => 'shipping_address_street',
-            'hideLabel' => true,
-            'type' => 'address',
-            'displayParams' => 
-            array (
-              'key' => 'shipping',
-              'copy' => 'billing',
-              'rows' => 2,
-              'cols' => 30,
-              'maxlength' => 150,
-            ),
             'label' => 'LBL_SHIPPING_ADDRESS_STREET',
           ),
         ),
@@ -204,13 +172,6 @@ array (
           array (
             'name' => 'discount_amount',
             'label' => 'LBL_DISCOUNT_AMOUNT',
-            'displayParams' => 
-            array (
-              'field' => 
-              array (
-                'onblur' => 'calculateTotal(\'lineItems\');',
-              ),
-            ),
           ),
         ),
         5 => 
@@ -227,13 +188,6 @@ array (
           array (
             'name' => 'shipping_amount',
             'label' => 'LBL_SHIPPING_AMOUNT',
-            'displayParams' => 
-            array (
-              'field' => 
-              array (
-                'onblur' => 'calculateTotal(\'lineItems\');',
-              ),
-            ),
           ),
         ),
         7 => 

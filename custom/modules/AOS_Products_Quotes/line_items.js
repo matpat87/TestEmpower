@@ -860,9 +860,20 @@ function calculateTotal(key)
       tot_amt += unit * qty;
     }
 
+    dis_amt = unformat2Number(get_value(key+'discount_amount'));
+
     if (dis_amt !== 0 && deleted != 1) {
-      dis_tot += dis_amt * qty;
+      // dis_tot += dis_amt * qty;
+
+      if(dis_amt < 0) {
+        dis_tot += dis_amt * qty;
+      } else if(dis_amt > 0) {
+        dis_tot += -Math.abs(dis_amt) * qty;
+      } else {
+        dis_tot = 0;
+      }
     }
+
     if (product_vat_amt !== 0 && deleted != 1) {
       tax += product_vat_amt;
     }

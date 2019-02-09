@@ -50,3 +50,6 @@ if(ACLController::checkAccess('ODR_SalesOrders', 'edit', true)){
 if(ACLController::checkAccess('ODR_SalesOrders', 'list', true)){
     $module_menu[]=array('index.php?module=ODR_SalesOrders&action=index&return_module=ODR_SalesOrders&return_action=DetailView', $mod_strings['LNK_LIST'],'View', 'ODR_SalesOrders');
 }
+
+if(ACLController::checkAccess('ODR_SalesOrders', 'import', true))$module_menu[]=Array("index.php?module=Import&action=Step1&import_module=ODR_SalesOrders&return_module=ODR_SalesOrders&return_action=index", $app_strings['LBL_IMPORT'],"Import", 'ODR_SalesOrders');
+if(ACLController::checkAccess('ODR_SalesOrders', 'import', true))$module_menu[]=Array("index.php?module=Import&action=Step1&import_module=AOS_Products_Quotes&return_module=ODR_SalesOrders&return_action=index", $mod_strings['LBL_IMPORT_LINE_ITEMS'],"Import", 'AOS_Products_Quotes');

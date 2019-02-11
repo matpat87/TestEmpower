@@ -103,12 +103,12 @@ array (
           0 => 'related_doc_name',
           1 => 'related_doc_rev_number',
         ),
-        7 => 
+        5 => 
         array (
           0 => 
           array (
-            'name' => 'assigned_user_name',
-            'label' => 'LBL_ASSIGNED_TO_NAME',
+            'name' => 'tr_technicalrequests_documents_name',
+            'label' => 'LBL_TR_TECHNICALREQUESTS_DOCUMENTS_FROM_TR_TECHNICALREQUESTS_TITLE',
           ),
         ),
       ),

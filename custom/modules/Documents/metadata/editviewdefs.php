@@ -129,6 +129,14 @@ array (
             'label' => 'LBL_ASSIGNED_TO_NAME',
           ),
         ),
+        8 => 
+        array (
+          0 => 
+          array (
+            'name' => 'tr_technicalrequests_documents_name',
+            'label' => 'LBL_TR_TECHNICALREQUESTS_DOCUMENTS_FROM_TR_TECHNICALREQUESTS_TITLE',
+          ),
+        ),
       ),
     ),
   ),

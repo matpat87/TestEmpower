@@ -13,7 +13,7 @@
                 $previousLogUpdates = $bean->fetched_row['updates'];
                 
                 if(!empty($previousLogUpdates)) {
-                    $bean->updates = $previousLogUpdates . "\n" . $newLogUpdate;
+                    $bean->updates = $previousLogUpdates . "\n\n" . $newLogUpdate;
                 } else {
                     $bean->updates = $newLogUpdate;
                 }

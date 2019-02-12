@@ -112,13 +112,13 @@ array (
         ),
         5 => 
         array (
-          0 => '',
-          1 => 
+          0 => 
           array (
             'name' => 'salesregion',
             'studio' => 'visible',
             'label' => 'LBL_SALESREGION',
           ),
+          1 => '',
         ),
       ),
       'lbl_editview_panel1' => 

@@ -124,7 +124,10 @@ array (
             'name' => 'estimated_start_date',
             'label' => 'LBL_DATE_START',
           ),
-          1 => 'priority',
+          1 => 
+          array (
+            'name' => 'accounts_project_1_name',
+          ),
         ),
         2 => 
         array (
@@ -133,7 +136,7 @@ array (
             'name' => 'estimated_end_date',
             'label' => 'LBL_DATE_END',
           ),
-          1 => 'override_business_hours',
+          1 => 'priority',
         ),
         3 => 
         array (
@@ -142,10 +145,7 @@ array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
           ),
-          1 => 
-          array (
-            'name' => 'am_projecttemplates_project_1_name',
-          ),
+          1 => 'override_business_hours',
         ),
         4 => 
         array (
@@ -155,7 +155,10 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_UPDATES',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'am_projecttemplates_project_1_name',
+          ),
         ),
       ),
     ),

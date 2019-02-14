@@ -6,4 +6,5 @@
         array('widget_class' => 'SubPanelTopScheduleCallButton')
 	);
 
+	unset($layout_defs['Project']['subpanel_setup']['accounts']);
 ?>

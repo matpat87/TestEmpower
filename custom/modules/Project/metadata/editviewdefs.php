@@ -63,20 +63,20 @@ array (
         1 => 
         array (
           0 => 'estimated_start_date',
-          1 => 'priority',
+          1 => 
+          array (
+            'name' => 'accounts_project_1_name',
+          ),
         ),
         2 => 
         array (
           0 => 'estimated_end_date',
-          1 => 'override_business_hours',
+          1 => 'priority',
         ),
         3 => 
         array (
           0 => 'assigned_user_name',
-          1 => 
-          array (
-            'name' => 'am_projecttemplates_project_1_name',
-          ),
+          1 => 'override_business_hours',
         ),
         4 => 
         array (
@@ -86,7 +86,10 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_PROJECT_UPDATE',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'am_projecttemplates_project_1_name',
+          ),
         ),
       ),
     ),

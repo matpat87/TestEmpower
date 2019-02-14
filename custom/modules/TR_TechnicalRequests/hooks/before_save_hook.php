@@ -18,7 +18,6 @@
                     $bean->updates = $newLogUpdate;
                 }
 
-                $bean->technical_request_update = '';
             }
             
 		}

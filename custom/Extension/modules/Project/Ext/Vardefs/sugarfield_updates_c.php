@@ -1,0 +1,28 @@
+<?php
+$dictionary['Project']['fields']['updates_c'] = array(
+    'inline_edit' => '1',
+    'labelValue' => 'Project Updates',
+    'required' => false,
+    'source' => 'custom_fields',
+    'name' => 'updates_c',
+    'vname' => 'LBL_UPDATES',
+    'type' => 'text',
+    'massupdate' => '0',
+    'default' => '',
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => true,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'size' => '20',
+    'studio' => 'visible',
+    'rows' => '6',
+    'cols' => '100',
+    'id' => 'Projectupdates_c',
+);
+?>

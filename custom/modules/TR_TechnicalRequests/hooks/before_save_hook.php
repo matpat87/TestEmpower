@@ -18,6 +18,8 @@
                     $bean->updates = $newLogUpdate;
                 }
 
+            } else {
+                $bean->technical_request_update = $bean->fetched_row['technical_request_update'];
             }
             
 		}

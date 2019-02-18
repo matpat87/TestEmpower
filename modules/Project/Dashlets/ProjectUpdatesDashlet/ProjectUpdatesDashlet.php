@@ -52,6 +52,8 @@ class ProjectUpdatesDashlet extends DashletGeneric {
 
         $this->searchFields = $dashletData['ProjectUpdatesDashlet']['searchFields'];
         $this->columns = $dashletData['ProjectUpdatesDashlet']['columns'];
+        $this->myItemsOnly = false;
+        $this->showMyItemsOnly = false;
         $this->seedBean = new Project();
     }
 
@@ -69,6 +71,30 @@ class ProjectUpdatesDashlet extends DashletGeneric {
         self::__construct($id, $def);
     }
 
+    function process($lvsParams = array(), $id = null) {
+        
+        global $current_user;
+        
+        // Accounts is jt0 in system generated query
+        $lvsParams['custom_from'] = "  LEFT JOIN accounts_cstm
+                                        ON jt0.id = accounts_cstm.id_c ";
+        
+        // If admin, show all project updates, else show only projects whose accounts are assigned to the logged user                                       
+        $lvsParams['custom_where'] = !$current_user->is_admin ? " OR (jt0.assigned_user_id = '".$current_user->id."')" : " ";
+        
+        // Filter data to show only records of projects that have active accounts and the project update field is not empty
+        $lvsParams['custom_where'] .= " AND (project_cstm.project_update_c IS NOT NULL AND project_cstm.project_update_c != '') 
+                                       AND accounts_cstm.status_c = 'Active'";
 
+        
 
+        // By default, sort data of project updates by last modified DESC
+        if(empty($lvsParams['orderBy']) && empty($lvsParams['sortOrder'])) {
+            $lvsParams['overrideOrder'] = true;
+            $lvsParams['orderBy'] = 'date_modified';
+            $lvsParams['sortOrder'] = 'DESC';
+        }
+        
+        parent::process($lvsParams);
+    } 
 }

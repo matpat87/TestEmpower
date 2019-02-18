@@ -18,6 +18,8 @@
                     $bean->updates_c = $newLogUpdate;
                 }
 
+            } else {
+                $bean->project_update_c = $bean->fetched_row['project_update_c'];
             }
             
 		}

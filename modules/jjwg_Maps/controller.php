@@ -1064,7 +1064,7 @@ class jjwg_MapsController extends SugarController {
                 if (isset($this->display_object->field_name_map[$group_field_name]['type']) &&
                         $this->display_object->field_name_map[$group_field_name]['type'] == 'enum') {
                     $group_field_dom = $this->display_object->field_name_map[$group_field_name]['options'];
-                    $marker['group'] = $GLOBALS['app_list_strings'][$group_field_dom][$group_field_value];
+                    $marker['group'] = $GLOBALS['app_list_strings'][$group_field_dom][$group_field_value] ?? '';
                 } elseif (!empty($display[$group_field_name])) {
                     $marker['group'] = $display[$group_field_name];
                 } else {

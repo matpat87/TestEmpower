@@ -771,6 +771,32 @@ class jjwg_MapsController extends SugarController {
                 $query = str_replace(' AND accounts.deleted=0', ' AND accounts.deleted=0 AND accounts.parent_id = \''.$this->bean->db->quote($map_parent_id).'\'', $query);
             }
             //var_dump($query);
+
+            global $current_user;
+                    
+            if(isset($_REQUEST['my_items']) && $_REQUEST['my_items']) {
+                // Filter results to logged user records only
+                $query .= " AND ".strtolower($map_module_type).".assigned_user_id = '".$current_user->id."' ";
+            } else {
+                // Filter results to display logged user and records that the logged user has access to
+                if(!$current_user->isAdmin()) {
+                    if($current_user->department == 'Sales') {
+                        $newQuery = "LEFT JOIN  users jt0 
+                                        ON ".strtolower($map_module_type).".modified_user_id=jt0.id 
+                                        AND jt0.deleted=0 
+                                    LEFT JOIN securitygroups_users
+                                        ON ".strtolower($map_module_type).".assigned_user_id = securitygroups_users.user_id
+                                    LEFT JOIN securitygroups
+                                        ON securitygroups.id = securitygroups_users.securitygroup_id
+                                    LEFT JOIN securitygroups_cstm
+                                        ON securitygroups_cstm.id_c = securitygroups.id ";
+                        $query = str_replace("LEFT JOIN  users jt0 ON ".strtolower($map_module_type).".modified_user_id=jt0.id AND jt0.deleted=0", $newQuery, $query);
+                        $query .= " AND securitygroups.name = '".$current_user->user_name."' AND securitygroups_cstm.type_c = 'Account Access' AND securitygroups.deleted = 0 ";
+                        $query .= " GROUP BY ".strtolower($map_module_type).".id ";
+                    }
+                }
+            }
+
             $display_result = $this->bean->db->limitQuery($query, 0, $this->settings['map_markers_limit']);
             while ($display = $this->bean->db->fetchByAssoc($display_result)) {
                 if (!empty($map_distance) && !empty($display['id'])) {

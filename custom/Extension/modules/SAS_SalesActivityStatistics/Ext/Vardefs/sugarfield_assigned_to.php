@@ -1,0 +1,36 @@
+<?php
+
+$dictionary['SAS_SalesActivityStatistics']['fields']['assigned_to'] = array(
+  'name' => 'assigned_to',
+  'labelValue' => 'Assigned To',
+  'vname' => 'LBL_ASSIGNED_TO',
+  'type' => 'enum',
+  'source' => 'non-db',
+  'options' => '',
+  'function' => 'getUserRepresentativesForReports',
+  'required' => false,
+  'massupdate' => '0',
+  'default' => NULL,
+  'no_default' => false,
+  'comments' => '',
+  'help' => '',
+  'importable' => 'true',
+  'duplicate_merge' => 'disabled',
+  'duplicate_merge_dom_value' => '0',
+  'audited' => false,
+  'inline_edit' => true,
+  'reportable' => true,
+  'unified_search' => false,
+  'merge_filter' => 'disabled',
+  'len' => '255',
+  'size' => '20',
+  'id_name' => 'user_id_c',
+  'ext2' => 'Users',
+  'module' => 'Users',
+  'rname' => 'name',
+  'quicksearch' => 'enabled',
+  'studio' => 'visible',
+  'id' => 'SAS_SalesActivityStatisticsassigned_to',
+);
+
+?>

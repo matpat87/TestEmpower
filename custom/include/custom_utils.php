@@ -3,6 +3,7 @@
 	require_once('custom/include/custom_utils/BudgetReportQuery.php');
 	require_once('custom/include/custom_utils/TimeAndDate.php');
 	require_once('custom/include/custom_utils/OpportunityPipelineReport.php');
+	require_once('custom/include/custom_utils/SalesActivityStatisticsQuery.php');
 
 	function string_replace_all($find, $replace, $string)
 	{
@@ -151,4 +152,28 @@
 		return $dropdown_data;
 	}
 
+	function getDivisionsForReports() {
+		
+		global $app_list_strings, $current_user, $db;
+
+		// Set default value for divisionList to 'All'
+		$divisionList['All'] = 'All';
+
+		// Loop through division dropdown list (based from user module's division field)
+		foreach ($app_list_strings['user_division_list'] as $key => $value) {
+			// Add to divisionList if key is not empty
+			if($key) {
+				if($current_user->is_admin) {
+					$divisionList[$key] = $value;
+				} else {
+					if($current_user->division_c == $divisionList[$key]) {
+						$divisionList[$key] = $value;
+					}
+				}
+				
+			}
+		}
+		
+		return $divisionList;
+	}
 ?>

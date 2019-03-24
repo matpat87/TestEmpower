@@ -796,7 +796,7 @@ class jjwg_MapsController extends SugarController {
                                     LEFT JOIN securitygroups_cstm
                                         ON securitygroups_cstm.id_c = securitygroups.id ";
                         $query = str_replace("LEFT JOIN  users jt0 ON ".strtolower($map_module_type).".modified_user_id=jt0.id AND jt0.deleted=0", $newQuery, $query);
-                        $query .= " AND securitygroups.name = '".$upperCaseFirstTwoLettersUsername."' AND securitygroups_cstm.type_c = 'Account Access' AND securitygroups.deleted = 0 ";
+                        $query .= " OR securitygroups.name = '".$upperCaseFirstTwoLettersUsername."' AND securitygroups_cstm.type_c = 'Account Access' AND securitygroups.deleted = 0 ";
                         $query .= " GROUP BY ".strtolower($map_module_type).".id ";
                     }
                 }

@@ -779,6 +779,11 @@ class jjwg_MapsController extends SugarController {
                 $query .= " AND ".strtolower($map_module_type).".assigned_user_id = '".$current_user->id."' ";
             } else {
                 // Filter results to display logged user and records that the logged user has access to
+
+                // Since username is created as all caps, convert to lowercase and convert first two letters to uppercase
+                $lowerCaseUsername = strtolower($current_user->user_name);
+                $upperCaseFirstTwoLettersUsername = strtoupper( substr( $lowerCaseUsername, 0, 2 ) ).substr( $lowerCaseUsername, 2 );
+
                 if(!$current_user->isAdmin()) {
                     if($current_user->department == 'Sales') {
                         $newQuery = "LEFT JOIN  users jt0 
@@ -791,7 +796,7 @@ class jjwg_MapsController extends SugarController {
                                     LEFT JOIN securitygroups_cstm
                                         ON securitygroups_cstm.id_c = securitygroups.id ";
                         $query = str_replace("LEFT JOIN  users jt0 ON ".strtolower($map_module_type).".modified_user_id=jt0.id AND jt0.deleted=0", $newQuery, $query);
-                        $query .= " AND securitygroups.name = '".$current_user->user_name."' AND securitygroups_cstm.type_c = 'Account Access' AND securitygroups.deleted = 0 ";
+                        $query .= " AND securitygroups.name = '".$upperCaseFirstTwoLettersUsername."' AND securitygroups_cstm.type_c = 'Account Access' AND securitygroups.deleted = 0 ";
                         $query .= " GROUP BY ".strtolower($map_module_type).".id ";
                     }
                 }

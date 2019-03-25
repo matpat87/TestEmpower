@@ -10,8 +10,8 @@ CONCAT(activity.type, ' (', activity.status, ')') AS ' status_c',
 CONCAT(u.first_name, ' ', u.last_name) AS 'assigned_to_name_c',
 activity.date 'date_start_c',
 activity.name AS 'name',
-a.name AS 'account_name_c',
-activity.parent_type AS 'related_to_c',
+IF(a.name != '', a.name, 'N/A') AS 'account_name_c',
+IF(activity.parent_type != '', activity.parent_type, 'N/A') AS 'related_to_c',
 activity.description 
 EOF;
 		}

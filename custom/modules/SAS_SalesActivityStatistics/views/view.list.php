@@ -91,12 +91,6 @@ class CustomSAS_SalesActivityStatisticsViewList extends ViewList
         $this->lv->contextMenus = false;
         $this->lv->showMassupdateFields = false;
         
-        $data = SalesActivityStatisticsQuery::salesActivityStatisticsDataQuery();
-        $_SESSION['SalesActivityStatisticsDataQuery'] = $data;
-
-        echo '<pre>'; 
-            print_r($data);
-        echo '</pre>';
         // $this->lv->ss->assign("sum", $sum);
         $defaultConfigMaxEntries = $sugar_config['list_max_entries_per_page'];
 

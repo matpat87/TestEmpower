@@ -166,7 +166,7 @@
 				if($current_user->is_admin) {
 					$divisionList[$key] = $value;
 				} else {
-					if($current_user->division_c == $divisionList[$key]) {
+					if($current_user->division_c == $key) {
 						$divisionList[$key] = $value;
 					}
 				}
@@ -175,5 +175,29 @@
 		}
 		
 		return $divisionList;
+	}
+
+	function getSalesGroupForReports() {
+
+		global $app_list_strings, $current_user, $db;
+
+		// Set default value for salesGroupList to 'All'
+		$salesGroupList['All'] = 'All';
+
+		// Loop through sales group dropdown list (based from user module's sales group field)
+		foreach($app_list_strings['sales_group_list'] as $key => $value) {
+			// Add salesGroupList if key is not empty
+			if($key) {
+				if($current_user->is_admin) {
+					$salesGroupList[$key] = $value;
+				} else {
+					if($current_user->sales_group_c == $key) {
+						$salesGroupList[$key] = $value;
+					}
+				}
+			}
+		}
+
+		return $salesGroupList;
 	}
 ?>

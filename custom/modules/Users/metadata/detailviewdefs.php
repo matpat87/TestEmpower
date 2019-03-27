@@ -129,32 +129,42 @@ array (
           ),
           1 => 
           array (
-            'name' => 'employee_type_c',
+            'name' => 'division_c',
             'studio' => 'visible',
-            'label' => 'LBL_EMPLOYEE_TYPE',
+            'label' => 'LBL_DIVISION',
           ),
         ),
         7 => 
         array (
+          0 => 
+          array (
+            'name' => 'employee_type_c',
+            'studio' => 'visible',
+            'label' => 'LBL_EMPLOYEE_TYPE',
+          ),
+          1 => '',
+        ),
+        8 => 
+        array (
           0 => 'messenger_type',
           1 => 'messenger_id',
         ),
-        8 => 
+        9 => 
         array (
           0 => 'address_street',
           1 => 'address_city',
         ),
-        9 => 
+        10 => 
         array (
           0 => 'address_state',
           1 => 'address_postalcode',
         ),
-        10 => 
+        11 => 
         array (
           0 => 'address_country',
           1 => '',
         ),
-        11 => 
+        12 => 
         array (
           0 => 'description',
         ),

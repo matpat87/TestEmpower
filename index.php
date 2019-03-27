@@ -42,6 +42,8 @@ if (!defined('sugarEntry')) {
     define('sugarEntry', true);
 }
 
+ini_set('error_reporting', E_ALL & ~E_WARNING & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
+
 include 'include/MVC/preDispatch.php';
 $startTime = microtime(true);
 require_once 'include/entryPoint.php';

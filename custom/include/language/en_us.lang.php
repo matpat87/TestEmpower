@@ -2748,3 +2748,8 @@ $GLOBALS['app_list_strings']['record_type_display_notes']=array (
   'Calls' => 'Call',
   'RE_Regulatory' => 'Regulatory',
 );
+$GLOBALS['app_list_strings']['user_department_list']=array (
+  '' => '',
+  'IT' => 'Information Technology',
+  'Sales' => 'Sales',
+);

@@ -177,6 +177,30 @@
 		return $divisionList;
 	}
 
+	function getDepartmentsForReports() {
+
+		global $app_list_strings, $current_user, $db;
+
+		// Set default value for departmentList to 'All'
+		$departmentList['All'] = 'All';
+
+		// Loop through department dropdown list (based from user module's department field)
+		foreach ($app_list_strings['user_department_list'] as $key => $value) {
+			// Add to departmentList if key is not empty
+			if($key) {
+				if($current_user->is_admin) {
+					$departmentList[$key] = $value;
+				} else {
+					if($current_user->department == $key) {
+						$departmentList[$key] = $value;
+					}
+				}
+				
+			}
+		}
+		
+		return $departmentList;
+	}
 	function getSalesGroupForReports() {
 
 		global $app_list_strings, $current_user, $db;

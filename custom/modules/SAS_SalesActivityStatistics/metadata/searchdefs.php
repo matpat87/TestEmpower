@@ -6,6 +6,15 @@ array (
   array (
     'basic_search' => 
     array (
+      'division_c' => 
+      array (
+        'type' => 'enum',
+        'default' => true,
+        'studio' => 'visible',
+        'label' => 'LBL_DIVISION',
+        'width' => '10%',
+        'name' => 'division_c',
+      ),
       'assigned_to' => 
       array (
         'type' => 'enum',
@@ -14,6 +23,24 @@ array (
         'label' => 'LBL_ASSIGNED_USER',
         'width' => '10%',
         'name' => 'assigned_to',
+      ),
+      'department' => 
+      array (
+        'type' => 'enum',
+        'default' => true,
+        'studio' => 'visible',
+        'label' => 'LBL_DEPARTMENT',
+        'width' => '10%',
+        'name' => 'department',
+      ),
+      'sales_group_c' => 
+      array (
+        'type' => 'enum',
+        'default' => true,
+        'studio' => 'visible',
+        'label' => 'LBL_SALES_GROUP',
+        'width' => '10%',
+        'name' => 'sales_group_c',
       ),
       'date_from' => 
       array (

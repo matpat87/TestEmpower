@@ -29,7 +29,7 @@
 
 		public function get_from_query()
 		{
-      $sql .= " FROM users WHERE users.deleted = 0 AND users.status = 'Active' ";
+      $sql .= " FROM users LEFT JOIN users_cstm ON users.id = users_cstm.id_c WHERE users.deleted = 0 AND users.status = 'Active' ";
       return $sql;
     }
 

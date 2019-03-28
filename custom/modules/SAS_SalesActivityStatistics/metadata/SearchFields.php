@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-18 16:53:34
+// created: 2019-03-28 15:17:18
 $searchFields['SAS_SalesActivityStatistics'] = array (
   'name' => 
   array (

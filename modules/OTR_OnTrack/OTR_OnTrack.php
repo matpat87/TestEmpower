@@ -77,8 +77,10 @@ class OTR_OnTrack extends Issue
 
         $work_log = string_replace_all("\n", "<br/>", $otr_ontrack->work_log); //replace all \n with <br> so that Work Log will be readable            
 
+        $newIssueNumber = $otr_ontrack->otr_ontrack_number ?? $this->retrieveNewIssueNumber();
+        
         $xtpl->assign("OTR_ISSUE_URL", $sugar_config['site_url'] . '/index.php?module=OTR_OnTrack&action=DetailView&record=' . $otr_ontrack->id);
-        $xtpl->assign("OTR_ISSUE_NUMBER", $otr_ontrack->otr_ontrack_number);
+        $xtpl->assign("OTR_ISSUE_NUMBER", $newIssueNumber);
         $xtpl->assign("OTR_APPLICATION", $app_list_strings['application_list'][$otr_ontrack->application_c]);
         $xtpl->assign("OTR_MODULE", "On Track");
         $xtpl->assign("OBJECT", "On Track");
@@ -103,6 +105,19 @@ class OTR_OnTrack extends Issue
         }
 
         return false;
+    }
+
+    public function retrieveNewIssueNumber() {
+        global $db;
+
+        $db = DBManagerFactory::getInstance();
+
+        $sql= "SELECT otr_ontrack_number FROM otr_ontrack ORDER BY otr_ontrack_number DESC LIMIT 1";
+        $result = $db->query($sql);
+        $row = $db->fetchByAssoc($result);
+        $newIssueNumber = $row['otr_ontrack_number'];
+        
+        return $newIssueNumber + 1;
     }
     
 }

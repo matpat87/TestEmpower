@@ -13,3 +13,20 @@ $GLOBALS['app_list_strings']['parent_type_display']=array (
   'Prospects' => 'Target',
   'RE_Regulatory' => 'Regulatory',
 );
+$GLOBALS['app_list_strings']['record_type_display_notes']=array (
+  '' => '',
+  'Accounts' => 'Account',
+  'Contacts' => 'Contact',
+  'Opportunities' => 'Opportunity',
+  'Tasks' => 'Task',
+  'Emails' => 'Email',
+  'Bugs' => 'Bug',
+  'Project' => 'Project',
+  'ProjectTask' => 'Project Task',
+  'Prospects' => 'Target',
+  'Cases' => 'Customer Issue',
+  'Leads' => 'Lead',
+  'Meetings' => 'Meeting',
+  'Calls' => 'Call',
+  'RE_Regulatory' => 'Regulatory',
+);

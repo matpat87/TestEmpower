@@ -35,6 +35,9 @@
 				$previousUserBean = BeanFactory::getBean('Users', $currentAssignedTo);
 				$previousAssignedUserName = $previousUserBean->first_name . ' ' . $previousUserBean->last_name;
 
+				$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Record Update';
+				$customBodyContent = 'This record has been updated.';
+
 				if($newAssignedTo != $currentAssignedTo && $newStatus == $currentStatus) {
 
 					$mail->Subject = 'Customer Issue #' .$bean->case_number. ' - Assigned User Update';

@@ -50,6 +50,11 @@ class AccountsViewEdit extends ViewEdit
  	}
 
  	function display(){
+		
+		if(!$this->ev->focus->id) {
+			$this->ev->focus->division_c = 'Color';
+		}
+
 		parent::display();
 
 		// Hide input fields so that custom non-db fields will display labels only

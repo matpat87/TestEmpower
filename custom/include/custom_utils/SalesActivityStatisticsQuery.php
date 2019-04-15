@@ -29,7 +29,11 @@
 
 		public function get_from_query()
 		{
+      global $current_user;
+
       $sql .= " FROM users LEFT JOIN users_cstm ON users.id = users_cstm.id_c WHERE users.deleted = 0 AND users.status = 'Active' ";
+      $sql .= $this->filterResultsQuery($sql);
+
       return $sql;
     }
 
@@ -59,6 +63,36 @@
 
       return $array;
       
+    }
+
+    public function filterResultsQuery($sql) {
+      
+      // Filter Assigned To - Start
+      $arrayUserIDs = [];
+      $whereUserIDs = $_REQUEST['assigned_to_basic'];
+
+      if($whereUserIDs) {
+        foreach ($whereUserIDs as $key => $value) {
+          array_push($arrayUserIDs, "'" . $value . "'");
+        }
+
+        $stringUserIDs = implode(', ', $arrayUserIDs);
+      }
+
+      if(!$current_user->is_admin) {
+        if(!$stringUserIDs) {
+          $sql .= " AND users.id = '".$current_user->id."'";
+        } else {
+          $sql .= " AND users.id IN (".$stringUserIDs.")";
+        }
+      } else {
+        if($stringUserIDs) {
+          $sql .= " AND users.id IN (".$stringUserIDs.")";
+        }
+      }
+      // Filter Assigned To - End
+
+      return $sql;
     }
   }
 ?>

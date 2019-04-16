@@ -29,12 +29,10 @@
 
 		public function get_from_query()
 		{
-      global $current_user;
-
       $sql .= " FROM users LEFT JOIN users_cstm ON users.id = users_cstm.id_c WHERE users.deleted = 0 AND users.status = 'Active' ";
-      $sql .= $this->filterResultsQuery($sql);
+      $filteredSQL = $this->filterResultsQuery($sql);
 
-      return $sql;
+      return $filteredSQL;
     }
 
     public function retrieveTableListToQuery() {
@@ -67,6 +65,34 @@
 
     public function filterResultsQuery($sql) {
       
+      global $current_user;
+
+      // Filter Division - Start
+      $arrayDivisions = [];
+      $whereDivisions = $_REQUEST['division_c_basic'];
+      
+      if($whereDivisions && !in_array("All", $whereDivisions)) {
+        foreach ($whereDivisions as $key => $value) {
+          array_push($arrayDivisions, "'" . $value . "'");
+        }
+      } else {
+        $dropdownDivisionList = getDivisionsForReports();
+          
+        foreach ($dropdownDivisionList as $key => $value) {
+          if($value != 'All') {
+            array_push($arrayDivisions, "'" . $key . "'");
+          }
+        }
+      }
+      
+      $stringDivisions = implode(', ', $arrayDivisions);
+
+      if($stringDivisions) {
+        $sql .= " AND users_cstm.division_c IN (".$stringDivisions.")";
+      }
+
+      // Filter Division - End
+
       // Filter Assigned To - Start
       $arrayUserIDs = [];
       $whereUserIDs = $_REQUEST['assigned_to_basic'];
@@ -91,6 +117,56 @@
         }
       }
       // Filter Assigned To - End
+
+      // Filter Department - Start
+      $arrayDepartments = [];
+      $whereDepartments = $_REQUEST['department_basic'];
+      
+      if($whereDepartments && !in_array("All", $whereDepartments)) {
+        foreach ($whereDepartments as $key => $value) {
+          array_push($arrayDepartments, "'" . $value . "'");
+        }
+      } else {
+        $dropdownDepartmentList = getDepartmentsForReports();
+          
+        foreach ($dropdownDepartmentList as $key => $value) {
+          if($value != 'All') {
+            array_push($arrayDepartments, "'" . $key . "'");
+          }
+        }
+      }
+      
+      $stringDepartments = implode(', ', $arrayDepartments);
+
+      if($stringDepartments) {
+        $sql .= " AND users.department IN (".$stringDepartments.")";
+      }
+
+      // Filter Department - End
+
+      // Filter Sales Group - Start
+      $arraySalesGroups = [];
+      $whereSalesGroups = $_REQUEST['sales_group_c_basic'];
+      
+      if($whereSalesGroups && !in_array("All", $whereSalesGroups)) {
+        foreach ($whereSalesGroups as $key => $value) {
+          array_push($arraySalesGroups, "'" . $value . "'");
+        }
+      } else {
+        $dropdownSalesGroupList = getSalesGroupForReports();
+
+        foreach ($dropdownSalesGroupList as $key => $value) {
+          if($value != 'All') {
+            array_push($arraySalesGroups, "'" . $key . "'");
+          }
+        }
+      }
+      
+      $stringSalesGroups = implode(', ', $arraySalesGroups);
+      if($stringSalesGroups) {
+        $sql .= " AND users_cstm.sales_group_c IN (".$stringSalesGroups.")";
+      }
+      // Filter Sales Group - End
 
       return $sql;
     }

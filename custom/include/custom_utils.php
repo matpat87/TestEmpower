@@ -96,7 +96,8 @@
                         AND u.deleted = 0
                     WHERE s.deleted = 0
                         AND sc.type_c = 'Sales Group'
-                        AND (s.assigned_user_id = '{$current_user->id}' {$or_clause})
+												AND (su.user_id = '{$current_user->id}'
+                        OR s.assigned_user_id = '{$current_user->id}' {$or_clause})
 					ORDER by name asc";
 		}
 
@@ -188,14 +189,7 @@
 		foreach ($app_list_strings['user_department_list'] as $key => $value) {
 			// Add to departmentList if key is not empty
 			if($key) {
-				if($current_user->is_admin) {
-					$departmentList[$key] = $value;
-				} else {
-					if($current_user->department == $key) {
-						$departmentList[$key] = $value;
-					}
-				}
-				
+				$departmentList[$key] = $value;
 			}
 		}
 		

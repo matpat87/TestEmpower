@@ -96,10 +96,16 @@
       if($whereUserIDs) {
         foreach ($whereUserIDs as $key => $value) {
           array_push($arrayUserIDs, "'" . $value . "'");
-        }
+        }  
+      } else {
+        $usersDropdownList = getUserRepresentativesForReports();
 
-        $stringUserIDs = implode(', ', $arrayUserIDs);
+        foreach ($usersDropdownList as $key => $value) {
+          array_push($arrayUserIDs, "'" . $key . "'");
+        }
       }
+
+      $stringUserIDs = implode(', ', $arrayUserIDs);
 
       if(!$current_user->is_admin) {
         if(!$stringUserIDs) {

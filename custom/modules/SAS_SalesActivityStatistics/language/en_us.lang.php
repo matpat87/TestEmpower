@@ -5,5 +5,5 @@ $mod_strings = array (
   'LBL_ASSIGNED_TO' => 'Assigned To',
   'LBL_DEPARTMENT' => 'Department',
   'LBL_SALES_GROUP' => 'Sales Group',
-  'LBL_ASSIGNED_USER' => 'Assigned To',
+  'LBL_ASSIGNED_USER' => 'User',
 );

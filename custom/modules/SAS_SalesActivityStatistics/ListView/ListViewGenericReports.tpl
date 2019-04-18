@@ -64,12 +64,6 @@
         font-size: 12px;
     }
 
-    @-moz-document url-prefix() {
-        .export-pdf{
-            margin-top: -18.5px !important;
-        }
-    }
-
 {/literal}
 </style>
 
@@ -142,7 +136,7 @@
     </div>
 {/if}
 {$multiSelectData}
-{*$data|var_dump*}
+
 {if $hideTable == false}
     <div class="list-view-rounded-corners">
         <table cellpadding='0' cellspacing='0' border='0' class='list view table-responsive'>
@@ -154,7 +148,10 @@
         {assign var="action_menu_location" value="top"}
 
 
-        {include file='themes/SuiteP/include/ListView/ListViewPaginationTop.tpl'} 
+        {include file='themes/SuiteP/include/ListView/ListViewPaginationTop.tpl'}
+        <tr>
+            <th colspan="{$colCount}" class="thcstm">Sales Activity Statistic for {$current_user_name}</th>
+        <tr>
         <tr height='20'>
             {if $prerow}
                 <th class="td_alt">&nbsp;</th>
@@ -320,32 +317,12 @@
                 {/foreach}
                 <td align='right'>{$pageData.additionalDetails.$id}</td>
                 </tr>
-                
-                {if $smarty.foreach.rowIteration.last}
-                    <tr height="20" class="bg-primary text-white">
-                        <td scope="row" align="left" valign="top" type="varchar" class=" ">TOTAL PER MONTH</td>
-                        <td align="left" valign="top" type="varchar"  class="hidden-xs "></td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs ">${$sum.0}</td>     
-                        <td align="left" valign="top" type="currency" class="hidden-xs ">${$sum.1}</td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs ">${$sum.2}</td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm ">${$sum.3}</td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm ">${$sum.4}</td> 
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm ">${$sum.5}</td> 
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm ">${$sum.6}</td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm ">${$sum.7}</td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm ">${$sum.8}</td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm hidden-md ">${$sum.9}</td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm hidden-md ">${$sum.10}</td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm hidden-md ">${$sum.11}</td>
-                        <td align="left" valign="top" type="currency" class="hidden-xs hidden-sm hidden-md ">${$sum.12}</td>
-                        <td align="right"></td>
-                    </tr>
-                {/if} 
+
                 {if !empty($data[$rowDataCount].DESCRIPTION)}
                 <tr style="background-color: white">
                     <td></td>
                     <td></td>
-                    <td colspan="5">{sugar_field parentFieldArray=$rowData vardef=$params displayType=ListView field='description'}</td>
+                    <td colspan="6" style="max-width: 300px !important; word-wrap:break-word;">{sugar_field parentFieldArray=$rowData vardef=$params displayType=ListView field='description'}</td>
                 </tr>
                 {/if}
 

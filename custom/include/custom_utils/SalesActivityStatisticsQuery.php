@@ -7,11 +7,7 @@
       $tableList = SalesActivityStatisticsQuery::retrieveTableListToQuery();
       $lastTableListData = $tableList ? end($tableList) : '';
 
-      $sql = "SELECT TRIM(CONCAT(IFNULL(users.first_name, ''), ' ', IFNULL(users.last_name, ''))) AS user, ";
-
-      $assignedToArray = $_REQUEST['assigned_to_basic'] ?? array();
-      $dateFrom = $_REQUEST['date_from_basic'] ?? '';
-      $dateTo = $_REQUEST['date_to_basic'] ?? '';
+      $sql = "SELECT TRIM(CONCAT(IFNULL(users.first_name, ''), ' ', IFNULL(users.last_name, ''))) AS user_non_db, ";
 
       foreach ($tableList as $key => $value) {
         $append = " ";
@@ -20,7 +16,7 @@
           $append = ", ";
         }
 
-        $sql .= "(SELECT count(*) FROM ".$value." WHERE ".$value.".assigned_user_id = users.id AND ".$value.".deleted = 0) AS ".$value. $append;
+        $sql .= "(SELECT count(*) FROM ".$value." WHERE ".$value.".assigned_user_id = users.id AND ".$value.".deleted = 0) AS ".$value. '_non_db' . $append;
       }
 
       return $sql;

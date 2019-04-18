@@ -91,6 +91,7 @@ class CustomSAS_SalesActivityStatisticsViewList extends ViewList
         $this->lv->contextMenus = false;
         $this->lv->showMassupdateFields = false;
         
+        $this->lv->ss->assign("current_user_name", $current_user->first_name . " " . $current_user->last_name);
         // $this->lv->ss->assign("sum", $sum);
         $defaultConfigMaxEntries = $sugar_config['list_max_entries_per_page'];
 

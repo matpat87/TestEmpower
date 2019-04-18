@@ -2,110 +2,96 @@
 $module_name = 'SAS_SalesActivityStatistics';
 $listViewDefs [$module_name] = 
 array (
-  'ACCOUNT_NAME_NON_DB' => 
+  'USER_NON_DB' => 
   array (
     'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_ACCOUNT_NAME_NON_DB',
-    'width' => '10%',
+    'label' => 'User',
+    'width' => '15%',
   ),
-  'CUSTOMER_NUMBER_NON_DB' => 
+  'LEADS_NON_DB' => 
   array (
     'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_CUSTOMER_NUMBER_NON_DB',
-    'width' => '10%',
+    'label' => 'Leads',
+    'width' => '7%',
   ),
-  'JANUARY_NON_DB' => 
+  'ACCOUNTS_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_JANUARY_NON_DB',
-    'width' => '10%',
+    'label' => 'Accounts',
+    'width' => '7%',
   ),
-  'FEBRUARY_NON_DB' => 
+  'CONTACTS_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_FEBRUARY_NON_DB',
-    'width' => '10%',
+    'label' => 'Contacts',
+    'width' => '7%',
   ),
-  'MARCH_NON_DB' => 
+  'CASES_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_MARCH_NON_DB',
-    'width' => '10%',
+    'label' => 'Customer Issues',
+    'width' => '7%',
   ),
-  'APRIL_NON_DB' => 
+  'OPPORTUNITIES_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_APRIL_NON_DB',
-    'width' => '10%',
+    'label' => 'Opportunities',
+    'width' => '7%',
   ),
-  'MAY_NON_DB' => 
+  'TR_TECHNICALREQUESTS_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_MAY_NON_DB',
-    'width' => '10%',
+    'label' => 'Technical Requests',
+    'width' => '7%',
   ),
-  'JUNE_NON_DB' => 
+  'PROJECT_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_JUNE_NON_DB',
-    'width' => '10%',
+    'label' => 'Projects',
+    'width' => '7%',
   ),
-  'JULY_NON_DB' => 
+  'NOTES_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_JULY_NON_DB',
-    'width' => '10%',
+    'label' => 'Notes',
+    'width' => '7%',
   ),
-  'AUGUST_NON_DB' => 
+  'CALLS_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_AUGUST_NON_DB',
-    'width' => '10%',
+    'label' => 'Calls',
+    'width' => '7%',
   ),
-  'SEPTEMBER_NON_DB' => 
+  'MEETINGS_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_SEPTEMBER_NON_DB',
-    'width' => '10%',
+    'label' => 'Meetings',
+    'width' => '7%',
   ),
-  'OCTOBER_NON_DB' => 
+  'TASKS_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_OCTOBER_NON_DB',
-    'width' => '10%',
+    'label' => 'Tasks',
+    'width' => '7%',
   ),
-  'NOVEMBER_NON_DB' => 
+  'EMAILS_NON_DB' => 
   array (
-    'type' => 'currency',
+    'type' => 'varchar',
     'default' => true,
-    'label' => 'LBL_NOVEMBER_NON_DB',
-    'width' => '10%',
-  ),
-  'DECEMBER_NON_DB' => 
-  array (
-    'type' => 'currency',
-    'default' => true,
-    'label' => 'LBL_DECEMBER_NON_DB',
-    'width' => '10%',
-  ),
-  'TOTAL_BUDGET_NON_DB' => 
-  array (
-    'type' => 'currency',
-    'default' => true,
-    'label' => 'LBL_TOTAL_BUDGET_NON_DB',
-    'width' => '10%',
+    'label' => 'Emails',
+    'width' => '7%',
   ),
 
   

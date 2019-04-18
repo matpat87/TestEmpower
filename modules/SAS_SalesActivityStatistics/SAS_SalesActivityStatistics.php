@@ -101,9 +101,57 @@ class SAS_SalesActivityStatistics extends Basic
         if($where) {
             $where = ' AND ' . $where;
             $where = str_replace('sas_salesactivitystatistics_cstm.assigned_to', 'users.id', $where);
-            $where = str_replace('sas_salesactivitystatistics_cstm.department', 'users.department', $where);
-            $where = str_replace('sas_salesactivitystatistics_cstm.sales_group_c', 'users_cstm.sales_group_c', $where);
-            $where = str_replace('sas_salesactivitystatistics_cstm.division_c', 'users_cstm.division_c', $where);
+            $where = str_replace('department', 'users.department', $where);
+            $where = str_replace('sales_group_c', 'users_cstm.sales_group_c', $where);
+            $where = str_replace('division_c', 'users_cstm.division_c', $where);
+            
+            // Division - Start
+            $arrayDivisions = array();
+            $dropdownDivisionList = getDivisionsForReports();
+          
+            foreach ($dropdownDivisionList as $key => $value) {
+                if($value != 'All') {
+                    array_push($arrayDivisions, "'" . $key . "'");
+                }
+            }
+            $stringDivisions = implode(', ', $arrayDivisions);
+
+            if($stringDivisions) {
+                $where = str_replace("users_cstm.division_c in ('All')", "users_cstm.division_c in (".$stringDivisions.")", $where);
+            }
+            // Division - End
+
+            // Department - Start
+            $arrayDepartments = array();
+            $dropdownDepartmentList = getDepartmentsForReports();
+          
+            foreach ($dropdownDepartmentList as $key => $value) {
+                if($value != 'All') {
+                    array_push($arrayDepartments, "'" . $key . "'");
+                }
+            }
+            $stringDepartments = implode(', ', $arrayDepartments);
+
+            if($stringDepartments) {
+                $where = str_replace("users.department in ('All')", "users.department in (".$stringDepartments.")", $where);
+            }
+            // Department - End
+
+            // Sales Group - Start
+            $arraySalesGroups = array();
+            $dropdownSalesGroupList = getSalesGroupForReports();
+
+            foreach ($dropdownSalesGroupList as $key => $value) {
+                if($value != 'All') {
+                    array_push($arraySalesGroups, "'" . $key . "'");
+                }
+            }
+            $stringSalesGroups = implode(', ', $arraySalesGroups);
+            
+            if($stringSalesGroups) {
+                $where = str_replace("users_cstm.sales_group_c in ('All')", "users_cstm.sales_group_c in (".$stringSalesGroups.")", $where);
+            }
+            // Sales Group - End
             
             $explodeWhere = explode("AND ", $where);
             $dateRangeArray = array();
@@ -136,8 +184,13 @@ class SAS_SalesActivityStatistics extends Basic
         }
 
         $return_array['group_by'] = ' GROUP BY users.id ';
-        $return_array['order_by'] .= "ORDER BY TRIM(CONCAT(IFNULL(users.first_name, ''), ' ', IFNULL(users.last_name, ''))) ";
         
+        if(!empty($order_by) && strpos($order_by, 'date_entered') !== false) {
+            $order_by = string_replace_all("date_entered DESC", "user_non_db ASC", $order_by);
+        }
+        
+        $return_array['order_by'] = ' ORDER BY ' . $order_by;
+
         $_SESSION['salesActivityStatisticQuery'] = $return_array;
         return $return_array;
 

@@ -191,7 +191,7 @@ class SAS_SalesActivityStatistics extends Basic
         
         $return_array['order_by'] = ' ORDER BY ' . $order_by;
 
-        $_SESSION['salesActivityStatisticQuery'] = $return_array;
+        $_SESSION['SalesActivityStatisticQuery'] = $return_array;
         return $return_array;
 
     }

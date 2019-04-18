@@ -7,7 +7,7 @@ array (
     'type' => 'varchar',
     'default' => true,
     'label' => 'User',
-    'width' => '15%',
+    'width' => '16%',
   ),
   'LEADS_NON_DB' => 
   array (

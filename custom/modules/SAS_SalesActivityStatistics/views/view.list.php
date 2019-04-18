@@ -117,7 +117,7 @@ EOF;
                 var paginationActionButtonsHTML = paginationActionButtons.html();
                 var buttonHTML = '<ul class="clickMenu selectmenu columnsFilterLink SugarActionMenu listViewLinkButton listViewLinkButton_top export-pdf">' +
                     '<li class="sugar_action_button">' +
-                    '<a href="index.php?entryPoint=BudgetReport" title="Export as PDF" class="parent-dropdown-handler" target="_blank">' +
+                    '<a href="index.php?entryPoint=SalesActivityStatistics" title="Export as PDF" class="parent-dropdown-handler" target="_blank">' +
                         '<span class="glyphicon glyphicon-export glyphicon-icon-cstm"></span>&nbsp;' +
                         '<span>Export PDF</span>' +
                     '</a></li></ul>';

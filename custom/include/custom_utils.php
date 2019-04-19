@@ -61,7 +61,6 @@
 
 		$user_representatives = array();
 		$query = "";
-		$or_clause = "";
 
 		if($current_user->is_admin)
 		{
@@ -76,14 +75,12 @@
 		else
 		{
 			$securityGroupBean = BeanFactory::getBean('SecurityGroups');
-        	$security_groups_assigned = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id, 'type_c' => 'Sales Group'), false, false);
+        	$security_groups_assiged = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id, 'type_c' => 'Sales Group'), false, false);
 
-        	if(!empty($security_groups_assigned))
+
+        	if(!empty($security_groups_assiged))
         	{
-        		$or_clause .= " OR u.id = '{$current_user->id}' ";
-        	}
-
-			$query = "SELECT u.id,
+				$query = "SELECT u.id,
 						CONCAT(u.first_name, ' ', u.last_name) AS name
                     FROM securitygroups AS s
                     INNER JOIN securitygroups_cstm AS sc
@@ -96,11 +93,24 @@
                         AND u.deleted = 0
                     WHERE s.deleted = 0
                         AND sc.type_c = 'Sales Group'
-												AND (su.user_id = '{$current_user->id}'
-                        OR s.assigned_user_id = '{$current_user->id}' {$or_clause})
+                        AND (s.assigned_user_id = '{$current_user->id}' OR u.id = '{$current_user->id}')
 					ORDER by name asc";
+        	}
+        	else
+        	{
+        		$query = "SELECT u.id, 
+						CONCAT(u.first_name, ' ', u.last_name) AS name
+					FROM users as u
+					INNER JOIN users_cstm as uc
+						on uc.id_c = u.id
+					WHERE u.deleted = 0
+						and u.id = '{$current_user->id}'
+					ORDER by name asc";
+        	}
+
 		}
 
+		
 		$result = $db->query($query, false);
 
 		while (($row = $db->fetchByAssoc($result)) != null) {
@@ -127,21 +137,38 @@
 		}
 		else
 		{
-			$query = "SELECT a.id,
-							a.name
-						FROM securitygroups AS s
-						INNER JOIN securitygroups_cstm AS sc
-							ON sc.id_c = s.id
-						INNER JOIN securitygroups_records AS sr
-							ON sr.securitygroup_id = s.id
-							AND sr.deleted = 0
-							AND sr.module = 'Accounts'
-						INNER JOIN accounts AS a
-							ON a.id = sr.record_id
-						WHERE s.deleted = 0
-							AND sc.type_c = 'Sales Group'
-							AND s.assigned_user_id = '{$current_user->id}'
-						ORDER by a.name asc";
+			$securityGroupBean = BeanFactory::getBean('SecurityGroups');
+        	$security_groups_assiged = $securityGroupBean->retrieve_by_string_fields(array('assigned_user_id' => $current_user->id, 'type_c' => 'Sales Group'), false, false);
+
+        	if(!empty($security_groups_assiged))
+        	{
+				$query = "SELECT a.id,
+						a.name
+                    FROM securitygroups AS s
+                    INNER JOIN securitygroups_cstm AS sc
+                        ON sc.id_c = s.id
+                    INNER JOIN securitygroups_users AS su
+                        ON su.securitygroup_id = s.id
+                        AND su.deleted = 0
+                    INNER JOIN users AS u
+                        ON u.id = su.user_id
+                        AND u.deleted = 0
+                    INNER JOIN accounts as a
+                    	ON a.assigned_user_id = u.id
+                    WHERE s.deleted = 0
+                        AND sc.type_c = 'Sales Group'
+                        AND (s.assigned_user_id = '{$current_user->id}' OR u.id = '{$current_user->id}')
+					ORDER by name asc";
+        	}
+        	else
+        	{
+        		$query = "SELECT id, 
+					name
+				  FROM accounts
+				  WHERE deleted = 0
+				  		AND assigned_user_id = '{$current_user->id}'
+				  ORDER by name asc";
+        	}
 		}
 
 		$result = $db->query($query, false);

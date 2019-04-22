@@ -35,7 +35,7 @@ class AccountsViewList extends ViewList
         }
 
         // Set filter of regular users to display their assigned accounts by default
-        if(!$current_user->isAdmin() && !isset($_REQUEST['assigned_user_id_advanced'])) {
+        if(!$current_user->isAdmin() && (!isset($_REQUEST['assigned_user_id_advanced']) && $_REQUEST['clear_query'])) {
         	$_REQUEST['searchFormTab'] = "advanced_search";
     		$_REQUEST['query'] = "true";
         	$_REQUEST['assigned_user_id_advanced'][0] = $current_user->id;

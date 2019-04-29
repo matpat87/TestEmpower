@@ -785,20 +785,20 @@ class jjwg_MapsController extends SugarController {
                 $upperCaseFirstTwoLettersUsername = strtoupper( substr( $lowerCaseUsername, 0, 2 ) ).substr( $lowerCaseUsername, 2 );
 
                 if(!$current_user->isAdmin()) {
-                    if($current_user->department == 'Sales') {
-                        $newQuery = "
-                                    LEFT JOIN securitygroups_records
-                                        ON securitygroups_records.record_id = ".strtolower($map_module_type).".id
-                                    LEFT JOIN securitygroups
-                                        ON securitygroups.id = securitygroups_records.securitygroup_id
-                                    LEFT JOIN securitygroups_cstm
-                                        ON securitygroups.id = securitygroups_cstm.id_c
-                                    WHERE 
-                                    ";
-                        $query = str_replace("where", $newQuery, $query);
-                        $query .= " AND securitygroups.name = '".$upperCaseFirstTwoLettersUsername."' AND securitygroups_cstm.type_c = 'Account Access' AND securitygroups.deleted = 0 ";
-                        $query .= " GROUP BY ".strtolower($map_module_type).".id ";
-                    }
+                    $newQuery = "
+                                LEFT JOIN securitygroups_records
+                                    ON securitygroups_records.record_id = ".strtolower($map_module_type).".id
+                                LEFT JOIN securitygroups
+                                    ON securitygroups.id = securitygroups_records.securitygroup_id
+                                LEFT JOIN securitygroups_cstm
+                                    ON securitygroups.id = securitygroups_cstm.id_c
+                                LEFT JOIN securitygroups_users
+                                    ON securitygroups.id = securitygroups_users.securitygroup_id
+                                WHERE 
+                                ";
+                    $query = str_replace("where", $newQuery, $query);
+                    $query .= " AND (securitygroups_users.user_id = '".$current_user->id."' OR securitygroups.assigned_user_id = '".$current_user->id."') AND securitygroups_cstm.type_c = 'Account Access' AND securitygroups.deleted = 0 AND securitygroups_users.deleted = 0";
+                    $query .= " GROUP BY ".strtolower($map_module_type).".id ";
                 }
             }
 

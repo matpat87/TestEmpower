@@ -80,7 +80,7 @@ class Jjwg_MapsViewQuick_Radius extends SugarView {
             <strong><?php echo $GLOBALS['mod_strings']['LBL_MY_ITEMS'].' '; ?> </strong>
         </td>
         <td>
-            <input type="checkbox" name="my_items" value="true" checked>
+            <input type="checkbox" name="my_items" value="true">
         </td>
     </tr>
 </table>

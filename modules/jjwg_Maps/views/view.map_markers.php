@@ -750,10 +750,16 @@ function setODataTable() {
                     "sWidth": "25%",
                     "mDataProp": "name",
                     "mRender": function (data, type, row) {
+                        var logged_user_name = <?php global $current_user; echo json_encode($current_user->user_name); ?>;
+
                         if (type == 'display') {
-                            return '<a target="_blank" href="./index.php?module=' + row.module +
-                                '&amp;action=DetailView&amp;record=' + row.id +
-                                '" class="link target_blank">' + data + '</a>';
+                            if(row.assigned_user_name == logged_user_name) {
+                                return '<a target="_blank" href="./index.php?module=' + row.module +
+                                    '&amp;action=DetailView&amp;record=' + row.id +
+                                    '" class="link target_blank">' + data + '</a>';
+                            } else {
+                                return data;
+                            }                                
                         } else {
                             return data;
                         }

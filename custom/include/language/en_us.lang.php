@@ -1939,26 +1939,6 @@ $GLOBALS['app_list_strings']['parent_type_display']=array (
   'Prospects' => 'Target',
   'RE_Regulatory' => 'Regulatory',
 );
-
-$GLOBALS['app_list_strings']['manufacturing_type_list']=array (
-  '' => '',
-  'BME' => 'Blow molding – Extrusion ',
-  'BMI' => 'Blow Molding – Injection',
-  'BMS' => 'Blow Molding - Stretch',
-  'BMF' => 'Blow Molding - Film',
-  'CAF' => 'Cast Film',
-  'CTG' => 'Coatings',
-  'CMP' => 'Compounding',
-  'CMM' => 'Compression Molding',
-  'EXF' => 'Extrusion - Film',
-  'EXP' => 'Extrusion - Profile',
-  'EXS' => 'Extrusion - Sheets',
-  'EXW' => 'Extrusion - Wire & Cable',
-  'IMR' => 'Inj Molding - Reg Gate',
-  'IMS' => 'Inj Molding - Small Gate',
-  'RMD' => 'Rotational Molding',
-  'THM' => 'Thermoforming',
-);
 $GLOBALS['app_list_strings']['industry_dom']=array (
   'Appliance' => 'Appliance',
   'Automotive' => 'Automotive',
@@ -2748,4 +2728,26 @@ $GLOBALS['app_list_strings']['role_list']=array (
   'ServiceTechnician' => 'Service Technician',
   'ShippingManager' => 'Shipping Manager',
   'TechServicesManager' => 'Tech Services Manager',
+);
+
+$GLOBALS['app_list_strings']['manufacturing_type_list']=array (
+  '' => '',
+  'BME' => 'Blow molding – Extrusion ',
+  'BMI' => 'Blow Molding – Injection',
+  'BMS' => 'Blow Molding - Stretch',
+  'BMF' => 'Blow Molding - Film',
+  'CAF' => 'Cast Film',
+  'CTG' => 'Coatings',
+  'CMP' => 'Compounding',
+  'CMM' => 'Compression Molding',
+  'EXF' => 'Extrusion - Film',
+  'EXP' => 'Extrusion - Profile',
+  'EXS' => 'Extrusion - Sheets',
+  'EXW' => 'Extrusion - Wire & Cable',
+  'IMR' => 'Inj Molding - Reg Gate',
+  'IMS' => 'Inj Molding - Small Gate',
+  'OEMBO' => 'OEM/Brand Owner',
+  'RMD' => 'Rotational Molding',
+  'THM' => 'Thermoforming',
+  'Other' => 'Other',
 );

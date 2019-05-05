@@ -2749,3 +2749,6 @@ $GLOBALS['app_list_strings']['role_list']=array (
   'ShippingManager' => 'Shipping Manager',
   'TechServicesManager' => 'Tech Services Manager',
 );
+
+$GLOBALS['app_list_strings']['specific_area_of_interest_list']=array (
+);

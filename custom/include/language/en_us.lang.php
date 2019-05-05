@@ -2753,3 +2753,5 @@ $GLOBALS['app_list_strings']['user_department_list']=array (
   'IT' => 'Information Technology',
   'Sales' => 'Sales',
 );
+$GLOBALS['app_list_strings']['specific_area_of_interest_list']=array (
+);

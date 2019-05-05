@@ -107,6 +107,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'specific_area_of_interest_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SPECIFIC_AREA_OF_INTEREST',
+          ),
+        ),
+        7 => 
+        array (
+          0 => 
+          array (
             'name' => 'primary_address_street',
             'hideLabel' => true,
             'type' => 'address',
@@ -133,11 +142,11 @@ array (
             ),
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 'email1',
         ),
-        8 => 
+        9 => 
         array (
           0 => 'description',
         ),

@@ -108,18 +108,23 @@ array (
             'comment' => 'Full text of the note',
             'label' => 'LBL_DESCRIPTION',
           ),
+          1 => 
+          array (
+            'name' => 'product_image',
+            'customCode' => '{$PRODUCT_IMAGE}',
+          ),
         ),
         5 => 
         array (
           0 => 
           array (
-            'name' => 'product_image',
-            'customCode' => '{$PRODUCT_IMAGE}',
+            'name' => 'ci_customeritems_accounts_name',
+            'label' => 'LBL_CI_CUSTOMERITEMS_ACCOUNTS_FROM_ACCOUNTS_TITLE',
           ),
           1 => 
           array (
-            'name' => 'ci_customeritems_accounts_name',
-            'label' => 'LBL_CI_CUSTOMERITEMS_ACCOUNTS_FROM_ACCOUNTS_TITLE',
+            'name' => 'location',
+            'label' => 'LBL_LOCATION',
           ),
         ),
         6 => 
@@ -143,11 +148,7 @@ array (
             'name' => 'ci_customeritems_opportunities_name',
             'label' => 'LBL_CI_CUSTOMERITEMS_OPPORTUNITIES_FROM_OPPORTUNITIES_TITLE',
           ),
-          1 => 
-          array (
-            'name' => 'location',
-            'label' => 'LBL_LOCATION',
-          ),
+          1 => '',
         ),
       ),
       'lbl_editview_panel2' => 

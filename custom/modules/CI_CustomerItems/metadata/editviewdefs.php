@@ -65,6 +65,7 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_STATUS',
           ),
+          1 => '',
         ),
         1 => 
         array (
@@ -116,17 +117,22 @@ array (
         5 => 
         array (
           0 => 'description',
+          1 => 
+          array (
+            'name' => 'product_image',
+            'customCode' => '{$PRODUCT_IMAGE}',
+          ),
         ),
         6 => 
         array (
           0 => 
           array (
-            'name' => 'product_image',
-            'customCode' => '{$PRODUCT_IMAGE}',
+            'name' => 'ci_customeritems_accounts_name',
           ),
           1 => 
           array (
-            'name' => 'ci_customeritems_accounts_name',
+            'name' => 'location',
+            'label' => 'LBL_LOCATION',
           ),
         ),
         7 => 
@@ -153,15 +159,6 @@ array (
           array (
             'name' => 'ci_customeritems_im_itemmaster_name',
           ),
-        ),
-        9 => 
-        array (
-          0 => 
-          array (
-            'name' => 'location',
-            'label' => 'LBL_LOCATION',
-          ),
-          1 => '',
         ),
       ),
       'lbl_editview_panel1' => 

@@ -2,7 +2,7 @@
 $module_name = 'CI_CustomerItems';
 $viewdefs [$module_name] = 
 array (
-  'EditView' => 
+  'QuickCreate' => 
   array (
     'templateMeta' => 
     array (
@@ -40,33 +40,18 @@ array (
           'newTab' => false,
           'panelDefault' => 'expanded',
         ),
-        'LBL_EDITVIEW_PANEL1' => 
-        array (
-          'newTab' => false,
-          'panelDefault' => 'expanded',
-        ),
         'LBL_EDITVIEW_PANEL2' => 
         array (
           'newTab' => false,
           'panelDefault' => 'expanded',
         ),
       ),
-      'syncDetailEditViews' => false,
     ),
     'panels' => 
     array (
       'default' => 
       array (
         0 => 
-        array (
-          0 => 
-          array (
-            'name' => 'status',
-            'studio' => 'visible',
-            'label' => 'LBL_STATUS',
-          ),
-        ),
-        1 => 
         array (
           0 => 'name',
           1 => 
@@ -75,7 +60,7 @@ array (
             'label' => 'LBL_PART_NUMBER',
           ),
         ),
-        2 => 
+        1 => 
         array (
           0 => 
           array (
@@ -86,9 +71,10 @@ array (
           1 => 
           array (
             'name' => 'ci_customeritems_ci_customeritems_name',
+            'label' => 'LBL_CI_CUSTOMERITEMS_CI_CUSTOMERITEMS_FROM_CI_CUSTOMERITEMS_L_TITLE',
           ),
         ),
-        3 => 
+        2 => 
         array (
           0 => 
           array (
@@ -101,7 +87,7 @@ array (
             'label' => 'LBL_PRICE',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -111,13 +97,19 @@ array (
           1 => 
           array (
             'name' => 'ci_customeritems_project_name',
+            'label' => 'LBL_CI_CUSTOMERITEMS_PROJECT_FROM_PROJECT_TITLE',
+          ),
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'description',
+            'comment' => 'Full text of the note',
+            'label' => 'LBL_DESCRIPTION',
           ),
         ),
         5 => 
-        array (
-          0 => 'description',
-        ),
-        6 => 
         array (
           0 => 
           array (
@@ -127,9 +119,10 @@ array (
           1 => 
           array (
             'name' => 'ci_customeritems_accounts_name',
+            'label' => 'LBL_CI_CUSTOMERITEMS_ACCOUNTS_FROM_ACCOUNTS_TITLE',
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -143,42 +136,17 @@ array (
             'label' => 'LBL_CONTAINER',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (
             'name' => 'ci_customeritems_opportunities_name',
+            'label' => 'LBL_CI_CUSTOMERITEMS_OPPORTUNITIES_FROM_OPPORTUNITIES_TITLE',
           ),
           1 => 
-          array (
-            'name' => 'ci_customeritems_im_itemmaster_name',
-          ),
-        ),
-        9 => 
-        array (
-          0 => 
           array (
             'name' => 'location',
             'label' => 'LBL_LOCATION',
-          ),
-          1 => '',
-        ),
-      ),
-      'lbl_editview_panel1' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'name' => 'date_entered',
-            'comment' => 'Date record created',
-            'label' => 'LBL_DATE_ENTERED',
-          ),
-          1 => 
-          array (
-            'name' => 'date_modified',
-            'comment' => 'Date record last modified',
-            'label' => 'LBL_DATE_MODIFIED',
           ),
         ),
       ),

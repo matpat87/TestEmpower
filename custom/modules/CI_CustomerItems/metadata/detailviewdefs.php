@@ -68,12 +68,6 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_STATUS',
           ),
-          1 => 
-          array (
-            'name' => 'division',
-            'studio' => 'visible',
-            'label' => 'LBL_DIVISION',
-          ),
         ),
         1 => 
         array (
@@ -88,29 +82,16 @@ array (
         array (
           0 => 
           array (
-            'name' => 'ci_customeritems_aos_product_categories_name',
-          ),
-          1 => 
-          array (
             'name' => 'type',
             'studio' => 'visible',
             'label' => 'LBL_TYPE',
-          ),
-        ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'currency_id',
-            'studio' => 'visible',
-            'label' => 'LBL_CURRENCY',
           ),
           1 => 
           array (
             'name' => 'ci_customeritems_ci_customeritems_name',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -123,27 +104,23 @@ array (
             'label' => 'LBL_PRICE',
           ),
         ),
-        5 => 
+        4 => 
         array (
           0 => 
-          array (
-            'name' => 'ci_customeritems_contacts_name',
-          ),
-          1 => 
           array (
             'name' => 'url',
             'label' => 'LBL_URL',
           ),
-        ),
-        6 => 
-        array (
-          0 => 'description',
           1 => 
           array (
             'name' => 'ci_customeritems_project_name',
           ),
         ),
-        7 => 
+        5 => 
+        array (
+          0 => 'description',
+        ),
+        6 => 
         array (
           0 => 
           array (
@@ -155,7 +132,7 @@ array (
             'name' => 'ci_customeritems_accounts_name',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (
@@ -164,25 +141,12 @@ array (
           ),
           1 => 
           array (
-            'name' => 'unit_measure',
-            'studio' => 'visible',
-            'label' => 'LBL_UNIT_MEASURE',
-          ),
-        ),
-        9 => 
-        array (
-          0 => 
-          array (
             'name' => 'container',
             'studio' => 'visible',
             'label' => 'LBL_CONTAINER',
           ),
-          1 => 
-          array (
-            'name' => 'ci_customeritems_im_itemmaster_name',
-          ),
         ),
-        10 => 
+        8 => 
         array (
           0 => 
           array (
@@ -190,23 +154,17 @@ array (
           ),
           1 => 
           array (
-            'name' => 'company_no',
-            'studio' => 'visible',
-            'label' => 'LBL_COMPANY_NO',
+            'name' => 'ci_customeritems_im_itemmaster_name',
           ),
         ),
-        11 => 
+        9 => 
         array (
           0 => 
           array (
             'name' => 'location',
             'label' => 'LBL_LOCATION',
           ),
-          1 => 
-          array (
-            'name' => 'material_cost_type',
-            'label' => 'LBL_MATERIAL_COST_TYPE',
-          ),
+          1 => '',
         ),
       ),
       'lbl_editview_panel1' => 

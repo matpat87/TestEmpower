@@ -1,5 +1,5 @@
 <?php
-// created: 2019-02-07 16:25:37
+// created: 2019-05-08 13:55:46
 $searchFields['CI_CustomerItems'] = array (
   'name' => 
   array (

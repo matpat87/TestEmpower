@@ -133,8 +133,7 @@ array (
           ),
           1 => 
           array (
-            'name' => 'location',
-            'label' => 'LBL_LOCATION',
+            'name' => 'accounts_ci_customeritems_1_name',
           ),
         ),
         7 => 
@@ -161,6 +160,15 @@ array (
           array (
             'name' => 'aos_products_ci_customeritems_1_name',
           ),
+        ),
+        9 => 
+        array (
+          0 => 
+          array (
+            'name' => 'location',
+            'label' => 'LBL_LOCATION',
+          ),
+          1 => '',
         ),
       ),
       'lbl_editview_panel1' => 

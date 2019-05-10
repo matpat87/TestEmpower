@@ -393,4 +393,33 @@ class Account extends Company implements EmailInterface {
 		return $query;
 	}
 
+	function retrieveCustomerItems() {
+		$query = "SELECT ci_customeritems.*, 
+							CASE
+								WHEN (
+									ci_customeritems_accountsaccounts_ida = '".$this->id."' 
+									AND  (accounts_ci_customeritems_1accounts_ida IS NULL OR accounts_ci_customeritems_1accounts_ida != '".$this->id."') 
+										) THEN 'Account'
+								WHEN (
+									(ci_customeritems_accountsaccounts_ida IS NULL OR ci_customeritems_accountsaccounts_ida != '".$this->id."') 
+												AND  accounts_ci_customeritems_1accounts_ida = '".$this->id."'
+								) THEN 'OEM Account'
+										WHEN (
+									ci_customeritems_accountsaccounts_ida = '".$this->id."'  AND accounts_ci_customeritems_1accounts_ida = '".$this->id."'
+										) THEN 'Account & OEM Account'
+								ELSE NULL
+							END 'account_relate_type'
+							FROM ci_customeritems
+							LEFT JOIN ci_customeritems_accounts_c 
+								ON ci_customeritems.id = ci_customeritems_accounts_c.ci_customeritems_accountsci_customeritems_idb
+								AND ci_customeritems_accounts_c.deleted = 0
+							LEFT JOIN accounts_ci_customeritems_1_c
+								ON	ci_customeritems.id = accounts_ci_customeritems_1_c.accounts_ci_customeritems_1ci_customeritems_idb
+								AND accounts_ci_customeritems_1_c.deleted = 0
+							WHERE ci_customeritems_accountsaccounts_ida = '".$this->id."' OR accounts_ci_customeritems_1accounts_ida = '".$this->id."'
+								AND ci_customeritems.deleted = 0
+								AND ci_customeritems_accounts_c.deleted = 0
+								AND accounts_ci_customeritems_1_c.deleted = 0";
+		return $query;
+	}
 }

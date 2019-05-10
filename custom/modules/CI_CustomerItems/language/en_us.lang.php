@@ -1,5 +1,5 @@
 <?php
-// created: 2019-06-05 05:40:09
+// created: 2019-05-08 15:29:36
 $mod_strings = array (
   'LBL_NAME' => 'Product Name',
   'LBL_DATE_ENTERED' => 'Date Created',
@@ -18,4 +18,6 @@ $mod_strings = array (
   'LNK_IMPORT_CI_CUSTOMERITEMS' => 'Import Customer Products',
   'LNK_LIST' => 'View Customer Products',
   'LNK_NEW_RECORD' => 'Create Customer Products',
+  'LBL_ACCOUNTS_CI_CUSTOMERITEMS_1_FROM_ACCOUNTS_TITLE' => 'OEM Account',
+  'LBL_ACCOUNT_RELATE_TYPE' => 'Relate Type'
 );

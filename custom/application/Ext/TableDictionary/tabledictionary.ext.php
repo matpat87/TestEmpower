@@ -112,6 +112,11 @@ include('custom/metadata/im_itemmaster_casesMetaData.php');
 
  
  //WARNING: The contents of this file are auto-generated
+include('custom/metadata/accounts_ci_customeritems_1MetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
 include('custom/metadata/ci_customeritems_im_itemmasterMetaData.php');
 
 

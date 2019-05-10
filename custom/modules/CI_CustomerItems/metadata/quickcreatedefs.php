@@ -123,8 +123,8 @@ array (
           ),
           1 => 
           array (
-            'name' => 'location',
-            'label' => 'LBL_LOCATION',
+            'name' => 'accounts_ci_customeritems_1_name',
+            'label' => 'LBL_ACCOUNTS_CI_CUSTOMERITEMS_1_FROM_ACCOUNTS_TITLE',
           ),
         ),
         6 => 
@@ -148,7 +148,11 @@ array (
             'name' => 'ci_customeritems_opportunities_name',
             'label' => 'LBL_CI_CUSTOMERITEMS_OPPORTUNITIES_FROM_OPPORTUNITIES_TITLE',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'location',
+            'label' => 'LBL_LOCATION',
+          ),
         ),
       ),
       'lbl_editview_panel2' => 

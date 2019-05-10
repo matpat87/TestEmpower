@@ -65,7 +65,6 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_STATUS',
           ),
-          1 => '',
         ),
         1 => 
         array (
@@ -131,8 +130,11 @@ array (
           ),
           1 => 
           array (
-            'name' => 'location',
-            'label' => 'LBL_LOCATION',
+            'name' => 'accounts_ci_customeritems_1_name',
+            'displayParams' => 
+            array (
+              'initial_filter' => '&oem_c_advanced[]=Yes&account_type_advanced[]=Customer&account_type_advanced[]=Prospect',
+            ),
           ),
         ),
         7 => 
@@ -159,6 +161,15 @@ array (
           array (
             'name' => 'ci_customeritems_im_itemmaster_name',
           ),
+        ),
+        9 => 
+        array (
+          0 => 
+          array (
+            'name' => 'location',
+            'label' => 'LBL_LOCATION',
+          ),
+          1 => '',
         ),
       ),
       'lbl_editview_panel1' => 

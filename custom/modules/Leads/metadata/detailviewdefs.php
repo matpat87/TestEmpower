@@ -171,8 +171,7 @@ array (
         ),
         5 => 
         array (
-          0 => '',
-          1 => 
+          0 => 
           array (
             'name' => 'specific_area_of_interest_c',
             'studio' => 'visible',

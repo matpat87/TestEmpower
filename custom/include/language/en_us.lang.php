@@ -2751,4 +2751,8 @@ $GLOBALS['app_list_strings']['role_list']=array (
 );
 
 $GLOBALS['app_list_strings']['specific_area_of_interest_list']=array (
+  '' => '',
+  'ContactedBySalesRep' => 'I would like to be contacted by a sales representative',
+  'CurrentCustomerNeedMSDSDoc' => 'I am a current Chroma customer and need MSDS or other documentation (please specify in comments section)',
+  'Other' => 'Other (please specify in comments section)',
 );

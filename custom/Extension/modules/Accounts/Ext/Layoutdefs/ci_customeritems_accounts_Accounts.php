@@ -14,10 +14,5 @@ $layout_defs["Accounts"]["subpanel_setup"]['ci_customeritems_accounts'] = array 
     array (
       'widget_class' => 'SubPanelTopButtonQuickCreate',
     ),
-    1 => 
-    array (
-      'widget_class' => 'SubPanelTopSelectButton',
-      'mode' => 'MultiSelect',
-    ),
   ),
 );

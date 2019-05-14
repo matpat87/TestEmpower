@@ -14,6 +14,7 @@ $dictionary["CI_CustomerItems"]["fields"]["ci_customeritems_im_itemmaster_name"]
   'name' => 'ci_customeritems_im_itemmaster_name',
   'type' => 'relate',
   'source' => 'non-db',
+  'required' => true,
   'vname' => 'LBL_CI_CUSTOMERITEMS_IM_ITEMMASTER_FROM_IM_ITEMMASTER_TITLE',
   'save' => true,
   'id_name' => 'ci_customeritems_im_itemmasterim_itemmaster_ida',

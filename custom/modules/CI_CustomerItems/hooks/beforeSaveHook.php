@@ -27,4 +27,17 @@ class beforeSaveHook
 		}
 	}
 
+	public function itemMasterQuickCreateCustomerItem($bean, $event, $arguments) {
+		if($_REQUEST['module'] == 'CI_CustomerItems' && $_REQUEST['return_module'] == 'IM_ItemMaster' && $bean->fetched_row == false) {
+			$beanItemMasterID = $_REQUEST['ci_customeritems_im_itemmasterim_itemmaster_ida'];
+
+			$itemMaster = BeanFactory::getBean('IM_ItemMaster', $beanItemMasterID);
+
+			$bean->name = $itemMaster->name;
+			$bean->part_number = $itemMaster->part_number;
+			$bean->status = $itemMaster->status;
+			$bean->cost = $itemMaster->cost;
+			$bean->price = $itemMaster->price;
+		}
+	}
 }

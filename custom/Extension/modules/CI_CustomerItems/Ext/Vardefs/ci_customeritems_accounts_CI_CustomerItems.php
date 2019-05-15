@@ -14,6 +14,7 @@ $dictionary["CI_CustomerItems"]["fields"]["ci_customeritems_accounts_name"] = ar
   'name' => 'ci_customeritems_accounts_name',
   'type' => 'relate',
   'source' => 'non-db',
+  'required' => true,
   'vname' => 'LBL_CI_CUSTOMERITEMS_ACCOUNTS_FROM_ACCOUNTS_TITLE',
   'save' => true,
   'id_name' => 'ci_customeritems_accountsaccounts_ida',

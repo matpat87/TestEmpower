@@ -14,10 +14,5 @@ $layout_defs["IM_ItemMaster"]["subpanel_setup"]['ci_customeritems_im_itemmaster'
     array (
       'widget_class' => 'SubPanelTopButtonQuickCreate',
     ),
-    1 => 
-    array (
-      'widget_class' => 'SubPanelTopSelectButton',
-      'mode' => 'MultiSelect',
-    ),
   ),
 );

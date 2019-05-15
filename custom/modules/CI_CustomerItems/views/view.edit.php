@@ -65,6 +65,16 @@ class CI_CustomerItemsViewEdit extends ViewEdit
       </script>";
     }
 
+    if($_REQUEST['target_action'] == 'QuickCreate' && $_REQUEST['parent_type'] == 'IM_ItemMaster') {
+      echo 
+      "<script>
+        $(document).ready(function() {
+          $('#ci_customeritems_im_itemmaster_name').attr('disabled', 'disabled');
+          $('#btn_ci_customeritems_im_itemmaster_name, #btn_clr_ci_customeritems_im_itemmaster_name').addClass('hidden');
+        });
+      </script>";
+    }
+
     parent::display();
  	}
 

@@ -24,6 +24,7 @@
 
 function display_lines($focus, $field, $value, $view){
 
+    
     global $sugar_config, $locale, $app_list_strings, $mod_strings;
 
     $enable_groups = (int)$sugar_config['aos']['lineItems']['enableGroups'];
@@ -159,9 +160,13 @@ function display_lines($focus, $field, $value, $view){
                     $product .= "<td width='5%' class='tabDetailViewDL'  style='padding:2px;' scope='row'>&nbsp;</td>";
                     $product .= "<td width='10%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_PRODUCT_QUANITY']."</td>";
                     $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_PRODUCT_NAME']."</td>";
-                    $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_CUSTOMER_ID']."</td>";
-                    $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_LDR']."</td>";
-                    $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_RESIN']."</td>";
+                    if($focus->module_dir == 'AOS_Quotes') {
+                        $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_CUSTOMER_ID']."</td>";
+                        $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_LDR']."</td>";
+                        $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_RESIN']."</td>";
+                    } else if($focus->module_dir == 'ODR_SalesOrders') {
+
+                    }
                     // $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_LIST_PRICE']."</td>";
                     // $product .= "<td width='12%' class='tabDetailViewDL' style='text-align: right;padding:2px;' scope='row'>".$mod_strings['LBL_DISCOUNT_AMT']."</td>";
                     $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_UNIT_PRICE']."</td>";
@@ -179,10 +184,14 @@ function display_lines($focus, $field, $value, $view){
 
                 $product .= "<td class='tabDetailViewDF' style='padding:2px;'><a href='index.php?module=AOS_Products&action=DetailView&record=".$line_item->product_id."' class='tabDetailViewDFLink'>".$line_item->name."</a></td>";
                 // $product .= "<td class='tabDetailViewDF' style='text-align: right; padding:2px;'>".currency_format_number($line_item->product_list_price,$params)."</td>";
-
-                $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->customer_id_c."</td>";
-                $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->ldr_c." %</td>";
-                $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->resin_c."</td>";
+                
+                if($focus->module_dir == 'AOS_Quotes') {
+                    $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->customer_id_c."</td>";
+                    $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->ldr_c." %</td>";
+                    $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->resin_c."</td>";
+                } else if($focus->module_dir == 'ODR_SalesOrders') {
+                    
+                }
 
                 // $product .= "<td class='tabDetailViewDF' style='text-align: right; padding:2px;'>".get_discount_string($line_item->discount, $line_item->product_discount, $params, $locale, $sep)."</td>";
 

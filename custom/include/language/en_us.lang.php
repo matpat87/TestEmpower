@@ -37,3 +37,5 @@ $GLOBALS['app_list_strings']['product_category_dom']=array (
   'Users' => 'Users',
   'Vendors' => 'Vendors',
 );
+$app_list_strings['moduleList']['ODR_SalesOrders']='Orders';
+$app_list_strings['moduleListSingular']['ODR_SalesOrders']='Order';

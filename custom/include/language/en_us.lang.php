@@ -39,3 +39,10 @@ $GLOBALS['app_list_strings']['product_category_dom']=array (
 );
 $app_list_strings['moduleList']['ODR_SalesOrders']='Orders';
 $app_list_strings['moduleListSingular']['ODR_SalesOrders']='Order';
+$GLOBALS['app_list_strings']['order_type_list']=array (
+  '' => '',
+  'SalesOrder' => 'Sales Order',
+  'BlanketOrder' => 'Blanket Order',
+  'SampleOrder' => 'Sample Order',
+  'CreditOrder' => 'Credit Order',
+);

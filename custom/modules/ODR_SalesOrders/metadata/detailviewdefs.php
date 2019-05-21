@@ -78,9 +78,40 @@ array (
             'name' => 'number',
             'label' => 'LBL_NUMBER',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'po_number_c',
+            'label' => 'LBL_PO_NUMBER',
+          ),
         ),
         1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'order_type_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ORDER_TYPE',
+          ),
+          1 => 
+          array (
+            'name' => 'order_date_c',
+            'label' => 'LBL_ORDER_DATE',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'ship_via_c',
+            'label' => 'LBL_SHIP_VIA',
+          ),
+          1 => 
+          array (
+            'name' => 'shipped_date_c',
+            'label' => 'LBL_SHIPPED_DATE',
+          ),
+        ),
+        3 => 
         array (
           0 => 
           array (
@@ -93,7 +124,7 @@ array (
             'label' => 'LBL_QUOTE_DATE',
           ),
         ),
-        2 => 
+        4 => 
         array (
           0 => 
           array (
@@ -106,7 +137,7 @@ array (
             'label' => 'LBL_INVOICE_DATE',
           ),
         ),
-        3 => 
+        5 => 
         array (
           0 => 'assigned_user_name',
           1 => 
@@ -116,7 +147,7 @@ array (
             'label' => 'LBL_STATUS',
           ),
         ),
-        4 => 
+        6 => 
         array (
           0 => 'description',
         ),

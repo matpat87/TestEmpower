@@ -149,6 +149,21 @@ array (
         ),
         6 => 
         array (
+          0 => 
+          array (
+            'name' => 'salesperson_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SALESPERSON',
+          ),
+          1 => 
+          array (
+            'name' => 'csr_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CSR',
+          ),
+        ),
+        7 => 
+        array (
           0 => 'description',
         ),
       ),
@@ -161,7 +176,6 @@ array (
             'name' => 'billing_account',
             'label' => 'LBL_BILLING_ACCOUNT',
           ),
-          1 => '',
         ),
         1 => 
         array (
@@ -170,7 +184,6 @@ array (
             'name' => 'billing_contact',
             'label' => 'LBL_BILLING_CONTACT',
           ),
-          1 => '',
         ),
         2 => 
         array (
@@ -206,7 +219,6 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_CURRENCY',
           ),
-          1 => '',
         ),
         1 => 
         array (
@@ -218,17 +230,13 @@ array (
         ),
         2 => 
         array (
-          0 => '',
-        ),
-        3 => 
-        array (
           0 => 
           array (
             'name' => 'total_amt',
             'label' => 'LBL_TOTAL_AMT',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -236,7 +244,7 @@ array (
             'label' => 'LBL_DISCOUNT_AMOUNT',
           ),
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -244,7 +252,7 @@ array (
             'label' => 'LBL_SUBTOTAL_AMOUNT',
           ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -252,7 +260,7 @@ array (
             'label' => 'LBL_SHIPPING_AMOUNT',
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -260,7 +268,7 @@ array (
             'label' => 'LBL_TAX_AMOUNT',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (

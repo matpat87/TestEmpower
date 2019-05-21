@@ -123,6 +123,23 @@ array (
         ),
         6 => 
         array (
+          0 => 
+          array (
+            'name' => 'salesperson_c',
+            'studio' => 'visible',
+            'label' => 'LBL_SALESPERSON',
+            'displayParams' => array (   'initial_filter' => '&role_c_advanced=SalesPerson',  ),
+          ),
+          1 => 
+          array (
+            'name' => 'csr_c',
+            'studio' => 'visible',
+            'label' => 'LBL_CSR',
+            'displayParams' => array (   'initial_filter' => '&role_c_advanced=CustomerService',  ),
+          ),
+        ),
+        7 => 
+        array (
           0 => 'description',
         ),
       ),
@@ -150,7 +167,6 @@ array (
               'shippingKey' => 'shipping',
             ),
           ),
-          1 => '',
         ),
         1 => 
         array (
@@ -163,7 +179,6 @@ array (
               'initial_filter' => '&account_name="+this.form.{$fields.billing_account.name}.value+"',
             ),
           ),
-          1 => '',
         ),
         2 => 
         array (
@@ -219,17 +234,13 @@ array (
         ),
         2 => 
         array (
-          0 => '',
-        ),
-        3 => 
-        array (
           0 => 
           array (
             'name' => 'total_amt',
             'label' => 'LBL_TOTAL_AMT',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -244,7 +255,7 @@ array (
             ),
           ),
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -252,7 +263,7 @@ array (
             'label' => 'LBL_SUBTOTAL_AMOUNT',
           ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -267,7 +278,7 @@ array (
             ),
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -275,7 +286,7 @@ array (
             'label' => 'LBL_TAX_AMOUNT',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (

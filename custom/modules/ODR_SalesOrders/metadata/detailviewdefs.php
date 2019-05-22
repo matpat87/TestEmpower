@@ -256,11 +256,19 @@ array (
         array (
           0 => 
           array (
+            'name' => 'misc_amount_c',
+            'label' => 'LBL_MISC_AMOUNT',
+          ),
+        ),
+        6 => 
+        array (
+          0 => 
+          array (
             'name' => 'shipping_amount',
             'label' => 'LBL_SHIPPING_AMOUNT',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -268,7 +276,7 @@ array (
             'label' => 'LBL_TAX_AMOUNT',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (

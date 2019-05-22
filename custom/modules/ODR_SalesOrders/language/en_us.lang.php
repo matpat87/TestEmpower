@@ -1,5 +1,5 @@
 <?php
-// created: 2019-05-21 15:24:48
+// created: 2019-05-22 14:58:15
 $mod_strings = array (
   'LNK_NEW_RECORD' => 'Create Order',
   'LNK_LIST' => 'View Orders',
@@ -17,4 +17,5 @@ $mod_strings = array (
   'LBL_SALESPERSON' => 'Salesperson',
   'LBL_CSR_USER_ID' => 'CSR (related User ID)',
   'LBL_CSR' => 'CSR',
+  'LBL_MISC_AMOUNT' => 'Misc',
 );

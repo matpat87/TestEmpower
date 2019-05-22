@@ -128,14 +128,20 @@ array (
             'name' => 'salesperson_c',
             'studio' => 'visible',
             'label' => 'LBL_SALESPERSON',
-            'displayParams' => array (   'initial_filter' => '&role_c_advanced=SalesPerson',  ),
+            'displayParams' => 
+            array (
+              'initial_filter' => '&role_c_advanced=SalesPerson',
+            ),
           ),
           1 => 
           array (
             'name' => 'csr_c',
             'studio' => 'visible',
             'label' => 'LBL_CSR',
-            'displayParams' => array (   'initial_filter' => '&role_c_advanced=CustomerService',  ),
+            'displayParams' => 
+            array (
+              'initial_filter' => '&role_c_advanced=CustomerService',
+            ),
           ),
         ),
         7 => 
@@ -267,6 +273,14 @@ array (
         array (
           0 => 
           array (
+            'name' => 'misc_amount_c',
+            'label' => 'LBL_MISC_AMOUNT',
+          ),
+        ),
+        6 => 
+        array (
+          0 => 
+          array (
             'name' => 'shipping_amount',
             'label' => 'LBL_SHIPPING_AMOUNT',
             'displayParams' => 
@@ -278,7 +292,7 @@ array (
             ),
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
@@ -286,7 +300,7 @@ array (
             'label' => 'LBL_TAX_AMOUNT',
           ),
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (

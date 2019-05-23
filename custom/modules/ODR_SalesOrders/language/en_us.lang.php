@@ -8,6 +8,7 @@ $mod_strings = array (
   'LBL_SEARCH_FORM_TITLE' => 'Search Order',
   'LBL_HOMEPAGE_TITLE' => 'My Orders',
   'LBL_DUE_DATE' => 'Requested Date',
+  'LBL_REQUIRED_SHIP_DATE' => 'Required Ship Date',
   'LBL_ORDER_DATE' => 'Order Date',
   'LBL_SHIPPED_DATE' => 'Shipped Date',
   'LBL_PO_NUMBER' => 'PO Number',

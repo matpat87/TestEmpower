@@ -206,24 +206,24 @@ function insertProductLine(tableid, groupid) {
     c.innerHTML = "<input type='text' name='product_product_qty[" + prodln + "]' id='product_product_qty" + prodln + "'  value='' title='' tabindex='116' onblur='Quantity_format2Number(" + prodln + ");calculateLine(" + prodln + ",\"product_\");' class='product_qty'>";
 
     var d = x.insertCell(4);
-    d.innerHTML = "<input type='text' name='product_quantity_shipped[" + prodln + "]' id='product_quantity_shipped" + prodln + "'  value='' title='' tabindex='116' onblur='Quantity_format2Number(" + prodln + ");calculateLine(" + prodln + ",\"product_\");' class='product_qty'>";
+    d.innerHTML = "<input type='text' name='product_quantity_shipped_c[" + prodln + "]' id='product_quantity_shipped_c" + prodln + "'  value='' title='' tabindex='116' onblur='Quantity_format2NumberCustom(" + prodln + ")' class='product_qty'>";
 
     var e = x.insertCell(5);
-    e.innerHTML = "<div type='date' field='requested_date_c'>";
+    e.innerHTML = "<div type='date' field='product_requested_date_c" + prodln + "'>";
     e.innerHTML += "<span class='dateTime'>";
-    e.innerHTML += "<input class='date_input' style='width:88px !important' autocomplete='off' type='text' name='requested_date_c' id='requested_date_c' title='' tabindex='116' size='11' maxlength='10'>";
+    e.innerHTML += "<input class='date_input' style='width:88px !important' autocomplete='off' type='text' name='product_requested_date_c[" + prodln + "]' id='product_requested_date_c" + prodln + "' title='' tabindex='116' size='11' maxlength='10'>";
 
-    e.innerHTML += "<button type='button' id='requested_date_c_trigger' class='btn btn-danger' onclick='return false;'><span class='suitepicon suitepicon-module-calendar' alt='Enter Date'></span></button>";
+    e.innerHTML += "<button type='button' id='product_requested_date_c" + prodln + "_trigger' class='btn btn-danger' onclick='return false;'><span class='suitepicon suitepicon-module-calendar' alt='Enter Date'></span></button>";
 
     e.innerHTML += "</span>";
     e.innerHTML += "</div>";
     
     Calendar.setup ({ 
-      inputField : 'requested_date_c',
+      inputField : 'product_requested_date_c' + prodln,
       form : 'EditView',
       ifFormat : '%m/%d/%Y %I:%M%P',
       daFormat : '%m/%d/%Y %I:%M%P',
-      button : 'requested_date_c_trigger',
+      button : 'product_requested_date_c' + prodln + '_trigger',
       singleClick : true,
       dateStr : '02/10/2019',
       startWeekday: 0,
@@ -232,21 +232,21 @@ function insertProductLine(tableid, groupid) {
     });
 
     var f = x.insertCell(6);
-    f.innerHTML = "<div type='date' field='quantity_shipped_c'>";
+    f.innerHTML = "<div type='date' field='product_required_ship_date_c" + prodln + "'>";
     f.innerHTML += "<span class='dateTime'>";
-    f.innerHTML += "<input class='date_input' style='width:88px !important' autocomplete='off' type='text' name='quantity_shipped_c' id='quantity_shipped_c' title='' tabindex='116' size='11' maxlength='10'>";
+    f.innerHTML += "<input class='date_input' style='width:88px !important' autocomplete='off' type='text' name='product_required_ship_date_c[" + prodln + "]' id='product_required_ship_date_c" + prodln + "' title='' tabindex='116' size='11' maxlength='10'>";
 
-    f.innerHTML += "<button type='button' id='quantity_shipped_c_trigger' class='btn btn-danger' onclick='return false;'><span class='suitepicon suitepicon-module-calendar' alt='Enter Date'></span></button>";
+    f.innerHTML += "<button type='button' id='product_required_ship_date_c" + prodln + "_trigger' class='btn btn-danger' onclick='return false;'><span class='suitepicon suitepicon-module-calendar' alt='Enter Date'></span></button>";
 
     f.innerHTML += "</span>";
     f.innerHTML += "</div>";
     
     Calendar.setup ({ 
-      inputField : 'quantity_shipped_c',
+      inputField : 'product_required_ship_date_c' + prodln,
       form : 'EditView',
       ifFormat : '%m/%d/%Y %I:%M%P',
       daFormat : '%m/%d/%Y %I:%M%P',
-      button : 'quantity_shipped_c_trigger',
+      button : 'product_required_ship_date_c' + prodln + '_trigger',
       singleClick : true,
       dateStr : '02/10/2019',
       startWeekday: 0,
@@ -257,6 +257,18 @@ function insertProductLine(tableid, groupid) {
     var g = x.insertCell(7);
     g.innerHTML = "<input type='text' name='product_product_discount[" + prodln + "]' id='product_product_discount" + prodln + "'  maxlength='50' value='' title='' tabindex='116' onblur='calculateLine(" + prodln + ",\"product_\");' onblur='calculateLine(" + prodln + ",\"product_\");' class='product_discount_text'><input type='hidden' name='product_product_discount_amount[" + prodln + "]' id='product_product_discount_amount" + prodln + "' value=''  />";
     g.innerHTML += "<select tabindex='116' name='product_discount[" + prodln + "]' id='product_discount" + prodln + "' onchange='calculateLine(" + prodln + ",\"product_\");' class='product_discount_amount_select'>" + discount_hidden + "</select>";
+
+    var h = x.insertCell(8);
+    h.innerHTML = "<input type='text' name='product_product_unit_price[" + prodln + "]' id='product_product_unit_price" + prodln + "' maxlength='50' value='' title='' tabindex='116' onblur='calculateLine(" + prodln + ",\"product_\");' onblur='calculateLine(" + prodln + ",\"product_\");' class='product_unit_price'>";
+
+    var i = x.insertCell(9);
+    i.innerHTML = "<input type='text' name='product_product_total_price[" + prodln + "]' id='product_product_total_price" + prodln + "' maxlength='50' value='' title='' tabindex='116' readonly='readonly' class='product_total_price'><input type='hidden' name='product_group_number[" + prodln + "]' id='product_group_number" + prodln + "' value='"+groupid+"'>";
+  
+    if (typeof currencyFields !== 'undefined'){
+      currencyFields.push("product_product_total_price" + prodln);
+    }
+    var j = x.insertCell(10);
+    j.innerHTML = "<input type='hidden' name='product_currency[" + prodln + "]' id='product_currency" + prodln + "' value=''><input type='hidden' name='product_deleted[" + prodln + "]' id='product_deleted" + prodln + "' value='0'><input type='hidden' name='product_id[" + prodln + "]' id='product_id" + prodln + "' value=''><button type='button' id='product_delete_line" + prodln + "' class='button product_delete_line' value='" + SUGAR.language.get(module_sugar_grp1, 'LBL_REMOVE_PRODUCT_LINE') + "' tabindex='116' onclick='markLineDeleted(" + prodln + ",\"product_\")'><span class=\"suitepicon suitepicon-action-clear\"></span></button><br>";
   } else {
     var a = x.insertCell(0);
     a.innerHTML = "<input type='text' name='product_product_qty[" + prodln + "]' id='product_product_qty" + prodln + "'  value='' title='' tabindex='116' onblur='Quantity_format2Number(" + prodln + ");calculateLine(" + prodln + ",\"product_\");' class='product_qty'>";
@@ -570,7 +582,15 @@ function insertProductHeader(tableid){
 
     var h=x.insertCell(7);
     h.style.color="rgb(68,68,68)";
-    h.innerHTML='&nbsp;';
+    h.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_UNIT_PRICE');
+
+    var i=x.insertCell(8);
+    i.style.color="rgb(68,68,68)";
+    i.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_TOTAL_PRICE');
+    
+    var j=x.insertCell(9);
+    j.style.color="rgb(68,68,68)";
+    j.innerHTML='&nbsp;';
   } else {
     var a=x.insertCell(0);
     a.style.color="rgb(68,68,68)";
@@ -840,6 +860,11 @@ function calculateLine(ln, key) {
     Quantity_format2Number(ln);
   }
 
+  if(document.getElementById(key + 'quantity_shipped_c' + ln) !== null){
+    QtyShipped = unformat2Number(document.getElementById(key + 'quantity_shipped_c' + ln).value);
+    Quantity_format2NumberCustom(ln);
+  }
+  
   var productTotalPrice = productQty * productUnitPrice;
 
   document.getElementById(key + 'product_unit_price' + ln).value = format2Number(productUnitPrice);
@@ -1142,6 +1167,27 @@ function Quantity_format2Number(ln)
   }
 
   document.getElementById('product_product_qty' + ln).value=str;
+}
+
+function Quantity_format2NumberCustom(ln)
+{
+  var str = '';
+  var qty=unformat2Number(document.getElementById('product_quantity_shipped_c' + ln).value);
+  if(qty === null){qty = 1;}
+
+  if(qty === 0){
+    str = '0';
+  } else {
+    str = format2Number(qty);
+    if(sig_digits){
+      str = str.replace(/0*$/,'');
+      str = str.replace(dec_sep,'~');
+      str = str.replace(/~$/,'');
+      str = str.replace('~',dec_sep);
+    }
+  }
+
+  document.getElementById('product_quantity_shipped_c' + ln).value=str;
 }
 
 function formatNumber(n, num_grp_sep, dec_sep, round, precision) {

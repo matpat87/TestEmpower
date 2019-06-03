@@ -176,6 +176,8 @@ function display_lines($focus, $field, $value, $view){
                         $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_DUE_DATE']."</td>";
                         $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_REQUIRED_SHIP_DATE']."</td>";
                         $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_DISCOUNT_AMT']."</td>";
+                        $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_UNIT_PRICE']."</td>";
+                        $product .= "<td width='12%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_TOTAL_PRICE']."</td>";
                     } else {
                         $product .= "<td width='5%' class='tabDetailViewDL'  style='padding:2px;' scope='row'>&nbsp;</td>";
                         $product .= "<td width='10%' class='tabDetailViewDL' style='padding:2px;' scope='row'>".$mod_strings['LBL_PRODUCT_QUANITY']."</td>";
@@ -212,10 +214,12 @@ function display_lines($focus, $field, $value, $view){
                     $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->part_number."</td>";
                     $product .= "<td class='tabDetailViewDF' style='padding:2px;'><a href='index.php?module=AOS_Products&action=DetailView&record=".$line_item->product_id."' class='tabDetailViewDFLink'>".$line_item->name."</a></td>";
                     $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".stripDecimalPointsAndTrailingZeroes(format_number($line_item->product_qty),$sep[1])."</td>";
-                    $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".stripDecimalPointsAndTrailingZeroes(format_number($line_item->quantity_shipped),$sep[1])."</td>";
+                    $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".stripDecimalPointsAndTrailingZeroes(format_number($line_item->quantity_shipped_c),$sep[1])."</td>";
                     $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->requested_date_c."</td>";
-                    $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->quantity_shipped_c."</td>";
+                    $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".$line_item->required_ship_date_c."</td>";
                     $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".get_discount_string($line_item->discount, $line_item->product_discount, $params, $locale, $sep)."</td>";
+                    $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".currency_format_number($line_item->product_unit_price,$params )."</td>";
+                    $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".currency_format_number($line_item->product_total_price,$params )."</td>";
                 } else {
                     $product .= "<td class='tabDetailViewDF' style='padding:2px;'>".stripDecimalPointsAndTrailingZeroes(format_number($line_item->product_qty),$sep[1])."</td>";
                     $product .= "<td class='tabDetailViewDF' style='padding:2px;'><a href='index.php?module=AOS_Products&action=DetailView&record=".$line_item->product_id."' class='tabDetailViewDFLink'>".$line_item->name."</a></td>";

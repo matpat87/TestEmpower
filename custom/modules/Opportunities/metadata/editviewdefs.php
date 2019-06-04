@@ -70,6 +70,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'currency_id',
+            'label' => 'LBL_CURRENCY',
+          ),
+          1 => '',
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
             'name' => 'amount',
             'customCode' => '<input type="text" name="{$fields.amount.name}" id="{$fields.amount.name}" value="{$fields.amount.value}" maxlength="{$fields.amount.len}" class="custom-currency" />',
           ),
@@ -80,21 +89,21 @@ array (
             'customCode' => '<input type="text" name="{$fields.avg_sell_price_c.name}" id="{$fields.avg_sell_price_c.name}" value="{$fields.avg_sell_price_c.value}" maxlength="{$fields.avg_sell_price_c.len}" class="custom-currency" />',
           ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 'sales_stage',
           1 => 'opportunity_type',
         ),
-        4 => 
+        5 => 
         array (
           0 => 'probability',
           1 => 'lead_source',
         ),
-        5 => 
+        6 => 
         array (
           0 => 'next_step_temp_c',
         ),
-        6 => 
+        7 => 
         array (
           0 => 'description',
           1 => 

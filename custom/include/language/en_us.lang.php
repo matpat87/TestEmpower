@@ -2759,3 +2759,18 @@ $GLOBALS['app_list_strings']['specific_area_of_interest_list']=array (
   'CurrentCustomerNeedMSDSDoc' => 'I am a current Chroma customer and need MSDS or other documentation (please specify in comments section)',
   'Other' => 'Other (please specify in comments section)',
 );
+$GLOBALS['app_list_strings']['sales_stage_dom']=array (
+  'Prospecting' => 'Prospecting',
+  'Qualification' => 'Qualification',
+  'Needs Analysis' => 'Needs Analysis',
+  'Value Proposition' => 'Value Proposition',
+  'Id. Decision Makers' => 'Identifying Decision Makers',
+  'Perception Analysis' => 'Perception Analysis',
+  'Proposal/Price Quote' => 'Proposal/Price Quote',
+  'Sampling' => 'Sampling',
+  'ProductionTrial' => 'Production Trial',
+  'Negotiation/Review' => 'Negotiation/Review',
+  'Closed Won' => 'Closed Won',
+  'Closed Lost' => 'Closed Lost',
+  'ClosedRejected' => 'Closed Rejected',
+);

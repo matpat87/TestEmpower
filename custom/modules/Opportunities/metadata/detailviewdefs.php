@@ -57,9 +57,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'currency_id',
-            'comment' => 'Currency used for display purposes',
-            'label' => 'LBL_CURRENCY',
+            'name' => 'annual_volume_lbs_c',
+            'label' => 'LBL_ANNUAL_VOLUME_LBS',
           ),
           1 => 'date_closed',
         ),
@@ -89,7 +88,6 @@ array (
           array (
             'name' => 'next_step',
             'label' => 'LBL_NEXT_STEP_TEMP',
-            //'customCode' => '{$CUSTOM_NEXT_STEP}',
           ),
         ),
         6 => 

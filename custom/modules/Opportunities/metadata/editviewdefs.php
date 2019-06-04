@@ -34,6 +34,13 @@ array (
           'panelDefault' => 'expanded',
         ),
       ),
+      'includes' => 
+      array (
+        0 => 
+        array (
+          'file' => 'custom/modules/Opportunities/js/custom-edit.js',
+        ),
+      ),
     ),
     'panels' => 
     array (
@@ -51,8 +58,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'currency_id',
-            'label' => 'LBL_CURRENCY',
+            'name' => 'annual_volume_lbs_c',
+            'label' => 'LBL_ANNUAL_VOLUME_LBS',
           ),
           1 => 
           array (
@@ -101,14 +108,5 @@ array (
     ),
   ),
 );
-
-
-
-$viewdefs['Opportunities']['EditView']['templateMeta']['includes'] =
-    array (
-        array (
-        'file' => 'custom/modules/Opportunities/js/custom-edit.js',
-        ),
-    );
-
+;
 ?>

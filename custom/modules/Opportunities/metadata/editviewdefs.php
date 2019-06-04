@@ -58,8 +58,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'currency_id',
-            'label' => 'LBL_CURRENCY',
+            'name' => 'annual_volume_lbs_c',
+            'label' => 'LBL_ANNUAL_VOLUME_LBS',
           ),
           1 => 
           array (

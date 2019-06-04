@@ -71,17 +71,22 @@ array (
             'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})',
             'customCode' => '{$AMOUNT}',
           ),
-          1 => 'opportunity_type',
+          1 => 
+          array (
+            'name' => 'avg_sell_price_c',
+            'label' => '{$MOD.LBL_AVG_SELL_PRICE} ({$CURRENCY})',
+            'customCode' => '{$AVG_SELL_PRICE}',
+          ),
         ),
         3 => 
         array (
           0 => 'sales_stage',
-          1 => 'lead_source',
+          1 => 'opportunity_type',
         ),
         4 => 
         array (
           0 => 'probability',
-          1 => '',
+          1 => 'lead_source',
         ),
         5 => 
         array (
@@ -89,7 +94,6 @@ array (
           array (
             'name' => 'next_step',
             'label' => 'LBL_NEXT_STEP_TEMP',
-            //'customCode' => '{$CUSTOM_NEXT_STEP}',
           ),
         ),
         6 => 

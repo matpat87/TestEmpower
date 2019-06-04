@@ -34,6 +34,13 @@ array (
           'panelDefault' => 'expanded',
         ),
       ),
+      'includes' => 
+      array (
+        0 => 
+        array (
+          'file' => 'custom/modules/Opportunities/js/custom-edit.js',
+        ),
+      ),
     ),
     'panels' => 
     array (
@@ -66,17 +73,22 @@ array (
             'name' => 'amount',
             'customCode' => '<input type="text" name="{$fields.amount.name}" id="{$fields.amount.name}" value="{$fields.amount.value}" maxlength="{$fields.amount.len}" class="custom-currency" />',
           ),
-          1 => 'opportunity_type',
+          1 => 
+          array (
+            'name' => 'avg_sell_price_c',
+            'label' => 'LBL_AVG_SELL_PRICE',
+            'customCode' => '<input type="text" name="{$fields.avg_sell_price_c.name}" id="{$fields.avg_sell_price_c.name}" value="{$fields.avg_sell_price_c.value}" maxlength="{$fields.avg_sell_price_c.len}" class="custom-currency" />',
+          ),
         ),
         3 => 
         array (
           0 => 'sales_stage',
-          1 => 'lead_source',
+          1 => 'opportunity_type',
         ),
         4 => 
         array (
           0 => 'probability',
-          1 => '',
+          1 => 'lead_source',
         ),
         5 => 
         array (
@@ -101,14 +113,5 @@ array (
     ),
   ),
 );
-
-
-
-$viewdefs['Opportunities']['EditView']['templateMeta']['includes'] =
-    array (
-        array (
-        'file' => 'custom/modules/Opportunities/js/custom-edit.js',
-        ),
-    );
-
+;
 ?>

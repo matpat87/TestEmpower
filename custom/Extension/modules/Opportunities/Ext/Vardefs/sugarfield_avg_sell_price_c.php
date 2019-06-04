@@ -1,0 +1,28 @@
+<?php
+  $dictionary['Opportunity']['fields']['avg_sell_price_c'] = array(
+    'inline_edit' => '0',
+    'labelValue' => 'Avg Sell Price',
+    'required' => false,
+    'source' => 'custom_fields',
+    'name' => 'avg_sell_price_c',
+    'vname' => 'LBL_AVG_SELL_PRICE',
+    'type' => 'currency',
+    'massupdate' => '0',
+    'default' => '0',
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => false,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => '17',
+    'size' => '20',
+    'enable_range_search' => false,
+    'precision' => 6,
+    'id' => 'Opportunitiesavg_sell_price_c',
+  );
+?>

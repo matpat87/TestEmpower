@@ -67,8 +67,12 @@ class CustomOpportunitiesViewEdit extends OpportunitiesViewEdit {
 		if(strpos($this->bean->amount, '$') === false)
 		{
 			$bean_amount = "$" . number_format($this->bean->amount, 2, '.', ',');
+			$this->bean->amount = $bean_amount;
+		}
 
-        	$this->bean->amount = $bean_amount;
+		if(strpos($this->bean->avg_sell_price_c, '$') === false) {
+			$bean_avg_sell_price_c = "$" . number_format($this->bean->avg_sell_price_c, 2, '.', ',');
+			$this->bean->avg_sell_price_c = $bean_avg_sell_price_c;
 		}
 
  		parent::display();

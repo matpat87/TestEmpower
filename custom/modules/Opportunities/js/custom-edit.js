@@ -1,5 +1,6 @@
 $(document).ready(function(e){
-	AmountJS();
+    AmountJS();
+    customValidateAvgSellPrice();
 });
 
 function AmountJS()
@@ -42,4 +43,16 @@ function AmountJS()
 
         $(this).val(value);
     });
+}
+
+function customValidateAvgSellPrice()
+{
+    min = 0;
+    max = 999.99;
+    formname = 'EditView';
+    label = $("div[data-label='LBL_AVG_SELL_PRICE'").html().trim().replace(/:/g, '');
+    addToValidate(formname, 'avg_sell_price_c', 'currency', true, label);
+    validate[formname][validate[formname].length-1][jstypeIndex] = 'range';
+    validate[formname][validate[formname].length-1][minIndex] = min;
+    validate[formname][validate[formname].length-1][maxIndex] = max;
 }

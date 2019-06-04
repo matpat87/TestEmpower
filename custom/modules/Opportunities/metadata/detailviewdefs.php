@@ -64,6 +64,15 @@ array (
         ),
         2 => 
         array (
+          0 => array (
+            'name' => 'currency_id',
+            'comment' => 'Currency used for display purposes',
+            'label' => 'LBL_CURRENCY',
+          ),
+          1 => '',
+        ),
+        3 => 
+        array (
           0 => 
           array (
             'name' => 'amount',
@@ -72,17 +81,17 @@ array (
           ),
           1 => 'opportunity_type',
         ),
-        3 => 
+        4 => 
         array (
           0 => 'sales_stage',
           1 => 'lead_source',
         ),
-        4 => 
+        5 => 
         array (
           0 => 'probability',
           1 => '',
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -90,7 +99,7 @@ array (
             'label' => 'LBL_NEXT_STEP_TEMP',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (

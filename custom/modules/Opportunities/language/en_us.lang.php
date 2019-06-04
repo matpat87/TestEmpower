@@ -1,5 +1,5 @@
 <?php
-// created: 2018-08-06 16:00:06
+// created: 2019-06-04 05:01:00
 $mod_strings = array (
   'LBL_NEXT_STEP_TEMP' => 'Next Step',
   'LBL_NEXT_STEP' => 'Next Step:',
@@ -8,4 +8,5 @@ $mod_strings = array (
   'LBL_ACTIVITIES_SUBPANEL_TITLE' => 'Future Activities',
   'LBL_HISTORY_SUBPANEL_TITLE' => 'Archives',
   'LBL_TYPE' => 'Type:',
+  'LBL_AVG_SELL_PRICE' => 'Avg Sell Price',
 );

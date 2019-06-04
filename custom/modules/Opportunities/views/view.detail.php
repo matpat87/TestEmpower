@@ -34,6 +34,12 @@ class CustomOpportunitiesViewDetail extends OpportunitiesViewDetail
         $this->ss->assign('AMOUNT', $bean_amount);
       }
 
+      if(isset($this->bean->avg_sell_price_c))
+      {
+        $bean_avg_sell_price_c = "$" . number_format($this->bean->avg_sell_price_c, 2, '.', ',');
+        $this->ss->assign('AVG_SELL_PRICE', $bean_avg_sell_price_c);
+      }
+
       //SKY 10/24 - enables the next_step html to be shown in UI 
       $this->bean->next_step = htmlspecialchars_decode($this->bean->next_step);
 

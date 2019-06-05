@@ -1,0 +1,28 @@
+<?php
+	$dictionary['AOS_Products']['fields']['weight_per_gal_c'] = array (
+		'inline_edit' => '1',
+    'labelValue' => 'Wgt / Gal',
+    'required' => false,
+    'source' => 'custom_fields',
+    'name' => 'weight_per_gal_c',
+    'vname' => 'LBL_WEIGHT_PER_GAL',
+    'type' => 'decimal',
+    'massupdate' => '0',
+    'default' => '0.00',
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => false,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => '18',
+    'size' => '20',
+    'enable_range_search' => false,
+    'precision' => '2',
+    'id' => 'AOS_Productsweight_per_gal_c',
+	);
+?>

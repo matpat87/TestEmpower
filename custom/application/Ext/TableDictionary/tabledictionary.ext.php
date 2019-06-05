@@ -18,6 +18,11 @@ include('custom/metadata/ci_customeritems_opportunitiesMetaData.php');
 
  
  //WARNING: The contents of this file are auto-generated
+include('custom/metadata/aos_products_notes_1MetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
 include('custom/metadata/mkt_markets_opportunities_1MetaData.php');
 
 
@@ -58,7 +63,17 @@ include('custom/metadata/ci_customeritems_projectMetaData.php');
 
  
  //WARNING: The contents of this file are auto-generated
+include('custom/metadata/aos_products_cases_1MetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
 include('custom/metadata/documents_otr_ontrack_1MetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
+include('custom/metadata/aos_products_documents_1MetaData.php');
 
 
  

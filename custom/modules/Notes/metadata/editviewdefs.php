@@ -38,6 +38,20 @@ function deleteAttachmentCallBack(text)
 {literal} } {/literal}
 </script>
 <script>toggle_portal_flag(); function toggle_portal_flag()  {literal} { {/literal} {$TOGGLE_JS} {literal} } {/literal} </script>',
+      'useTabs' => false,
+      'tabDefs' => 
+      array (
+        'LBL_NOTE_INFORMATION' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
+        'LBL_PANEL_ASSIGNMENT' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
+      ),
     ),
     'panels' => 
     array (
@@ -72,7 +86,7 @@ function deleteAttachmentCallBack(text)
           ),
           1 => 
           array (
-            'name' => 'im_itemmaster_notes_1_name',
+            'name' => 'aos_products_notes_1_name',
           ),
         ),
       ),

@@ -170,6 +170,15 @@ array (
           ),
           1 => '',
         ),
+        9 => 
+        array (
+          0 => 
+          array (
+            'name' => 'location',
+            'label' => 'LBL_LOCATION',
+          ),
+          1 => '',
+        ),
       ),
       'lbl_editview_panel1' => 
       array (

@@ -14,6 +14,7 @@ $dictionary["CI_CustomerItems"]["fields"]["aos_products_ci_customeritems_1_name"
   'name' => 'aos_products_ci_customeritems_1_name',
   'type' => 'relate',
   'source' => 'non-db',
+  'required' => true,
   'vname' => 'LBL_AOS_PRODUCTS_CI_CUSTOMERITEMS_1_FROM_AOS_PRODUCTS_TITLE',
   'save' => true,
   'id_name' => 'aos_products_ci_customeritems_1aos_products_ida',

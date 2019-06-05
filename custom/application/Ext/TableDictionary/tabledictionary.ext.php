@@ -73,6 +73,11 @@ include('custom/metadata/ci_customeritems_ci_customeritemsMetaData.php');
 
  
  //WARNING: The contents of this file are auto-generated
+include('custom/metadata/aos_products_ci_customeritems_1MetaData.php');
+
+
+ 
+ //WARNING: The contents of this file are auto-generated
 include('custom/metadata/campaigns_marketsMetaData.php');
 
  

@@ -46,3 +46,5 @@ $GLOBALS['app_list_strings']['product_category_dom']=array (
   'Users' => 'Users',
   'Vendors' => 'Vendors',
 );
+$app_list_strings['moduleList']['CI_CustomerItems']='Customer Products';
+$app_list_strings['moduleListSingular']['CI_CustomerItems']='Customer Product';

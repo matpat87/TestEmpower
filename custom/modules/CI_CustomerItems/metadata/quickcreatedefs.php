@@ -50,8 +50,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'ci_customeritems_im_itemmaster_name',
-            'label' => 'LBL_CI_CUSTOMERITEMS_IM_ITEMMASTER_FROM_IM_ITEMMASTER_TITLE',
+            'name' => 'aos_products_ci_customeritems_1_name',
+            'label' => 'LBL_AOS_PRODUCTS_CI_CUSTOMERITEMS_1_FROM_AOS_PRODUCTS_TITLE',
           ),
           1 => 
           array (

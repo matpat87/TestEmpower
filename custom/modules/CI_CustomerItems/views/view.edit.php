@@ -65,12 +65,12 @@ class CI_CustomerItemsViewEdit extends ViewEdit
       </script>";
     }
 
-    if($_REQUEST['target_action'] == 'QuickCreate' && $_REQUEST['parent_type'] == 'IM_ItemMaster') {
+    if($_REQUEST['target_action'] == 'QuickCreate' && $_REQUEST['parent_type'] == 'AOS_Products') {
       echo 
       "<script>
         $(document).ready(function() {
-          $('#ci_customeritems_im_itemmaster_name').attr('disabled', 'disabled');
-          $('#btn_ci_customeritems_im_itemmaster_name, #btn_clr_ci_customeritems_im_itemmaster_name').addClass('hidden');
+          $('#aos_products_ci_customeritems_1_name').attr('disabled', 'disabled');
+          $('#btn_aos_products_ci_customeritems_1_name, #btn_clr_aos_products_ci_customeritems_1_name').addClass('hidden');
         });
       </script>";
     }

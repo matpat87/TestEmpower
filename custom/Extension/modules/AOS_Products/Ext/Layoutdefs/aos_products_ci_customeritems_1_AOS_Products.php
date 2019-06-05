@@ -14,10 +14,5 @@ $layout_defs["AOS_Products"]["subpanel_setup"]['aos_products_ci_customeritems_1'
     array (
       'widget_class' => 'SubPanelTopButtonQuickCreate',
     ),
-    1 => 
-    array (
-      'widget_class' => 'SubPanelTopSelectButton',
-      'mode' => 'MultiSelect',
-    ),
   ),
 );

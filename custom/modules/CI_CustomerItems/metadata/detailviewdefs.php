@@ -68,7 +68,6 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_STATUS',
           ),
-          1 => '',
         ),
         1 => 
         array (
@@ -160,7 +159,7 @@ array (
           ),
           1 => 
           array (
-            'name' => 'ci_customeritems_im_itemmaster_name',
+            'name' => 'aos_products_ci_customeritems_1_name',
           ),
         ),
       ),
@@ -173,7 +172,6 @@ array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO_NAME',
           ),
-          1 => '',
         ),
         1 => 
         array (
@@ -227,14 +225,8 @@ array (
             'name' => 'margin',
             'label' => 'LBL_MARGIN',
           ),
-          1 => '',
         ),
         2 => 
-        array (
-          0 => '',
-          1 => '',
-        ),
-        3 => 
         array (
           0 => 
           array (
@@ -247,7 +239,7 @@ array (
             'label' => 'LBL_BUDGET_JUL',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -260,7 +252,7 @@ array (
             'label' => 'LBL_BUDGET_AUG',
           ),
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -273,7 +265,7 @@ array (
             'label' => 'LBL_BUDGET_SEP',
           ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -286,7 +278,7 @@ array (
             'label' => 'LBL_BUDGET_OCT',
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -299,7 +291,7 @@ array (
             'label' => 'LBL_BUDGET_NOV',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (
@@ -312,7 +304,7 @@ array (
             'label' => 'LBL_BUDGET_DEC',
           ),
         ),
-        9 => 
+        8 => 
         array (
           0 => 
           array (
@@ -320,7 +312,7 @@ array (
             'label' => 'Volume',
           ),
         ),
-        10 => 
+        9 => 
         array (
           0 => 
           array (
@@ -333,7 +325,7 @@ array (
             'label' => 'LBL_VOLUME_07_JUL',
           ),
         ),
-        11 => 
+        10 => 
         array (
           0 => 
           array (
@@ -346,7 +338,7 @@ array (
             'label' => 'LBL_VOLUME_08_AUG',
           ),
         ),
-        12 => 
+        11 => 
         array (
           0 => 
           array (
@@ -359,7 +351,7 @@ array (
             'label' => 'LBL_VOLUME_09_SEP',
           ),
         ),
-        13 => 
+        12 => 
         array (
           0 => 
           array (
@@ -372,7 +364,7 @@ array (
             'label' => 'LBL_VOLUME_10_OCT',
           ),
         ),
-        14 => 
+        13 => 
         array (
           0 => 
           array (
@@ -385,7 +377,7 @@ array (
             'label' => 'LBL_VOLUME_11_NOV',
           ),
         ),
-        15 => 
+        14 => 
         array (
           0 => 
           array (
@@ -398,7 +390,7 @@ array (
             'label' => 'LBL_VOLUME_12_DEC',
           ),
         ),
-        16 => 
+        15 => 
         array (
           0 => 
           array (
@@ -406,7 +398,7 @@ array (
             'label' => 'Budget Cost',
           ),
         ),
-        17 => 
+        16 => 
         array (
           0 => 
           array (
@@ -419,7 +411,7 @@ array (
             'label' => 'LBL_BUDGET_COST_07_JUL',
           ),
         ),
-        18 => 
+        17 => 
         array (
           0 => 
           array (
@@ -432,7 +424,7 @@ array (
             'label' => 'LBL_BUDGET_COST_08_AUG',
           ),
         ),
-        19 => 
+        18 => 
         array (
           0 => 
           array (
@@ -445,7 +437,7 @@ array (
             'label' => 'LBL_BUDGET_COST_09_SEP',
           ),
         ),
-        20 => 
+        19 => 
         array (
           0 => 
           array (
@@ -458,7 +450,7 @@ array (
             'label' => 'LBL_BUDGET_COST_10_OCT',
           ),
         ),
-        21 => 
+        20 => 
         array (
           0 => 
           array (
@@ -471,7 +463,7 @@ array (
             'label' => 'LBL_BUDGET_COST_11_NOV',
           ),
         ),
-        22 => 
+        21 => 
         array (
           0 => 
           array (

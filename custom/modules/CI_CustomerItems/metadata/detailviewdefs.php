@@ -158,7 +158,7 @@ array (
           ),
           1 => 
           array (
-            'name' => 'ci_customeritems_im_itemmaster_name',
+            'name' => 'aos_products_ci_customeritems_1_name',
           ),
         ),
         9 => 

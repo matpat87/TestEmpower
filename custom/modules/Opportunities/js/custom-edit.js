@@ -18,6 +18,7 @@ function AmountJS()
             key == 9 ||
             key == 46 ||
             key == 190 ||
+            key == 110 ||
             (key == 13 && detailViewIntervalObj != null) ||
             (key >= 48 && key <= 57) ||
             (key >= 96 && key <= 105)); 

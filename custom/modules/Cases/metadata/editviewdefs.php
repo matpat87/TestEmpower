@@ -98,11 +98,7 @@ array (
             'name' => 'due_date_c',
             'label' => 'LBL_DUE_DATE',
           ),
-          1 => 
-          array (
-            'name' => 'customer_name_c',
-            'label' => 'LBL_CUSTOMER_NAME',
-          ),
+          1 => '',
         ),
         4 => 
         array (

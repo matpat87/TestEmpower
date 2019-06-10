@@ -2504,13 +2504,6 @@ $GLOBALS['app_list_strings']['category_list']=array (
   'Pricing' => 'Pricing',
   'DocumentationLabeling' => 'Documentation/Labeling',
 );
-$GLOBALS['app_list_strings']['case_priority_dom']=array (
-  'P3' => 'Low',
-  'P2' => 'Medium',
-  'P1' => 'High',
-  'P0' => 'Critical',
-  'P' => 'Urgent',
-);
 $GLOBALS['app_list_strings']['status_list']=array (
   'New' => 'New',
   'Responded' => 'Responded',
@@ -2811,4 +2804,11 @@ $GLOBALS['app_list_strings']['product_category_dom']=array (
   'Tasks' => 'Tasks',
   'Users' => 'Users',
   'Vendors' => 'Vendors',
+);
+$GLOBALS['app_list_strings']['case_priority_dom']=array (
+  'P0' => 'Critical',
+  'P' => 'Urgent',
+  'P1' => 'High',
+  'P2' => 'Medium',
+  'P3' => 'Low',
 );

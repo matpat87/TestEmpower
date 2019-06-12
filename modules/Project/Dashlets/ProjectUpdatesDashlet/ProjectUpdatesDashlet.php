@@ -76,17 +76,38 @@ class ProjectUpdatesDashlet extends DashletGeneric {
         global $current_user;
         
         // Accounts is jt0 in system generated query
-        $lvsParams['custom_from'] = "  LEFT JOIN accounts_cstm
-                                        ON jt0.id = accounts_cstm.id_c ";
+        $lvsParams['custom_from'] = "   LEFT JOIN accounts_cstm
+                                            ON jt0.id = accounts_cstm.id_c ";
         
-        // If admin, show all project updates, else show only projects whose accounts are assigned to the logged user                                       
-        $lvsParams['custom_where'] = !$current_user->is_admin ? " OR (jt0.assigned_user_id = '".$current_user->id."')" : " ";
+        // Link to security groups if logged user is not an admin
+        if(! $current_user->is_admin) {
+            $lvsParams['custom_from'] .= "  LEFT JOIN securitygroups_records
+                                                ON securitygroups_records.record_id = jt0.id
+                                            LEFT JOIN securitygroups
+                                                ON securitygroups.id = securitygroups_records.securitygroup_id
+                                            LEFT JOIN securitygroups_cstm
+                                                ON securitygroups_cstm.id_c = securitygroups.id
+                                        ";
+        }
+                                    
+        // If admin, show all project updates, else show only projects whose accounts are assigned to the logged user
+        if(! $current_user->is_admin) {
+            $lvsParams['custom_where'] = "  OR (jt0.assigned_user_id = '".$current_user->id."')
+                                            OR (
+                                                securitygroups.name = '".$current_user->user_name."'
+                                                AND securitygroups.deleted = 0
+                                                AND securitygroups_cstm.type_c = 'Account Access'
+                                            )
+                                        ";
+        }
         
         // Filter data to show only records of projects that have active accounts and the project update field is not empty
         $lvsParams['custom_where'] .= " AND (project_cstm.project_update_c IS NOT NULL AND project_cstm.project_update_c != '') 
-                                       AND accounts_cstm.status_c = 'Active'";
+                                        AND accounts_cstm.status_c = 'Active'
+                                    ";
 
-        
+        // Append GROUP BY at the end of the where conditions since by default, CRM does not support groupBy lvsParams
+        $lvsParams['custom_where'] .= " GROUP BY project.id ";
 
         // By default, sort data of project updates by last modified DESC
         if(empty($lvsParams['orderBy']) && empty($lvsParams['sortOrder'])) {

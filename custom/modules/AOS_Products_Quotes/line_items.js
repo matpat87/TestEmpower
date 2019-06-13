@@ -329,22 +329,24 @@ function insertProductLine(tableid, groupid) {
 
   enableQS(true);
   //QSFieldsArray["EditView_product_name"+prodln].forceSelection = true;
+  
+  if(module_sugar_grp1 != 'AOS_Quotes' && module_sugar_grp1 != 'ODR_SalesOrders') {
+    var y = tablebody.insertRow(-1);
+    y.id = 'product_note_line' + prodln;
 
-  var y = tablebody.insertRow(-1);
-  y.id = 'product_note_line' + prodln;
+    var h1 = y.insertCell(0);
+    var h1 = y.insertCell(0);
+    h1.colSpan = "5";
+    h1.style.color = "rgb(68,68,68)";
+    h1.innerHTML = "<span style='vertical-align: top;' class='product_item_description_label'>" + SUGAR.language.get(module_sugar_grp1, 'LBL_PRODUCT_DESCRIPTION') + " :&nbsp;&nbsp;</span>";
+    h1.innerHTML += "<textarea tabindex='116' name='product_item_description[" + prodln + "]' id='product_item_description" + prodln + "' rows='2' cols='23' class='product_item_description'></textarea>&nbsp;&nbsp;";
 
-  var h1 = y.insertCell(0);
-  // var h1 = y.insertCell(0);
-  // h1.colSpan = "5";
-  // h1.style.color = "rgb(68,68,68)";
-  // h1.innerHTML = "<span style='vertical-align: top;' class='product_item_description_label'>" + SUGAR.language.get(module_sugar_grp1, 'LBL_PRODUCT_DESCRIPTION') + " :&nbsp;&nbsp;</span>";
-  // h1.innerHTML += "<textarea tabindex='116' name='product_item_description[" + prodln + "]' id='product_item_description" + prodln + "' rows='2' cols='23' class='product_item_description'></textarea>&nbsp;&nbsp;";
-
-  // var i = y.insertCell(1);
-  // i.colSpan = "5";
-  // i.style.color = "rgb(68,68,68)";
-  // i.innerHTML = "<span style='vertical-align: top;' class='product_description_label'>"  + SUGAR.language.get(module_sugar_grp1, 'LBL_PRODUCT_NOTE') + " :&nbsp;</span>";
-  // i.innerHTML += "<textarea tabindex='116' name='product_description[" + prodln + "]' id='product_description" + prodln + "' rows='2' cols='23' class='product_description'></textarea>&nbsp;&nbsp;"
+    var i = y.insertCell(1);
+    i.colSpan = "5";
+    i.style.color = "rgb(68,68,68)";
+    i.innerHTML = "<span style='vertical-align: top;' class='product_description_label'>"  + SUGAR.language.get(module_sugar_grp1, 'LBL_PRODUCT_NOTE') + " :&nbsp;</span>";
+    i.innerHTML += "<textarea tabindex='116' name='product_description[" + prodln + "]' id='product_description" + prodln + "' rows='2' cols='23' class='product_description'></textarea>&nbsp;&nbsp;"
+  }
 
   addAlignedLabels(prodln, 'product');
 
@@ -457,37 +459,37 @@ function insertServiceLine(tableid, groupid) {
   a.colSpan = "4";
   a.innerHTML = "<textarea name='service_name[" + servln + "]' id='service_name" + servln + "'  cols='64' title='' tabindex='116' class='service_name'></textarea><input type='hidden' name='service_product_id[" + servln + "]' id='service_product_id" + servln + "'  maxlength='50' value='0'>";
 
-  // var a1 = x.insertCell(1);
-  // a1.innerHTML = "<input type='text' name='service_product_list_price[" + servln + "]' id='service_product_list_price" + servln + "' maxlength='50' value='' title='' tabindex='116'   onblur='calculateLine(" + servln + ",\"service_\");' class='service_list_price'>";
+  var a1 = x.insertCell(1);
+  a1.innerHTML = "<input type='text' name='service_product_list_price[" + servln + "]' id='service_product_list_price" + servln + "' maxlength='50' value='' title='' tabindex='116'   onblur='calculateLine(" + servln + ",\"service_\");' class='service_list_price'>";
 
-  // if (typeof currencyFields !== 'undefined'){
-  //   currencyFields.push("service_product_list_price" + servln);
-  // }
+  if (typeof currencyFields !== 'undefined'){
+    currencyFields.push("service_product_list_price" + servln);
+  }
 
-  // var a2 = x.insertCell(2);
-  // a2.innerHTML = "<input type='text' name='service_product_discount[" + servln + "]' id='service_product_discount" + servln + "'  maxlength='50' value='' title='' tabindex='116' onblur='calculateLine(" + servln + ",\"service_\");' onblur='calculateLine(" + servln + ",\"service_\");' class='service_discount_text'><input type='hidden' name='service_product_discount_amount[" + servln + "]' id='service_product_discount_amount" + servln + "' value=''/>";
-  // a2.innerHTML += "<select tabindex='116' name='service_discount[" + servln + "]' id='service_discount" + servln + "' onchange='calculateLine(" + servln + ",\"service_\");' class='service_discount_select'>" + discount_hidden + "</select>";
+  var a2 = x.insertCell(2);
+  a2.innerHTML = "<input type='text' name='service_product_discount[" + servln + "]' id='service_product_discount" + servln + "'  maxlength='50' value='' title='' tabindex='116' onblur='calculateLine(" + servln + ",\"service_\");' onblur='calculateLine(" + servln + ",\"service_\");' class='service_discount_text'><input type='hidden' name='service_product_discount_amount[" + servln + "]' id='service_product_discount_amount" + servln + "' value=''/>";
+  a2.innerHTML += "<select tabindex='116' name='service_discount[" + servln + "]' id='service_discount" + servln + "' onchange='calculateLine(" + servln + ",\"service_\");' class='service_discount_select'>" + discount_hidden + "</select>";
 
-  var b = x.insertCell(1);
+  var b = x.insertCell(3);
   b.innerHTML = "<input type='text' name='service_product_unit_price[" + servln + "]' id='service_product_unit_price" + servln + "' maxlength='50' value='' title='' tabindex='116'   onblur='calculateLine(" + servln + ",\"service_\");' class='service_unit_price'>";
 
   if (typeof currencyFields !== 'undefined'){
     currencyFields.push("service_product_unit_price" + servln);
   }
-  // var c = x.insertCell(4);
-  // c.innerHTML = "<input type='text' name='service_vat_amt[" + servln + "]' id='service_vat_amt" + servln + "' maxlength='250' value='' title='' tabindex='116' readonly='readonly' class='service_vat_text'>";
-  // c.innerHTML += "<select tabindex='116' name='service_vat[" + servln + "]' id='service_vat" + servln + "' onchange='calculateLine(" + servln + ",\"service_\");' class='service_vat_select'>" + vat_hidden + "</select>";
-  // if (typeof currencyFields !== 'undefined'){
-  //   currencyFields.push("service_vat_amt" + servln);
-  // }
+  var c = x.insertCell(4);
+  c.innerHTML = "<input type='text' name='service_vat_amt[" + servln + "]' id='service_vat_amt" + servln + "' maxlength='250' value='' title='' tabindex='116' readonly='readonly' class='service_vat_text'>";
+  c.innerHTML += "<select tabindex='116' name='service_vat[" + servln + "]' id='service_vat" + servln + "' onchange='calculateLine(" + servln + ",\"service_\");' class='service_vat_select'>" + vat_hidden + "</select>";
+  if (typeof currencyFields !== 'undefined'){
+    currencyFields.push("service_vat_amt" + servln);
+  }
 
-  var e = x.insertCell(2);
+  var e = x.insertCell(5);
   e.innerHTML = "<input type='text' name='service_product_total_price[" + servln + "]' id='service_product_total_price" + servln + "' maxlength='50' value='' title='' tabindex='116' readonly='readonly' class='service_total_price'><input type='hidden' name='service_group_number[" + servln + "]' id='service_group_number" + servln + "' value='"+ groupid +"'>";
 
   if (typeof currencyFields !== 'undefined'){
     currencyFields.push("service_product_total_price" + servln);
   }
-  var f = x.insertCell(3);
+  var f = x.insertCell(6);
   f.innerHTML = "<input type='hidden' name='service_deleted[" + servln + "]' id='service_deleted" + servln + "' value='0'><input type='hidden' name='service_id[" + servln + "]' id='service_id" + servln + "' value=''><button type='button' class='button service_delete_line' id='service_delete_line" + servln + "' value='" + SUGAR.language.get(module_sugar_grp1, 'LBL_REMOVE_PRODUCT_LINE') + "' tabindex='116' onclick='markLineDeleted(" + servln + ",\"service_\")'><span class=\"suitepicon suitepicon-action-clear\"></span></button><br>";
 
   addAlignedLabels(servln, 'service');
@@ -651,27 +653,27 @@ function insertServiceHeader(tableid){
   a.style.color="rgb(68,68,68)";
   a.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_NAME');
 
-  // var b=x.insertCell(1);
-  // b.style.color="rgb(68,68,68)";
-  // b.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_LIST_PRICE');
+  var b=x.insertCell(1);
+  b.style.color="rgb(68,68,68)";
+  b.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_LIST_PRICE');
 
-  // var c=x.insertCell(2);
-  // c.style.color="rgb(68,68,68)";
-  // c.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_DISCOUNT');
+  var c=x.insertCell(2);
+  c.style.color="rgb(68,68,68)";
+  c.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_DISCOUNT');
 
-  var d=x.insertCell(1);
+  var d=x.insertCell(3);
   d.style.color="rgb(68,68,68)";
   d.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_SERVICE_PRICE');
 
-  // var e=x.insertCell(4);
-  // e.style.color="rgb(68,68,68)";
-  // e.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_VAT_AMT');
+  var e=x.insertCell(4);
+  e.style.color="rgb(68,68,68)";
+  e.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_VAT_AMT');
 
-  var f=x.insertCell(2);
+  var f=x.insertCell(5);
   f.style.color="rgb(68,68,68)";
   f.innerHTML=SUGAR.language.get(module_sugar_grp1, 'LBL_TOTAL_PRICE');
 
-  var g=x.insertCell(3);
+  var g=x.insertCell(6);
   g.style.color="rgb(68,68,68)";
   g.innerHTML='&nbsp;';
 }
@@ -754,7 +756,11 @@ function insertGroup()
   footer_cell.scope="row";
   footer_cell.colSpan="20";
   footer_cell.innerHTML="<input type='button' tabindex='116' class='button add_product_line' value='"+SUGAR.language.get(module_sugar_grp1, 'LBL_ADD_PRODUCT_LINE')+"' id='"+productTable.id+"addProductLine' onclick='insertProductLine(\""+productTable.id+"\",\""+groupn+"\")' />";
-  // footer_cell.innerHTML+=" <input type='button' tabindex='116' class='button add_service_line' value='"+SUGAR.language.get(module_sugar_grp1, 'LBL_ADD_SERVICE_LINE')+"' id='"+serviceTable.id+"addServiceLine' onclick='insertServiceLine(\""+serviceTable.id+"\",\""+groupn+"\")' />";
+  
+  if(module_sugar_grp1 != 'AOS_Quotes' && module_sugar_grp1 != 'ODR_SalesOrders') {
+    footer_cell.innerHTML+=" <input type='button' tabindex='116' class='button add_service_line' value='"+SUGAR.language.get(module_sugar_grp1, 'LBL_ADD_SERVICE_LINE')+"' id='"+serviceTable.id+"addServiceLine' onclick='insertServiceLine(\""+serviceTable.id+"\",\""+groupn+"\")' />";
+  }
+  
   if(enable_groups){
     footer_cell.innerHTML+="<span class='totals'><label>"+SUGAR.language.get(module_sugar_grp1, 'LBL_TOTAL_AMT')+":</label><input name='group_total_amt[]' id='"+ table.id +"total_amt' class='group_total_amt' maxlength='26' value='' title='' tabindex='120' type='text' readonly></span>";
 
@@ -852,121 +858,120 @@ function markLineDeleted(ln, key)
  * Calculate Line Values
  */
 
-function calculateLine(ln, key) {
-  var productUnitPrice = unformat2Number(document.getElementById(key + 'product_unit_price' + ln).value);
-  var productQty = 1;
-  if(document.getElementById(key + 'product_qty' + ln) !== null){
-    productQty = unformat2Number(document.getElementById(key + 'product_qty' + ln).value);
-    Quantity_format2Number(ln);
-  }
-
-  if(document.getElementById(key + 'quantity_shipped_c' + ln) !== null){
-    QtyShipped = unformat2Number(document.getElementById(key + 'quantity_shipped_c' + ln).value);
-    Quantity_format2NumberCustom(ln);
-  }
+function calculateLine(ln, key){
   
-  var productTotalPrice = productQty * productUnitPrice;
+  if(module_sugar_grp1 == 'AOS_Quotes') {
+    var productUnitPrice = unformat2Number(document.getElementById(key + 'product_unit_price' + ln).value);
+    var productQty = 1;
+    if(document.getElementById(key + 'product_qty' + ln) !== null){
+      productQty = unformat2Number(document.getElementById(key + 'product_qty' + ln).value);
+      Quantity_format2Number(ln);
+    }
 
-  document.getElementById(key + 'product_unit_price' + ln).value = format2Number(productUnitPrice);
-  document.getElementById(key + 'product_total_price' + ln).value = format2Number(productTotalPrice);
-  var groupid = 0;
-  if(enable_groups){
-    groupid = document.getElementById(key + 'group_number' + ln).value;
-  }
-  groupid = 'group' + groupid;
+    if(document.getElementById(key + 'quantity_shipped_c' + ln) !== null){
+      QtyShipped = unformat2Number(document.getElementById(key + 'quantity_shipped_c' + ln).value);
+      Quantity_format2NumberCustom(ln);
+    }
+    
+    var productTotalPrice = productQty * productUnitPrice;
 
-  calculateTotal(groupid);
-  calculateTotal();
-}
+    document.getElementById(key + 'product_unit_price' + ln).value = format2Number(productUnitPrice);
+    document.getElementById(key + 'product_total_price' + ln).value = format2Number(productTotalPrice);
+    var groupid = 0;
+    if(enable_groups){
+      groupid = document.getElementById(key + 'group_number' + ln).value;
+    }
+    groupid = 'group' + groupid;
 
-/* Removed due to custom modifications requested by client (Modified by: Ralph Julian B. Siasat)
-  function calculateLine(ln, key){
+    calculateTotal(groupid);
+    calculateTotal();
+  } else if(module_sugar_grp1 == 'ODR_SalesOrders') {
 
-  var required = 'product_list_price';
-  if(document.getElementById(key + required + ln) === null){
-    required = 'product_unit_price';
-  }
+  } else {
+    var required = 'product_list_price';
+    if(document.getElementById(key + required + ln) === null){
+      required = 'product_unit_price';
+    }
 
-  if (document.getElementById(key + 'name' + ln).value === '' || document.getElementById(key + required + ln).value === ''){
-    return;
-  }
+    if (document.getElementById(key + 'name' + ln).value === '' || document.getElementById(key + required + ln).value === ''){
+      return;
+    }
 
-  if(key === "product_" && document.getElementById(key + 'product_qty' + ln) !== null && document.getElementById(key + 'product_qty' + ln).value === ''){
-    document.getElementById(key + 'product_qty' + ln).value =1;
-  }
+    if(key === "product_" && document.getElementById(key + 'product_qty' + ln) !== null && document.getElementById(key + 'product_qty' + ln).value === ''){
+      document.getElementById(key + 'product_qty' + ln).value =1;
+    }
 
-  var productUnitPrice = unformat2Number(document.getElementById(key + 'product_unit_price' + ln).value);
+    var productUnitPrice = unformat2Number(document.getElementById(key + 'product_unit_price' + ln).value);
 
-  if(document.getElementById(key + 'product_list_price' + ln) !== null && document.getElementById(key + 'product_discount' + ln) !== null && document.getElementById(key + 'discount' + ln) !== null){
-    var listPrice = get_value(key + 'product_list_price' + ln);
-    var discount = get_value(key + 'product_discount' + ln);
-    var dis = document.getElementById(key + 'discount' + ln).value;
+    if(document.getElementById(key + 'product_list_price' + ln) !== null && document.getElementById(key + 'product_discount' + ln) !== null && document.getElementById(key + 'discount' + ln) !== null){
+      var listPrice = get_value(key + 'product_list_price' + ln);
+      var discount = get_value(key + 'product_discount' + ln);
+      var dis = document.getElementById(key + 'discount' + ln).value;
 
-    if(dis == 'Amount')
-    {
-      if(discount > listPrice)
+      if(dis == 'Amount')
       {
-        document.getElementById(key + 'product_discount' + ln).value = listPrice;
-        discount = listPrice;
+        if(discount > listPrice)
+        {
+          document.getElementById(key + 'product_discount' + ln).value = listPrice;
+          discount = listPrice;
+        }
+        productUnitPrice = listPrice - discount;
+        document.getElementById(key + 'product_unit_price' + ln).value = format2Number(listPrice - discount);
       }
-      productUnitPrice = listPrice - discount;
-      document.getElementById(key + 'product_unit_price' + ln).value = format2Number(listPrice - discount);
-    }
-    else if(dis == 'Percentage')
-    {
-      if(discount > 100)
+      else if(dis == 'Percentage')
       {
-        document.getElementById(key + 'product_discount' + ln).value = 100;
-        discount = 100;
+        if(discount > 100)
+        {
+          document.getElementById(key + 'product_discount' + ln).value = 100;
+          discount = 100;
+        }
+        discount = (discount/100) * listPrice;
+        productUnitPrice = listPrice - discount;
+        document.getElementById(key + 'product_unit_price' + ln).value = format2Number(listPrice - discount);
       }
-      discount = (discount/100) * listPrice;
-      productUnitPrice = listPrice - discount;
-      document.getElementById(key + 'product_unit_price' + ln).value = format2Number(listPrice - discount);
+      else
+      {
+        document.getElementById(key + 'product_unit_price' + ln).value = document.getElementById(key + 'product_list_price' + ln).value;
+        document.getElementById(key + 'product_discount' + ln).value = '';
+        discount = 0;
+      }
+      document.getElementById(key + 'product_list_price' + ln).value = format2Number(listPrice);
+      //document.getElementById(key + 'product_discount' + ln).value = format2Number(unformat2Number(document.getElementById(key + 'product_discount' + ln).value));
+      document.getElementById(key + 'product_discount_amount' + ln).value = format2Number(-discount, 6);
     }
-    else
-    {
-      document.getElementById(key + 'product_unit_price' + ln).value = document.getElementById(key + 'product_list_price' + ln).value;
-      document.getElementById(key + 'product_discount' + ln).value = '';
-      discount = 0;
+
+    var productQty = 1;
+    if(document.getElementById(key + 'product_qty' + ln) !== null){
+      productQty = unformat2Number(document.getElementById(key + 'product_qty' + ln).value);
+      Quantity_format2Number(ln);
     }
-    document.getElementById(key + 'product_list_price' + ln).value = format2Number(listPrice);
-    //document.getElementById(key + 'product_discount' + ln).value = format2Number(unformat2Number(document.getElementById(key + 'product_discount' + ln).value));
-    document.getElementById(key + 'product_discount_amount' + ln).value = format2Number(-discount, 6);
+
+
+    var vat = unformatNumber(document.getElementById(key + 'vat' + ln).value,',','.');
+
+    var productTotalPrice = productQty * productUnitPrice;
+
+
+    var totalvat=(productTotalPrice * vat) /100;
+
+    if(total_tax){
+      productTotalPrice=productTotalPrice + totalvat;
+    }
+
+    document.getElementById(key + 'vat_amt' + ln).value = format2Number(totalvat);
+
+    document.getElementById(key + 'product_unit_price' + ln).value = format2Number(productUnitPrice);
+    document.getElementById(key + 'product_total_price' + ln).value = format2Number(productTotalPrice);
+    var groupid = 0;
+    if(enable_groups){
+      groupid = document.getElementById(key + 'group_number' + ln).value;
+    }
+    groupid = 'group' + groupid;
+
+    calculateTotal(groupid);
+    calculateTotal();
   }
-
-  var productQty = 1;
-  if(document.getElementById(key + 'product_qty' + ln) !== null){
-    productQty = unformat2Number(document.getElementById(key + 'product_qty' + ln).value);
-    Quantity_format2Number(ln);
-  }
-
-
-  var vat = unformatNumber(document.getElementById(key + 'vat' + ln).value,',','.');
-
-  var productTotalPrice = productQty * productUnitPrice;
-
-
-  var totalvat=(productTotalPrice * vat) /100;
-
-  if(total_tax){
-    productTotalPrice=productTotalPrice + totalvat;
-  }
-
-  document.getElementById(key + 'vat_amt' + ln).value = format2Number(totalvat);
-
-  document.getElementById(key + 'product_unit_price' + ln).value = format2Number(productUnitPrice);
-  document.getElementById(key + 'product_total_price' + ln).value = format2Number(productTotalPrice);
-  var groupid = 0;
-  if(enable_groups){
-    groupid = document.getElementById(key + 'group_number' + ln).value;
-  }
-  groupid = 'group' + groupid;
-
-  calculateTotal(groupid);
-  calculateTotal();
-
 }
-*/
 
 function calculateAllLines() {
   $('.product_group').each(function(productGroupkey, productGroupValue) {
@@ -1243,7 +1248,8 @@ function validateFields(prodln) {
     addToValidate('EditView','product_ldr_c'+prodln,'decimal',true,"LDR");
     addToValidate('EditView','product_resin_c'+prodln,'varchar',true,"Resin");
   } else if (module_sugar_grp1 == 'ODR_SalesOrders') {
-
+    addToValidate('EditView','product_requested_date_c['+prodln+']','date',true,"Requested Date");
+    addToValidate('EditView','product_required_ship_date_c['+prodln+']','date',true,"Required Ship Date");
   }
 }
 

@@ -275,6 +275,13 @@ array (
           array (
             'name' => 'misc_amount_c',
             'label' => 'LBL_MISC_AMOUNT',
+            'displayParams' => 
+            array (
+              'field' => 
+              array (
+                'onblur' => 'calculateTotal(\'lineItems\');',
+              ),
+            ),
           ),
         ),
         6 => 
@@ -298,6 +305,13 @@ array (
           array (
             'name' => 'tax_amount',
             'label' => 'LBL_TAX_AMOUNT',
+            'displayParams' => 
+            array (
+              'field' => 
+              array (
+                'onblur' => 'calculateTotal(\'lineItems\');',
+              ),
+            ),
           ),
         ),
         8 => 

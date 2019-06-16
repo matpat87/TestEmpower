@@ -4,7 +4,6 @@
 		'inline_edit' => '1',
     'labelValue' => 'Required Ship Date',
     'required' => false,
-    'source' => 'custom_fields',
     'name' => 'required_ship_date_c',
     'vname' => 'LBL_REQUIRED_SHIP_DATE',
     'type' => 'date',

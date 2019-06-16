@@ -4,7 +4,6 @@
 		'inline_edit' => '1',
     'labelValue' => 'Requested Date',
     'required' => false,
-    'source' => 'custom_fields',
     'name' => 'requested_date_c',
     'vname' => 'LBL_REQUESTED_DATE',
     'type' => 'date',

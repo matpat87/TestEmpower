@@ -3,7 +3,7 @@
 	$dictionary['AOS_Products_Quotes']['fields']['ldr_c'] = array (
 		'inline_edit' => false,
 		'labelValue' => 'LDR',
-		'required' => true,
+		'required' => false,
 		'name' => 'ldr_c',
 		'vname' => 'LBL_LDR',
 		'type' => 'decimal',

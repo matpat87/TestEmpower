@@ -3,7 +3,7 @@
 	$dictionary['AOS_Products_Quotes']['fields']['customer_id_c'] = array (
 		'inline_edit' => false,
 		'labelValue' => 'Customer ID',
-		'required' => true,
+		'required' => false,
 		'name' => 'customer_id_c',
 		'vname' => 'LBL_CUSTOMER_ID',
 		'type' => 'varchar',

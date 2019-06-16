@@ -4,7 +4,6 @@
 		'inline_edit' => '1',
     'labelValue' => 'Qty Shipped',
     'required' => false,
-    'source' => 'custom_fields',
     'name' => 'quantity_shipped_c',
     'vname' => 'LBL_QUANTITY_SHIPPED',
     'type' => 'decimal',

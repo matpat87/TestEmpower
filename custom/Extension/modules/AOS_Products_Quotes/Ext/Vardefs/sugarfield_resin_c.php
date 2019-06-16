@@ -3,7 +3,7 @@
 	$dictionary['AOS_Products_Quotes']['fields']['resin_c'] = array (
 		'inline_edit' => false,
 		'labelValue' => 'Resin',
-		'required' => true,
+		'required' => false,
 		'name' => 'resin_c',
 		'vname' => 'LBL_RESIN',
 		'type' => 'varchar',

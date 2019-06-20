@@ -47,19 +47,20 @@
 		}
 
 		$trHTML .= '<tr style="">
-			<td style="width: 13%">'. $row['status_c'] .'</td>
-			<td style="width: 15%">'. $row['assigned_to_name_c'] .'</td>
-			<td style="width: 13%">'. $date_start_c .'</td>
+			<td style="width: 10%">'. $row['status_c'] .'</td>
+			<td style="width: 10%">'. $row['assigned_to_name_c'] .'</td>
+			<td style="width: 10%">'. $date_start_c .'</td>
 			<td style="width: 31%">'. $row['name'] .'</td>
-			<td style="width: 13%">'. $row['account_name_c'] .'</td>
-			<td style="width: 15%">'. $row['related_to_c'] .'</td>
+			<td style="width: 10%">'. $row['account_name_c'] .'</td>
+			<td style="width: 10%">'. $row['shipping_address_city_c'] .'</td>
+			<td style="width: 10%">'. $row['shipping_address_state_c'] .'</td>
+			<td style="width: 10%">'. $row['related_to_c'] .'</td>
 		</tr>';
 
 		if(!empty($row['description'])){
 			$trHTML .= '<tr>
 				<td></td>
-				<td></td>
-				<td colspan="4">'. $row['description'] .'</td>
+				<td colspan="7">'. $row['description'] .'</td>
 			</tr>';
 		}
 	}
@@ -124,12 +125,14 @@ $pdf->AddPage();
 $html = '<table cellpadding="6" style="width: 100%">
 	<thead>
 		<tr>
-			<th style="font-weight: bold; width: 13%">Status</th>
-			<th style="font-weight: bold; width: 15%">Assigned To</th>
-			<th style="font-weight: bold; width: 13%">Date</th>
+			<th style="font-weight: bold; width: 10%">Status</th>
+			<th style="font-weight: bold; width: 10%">Assigned To</th>
+			<th style="font-weight: bold; width: 10%">Date</th>
 			<th style="font-weight: bold; width: 31%">Subject</th>
-			<th style="font-weight: bold; width: 13%">Account</th>
-			<th style="font-weight: bold; width: 15%">Related To</th>
+			<th style="font-weight: bold; width: 10%">Account</th>
+			<th style="font-weight: bold; width: 10%">City</th>
+			<th style="font-weight: bold; width: 10%">State</th>
+			<th style="font-weight: bold; width: 10%">Related To</th>
 		</tr>
 	</thead>
 	<tbody>

@@ -11,6 +11,8 @@ CONCAT(u.first_name, ' ', u.last_name) AS 'assigned_to_name_c',
 activity.date 'date_start_c',
 activity.name AS 'name',
 IF(a.name != '', a.name, 'N/A') AS 'account_name_c',
+a.shipping_address_city AS 'shipping_address_city_c', 
+a.shipping_address_state AS 'shipping_address_state_c', 
 IF(activity.parent_type != '', activity.parent_type, 'N/A') AS 'related_to_c',
 activity.description 
 EOF;

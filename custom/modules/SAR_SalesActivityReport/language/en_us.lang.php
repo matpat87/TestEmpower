@@ -13,4 +13,6 @@ $mod_strings = array (
   'LNK_LIST' => 'View Empower Reports',
   'LBL_ASSIGNED_USER' => 'Assigned User',
   'LBL_ASSIGNED_ACCOUNT' => 'Account',
+  'LBL_SHIPPING_ADDRESS_CITY' => 'City',
+  'LBL_SHIPPING_ADDRESS_STATE' => 'State',
 );

@@ -37,6 +37,20 @@ array (
     'label' => 'LBL_ACCOUNT_NAME',
     'width' => '10%',
   ),
+  'SHIPPING_ADDRESS_CITY_C' => 
+  array (
+    'type' => 'varchar',
+    'label' => 'LBL_SHIPPING_ADDRESS_CITY',
+    'width' => '10%',
+    'default' => true,
+  ),
+  'SHIPPING_ADDRESS_STATE_C' => 
+  array (
+    'type' => 'varchar',
+    'label' => 'LBL_SHIPPING_ADDRESS_STATE',
+    'width' => '10%',
+    'default' => true,
+  ),
   'RELATED_TO_C' => 
   array (
     'type' => 'enum',

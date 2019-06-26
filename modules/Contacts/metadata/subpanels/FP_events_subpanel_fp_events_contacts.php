@@ -56,7 +56,7 @@ $subpanel_layout['list_fields'] = array (
   array (
     'name' => 'email1',
     'vname' => 'LBL_LIST_EMAIL',
-    'widget_class' => 'SubPanelEmailLink',
+    // 'widget_class' => 'SubPanelEmailLink',
     'width' => '20%',
     'sortable' => false,
     'default' => true,

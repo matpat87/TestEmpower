@@ -213,7 +213,7 @@
 		$departmentList['All'] = 'All';
 
 		// Loop through department dropdown list (based from user module's department field)
-		foreach ($app_list_strings['user_department_list'] as $key => $value) {
+		foreach ($app_list_strings['department_list'] as $key => $value) {
 			// Add to departmentList if key is not empty
 			if($key) {
 				$departmentList[$key] = $value;

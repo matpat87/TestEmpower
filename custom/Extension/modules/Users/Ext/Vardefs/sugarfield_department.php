@@ -20,7 +20,7 @@
     'merge_filter' => 'disabled',
     'len' => 100,
     'size' => '20',
-    'options' => 'user_department_list',
+    'options' => 'department_list',
     'studio' => 'visible',
     'dependency' => NULL,
     'id' => 'Usersdepartment',

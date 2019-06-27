@@ -2516,18 +2516,6 @@ $GLOBALS['app_list_strings']['source_list']=array (
   'InternalObservation' => 'Internal Observation',
   'Other' => 'Other',
 );
-$GLOBALS['app_list_strings']['department_list']=array (
-  '' => '',
-  'CustomerService' => 'Customer Service',
-  'Accounting' => 'Accounting',
-  'Manufacturing' => 'Manufacturing',
-  'Purchasing' => 'Purchasing',
-  'Lab' => 'Lab',
-  'QualityControl' => 'Quality Control',
-  'Shipping' => 'Shipping',
-  'Receiving' => 'Receiving',
-  'InventoryControl' => 'Inventory Control',
-);
 $GLOBALS['app_list_strings']['documents_parent_type_display']=array (
   'Accounts' => 'Account',
   'Contacts' => 'Contact',
@@ -2741,11 +2729,6 @@ $GLOBALS['app_list_strings']['record_type_display_notes']=array (
   'Calls' => 'Call',
   'RE_Regulatory' => 'Regulatory',
 );
-$GLOBALS['app_list_strings']['user_department_list']=array (
-  '' => '',
-  'IT' => 'Information Technology',
-  'Sales' => 'Sales',
-);
 $GLOBALS['app_list_strings']['specific_area_of_interest_list']=array (
   '' => '',
   'ContactedBySalesRep' => 'I would like to be contacted by a sales representative',
@@ -2811,4 +2794,18 @@ $GLOBALS['app_list_strings']['case_priority_dom']=array (
   'P1' => 'High',
   'P2' => 'Medium',
   'P3' => 'Low',
+);
+$GLOBALS['app_list_strings']['department_list']=array (
+  '' => '',
+  'Accounting' => 'Accounting',
+  'CustomerService' => 'Customer Service',
+  'IT' => 'Information Technology',
+  'InventoryControl' => 'Inventory Control',
+  'Lab' => 'Lab',
+  'Manufacturing' => 'Manufacturing',
+  'Purchasing' => 'Purchasing',
+  'QualityControl' => 'Quality Control',
+  'Receiving' => 'Receiving',
+  'Sales' => 'Sales',
+  'Shipping' => 'Shipping',
 );

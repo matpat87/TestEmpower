@@ -2805,7 +2805,9 @@ $GLOBALS['app_list_strings']['product_category_dom']=array (
   'Users' => 'Users',
   'Vendors' => 'Vendors',
 );
+
 $GLOBALS['app_list_strings']['case_priority_dom']=array (
+  '' => '',
   'P0' => 'Critical',
   'P' => 'Urgent',
   'P1' => 'High',

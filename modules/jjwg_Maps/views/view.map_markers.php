@@ -89,6 +89,26 @@ class Jjwg_MapsViewMap_Markers extends SugarView {
     div.dataTables_filter {
       margin-right: 10px;
     }
+
+    table.dataTable tr.odd {
+        background-color: #c4e3f5 !important;
+    }
+
+    .paginate_enabled_previous {
+        background: url('/custom/themes/SuiteP/images/forms/Empower/back_enabled.png') no-repeat top left !important;
+    }
+
+    .paginate_enabled_previous:hover {
+        background: url('/custom/themes/SuiteP/images/forms/Empower/back_enabled_hover.png') no-repeat top left !important;
+    }
+    .paginate_enabled_next {
+        background: url('/custom/themes/SuiteP/images/forms/Empower/forward_enabled.png') no-repeat top right !important;
+    }
+
+    .paginate_enabled_next:hover {
+        background: url('/custom/themes/SuiteP/images/forms/Empower/forward_enabled_hover.png') no-repeat top right !important;
+    }
+
   </style>
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css" />
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/datatables-tabletools/2.1.5/css/TableTools.min.css" />

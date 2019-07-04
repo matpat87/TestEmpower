@@ -15,4 +15,5 @@ $mod_strings = array (
   'LBL_ROLE' => 'Role',
   'LBL_SALES_GROUP' => 'Sales Group',
   'LBL_DEPARTMENT' => 'Department',
+  'LBL_SUBTHEME_OPTIONS_EMPOWER' => 'Empower',
 );

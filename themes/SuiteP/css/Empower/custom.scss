@@ -1,0 +1,150 @@
+.ui-widget-content a {
+  color: $color-4;
+}
+
+#fieldChoices .title {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  color: $color-4;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 30%;
+}
+
+.icon {
+  fill: $color-4;
+  pointer-events: none;
+  fill: $color-4;
+  pointer-events: none;
+}
+
+.inlineEditIcon {
+  color: $color-4;
+  padding-left: 3px;
+  float: right;
+  width: 15px;
+  height: 10px;
+}
+
+.inlineEditIcon svg {
+  display: none;
+  fill: $color-4;
+}
+
+select[size] {
+  background: url("/custom/themes/SuiteP/images/forms/Empower/select.ico") no-repeat right $input-select-option;
+  background-color: $input-select-option;
+  background-size: 52px 52px;
+  overflow-y: hidden;
+  color: $main-font-color;
+  padding: 0 52px 0 5px;
+  border-color: $input-select-bg;
+  border-style: solid;
+  border-radius: $border-radius-base;
+  line-height: $input-line-height + 8;
+  outline: 0;
+  /*height: $input-line-height + 8;*/
+  height:100%;
+  -webkit-appearance: none;
+  appearance: none;
+  border-size: 1px;
+  -moz-appearance: none;
+}
+
+select.form-control {
+  background: url("/custom/themes/SuiteP/images/forms/Empower/select.ico") no-repeat right $input-select-option;
+  background-color: $input-select-option;
+  background-size: 52px 52px;
+  color: $main-font-color;
+  padding: 0 52px 0 5px;
+  border-color: $input-select-bg;
+  border-style: solid;
+  border-radius: $border-radius-base;
+  line-height: $input-line-height + 8;
+  outline: 0;
+  height: $input-line-height + 8;
+  -webkit-appearance: none;
+  appearance: none;
+  scrollbar-base-color: $input-select-bg;
+  scrollbar-arrow-color: $input-select-bg;
+  border-size: 1px;
+  -moz-appearance: none;
+}
+
+select {
+  background: url("/custom/themes/SuiteP/images/forms/Empower/select.ico") no-repeat right $input-select-option;
+  background-color: $input-select-option;
+  background-size: 52px 52px;
+  color: $main-font-color;
+  padding: 0 52px 0 5px;
+  border-color: $input-select-bg;
+  border-style: solid;
+  border-radius: $border-radius-base;
+  line-height: $input-line-height + 8;
+  outline: 0;
+  height: $input-line-height + 8;
+  -webkit-appearance: none;
+  appearance: none;
+  scrollbar-base-color: $input-select-bg;
+  scrollbar-arrow-color: $input-select-bg;
+  border-size: 1px;
+  -moz-appearance: none;
+}
+
+.saved_search_select {
+  background: url("/custom/themes/SuiteP/images/forms/Empower/select.ico") no-repeat right $input-select-option;
+  background-color: $input-select-option;
+  background-size: 52px 52px;
+  padding: 16px 55px 16px 5px;
+  border-color: $input-select-bg;
+  border-style: solid;
+  border-radius: $border-radius-base;
+  border-size: 1px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select.ui-widget-content {
+  background: url("/custom/themes/SuiteP/images/forms/Empower/select.ico") no-repeat right $input-select-option;
+  background-color: $input-select-option;
+  background-size: 52px 52px;
+  color: $main-font-color;
+  padding: 0 52px 0 5px;
+  border-color: $input-select-bg;
+  border-style: solid;
+  border-radius: $border-radius-base;
+  line-height: $input-line-height + 8;
+  outline: 0;
+  height: $input-line-height + 8;
+  -webkit-appearance: none;
+  appearance: none;
+  scrollbar-base-color: $input-select-bg;
+  scrollbar-arrow-color: $input-select-bg;
+  border-size: 1px;
+  -moz-appearance: none;
+}
+
+input[type=checkbox] {
+  display: inline-block;
+  background: url('/custom/themes/SuiteP/images/forms/Empower/check.png') no-repeat;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  visibility: visible;
+}
+
+input[type=radio] {
+  display: inline-block;
+  background: url('/custom/themes/SuiteP/images/forms/Empower/radio.png') no-repeat;
+  padding: 0;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  visibility: visible;
+}

@@ -12,12 +12,9 @@ $layout_defs["Opportunities"]["subpanel_setup"]['ci_customeritems_opportunities'
   array (
     0 => 
     array (
-      'widget_class' => 'SubPanelTopButtonQuickCreate',
-    ),
-    1 => 
-    array (
       'widget_class' => 'SubPanelTopSelectButton',
       'mode' => 'MultiSelect',
+      'initial_filter_fields' => array('assigned_user_name' => 'assigned_user_name', 'assigned_user_id' => 'assigned_user_id')
     ),
   ),
 );

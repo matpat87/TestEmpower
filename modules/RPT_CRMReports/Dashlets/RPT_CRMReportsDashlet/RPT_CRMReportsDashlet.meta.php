@@ -44,9 +44,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['RPT_CRMReportsDashlet'] = array(
-    'module' => 'RPT_CRMReports',
-    'title' => translate('LBL_HOMEPAGE_TITLE', 'RPT_CRMReports'),
-    'description' => 'A customizable view into RPT_CRMReports',
-    'category' => 'Module Views'
-);
+// $dashletMeta['RPT_CRMReportsDashlet'] = array(
+//     'module' => 'RPT_CRMReports',
+//     'title' => translate('LBL_HOMEPAGE_TITLE', 'RPT_CRMReports'),
+//     'description' => 'A customizable view into RPT_CRMReports',
+//     'category' => 'Module Views'
+// );

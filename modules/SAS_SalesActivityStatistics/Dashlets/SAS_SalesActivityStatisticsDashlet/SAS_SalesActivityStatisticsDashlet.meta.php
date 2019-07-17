@@ -44,9 +44,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['SAS_SalesActivityStatisticsDashlet'] = array(
-    'module' => 'SAS_SalesActivityStatistics',
-    'title' => translate('LBL_HOMEPAGE_TITLE', 'SAS_SalesActivityStatistics'),
-    'description' => 'A customizable view into SAS_SalesActivityStatistics',
-    'category' => 'Module Views'
-);
+// $dashletMeta['SAS_SalesActivityStatisticsDashlet'] = array(
+//     'module' => 'SAS_SalesActivityStatistics',
+//     'title' => translate('LBL_HOMEPAGE_TITLE', 'SAS_SalesActivityStatistics'),
+//     'description' => 'A customizable view into SAS_SalesActivityStatistics',
+//     'category' => 'Module Views'
+// );

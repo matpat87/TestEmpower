@@ -134,21 +134,22 @@ class SAR_SalesActivityReport extends Basic
 
         $from_query .= " LEFT JOIN accounts as a
                             ON (a.assigned_user_id = u.id AND a.id = activity.parent_id AND activity.parent_type = 'Accounts')
-                                or a.id = (
-                                        SELECT account_id
-                                        FROM accounts_opportunities
-                                        WHERE deleted = 0
-                                            and opportunity_id = o.id
-                                        LIMIT 1
-                                    )
-                                    or a.id = (
-                                        SELECT bean_id
-                                        from emails_beans
-                                        where deleted = 0 
-                                            and email_id = activity.id
-                                            and bean_module = 'Accounts'
-                                            and activity.type = 'Email'
-                                    ) ";
+                                OR a.id = (
+                                    SELECT account_id
+                                    FROM accounts_opportunities
+                                    WHERE deleted = 0
+                                        and opportunity_id = o.id
+                                    LIMIT 1
+                                )
+                                OR a.id = (
+                                    SELECT bean_id
+                                    from emails_beans
+                                    where deleted = 0 
+                                        and email_id = activity.id
+                                        and bean_module = 'Accounts'
+                                        and activity.type = 'Email'
+                                    LIMIT 1
+                                ) ";
 
         $return_array['from'] = $from_query;
 

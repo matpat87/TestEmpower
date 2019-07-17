@@ -44,9 +44,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['AAR_AccountActivityReportDashlet'] = array(
-    'module' => 'AAR_AccountActivityReport',
-    'title' => translate('LBL_HOMEPAGE_TITLE', 'AAR_AccountActivityReport'),
-    'description' => 'A customizable view into AAR_AccountActivityReport',
-    'category' => 'Module Views'
-);
+// $dashletMeta['AAR_AccountActivityReportDashlet'] = array(
+//     'module' => 'AAR_AccountActivityReport',
+//     'title' => translate('LBL_HOMEPAGE_TITLE', 'AAR_AccountActivityReport'),
+//     'description' => 'A customizable view into AAR_AccountActivityReport',
+//     'category' => 'Module Views'
+// );

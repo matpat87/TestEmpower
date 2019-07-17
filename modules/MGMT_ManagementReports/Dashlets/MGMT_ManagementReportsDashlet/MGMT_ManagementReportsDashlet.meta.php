@@ -44,9 +44,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['MGMT_ManagementReportsDashlet'] = array(
-    'module' => 'MGMT_ManagementReports',
-    'title' => translate('LBL_HOMEPAGE_TITLE', 'MGMT_ManagementReports'),
-    'description' => 'A customizable view into MGMT_ManagementReports',
-    'category' => 'Module Views'
-);
+// $dashletMeta['MGMT_ManagementReportsDashlet'] = array(
+//     'module' => 'MGMT_ManagementReports',
+//     'title' => translate('LBL_HOMEPAGE_TITLE', 'MGMT_ManagementReports'),
+//     'description' => 'A customizable view into MGMT_ManagementReports',
+//     'category' => 'Module Views'
+// );

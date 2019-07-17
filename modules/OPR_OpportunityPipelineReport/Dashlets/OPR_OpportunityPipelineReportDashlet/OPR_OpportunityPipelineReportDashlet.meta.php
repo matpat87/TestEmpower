@@ -44,9 +44,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['OPR_OpportunityPipelineReportDashlet'] = array(
-    'module' => 'OPR_OpportunityPipelineReport',
-    'title' => translate('LBL_HOMEPAGE_TITLE', 'OPR_OpportunityPipelineReport'),
-    'description' => 'A customizable view into OPR_OpportunityPipelineReport',
-    'category' => 'Module Views'
-);
+// $dashletMeta['OPR_OpportunityPipelineReportDashlet'] = array(
+//     'module' => 'OPR_OpportunityPipelineReport',
+//     'title' => translate('LBL_HOMEPAGE_TITLE', 'OPR_OpportunityPipelineReport'),
+//     'description' => 'A customizable view into OPR_OpportunityPipelineReport',
+//     'category' => 'Module Views'
+// );

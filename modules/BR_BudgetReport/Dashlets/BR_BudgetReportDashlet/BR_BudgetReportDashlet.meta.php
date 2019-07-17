@@ -44,9 +44,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['BR_BudgetReportDashlet'] = array(
-    'module' => 'BR_BudgetReport',
-    'title' => translate('LBL_HOMEPAGE_TITLE', 'BR_BudgetReport'),
-    'description' => 'A customizable view into BR_BudgetReport',
-    'category' => 'Module Views'
-);
+// $dashletMeta['BR_BudgetReportDashlet'] = array(
+//     'module' => 'BR_BudgetReport',
+//     'title' => translate('LBL_HOMEPAGE_TITLE', 'BR_BudgetReport'),
+//     'description' => 'A customizable view into BR_BudgetReport',
+//     'category' => 'Module Views'
+// );

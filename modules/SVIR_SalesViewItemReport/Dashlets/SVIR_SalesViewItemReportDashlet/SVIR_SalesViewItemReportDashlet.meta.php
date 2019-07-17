@@ -44,9 +44,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 global $app_strings;
 
-$dashletMeta['SVIR_SalesViewItemReportDashlet'] = array(
-    'module' => 'SVIR_SalesViewItemReport',
-    'title' => translate('LBL_HOMEPAGE_TITLE', 'SVIR_SalesViewItemReport'),
-    'description' => 'A customizable view into SVIR_SalesViewItemReport',
-    'category' => 'Module Views'
-);
+// $dashletMeta['SVIR_SalesViewItemReportDashlet'] = array(
+//     'module' => 'SVIR_SalesViewItemReport',
+//     'title' => translate('LBL_HOMEPAGE_TITLE', 'SVIR_SalesViewItemReport'),
+//     'description' => 'A customizable view into SVIR_SalesViewItemReport',
+//     'category' => 'Module Views'
+// );

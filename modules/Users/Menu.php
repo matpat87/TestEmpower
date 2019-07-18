@@ -81,7 +81,7 @@ if (is_admin($current_user)) {
 **/
 if($current_user->is_admin && 
     (empty($_SESSION['sudo_user_id']) && (isset($_REQUEST['module']) && $_REQUEST['module'] == "Users") && ( isset($_REQUEST['module']) && $_REQUEST['action'] == "DetailView") )){
-    $module_menu[] = Array("index.php?entryPoint=switchUserEntryPoint&user_id=" . $_REQUEST['record'], "Login as " . trim($current_user->first_name . ' ' . $current_user->last_name), "");
+    $module_menu[] = Array("index.php?entryPoint=switchUserEntryPoint&user_id=" . $_REQUEST['record'], "Login as " . trim($this->bean->first_name . ' ' . $this->bean->last_name), "");
 }
 /**
  * End of customization

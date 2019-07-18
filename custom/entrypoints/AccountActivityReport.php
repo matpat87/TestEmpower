@@ -41,9 +41,9 @@
 	while( $row = $db->fetchByAssoc($result)){ 
 		$custom_date = '';
 
-		if(!empty($row['custom_date']))
+		if(!empty($row['date_start_c']))
 		{
-			$custom_date = new DateTime($row['custom_date']);
+			$custom_date = new DateTime($row['date_start_c']);
 			$custom_date = $custom_date->format('m/d/Y');
 		}
 
@@ -77,12 +77,12 @@ $pdf = new TCPDF(CUSTOM_PDF_PAGE_ORIENTATION, PDF_UNIT, 'LETTER', true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Empower');
-$pdf->SetTitle('Sales Activity Report');
+$pdf->SetTitle('Account Activity Report');
 $pdf->SetSubject('TCPDF Tutorial');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
-$pdf->SetHeaderData('', 0, 'Sales Activity Report', '');
+$pdf->SetHeaderData('', 0, 'Account Activity Report', '');
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));

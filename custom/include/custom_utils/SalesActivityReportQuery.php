@@ -75,7 +75,7 @@ FROM
       e.date_entered AS 'date',
       e.parent_id,
       e.parent_type,
-      et.description
+      SUBSTRING_INDEX(et.description, "From:", 1)
     FROM emails as e
     INNER join emails_text as et
       ON et.deleted = 0

@@ -2489,14 +2489,6 @@ $GLOBALS['app_list_strings']['internal_material_dispo_list']=array (
   'WorkOff' => 'Work Off',
   'ReturnToStock' => 'Return to Stock',
 );
-$GLOBALS['app_list_strings']['site_list']=array (
-  '' => '',
-  'McHenry' => 'McHenry',
-  'Delaware' => 'Delaware',
-  'Lambertville' => 'Lambertville',
-  'Leominster' => 'Leominster',
-  'Salisbury' => 'Salisbury',
-);
 $GLOBALS['app_list_strings']['category_list']=array (
   '' => '',
   'ProductDefect' => 'Product Defect',
@@ -2741,11 +2733,6 @@ $GLOBALS['app_list_strings']['record_type_display_notes']=array (
   'Calls' => 'Call',
   'RE_Regulatory' => 'Regulatory',
 );
-$GLOBALS['app_list_strings']['user_department_list']=array (
-  '' => '',
-  'IT' => 'Information Technology',
-  'Sales' => 'Sales',
-);
 $GLOBALS['app_list_strings']['specific_area_of_interest_list']=array (
   '' => '',
   'ContactedBySalesRep' => 'I would like to be contacted by a sales representative',
@@ -2813,4 +2800,27 @@ $GLOBALS['app_list_strings']['case_priority_dom']=array (
   'P1' => 'High',
   'P2' => 'Medium',
   'P3' => 'Low',
+);
+$GLOBALS['app_list_strings']['user_department_list']=array (
+  '' => '',
+  'Accounting' => 'Accounting',
+  'CustomerService' => 'Customer Service',
+  'IT' => 'Information Technology',
+  'InventoryControl' => 'Inventory Control',
+  'Lab' => 'Lab',
+  'Manufacturing' => 'Manufacturing',
+  'Purchasing' => 'Purchasing',
+  'QualityControl' => 'Quality Control',
+  'Receiving' => 'Receiving',
+  'Sales' => 'Sales',
+  'Shipping' => 'Shipping',
+);
+$GLOBALS['app_list_strings']['site_list']=array (
+  '' => '',
+  'Clinton' => 'Clinton',
+  'Delaware' => 'Delaware',
+  'Lambertville' => 'Lambertville',
+  'Leominster' => 'Leominster',
+  'McHenry' => 'McHenry',
+  'Salisbury' => 'Salisbury',
 );

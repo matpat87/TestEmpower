@@ -2,7 +2,7 @@
 	$dictionary['User']['fields']['sales_group_c'] = array (
 		'inline_edit' => '1',
 		'labelValue' => 'Sales Group',
-		'required' => true,
+		'required' => false,
 		'source' => 'custom_fields',
 		'name' => 'sales_group_c',
 		'vname' => 'LBL_SALES_GROUP',

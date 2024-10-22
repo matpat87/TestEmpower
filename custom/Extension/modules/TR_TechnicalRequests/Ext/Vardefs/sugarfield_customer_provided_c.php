@@ -1,0 +1,30 @@
+<?php
+    // created: 2019-10-12 14:34:07
+    $dictionary['TR_TechnicalRequests']['fields']['customer_provided_c'] = array (
+        'inline_edit' => '1',
+        'labelValue' => 'Customer Provided',
+        'required' => false,
+        'source' => 'custom_fields',
+        'name' => 'customer_provided_c',
+        'vname' => 'LBL_CUSTOMER_PROVIDED',
+        'type' => 'enum',
+        'massupdate' => '0',
+        'default' => '',
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => 100,
+        'size' => '20',
+        'options' => 'customer_provided_list',
+        'studio' => 'visible',
+        'dependency' => false,
+        'id' => 'TR_TechnicalRequestscustomer_provided_c',
+    );
+?>

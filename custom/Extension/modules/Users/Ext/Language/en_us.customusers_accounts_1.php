@@ -1,0 +1,4 @@
+<?php
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_USERS_CASES_1_FROM_CASES_TITLE'] = 'Customer Issues';
+$mod_strings['LBL_USERS_ACCOUNTS_1_FROM_ACCOUNTS_TITLE'] = 'Accounts';

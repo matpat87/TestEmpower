@@ -1,0 +1,40 @@
+<?php
+ // created: 2023-10-30 16:23:01
+$dictionary['APR_AccountProfileReport']['fields']['apr_account_name_nondb'] = array (
+    'required' => false,
+    'source' => 'non-db',
+    'name' => 'apr_account_name_nondb',
+    'vname' => 'LBL_NAME',
+    'type' => 'relate',
+    'massupdate' => '0',
+    'default' => NULL,
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => true,
+    'inline_edit' => true,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => '255',
+    'size' => '20',
+    'id_name' => 'account_id_c',
+    'ext2' => 'Accounts',
+    'module' => 'Accounts',
+    'rname' => 'name',
+    'quicksearch' => 'enabled',
+    'studio' => 'visible',
+    'id' => 'APR_AccountProfileReportapr_account_name_nondb',
+    // 'custom_module' => 'APR_AccountProfileReport',
+);
+
+$dictionary['APR_AccountProfileReport']['fields']['account_id_c'] = array (
+    'name' => 'account_id_c',
+    'type' => 'id',
+    'source' => 'non-db',
+    'reportable' => false,
+    'vname' => 'LBL_ACCOUNT_ACCOUNT_ID',
+);

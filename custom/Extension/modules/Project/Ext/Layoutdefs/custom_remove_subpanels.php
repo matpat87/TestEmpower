@@ -1,0 +1,12 @@
+<?php
+    unset($layout_defs['Project']['subpanel_setup']['projects_cases']);
+    unset($layout_defs['Project']['subpanel_setup']['cases']);
+    unset($layout_defs['Project']['subpanel_setup']['products']);
+    unset($layout_defs['Project']['subpanel_setup']['ci_customeritems_project']);
+	unset($layout_defs["Project"]["subpanel_setup"]['projecttask']);
+	unset($layout_defs["Project"]["subpanel_setup"]['opportunities_project_1']);
+	unset($layout_defs["Project"]["subpanel_setup"]['projects_opportunities']);
+	unset($layout_defs["Project"]["subpanel_setup"]['aos_quotes_project']);
+    unset($layout_defs["Project"]["subpanel_setup"]['opportunities']);
+    unset($layout_defs["Project"]["subpanel_setup"]['accounts']);
+?>

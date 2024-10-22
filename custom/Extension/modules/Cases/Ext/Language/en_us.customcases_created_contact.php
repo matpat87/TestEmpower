@@ -1,0 +1,3 @@
+<?php
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_CONTACT_CREATED_BY_NAME'] = 'Contact';

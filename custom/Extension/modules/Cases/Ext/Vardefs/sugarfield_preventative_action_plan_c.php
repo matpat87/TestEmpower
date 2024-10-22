@@ -1,0 +1,28 @@
+<?php
+	$dictionary['Case']['fields']['preventative_action_plan_c'] = array (
+		'inline_edit' => '1',
+		'labelValue' => 'Preventive Action Plan',
+		'required' => false,
+		'source' => 'custom_fields',
+		'name' => 'preventative_action_plan_c',
+		'vname' => 'LBL_PREVENTATIVE_ACTION_PLAN',
+		'type' => 'text',
+		'massupdate' => '0',
+		'default' => '',
+		'no_default' => false,
+		'comments' => '',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'disabled',
+		'duplicate_merge_dom_value' => '0',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'size' => '20',
+		'studio' => 'visible',
+		'rows' => '4',
+		'cols' => '20',
+		'id' => 'Casespreventative_action_plan_c',
+	);
+?>

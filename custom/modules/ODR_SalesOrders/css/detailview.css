@@ -1,0 +1,7 @@
+div[field="subtotal_amount"],
+div[field="misc_amount_c"],
+div[field="shipping_amount"],
+div[field="tax_amount"],
+div[field="total_amount"]{
+    text-align: right !important;
+}

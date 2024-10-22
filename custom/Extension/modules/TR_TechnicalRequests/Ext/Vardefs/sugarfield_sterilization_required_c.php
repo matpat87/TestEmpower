@@ -1,0 +1,30 @@
+<?php
+ // created: 2021-09-23 08:28:15
+    $dictionary['TR_TechnicalRequests']['fields']['sterilization_required_c'] = array (
+        'inline_edit' => '1',
+        'labelValue' => 'Sterilization Required',
+        'required' => false,
+        'source' => 'custom_fields',
+        'name' => 'sterilization_required_c',
+        'vname' => 'LBL_STERILIZATION_REQUIRED',
+        'type' => 'enum',
+        'massupdate' => '0',
+        'default' => '',
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => 100,
+        'size' => '20',
+        'options' => 'sterilization_required_list',
+        'studio' => 'visible',
+        'dependency' => false,
+        'id' => 'TR_TechnicalRequestssterilization_required_c',
+    );
+?>

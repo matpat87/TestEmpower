@@ -1,0 +1,801 @@
+// Run via terminal to recompile CSS
+// ./vendor/bin/pscss -s compressed themes/SuiteP/css/Empower/style.scss > themes/SuiteP/css/Empower/style.css
+
+// CSS Var for manual color assignments
+:root {
+  --custom-panel-bg: #{$color-13};
+  --custom-panel-bg-hover: #{$color-14};
+  --custom-panel-text-color: #{$color-20};
+}
+
+footer {
+  background-color: $color-20;
+  color: $color-93 !important;
+
+  & a {
+    color: $color-4 !important;
+  }
+}
+
+a {
+  color: $color-4;
+
+  &:hover, &:focus {
+    color: $color-14;
+  }
+}
+
+*::-webkit-scrollbar-thumb {
+  background: $color-4 !important;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.dashletcontainer > * div.bd,
+.sub-panel div.tab-content {
+  border: 1px solid $color-93;
+  margin: 0px 0.5px;
+}
+
+a#basic_search_link {
+  color: $color-20;
+  background-color: $color-13;
+  border-color: $color-13;
+
+  &:hover, &:focus, &:active {
+    background-color: $color-14;
+    border-color: $color-14;
+    color: $color-20;
+
+    & > {
+      background-color: $color-14;
+      border-color: $color-14;
+      color: $color-20;
+    }
+  }
+}
+
+button:not(.tox-mbtn):not(.tox-tbtn):not(.user-menu-button):not(.vertical-separator), input[type="button"], input[type="reset"], input[type="submit"], input[type=button].btn-info, div.modal-footer>button.btn.button.purple.btn-default, .btn-primary, .btn-info, .btn-default, .btn-warning, [field="billing_address_street"].detail-view-field .button, [field="shipping_address_street"].detail-view-field .button, .buttons input#btn_view_change_log {
+  color: $color-20;
+  background: $color-13;
+  background-color: $color-13;
+  border-color: $color-13;
+
+  &:hover, &:focus, &:active {
+    background: $color-14;
+    background-color: $color-14;
+    border-color: $color-14;
+    color: $color-20;
+
+    & > {
+      background: $color-14;
+      background-color: $color-14;
+      border-color: $color-14;
+      color: $color-20;
+    }
+  }
+}
+
+ul.chooserList.green.ui-sortable>li {
+  color: $color-20 !important;
+  background: $color-13 !important;
+  background-color: $color-13 !important;
+  border-color: $color-13 !important;
+}
+
+ul.chooserList.red.ui-sortable>li {
+  opacity: 0.5 !important;
+  background: $color-28 !important;
+  background-color: $color-28 !important;
+  border-color: $color-28 !important;
+  color: $color-20 !important;
+}
+
+button.close {
+  background: transparent !important;
+  color: $color-4 !important;
+}
+
+// List
+.list.view > tbody > *
+  [class^="suitepicon"]:not(.suitepicon-action-select):not(.suitepicon-action-first):not(.suitepicon-action-last):not(.suitepicon-action-left):not(.suitepicon-action-right):not(.suitepicon-action-caret)::before {
+  color: $color-4 !important;
+
+  &:hover, &:focus {
+    color: $color-14 !important;
+  }
+}
+
+// My Filters arrow icon
+ul.clickMenu>li.sugar_action_button>span {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: -27px;
+  margin-left: 80px;
+  margin-right: 10px;
+}
+
+#selectLinkTop>li>label.disabled {
+  opacity: 0.5 !important;
+  background: $color-4 !important;
+  background-color: $color-4 !important;
+  border-color: $color-4 !important;
+  color: $color-20 !important;
+}
+
+.table-responsive.list>tbody>tr>td .suitepicon {
+  color: $color-20 !important;
+}
+
+.table-responsive.list>tbody>tr>td .button-toggle-expanded span, .button-toggle-expanded .table-responsive.list>tbody>tr>td span, .table-responsive.list>tbody>tr>td .button-toggle-collapsed span, .button-toggle-collapsed .table-responsive.list>tbody>tr>td span, .table-responsive.list>tbody>tr>td .panel-heading a.collapsed, .panel-heading .table-responsive.list>tbody>tr>td a.collapsed, .table-responsive.list>tbody>tr>td .panel-heading a, .panel-heading .table-responsive.list>tbody>tr>td a {
+  color: $color-7 !important;
+}
+
+.btn-danger {
+  background-color: $danger-btn-bg !important;
+}
+
+.btn-danger:hover {
+  background-color: $danger-btn-bg-hover !important;
+}
+
+// Sidebar Link and Button Color
+.sidebar .actionMenuSidebar .recent_h3 {
+  display: block;
+  padding: 0 1% 0 7%;
+  font-size: 16px;
+  font-weight: bold;
+  color: $side-bar-header-color;
+  margin: 0;
+}
+
+.actionMenuSidebar ul li a:hover {
+  background-color: $sidebar-btn-bg-hover !important;
+  color: $sidebar-btn-color-hover !important;
+
+  > a, span, svg {
+    color: $side-bar-link-color-hover !important;
+  }
+}
+
+.recentlyViewedSidebar li:hover,
+.favoritesSidebar li:hover {
+  background-color: $sidebar-btn-bg-hover !important;
+
+  > a, span, svg {
+    color: $side-bar-link-color-hover !important;
+  }
+}
+
+// Nav
+.create.quickcreatetop .dropdown-toggle {
+  background: none;
+  border: 1px solid $color-20;
+}
+
+.quickcreatetop .dropdown-menu {
+  background-color: $color-19;
+  border-radius: 3px;
+  border-top-right-radius: 0;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.quickcreatetop .dropdown-menu:hover {
+  text-decoration: none;
+}
+
+.quickcreatetop ul li {
+  padding: 0;
+  margin: 0;
+}
+
+.quickcreatetop .dropdown-menu li a {
+  display: block;
+  font-size: 14px;
+  background-color: $color-20;
+  background-image: none;
+  padding: 10px;
+  margin: 0;
+  border-bottom: 1px solid $color-19;
+  border-radius: 0;
+  letter-spacing: 0;
+  text-align: left;
+  width: 100%;
+  text-transform: none;
+  opacity: 1;
+  color: $color-7;
+}
+
+//
+.nav-tabs {
+  > li {
+    > a, a:focus, a:hover {
+      border: 1px solid $color-4 !important;
+      background: transparent !important;
+      color: $color-4 !important;
+    }
+
+    &.dropdown, &.active {
+      > a {
+        border: 1px solid $color-4 !important;
+        background: $color-4 !important;
+        color: $color-20 !important;
+      }
+    }
+  }
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a.with-home-icon {
+  color: $navbar-main-menu-bg !important;
+
+  &:hover, &:focus {
+    color: $navbar-link-color-hover !important;
+  }
+}
+
+.topnav {
+  > span > a {
+    color: $navbar-main-menu-bg;
+  }
+
+  ul.dropdown-menu > li > a {
+    color: $navbar-link-color;
+  }
+}
+
+.topnav:hover {
+  background-color: $navbar-main-menu-bg;
+  color: $navbar-link-color-hover;
+
+  > span {
+    > a {
+      color: $navbar-link-color !important;
+      background-color: $navbar-main-menu-bg !important;
+      border-top: 3px solid $navbar-link-color !important;
+    }
+  }
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav>li>a.with-home-icon:hover, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-nav>li>a.with-home-icon:focus
+.navbar-brand-container, .alertsButton, .navbar-inverse .navbar-inverse, .navbar-search .btn-default.searchbutton {
+  color: $navbar-main-menu-bg !important;
+  background: transparent !important;
+
+  &:hover, &:focus {
+    color: $navbar-main-menu-bg !important;
+    background: transparent !important;
+
+    * > {
+      &:hover, &:focus {
+        color: $navbar-main-menu-bg !important;
+        background: transparent !important;
+      }
+    }
+  }
+}
+
+.navbar-form .input-group {
+  border: 1px solid $color-20 !important;
+}
+
+.searchform .query_string {
+  color: $color-4 !important;
+  -webkit-text-fill-color: $color-4 !important;
+
+  &:focus, &:active {
+    color: $color-4 !important;
+    -webkit-text-fill-color: $color-4 !important;
+  }
+}
+
+@media (max-width: 1560px) {
+  .navbar-search .query_string {
+    background-color: $navbar-search-bg !important;
+    border: 0 !important;
+  }
+}
+
+.navbar-form.searchform .input-group-btn {
+  border-left: 1px solid $color-20 !important;
+  background: transparent !important;
+  margin: 0px;
+
+  & button {
+    color: $color-20 !important;
+
+    &:hover, &:focus {
+      background: transparent !important;
+      color: $color-20 !important;
+    }
+  }
+}
+
+.navbar-inverse .dropdown-menu li a, .globalLinks-desktop .user-dropdown li a {
+  color: $navbar-link-color;
+}
+
+.globalLinks-desktop {
+  color: $color-20 !important;
+  background: $color-4 !important;
+
+  &:hover, &:focus {
+    color: $color-20 !important;
+    background: $color-4 !important;
+  }
+}
+
+.navbar-inverse .dropdown-menu li a {
+  &:hover, &:focus {
+    color: $navbar-link-color-hover !important;
+  }
+}
+
+.modulename {
+  > a {
+    color: $navbar-main-menu-bg !important;
+
+    &:hover, &:focus {
+      color: $navbar-link-color-hover !important;
+    }
+  }
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: $navbar-main-menu-bg !important;
+}
+
+.quickcreatetop .dropdown-menu li a:hover {
+  color: $color-20 !important;
+  background-color: $color-4 !important;
+}
+
+.quickcreatetop .dropdown-menu {
+  margin-top: -2px;
+}
+
+.searchform button {
+  display: block;
+  font-size: $navbar-toolbar-height / 2;
+  color: $navbar-search-btn-color;
+  padding: 10px 10px 10px 10px;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  float: left;
+  height: auto;
+}
+
+.searchform button:hover {
+  color: $navbar-search-btn-color-hover;
+}
+
+.custom-svg-icon {
+  color: $color-7 !important;
+
+  &:hover, &:focus {
+    color: $color-20 !important;
+  }
+}
+
+//
+
+.list #pagination td .paginationTable .pageNumbers,
+.subpanel-table.list tr.pagination span.pageNumbers,
+.list .pagination td table td span.pageNumbers {
+  color: $color-93 !important;
+}
+
+#pageContainer .dashletcontainer .pagination td {
+  background: transparent !important;
+  padding-top: 5px !important;
+}
+
+.paginationTable .list-view-pagination-button,
+.button.btn-pagination,
+#pageContainer .dashletcontainer .pagination td button {
+  background: $color-13 !important;
+  background-color: $color-13 !important;
+  border-color: $color-13 !important;
+  color: $color-20 !important;
+
+  &:hover, &:focus {
+    background: $color-14 !important;
+    background-color: $color-14 !important;
+    border-color: $color-14 !important;
+    color: $color-20 !important;
+  }
+
+  &[disabled] {
+    opacity: 0.5 !important;
+    background: $color-28 !important;
+    background-color: $color-28 !important;
+    border-color: $color-28 !important;
+    color: $color-20 !important;
+    cursor: not-allowed !important;
+  }
+}
+
+// Input, Select
+input[type="text"]:not(.custom-readonly):not(.query_string), input[type="password"]:not(.custom-readonly):not(.query_string), input:not([type]):not(.custom-readonly):not(.query_string), input[type="email"]:not(.custom-readonly):not(.query_string), textarea:not(.custom-readonly):not(.query_string) {
+  background: transparent !important;
+  border: 1px solid $color-93 !important;
+}
+
+select:not(.custom-readonly):not(.query_string) {
+  border: 1px solid $color-93 !important;
+}
+
+.custom-readonly {
+  background: transparent !important;
+  border: none !important;
+  pointer-events: none !important;
+  cursor: none !important;
+  opacity: 1 !important
+}
+
+// Action dropdown
+.content #tab-actions>.dropdown-menu li {
+  border-bottom: none !important;
+
+  &:not(:last-child):not(:has(> a)):not(:empty) {
+    border-bottom: 1px solid $color-9 !important;
+  }
+
+  background: $color-13 !important;
+  background-color: $color-13 !important;
+  border-color: $color-13 !important;
+
+  &:hover {
+    & * {
+      background: $color-14 !important;
+      background-color: $color-14 !important;
+      border-color: $color-14 !important;
+      color: $color-20 !important;
+    }
+  }
+}
+
+.list {
+  & thead {
+    background: $color-80 !important;
+  }
+
+  & tr th {
+    color: $color-93 !important;
+
+    & a:link {
+      color: $color-93 !important;
+
+      &:hover, &:focus {
+        border-color: $color-94 !important;
+        color: $color-94 !important;
+      }
+    }
+  }
+}
+
+.list.apx-global-search-cstm-class {
+  & thead {
+    background: $color-13 !important;
+  }
+  & tr th {
+    color: $color-80 !important;
+  }
+}
+
+.popupBody .list.view .pagination .button,
+.subpanel-table.list tr.pagination button.button[name="listViewStartButton"],
+.subpanel-table.list tr.pagination button.button[name="listViewPrevButton"],
+.subpanel-table.list tr.pagination button.button[name="listViewNextButton"],
+.subpanel-table.list tr.pagination button.button[name="listViewEndButton"] {
+  background: $color-13 !important;
+  background-color: $color-13 !important;
+  border-color: $color-13 !important;
+  color: $color-20 !important;
+
+  &:hover, &:focus {
+    background: $color-14 !important;
+    background-color: $color-14 !important;
+    border-color: $color-14 !important;
+    color: $color-20 !important;
+  }
+
+  &[disabled] {
+    opacity: 0.5 !important;
+    background: $color-28 !important;
+    background-color: $color-28 !important;
+    border-color: $color-28 !important;
+    color: $color-20 !important;
+    cursor: not-allowed !important;
+  }
+}
+
+table.subpanel-table .pagination li.sugar_action_button>form>a,
+table.subpanel-table li.sugar_action_button,
+ul.clickMenu.SugarActionMenu li.single a {
+  background: $color-13 !important;
+  background-color: $color-13 !important;
+  border-color: $color-13 !important;
+
+  &:hover, &:focus {
+    background: $color-14 !important;
+    background-color: $color-14 !important;
+    border-color: $color-14 !important;
+    color: $color-20 !important;
+
+    & > a {
+      background: $color-14 !important;
+      background-color: $color-14 !important;
+      border-color: $color-14 !important;
+      color: $color-20 !important;
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5 !important;
+    background: $color-28 !important;
+    background-color: $color-28 !important;
+    border-color: $color-28 !important;
+    color: $color-20 !important;
+    cursor: not-allowed !important;
+  }
+}
+
+.selectActionsDisabled {
+  opacity: 0.5 !important;
+  background: $color-28 !important;
+  background-color: $color-28 !important;
+  border-color: $color-28 !important;
+  color: $color-20 !important;
+  cursor: not-allowed !important;
+
+  & a {
+    opacity: 0.5 !important;
+    background: $color-28 !important;
+    background-color: $color-28 !important;
+    border-color: $color-28 !important;
+    color: $color-20 !important;
+    cursor: not-allowed !important;
+  }
+}
+
+#selectLinkTop,
+#selectLinkBottom,
+#actionLinkTop,
+#actionLinkBottom,
+.listViewLinkButton {
+  & ul, & li {
+    background: $color-13 !important;
+    background-color: $color-13 !important;
+    border-color: $color-13 !important;
+
+    &:hover {
+      & * {
+        background: $color-14 !important;
+        background-color: $color-14 !important;
+        border-color: $color-14 !important;
+        color: $color-20 !important;
+      }
+    }
+  }
+
+  & li.sugar_action_button {
+    &:hover {
+      background: $color-14 !important;
+      background-color: $color-14 !important;
+      border-color: $color-14 !important;
+      color: $color-20 !important;
+    }
+
+    & a {
+      background: $color-13 !important;
+      background-color: $color-13 !important;
+      border-color: $color-13 !important;
+
+      &:hover {
+        background: $color-14 !important;
+        background-color: $color-14 !important;
+        border-color: $color-14 !important;
+        color: $color-20 !important;
+      }
+    }
+  }
+}
+
+#dashletCategories {
+  & > li {
+    & a {
+      border: 1px solid $color-4 !important;
+      background: transparent !important;
+      color: $color-4 !important;
+    }
+
+    &.active a {
+      border: 1px solid $color-4 !important;
+      background: $color-4 !important;
+      color: $color-20 !important;
+    }
+  }
+}
+
+// User Profile Tabs
+.yui-navset .yui-nav {
+  & a em {
+    border: 1px solid $color-4 !important;
+    background: transparent !important;
+    color: $color-4 !important;
+  }
+
+  & .selected a em {
+    border: 1px solid $color-4 !important;
+    background: $color-4 !important;
+    color: $color-20 !important;
+  }
+}
+
+// List view / Dashlet / Subpanel Rows
+.oddListRowS1 td {
+  background: $color-20;
+}
+
+// Popup calendar
+.yui-module .hd, .yui-panel .hd {
+  background: $color-4 !important;
+  color: $color-20 !important;
+}
+
+.yui-calendar {
+  & a {
+    &.calnavleft, &.calnavright {
+      border: 0 !important;
+      background-color: transparent !important;
+      color: $color-4 !important;
+    }
+  }
+
+}
+.yui-calendar td.calcell {
+  & a {
+    & .selected, &:hover {
+      background: $color-4 !important;
+      color: $color-20 !important;
+    }
+  }
+}
+
+// Calendar
+.monthHeader {
+  background: $color-4 !important;
+  color: $color-20 !important;
+  margin-bottom: 0 !important;
+}
+
+.monthCalBody {
+  background: $color-20 !important;
+  color: $color-93 !important;
+
+  & >.calSharedUser {
+    color: $color-93 !important;
+  }
+}
+
+.fc-day-header {
+  & a {
+    color: $color-4 !important;
+  }
+
+  & span {
+    color: $color-93 !important;
+  }
+}
+
+.qtip-content {
+  color: $color-93 !important;
+  background: $color-20 !important;
+}
+
+.table-responsive.list>tbody>tr>td>a {
+  border-bottom-color: transparent !important;
+}
+
+#aow_conditionLines>thead td {
+  background-color: $color-4 !important;
+  color: $color-20 !important;
+}
+
+.le_row {
+  background-color: $color-4 !important;
+  color: $color-93 !important;
+
+  & .panel_name {
+    color: $color-20 !important;
+  }
+}
+
+.popupBody .list .subnav {
+  background-color: $color-4 !important;
+  color: $color-93 !important;
+}
+
+.alert-header {
+  background-color: $color-4 !important;
+  color: $color-93 !important;
+}
+
+.mobile-bar {
+  background-color: $color-4 !important;
+  color: $color-93 !important;
+}
+
+.quickcreatetop .dropdown-menu {
+  background-color: $color-20 !important;
+}
+
+#quick_address, #distance {
+  background-color: $color-80 !important;
+}
+
+button.btn.btn-attach-document {
+  margin-top: 0 !important;
+}
+
+.export-pdf a {
+  padding: 2px 6px 0 7px !important;
+}
+
+a.parent-dropdown-handler.btnAction {
+  padding: 5px 8px 0 7px !important;
+}
+
+.listViewEmpty label.selected-actions-label {
+  margin: 3px 3px 0 5px !important;
+}
+
+ul.clickMenu.selectmenu.SugarActionMenu.searchLink.listViewLinkButton > li > a {
+  padding: 5px 8px 0 7px !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.is_qa_notice {
+    background-color: $color-96 !important;
+    color: $color-20 !important;
+    text-decoration: underline !important;
+    padding: 0 !important;
+}
+
+.modal-search .col-advanced-search .col-xs-12 {
+  width: 100% !important;
+  padding-bottom: 5px !important;
+}
+
+#orderBySelect {
+  width: 50%;
+}
+
+[field=number] {
+  vertical-align: middle;
+  line-height: $input-line-height;
+  height: auto !important;
+}
+
+form[name="wizform"] .icon-btn-lst .icon-btn a {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.apx-global-search-cstm-class {
+  & thead {
+    background: $color-13 !important;
+  }
+  & tr th {
+    color: $color-80 !important;
+  }
+}

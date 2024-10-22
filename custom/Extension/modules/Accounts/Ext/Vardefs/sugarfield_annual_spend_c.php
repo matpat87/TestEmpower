@@ -1,0 +1,36 @@
+<?php
+  $dictionary['Account']['fields']['annual_spend_c'] = array(
+    'inline_edit' => '1',
+    'labelValue' => 'Annual Spend',
+    'duplicate_merge' => 'true',
+    'duplicate_merge_dom_value' => '1',
+    'required' => false,
+    'source' => 'custom_fields',
+    'name' => 'annual_spend_c',
+    'vname' => 'LBL_ANNUAL_SPEND',
+    'type' => 'int',
+    'massupdate' => '0',
+    'default' => '',
+    'no_default' => false,
+    'comments' => 'Capture the customers annual spend in the marketplace to better assess their growth potential. This is not to track their annual spend with us.',
+    'help' => 'Capture the customers annual spend in the marketplace to better assess their growth potential. This is not to track their annual spend with us.',
+    'importable' => 'true',
+    'audited' => false,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => '17',
+    'size' => '20',
+    'enable_range_search' => false,
+    'disable_num_format' => '',
+    'min' => 0,
+    'max' => 999999999,
+    'validation' => 
+    array (
+      'type' => 'range',
+      'min' => 0,
+      'max' => 999999999,
+    ),
+    'id' => 'Accountsannual_spend_c',
+  );
+?>

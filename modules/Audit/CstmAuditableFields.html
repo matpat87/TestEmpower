@@ -1,0 +1,79 @@
+<!-- BEGIN: audit_fields -->
+<script src="/custom/include/js/cdn-tailwindcss-3.4.3.js"></script>
+<style>
+    .popupBody {
+        margin: 0;
+    }
+
+    .collapsed-content {
+        max-height: 15rem;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+    .expanded-content {
+        overflow: hidden;
+        transition: max-height 0.3s ease-in;
+    }
+</style>
+<div class="m-4">
+    <div class="w-full rounded overflow-hidden shadow-lg bg-white">
+        <div class="h-12 font-bold text-gray-50 text-xl mb-2 p-2 flex justify-between" style="background-color: var(--custom-panel-bg); color: rgb(255, 255, 255);">
+            <span>Auditable fields</span>
+            <button id="toggleButton" class="px-2 hidden border border-white">+</button>
+        </div>
+        <div class="">
+            <div class="px-6 grid grid-cols-4 gap-0.5 collapsed-content" id="content">
+                <!-- BEGIN: row -->
+                <span class="text-gray-700 text-lg p-0">
+                   {APX_CSTM_CUSTOM_FIELD}
+                </span>
+                <!-- END: row -->
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    const toggleButton = document.getElementById('toggleButton');
+    const content = document.getElementById('content');
+    let isExpanded = false;
+
+    // Check if content is overflowed and should be collapsible
+    function checkCollapsible() {
+        if (content.scrollHeight > content.clientHeight) {
+            toggleButton.classList.remove('hidden');
+        } else {
+            toggleButton.classList.add('hidden');
+        }
+    }
+
+    toggleButton.addEventListener('click', function() {
+        if (isExpanded) {
+            content.style.maxHeight = '15rem';
+            content.classList.remove('expanded-content');
+            content.classList.add('collapsed-content');
+            toggleButton.textContent = '+';
+
+        } else {
+            content.classList.remove('collapsed-content');
+            content.classList.add('expanded-content');
+            let contentHeight = content.scrollHeight + 'px';
+            content.style.maxHeight = contentHeight;
+            toggleButton.textContent = '-';
+
+        }
+        isExpanded = !isExpanded;
+    });
+
+    // Initial check when the page loads
+    checkCollapsible();
+
+    // Optionally re-check on window resize if your layout is responsive
+    window.addEventListener('resize', checkCollapsible);
+</script>
+
+
+<!-- END: audit_fields -->

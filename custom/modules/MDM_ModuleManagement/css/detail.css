@@ -1,0 +1,26 @@
+#tblModuleManagement tbody::before
+{
+  content: '';
+  display: block;
+  height: 15px;
+
+}
+
+#tblModuleManagement thead th{
+    text-align: center;
+    font-weight: bolder;
+}
+
+#tblModuleManagement tbody td:not(:first-child){
+    text-align: center;
+}
+
+.select-hidden{
+    visibility: hidden; 
+    display: none;
+}
+
+.label-hidden{
+    visibility: hidden; 
+    display: none;
+}

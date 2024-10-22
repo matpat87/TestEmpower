@@ -1,0 +1,61 @@
+#quote{
+    background-color:#fff;
+    border: 1px solid #d8d8d8;
+    padding:10px; 
+    margin:2px;
+}
+#quotecat{
+    background-color:#fff;
+    border: 1px solid #d8d8d8;
+    padding:10px; 
+    margin:2px;
+}
+#loginquote{
+    border: 1px solid #d8d8d8;
+    padding:10px; 
+    margin:2px;
+}
+table td #category_block{
+    display:inline; float: left;
+    font-size: 14px; font-weight:100px;
+    width:33%;
+}
+
+#tab td{
+    padding:3px;
+}
+
+
+#quotecat > button {
+    border: medium none;
+    padding: 5px;
+}
+#thead{
+    text-align:left;
+}
+
+#pagecontent button { border: medium none ; padding: 5px; margin-bottom: 10px; }
+#dis .custom-pagination { padding-top: 20px; width: 100%; }
+#tab label#lbl_newquote_hidden,
+#tab label#lbl_editquote_hidden,
+#tab label#lbl_hidden_select { color: red; font-weight: normal;}
+
+#tab2 label#lbl_newcat_hidden,
+#tab2 label#lbl_editcat_hidden { color: red; font-weight: normal;}
+
+#newcat_row label#lbl_newcat_hidden{margin-left: 10px;margin-top:10px; color: red; font-weight: normal;}
+
+#tbl_loginquote{ margin-left : -10px; font-weight: normal;}
+
+
+#lbl_editcat_hidden {margin-top:10px; }
+
+#pagecontent button.button.button-small{line-height: inherit;height: inherit;}
+
+#pagecontent button.button.button-small:hover,
+#pagecontent button.button.button-small:focus,
+#pagecontent button.button.button-small:active{background: #D66C60;}
+
+.no-img-uploaded{display: none;}
+
+

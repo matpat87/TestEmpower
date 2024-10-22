@@ -1,0 +1,139 @@
+<?php
+/**
+ *
+ * SugarCRM Community Edition is a customer relationship management program developed by
+ * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
+ *
+ * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
+ * Copyright (C) 2011 - 2017 SalesAgility Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License version 3 as published by the
+ * Free Software Foundation with the addition of the following permission added
+ * to Section 15 as permitted in Section 7(a): FOR ANY PART OF THE COVERED WORK
+ * IN WHICH THE COPYRIGHT IS OWNED BY SUGARCRM, SUGARCRM DISCLAIMS THE WARRANTY
+ * OF NON INFRINGEMENT OF THIRD PARTY RIGHTS.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along with
+ * this program; if not, see http://www.gnu.org/licenses or write to the Free
+ * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ * 02110-1301 USA.
+ *
+ * You can contact SugarCRM, Inc. headquarters at 10050 North Wolfe Road,
+ * SW2-130, Cupertino, CA 95014, USA. or at email address contact@sugarcrm.com.
+ *
+ * The interactive user interfaces in modified source and object code versions
+ * of this program must display Appropriate Legal Notices, as required under
+ * Section 5 of the GNU Affero General Public License version 3.
+ *
+ * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
+ * these Appropriate Legal Notices must retain the display of the "Powered by
+ * SugarCRM" logo and "Supercharged by SuiteCRM" logo. If the display of the logos is not
+ * reasonably feasible for  technical reasons, the Appropriate Legal Notices must
+ * display the words  "Powered by SugarCRM" and "Supercharged by SuiteCRM".
+ */
+
+
+class MKT_Markets extends Basic
+{
+    public $new_schema = true;
+    public $module_dir = 'MKT_Markets';
+    public $object_name = 'MKT_Markets';
+    public $table_name = 'mkt_markets';
+    public $importable = true;
+
+    public $id;
+    public $name;
+    public $date_entered;
+    public $date_modified;
+    public $modified_user_id;
+    public $modified_by_name;
+    public $created_by;
+    public $created_by_name;
+    public $description;
+    public $deleted;
+    public $created_by_link;
+    public $modified_user_link;
+    public $assigned_user_id;
+    public $assigned_user_name;
+    public $assigned_user_link;
+    public $SecurityGroups;
+    public $division;
+    public $dynamics;
+    public $economic;
+    public $gross_margin;
+    public $growth_rate;
+    public $industry;
+    public $macromarket;
+    public $market_penetration;
+    public $opportunities;
+    public $political;
+    public $potential_revenue;
+    public $currency_id;
+    public $region;
+    public $revenue;
+    public $social;
+    public $strengths;
+    public $technical;
+    public $threats;
+    public $value_proposition;
+    public $weaknesses;
+    public $year_1;
+    public $year_2;
+    public $year_3;
+    public $year_4;
+    public $year_5;
+	
+    public function bean_implements($interface)
+    {
+        switch($interface)
+        {
+            case 'ACL':
+                return true;
+        }
+
+        return false;
+    }
+
+    function create_new_list_query(
+		$order_by, $where, $filter = array(), $params = array(),
+		$show_deleted = 0, $join_type = '', $return_array = false, $parentbean = null,
+        $singleSelect = false, $ifListForExport = false)
+    {
+		global $log;
+
+		$result = parent::create_new_list_query($order_by, $where, $filter, $params, 
+			$show_deleted, $join_type, $return_array, $parentbean, 
+            $singleSelect, $ifListForExport);
+
+        
+        if (is_array($return_array)) {
+            
+            if ($_REQUEST['action'] == 'index' || $_REQUEST['action'] == 'Popup') {
+                $result['select'] .= " , mkt_markets.industry";
+                $result['order_by'] = str_replace("ORDER BY industry_non_db", "ORDER BY mkt_markets.industry ");
+                
+            }
+        }
+
+        if ($_REQUEST['action'] == 'index' 
+            && ($_REQUEST['searchFormTab'] == 'advanced_search' || $_REQUEST['searchFormTab'] == 'basic_search') 
+            && (isset($_REQUEST['industry_advanced']) || isset($_REQUEST['industry_basic']))) {
+            $result['where'] = str_replace("mkt_markets.industry", "mkt_markets.name ", $result['where']);
+            
+        }
+
+        if (isset($_REQUEST['MKT_Markets2_MKT_MARKETS_ORDER_BY']) && isset($_REQUEST['lvso'])) {
+            $result['order_by'] = " ORDER BY {$_REQUEST['MKT_Markets2_MKT_MARKETS_ORDER_BY']} {$_REQUEST['lvso']}";
+        }
+        // $result['select'] = str_replace("mkt_markets.industry", "mkt_markets.industry as name", $result['select']);
+        
+        return $result;
+	}
+	
+}

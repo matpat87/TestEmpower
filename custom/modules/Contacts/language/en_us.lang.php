@@ -1,0 +1,26 @@
+<?php
+// created: 2021-09-28 09:16:15
+$mod_strings = array (
+  'LBL_TYPE' => 'Type',
+  'LBL_CASES' => 'Customer Issues',
+  'LBL_CASES_SUBPANEL_TITLE' => 'Customer Issues',
+  'LBL_EXT' => 'Ext',
+  'LBL_STATUS' => 'Status',
+  'LBL_ACCOUNT_REF' => 'Account Ref',
+  'LBL_BIRTHDATE' => 'Birthday:',
+  'LBL_BIRTHDAY_RANGE' => 'Birthday Range',
+  'LBL_HOMEPAGE_TITLE' => 'Contact&#039;s Birthdays',
+  'LBL_EDITVIEW_PANEL1' => 'DISTRIBUTION',
+  'LBL_LINE_ITEMS' => 'Line Items',
+  'LBL_DETAILVIEW_PANEL1' => 'DISTRIBUTION',
+  'LBL_EMAIL_ADDRESS' => 'Email Address:',
+  'LBL_DIVISION' => 'Division',
+  'LBL_DESCRIPTION' => 'Personal Background Information',
+  'LBL_PRIMARY_ADDRESS_STATE' => 'Primary Address State:',
+  'LBL_PRIMARY_ADDRESS_POSTALCODE' => 'Primary Address Postal Code:',
+  'LBL_PRIMARY_ADDRESS_CITY' => 'Primary Address City:',
+  'LBL_PRIMARY_ADDRESS_STREET' => 'Primary Address Street:',
+  'LBL_PRIMARY_ADDRESS_COUNTRY' => 'Primary Address Country:',
+  'LBL_ALTERNATE_EMAIL' => 'Alternate Email',
+  'LBL_ACCOUNT_STATUS_NON_DB' => 'Account Status',
+);

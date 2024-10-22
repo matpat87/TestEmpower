@@ -1,0 +1,229 @@
+
+.body {
+    font-size: 12px;
+}
+
+.buttonLogin {
+    border: 1px solid #444444;
+    font-size: 11px;
+    color: #ffffff;
+    background-color: #666666;
+    font-weight: bold;
+}
+
+table.tabForm td {
+    border: none;
+}
+
+table, td {
+}
+
+p {
+    MARGIN-TOP: 0px;
+    MARGIN-BOTTOM: 10px;
+}
+
+form {
+    margin: 0px;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.login-form {
+    position: absolute;
+    z-index: 999;
+    background: #fcfcfc;
+    width: 375px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
+    -moz-box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
+    -webkit-box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
+    opacity: 0.9;  filter: alpha(opacity=90);
+    background: #fcfcfc none repeat scroll 0 0;
+    bottom: 0;
+    height: 410px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    top: 70px;
+
+}
+
+.login-form .header {
+    display: inline-block;
+    padding: 20px 25px 15px 25px;
+    /* background: #ffffff; */
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 86%;
+}
+
+.login-form .header h1 {
+    float: left;
+}
+
+.login-form .content {
+    padding: 20px 25px;
+}
+
+.login-form .content h2 {
+    color: #606060;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+div#main, div#content {
+    padding: 0px;
+    height: 100%;
+    margin: 0px;
+}
+
+div#main, div#content table {
+    height: 100%;
+}
+
+div#main, div#content table td {
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+}
+
+.login-slider {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bxslider, .bxslider li {
+    padding: 0px;
+    margin: 0px;
+}
+
+.bx-wrapper .bx-viewport {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+.replacedImage {
+    background-size: cover !important;
+}
+
+.form-label {
+    color: #606060;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-input {
+    background: #fff;
+    color: #606060;
+    padding: 10px;
+    width: 92% !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px 0px 10px 0px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+}
+
+#login_button {
+    background: #0e73b0 url(modules/CL_custom_login/loginSlider/images/login-arrow.png) no-repeat 90% 50%;
+    border: 1px solid #0e73b0;
+    color: #fff;
+    padding: 10px 25px 10px 10px;
+    width: auto !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px 0px 10px 0px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.option a {
+    color: #606060;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.form-select {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #404040;
+    padding: 10px;
+    width: 92% !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px 0px 10px 0px;
+}
+
+.bx-controls-direction {
+    left: 25%;
+    bottom: 15%;
+    margin: auto;
+    position: absolute;
+    right: inherit;
+    width: 90px;
+}
+
+#generate_pwd_button {
+    background: #0e73b0 url(modules/CL_custom_login/loginSlider/images/login-arrow.png) no-repeat 90% 50%;
+    border: 1px solid #0e73b0;
+    color: #fff;
+    padding: 10px 25px 10px 10px;
+    width: auto !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px 0px 10px 0px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#content.noLeftColumn{margin-left:0px;}
+.quote-block{background: rgba(255,255,255,0.9); box-shadow: 2px 2px 12px #879; color: #666; display: inline-block; left: 0; margin: auto; height: auto; max-height:110px; min-height:40px; padding: 20px 10px 10px; position: absolute; right: 0; text-align: center; top: 30px; vertical-align: middle; width: 50%; z-index: 1; -webkit-border-radius: 5px;
+             -moz-border-radius: 5px;
+             border-radius: 5px; 
+}
+.quote{color: #4e5857; font-size: 17px; font-family: 'Rockwell'; font-weight: bold; margin-bottom: 0; margin-top: 0; text-align: center; width: 100%; }
+.quote-img-right img{margin-top:10px; padding-left: 10px;}
+.quote-img-left img{margin-top: -20px; padding-right: 10px;}
+
+@media only screen and (max-width: 767px) {
+    .quote-block{width: 90%;}
+
+}
+
+@media only screen and (max-width: 480px) {
+
+
+    .login-form {width: 300px; top: 90px;}
+    .login-form .header {width: 250px;}
+    .login-form .content {padding: 5px 25px;  }
+    .login-form .content h2 { margin-bottom: 10px; }
+    .quote { font-size: 12px;}
+}
+
+

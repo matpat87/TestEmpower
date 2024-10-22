@@ -1,0 +1,35 @@
+<?php
+
+$dictionary['AOS_Products_Quotes']['fields']['order_name'] = array (
+    'inline_edit' => '',
+    'labelValue' => 'Order #',
+    'required' => false,
+    'source' => 'non-db',
+    'name' => 'order_name',
+    'vname' => 'LBL_ORDER_NUMBER',
+    'type' => 'relate',
+    'massupdate' => '0',
+    'default' => NULL,
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => true,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => '255',
+    'size' => '20',
+    'id_name' => 'odr_salesorders_id_c',
+    'ext2' => 'ODR_SalesOrders',
+    'module' => 'ODR_SalesOrders',
+    'rname' => 'name',
+    'quicksearch' => 'enabled',
+    'studio' => 'visible',
+    'id' => 'AOS_Products_Quotesorder_name',
+    //'custom_module' => 'AOS_Invoices',
+);
+
+?>

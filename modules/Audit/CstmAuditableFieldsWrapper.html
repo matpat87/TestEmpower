@@ -1,0 +1,42 @@
+<script src="/custom/include/js/cdn-tailwindcss-3.4.3.js"></script>
+<!-- BEGIN: audit_fields_log -->
+<div class="m-4 text-2xl font-semibold">
+    {APX_CUSTOM_AUDIT_LOG_TITLE.POPUP_TITLE}: {APX_CUSTOM_AUDIT_LOG_TITLE.MODULE_NAME}
+</div>
+<div id="apx-custom-change-log-div">
+    {APX_CUSTOM_AUDIT_FIELDS_LIST}
+</div>
+<div class="m-4">
+    <div class="w-full rounded overflow-hidden shadow-lg bg-white">
+        <div class="h-12 font-bold text-gray-50 text-xl mb-2 p-2 flex justify-between" style="background-color: var(--custom-panel-bg); color: rgb(255, 255, 255);">
+            <span>Change Logs</span>
+        </div>
+
+        <div class="m-6 py-2">
+            {APX_AUDIT_FIELDS_LIST}
+        </div>
+    </div>
+</div>
+<style>
+    div.dt-container .dt-paging .dt-paging-button {
+        color: #f7f7f7 !important;
+    }
+</style>
+<script>
+    const initializeDataTable = () => {
+        $('#apx-change-log-table').DataTable();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize the DataTable after the table is rendered
+        initializeDataTable();
+
+        const selectElement = document.querySelector('[name="apx-change-log-table_length"]');
+        if (selectElement) {
+            selectElement.style.width = '7rem'; // Adjust the width as needed
+            selectElement.style.marginRight = '4px'; // Adjust the margin-right as needed
+        }
+
+    });
+</script>
+<!-- END: audit_fields_log -->

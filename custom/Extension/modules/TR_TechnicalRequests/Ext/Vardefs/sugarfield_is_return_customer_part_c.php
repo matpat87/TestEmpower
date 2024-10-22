@@ -1,0 +1,30 @@
+<?php
+    // created: 2019-10-17 13:11:42
+    $dictionary['TR_TechnicalRequests']['fields']['is_return_customer_part_c'] = array (
+        'inline_edit' => '1',
+        'labelValue' => 'Return Target',
+        'required' => true,
+        'source' => 'custom_fields',
+        'name' => 'is_return_customer_part_c',
+        'vname' => 'LBL_IS_RETURN_CUSTOMER_PART',
+        'type' => 'enum',
+        'massupdate' => '0',
+        'default' => NULL,
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => 100,
+        'size' => '20',
+        'options' => 'is_return_customer_part_c_list',
+        'studio' => 'visible',
+        'dependency' => NULL,
+        'id' => 'TR_TechnicalRequestsis_return_customer_part_c',
+    );
+?>

@@ -1,0 +1,31 @@
+<?php
+  // created: 2020-06-03 08:29:19
+  $dictionary['DSBTN_Distribution']['fields']['ship_to_address_c'] = array (
+    'inline_edit' => '1',
+    'labelValue' => 'ship to address',
+    'required' => false,
+    'source' => 'custom_fields',
+    'name' => 'ship_to_address_c',
+    'vname' => 'LBL_SHIP_TO_ADDRESS',
+    'type' => 'radioenum',
+    'massupdate' => '0',
+    'default' => 'primary_address',
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => false,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => 100,
+    'size' => '20',
+    'options' => 'ship_to_address_list',
+    'studio' => 'visible',
+    'dbType' => 'enum',
+    'separator' => '<br>',
+    'id' => 'DSBTN_Distributionship_to_address_c',
+  );
+?>

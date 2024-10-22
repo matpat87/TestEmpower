@@ -1,0 +1,33 @@
+<?php
+ // created: 2021-09-15 07:00:51
+    $dictionary['Opportunity']['fields']['contact_c'] = array (
+        'inline_edit' => '1',
+        'labelValue' => 'Contact',
+        'required' => true,
+        'source' => 'non-db',
+        'name' => 'contact_c',
+        'vname' => 'LBL_CONTACT',
+        'type' => 'relate',
+        'massupdate' => '0',
+        'default' => NULL,
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => false,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => '255',
+        'size' => '20',
+        'id_name' => 'contact_id_c',
+        'ext2' => 'Contacts',
+        'module' => 'Contacts',
+        'rname' => 'name',
+        'quicksearch' => 'enabled',
+        'studio' => 'visible',
+        'id' => 'Opportunitiescontact_c',
+    );
+?>

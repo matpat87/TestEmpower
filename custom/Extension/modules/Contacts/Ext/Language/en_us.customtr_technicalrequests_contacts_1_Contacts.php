@@ -1,0 +1,3 @@
+<?php
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_TR_TECHNICALREQUESTS_CONTACTS_1_TITLE'] = 'Technical Requests';

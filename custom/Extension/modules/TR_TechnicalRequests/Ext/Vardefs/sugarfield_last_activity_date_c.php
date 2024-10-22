@@ -1,0 +1,28 @@
+<?php
+	$dictionary['TR_TechnicalRequests']['fields']['last_activity_date_c'] = array (
+		'inline_edit' => '',
+		'options' => 'date_range_search_dom',
+		'labelValue' => 'Last Activity Date',
+		'enable_range_search' => '1',
+		'required' => false,
+		'source' => 'custom_fields',
+		'name' => 'last_activity_date_c',
+		'vname' => 'LBL_LAST_ACTIVITY_DATE',
+		'type' => 'datetimecombo',
+		'massupdate' => '0',
+		'default' => '',
+		'no_default' => false,
+		'comments' => '',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'true',
+		'duplicate_merge_dom_value' => '1',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'size' => '20',
+		'dbType' => 'datetime',
+		'id' => 'TR_TechnicalRequestslast_activity_date_c',
+	);
+?>

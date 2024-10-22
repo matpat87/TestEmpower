@@ -1,0 +1,28 @@
+<?php
+	$dictionary['Case']['fields']['material_notes_c'] = array (
+		'inline_edit' => '1',
+		'labelValue' => 'Material Notes',
+		'required' => false,
+		'source' => 'custom_fields',
+		'name' => 'material_notes_c',
+		'vname' => 'LBL_MATERIAL_NOTES',
+		'type' => 'text',
+		'massupdate' => '0',
+		'default' => '',
+		'no_default' => false,
+		'comments' => '',
+		'help' => '',
+		'importable' => 'true',
+		'duplicate_merge' => 'disabled',
+		'duplicate_merge_dom_value' => '0',
+		'audited' => false,
+		'reportable' => true,
+		'unified_search' => false,
+		'merge_filter' => 'disabled',
+		'size' => '20',
+		'studio' => 'visible',
+		'rows' => '4',
+		'cols' => '20',
+		'id' => 'Casesmaterial_notes_c',
+	);
+?>

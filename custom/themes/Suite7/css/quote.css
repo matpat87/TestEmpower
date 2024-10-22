@@ -1,0 +1,48 @@
+#quote{
+    background-color:#fff;
+    box-shadow: 1px 1px 2px 1px #999;
+    border-radius: 10px;
+    padding:10px; 
+    margin:2px;
+}
+#quotecat{
+    background-color:#fff;
+    box-shadow: 1px 1px 2px 1px #999;
+    border-radius: 10px;
+    padding:10px; 
+    margin:2px;
+}
+#loginquote{
+    box-shadow: 1px 1px 2px 1px #999;
+    border-radius:10px;
+    padding:10px; 
+    margin:2px;
+}
+table td #category_block{
+    display:inline; float: left;
+    font-size: 14px; font-weight:100px;
+    width:33%;
+}
+#header_main{
+    font-size: 14px;
+}
+#thead{
+    text-align:left;
+}
+
+#quotecat > button {
+    border: medium none;
+    padding: 5px;
+}
+#tab label#lbl_hidden_select { color: red; font-weight: normal;}
+
+#pagecontent button { border: medium none ; padding: 5px; margin-bottom: 10px; }
+#dis .custom-pagination { padding-top: 20px; width: 100%; }
+#tab label#lbl_newquote_hidden,
+#tab label#lbl_editquote_hidden,
+#tab label#lbl_hidden_select { color: red; font-weight: normal;}
+
+#tab2 label#lbl_newcat_hidden,
+#tab2 label#lbl_editcat_hidden { color: red; font-weight: normal;}
+
+#newcat_row label#lbl_newcat_hidden{margin-left: 10px; margin-top: 22px; color: red; font-weight: normal;}

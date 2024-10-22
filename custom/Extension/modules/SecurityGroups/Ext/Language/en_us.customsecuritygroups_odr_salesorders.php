@@ -1,0 +1,2 @@
+<?php
+$mod_strings['LBL_SECUIRTYGROUPS_ODR_SALESORDERS_FROM_DOCUMENTS_TITLE'] = 'Orders'; //OnTrack #981

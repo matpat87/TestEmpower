@@ -1,0 +1,30 @@
+<?php
+    // created: 2021-03-18 02:15:28
+    $dictionary['TR_TechnicalRequests']['fields']['order_cycle_c'] = array (
+        'inline_edit' => '1',
+        'labelValue' => 'Order Cycle',
+        'required' => true,
+        'source' => 'custom_fields',
+        'name' => 'order_cycle_c',
+        'vname' => 'LBL_ORDER_CYCLE',
+        'type' => 'enum',
+        'massupdate' => '0',
+        'default' => '',
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => 100,
+        'size' => '20',
+        'options' => 'order_cycle_list',
+        'studio' => 'visible',
+        'dependency' => false,
+        'id' => 'TR_TechnicalRequestsorder_cycle_c',
+    );
+?>

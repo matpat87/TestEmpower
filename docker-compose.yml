@@ -1,0 +1,16 @@
+version: '3'
+services:
+  elasticsearch-qa:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+    oom_kill_disable: true
+    container_name: elasticsearch-qa
+    restart: unless-stopped
+    ports:
+        - 9201:9200
+        - 9301:9300
+    environment:
+        - discovery.type=single-node
+        - xpack.security.enabled=false
+        - ELASTICSEARCH_USERNAME="elastic"
+        - ELASTICSEARCH_PASSWORD="Alphanomix21!"
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"

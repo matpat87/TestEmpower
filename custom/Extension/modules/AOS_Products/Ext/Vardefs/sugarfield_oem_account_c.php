@@ -1,0 +1,35 @@
+<?php
+ // created: 2019-12-09 13:14:24
+$dictionary['AOS_Products']['fields']['oem_account_c'] = array (
+    'inline_edit' => '1',
+    'labelValue' => 'OEM Account',
+    'required' => false,
+    'source' => 'non-db',
+    'name' => 'oem_account_c',
+    'vname' => 'LBL_OEM_ACCOUNT',
+    'type' => 'relate',
+    'massupdate' => '0',
+    'default' => NULL,
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => true,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => '255',
+    'size' => '20',
+    'id_name' => 'account_id1_c',
+    'ext2' => 'Accounts',
+    'module' => 'Accounts',
+    'rname' => 'name',
+    'quicksearch' => 'enabled',
+    'studio' => 'visible',
+    'id' => 'AOS_Productsoem_account_c',
+    'custom_module' => 'AOS_Products',
+);
+
+ ?>

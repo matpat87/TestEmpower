@@ -1,0 +1,28 @@
+<?php
+	$dictionary['AOS_Products']['fields']['weight_c'] = array (
+		'inline_edit' => '1',
+    'labelValue' => 'Weight',
+    'required' => true,
+    'source' => 'custom_fields',
+    'name' => 'weight_c',
+    'vname' => 'LBL_WEIGHT',
+    'type' => 'decimal',
+    'massupdate' => '0',
+    'default' => '0.00',
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => true,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => '18',
+    'size' => '20',
+    'enable_range_search' => false,
+    'precision' => '2',
+    'id' => 'AOS_Productsweight_c',
+	);
+?>

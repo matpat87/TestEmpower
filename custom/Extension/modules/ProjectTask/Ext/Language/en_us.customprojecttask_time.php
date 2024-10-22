@@ -1,0 +1,4 @@
+<?php
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_PROJECTTASK_TIMES_FROM_TIMES_TITLE'] = 'Project Tasks';
+$mod_strings['LBL_TIME_SUBPANEL_TITLE'] = 'TIME';

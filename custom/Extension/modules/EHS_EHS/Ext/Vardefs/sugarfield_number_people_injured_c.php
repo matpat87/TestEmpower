@@ -1,0 +1,31 @@
+<?php
+ // created: 2018-06-20 16:36:22
+$dictionary['EHS_EHS']['fields']['number_people_injured_c'] = array (
+    'inline_edit' => '1',
+    'labelValue' => 'Number of People Injured',
+    'required' => true,
+    'source' => 'custom_fields',
+    'name' => 'number_people_injured_c',
+    'vname' => 'LBL_NUMBER_PEOPLE_INJURED',
+    'type' => 'int',
+    'massupdate' => '0',
+    'default' => '',
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => false,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => '255',
+    'size' => '20',
+    'enable_range_search' => false,
+    'disable_num_format' => '',
+    'min' => false,
+    'max' => false,
+    'id' => 'EHS_EHSnumber_people_injured_c',
+);
+ ?>

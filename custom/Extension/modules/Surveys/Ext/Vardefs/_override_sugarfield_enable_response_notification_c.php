@@ -1,0 +1,26 @@
+<?php
+ // created: 2024-02-12 09:35:01
+$dictionary['Surveys']['fields']['enable_response_notification_c'] = array (
+    'inline_edit' => '1',
+    'labelValue' => 'Enable Reponse Notification',
+    'required' => false,
+    'source' => 'custom_fields',
+    'name' => 'enable_response_notification_c',
+    'vname' => 'LBL_ENABLE_RESPONSE_NOTIFICATION',
+    'type' => 'bool',
+    'massupdate' => '0',
+    'default' => '0',
+    'no_default' => false,
+    'comments' => '',
+    'help' => '',
+    'importable' => 'true',
+    'duplicate_merge' => 'disabled',
+    'duplicate_merge_dom_value' => '0',
+    'audited' => false,
+    'reportable' => true,
+    'unified_search' => false,
+    'merge_filter' => 'disabled',
+    'len' => '255',
+    'size' => '20',
+    'id' => 'Surveysenable_response_notification_c',
+);

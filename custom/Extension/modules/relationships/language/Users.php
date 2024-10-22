@@ -1,0 +1,9 @@
+<?php
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_USERS_CASES_1_FROM_CASES_TITLE'] = 'Customer Issues';
+$mod_strings['LBL_USERS_ACCOUNTS_1_FROM_ACCOUNTS_TITLE'] = 'Accounts';
+$mod_strings['LBL_USERS_ACCOUNTS_2_FROM_ACCOUNTS_TITLE'] = 'Accounts';
+$mod_strings['LBL_USERS_OTR_ONTRACK_1_FROM_OTR_ONTRACK_TITLE'] = 'Reported By';
+$mod_strings['LBL_USERS_PROJECTTASK_1_FROM_PROJECTTASK_TITLE'] = 'Reported By';
+$mod_strings['LBL_USERS_AOS_INVOICES_1_FROM_AOS_INVOICES_TITLE'] = 'Invoices';
+$mod_strings['LBL_USERS_ACCOUNTS_3_FROM_ACCOUNTS_TITLE'] = 'Accounts';

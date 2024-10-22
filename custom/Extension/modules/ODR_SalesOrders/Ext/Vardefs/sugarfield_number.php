@@ -1,0 +1,26 @@
+<?php
+	$dictionary['ODR_SalesOrders']['fields']['number'] = array (
+        'required' => true,
+        'name' => 'number',
+        'vname' => 'LBL_NUMBER',
+        'type' => 'varchar',
+        'massupdate' => 0,
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => false,
+        'inline_edit' => true,
+        'reportable' => true,
+        'unified_search' => true,
+        'merge_filter' => 'disabled',
+        'len' => '11',
+        'size' => '20',
+        'enable_range_search' => false,
+        'disable_num_format' => '1',
+        'min' => false,
+        'max' => false,
+    );
+?>

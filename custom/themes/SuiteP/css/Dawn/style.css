@@ -1,0 +1,298 @@
+:root {
+  --custom-panel-bg: #66727D;
+}
+
+.custom-readonly {
+  background: rgb(248, 248, 248) !important;
+  border: 1px solid rgb(226, 231, 235) !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+#searchDialog > .modal-dialog {
+  width: 85% !important;
+  height: 85% !important;
+  margin: auto;
+}
+
+.row-container {
+  white-space: nowrap !important;
+  max-width: 100%;
+  overflow: auto;
+  padding: 0px !important;
+}
+
+.modal-search .form-item {
+  width: 80%;
+}
+
+.search_form .view .col-xs-12 input[type='text'] {
+  width: 70%;
+}
+
+@media (max-width: 320px) {
+  .modal-search .col-xs-12 {
+    width: 100% !important;
+  }
+
+  .modal-search .form-item {
+    width: 100%;
+  }
+
+  .search_form .view .col-xs-12 input[type='text'] {
+    width: 100%;
+  }
+}
+
+.row-equal-height {
+  min-height: 140px !important;
+}
+
+.row-field,
+.row-label {
+  float: none !important;
+  display: inline-block !important;
+}
+
+.advanced .col-xs-12 {
+  float: none;
+}
+
+.col-advanced-search {
+  float: left;
+}
+
+.modal-search .submitButtonsAdvanced,
+.modal-search .submitButtons {
+  float: left !important;
+}
+
+.modal-search .col-lg-4 {
+  width: 33.3333333333%;
+  min-height: 68px;
+}
+
+#EditView #misc_amount_c {
+  width: 40%;
+  max-width: 40%;
+}
+
+@media (min-width: 1600px) {
+  .col-sm-12 .col-sm-8.edit-view-field textarea#description,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#sales_activity_c,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#status_update_c,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#business_strategy_c {
+    width: 120%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .col-sm-12 .col-sm-8.edit-view-field textarea#description,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#sales_activity_c,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#status_update_c,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#business_strategy_c {
+    width: 120%;
+  }
+}
+
+@media (min-width: 769px) {
+  .col-sm-12 .col-sm-8.edit-view-field textarea#description,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#sales_activity_c,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#status_update_c,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#business_strategy_c {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-sm-12 .col-sm-8.edit-view-field textarea#description,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#sales_activity_c,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#status_update_c,
+  .col-sm-12 .col-sm-8.edit-view-field textarea#business_strategy_c {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  textarea#description,
+  textarea#sales_activity_c,
+  textarea#status_update_c {
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  textarea#description,
+  textarea#sales_activity_c,
+  textarea#status_update_c {
+    width: 100%;
+  }
+}
+
+.custom-svg-icon {
+  display: inline-block;
+  color: white;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+#EditView #misc_amount_c {
+  width: 40%;
+  max-width: 40%;
+}
+
+@media (min-width: 800px) {
+  div#dlg_c {
+    z-index: 1001 !important;
+  }
+
+  .yui-skin-sam.masked
+    #dlg.SuiteP-configureDashlet.yui-module.yui-overlay.yui-panel
+    .bd
+    form
+    table.edit
+    tr
+    td[scope='row'] {
+    width: 20% !important;
+  }
+
+  .yui-skin-sam.masked
+    #dlg.SuiteP-configureDashlet.yui-module.yui-overlay.yui-panel
+    .bd
+    form
+    table.edit
+    tr
+    td[valign='top'] {
+    width: 30%;
+  }
+
+  .yui-skin-sam.masked
+    #dlg.SuiteP-configureDashlet.yui-module.yui-overlay.yui-panel {
+    max-width: 1136px;
+  }
+
+  .yui-skin-sam.masked
+    #dlg.SuiteP-configureDashlet.yui-module.yui-overlay.yui-panel
+    .bd
+    form
+    table.edit
+    #edit_tabs {
+    top: 53px;
+    left: 555px;
+  }
+
+  .yui-skin-sam.masked
+    #dlg.SuiteP-configureDashlet.yui-module.yui-overlay.yui-panel
+    .bd
+    form
+    table.edit
+    tr
+    td[valign='top']
+    select {
+    padding-right: 15px;
+  }
+
+  select.templateGroupChooser,
+  select.groupChooser,
+  select#hide_tabs {
+    padding-right: 15px;
+  }
+}
+
+.currentModule {
+  display: none !important;
+}
+
+/* Date fields fixed width to avoid button wrap on smaller screensizes as per ticket #703 */
+.dateTime input.date_input {
+  display: inline-block;
+  width: 50% !important;
+}
+
+/* Global fixed for fields in Advanced Filter Pop-up that have range dropdown: avoids putting input fields on the next line */
+div[id$='_range_div'] {
+  display: inline-block;
+  width: 60% !important;
+}
+
+/* OnTrack #1001 - Make the search form look better */
+#search_form span.id-ff.multiple{
+	position: unset;
+}
+
+#search_form .yui-ac-input{
+  margin-top: 0px;
+}
+
+#search_form .yui-ac button{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+/* OnTrack #1001 - end of Make the search form look better */
+
+/* OnTrack #1015 - start of Date Filter */
+@media screen and (max-width: 1050px) {
+    div[id*="_advanced_range_div"]{
+        width: 100% !important;
+    }
+
+    div[id*="_advanced_range_div"] .dateRangeInput{
+        width: 40% !important;
+    }
+}
+/* OnTrack #1015 - end of Date Filter */
+
+/* OnTrack #935 - LIST VIEW - CHANGES */
+.advanced .col-lg-4{
+    min-height: 107px;
+}
+
+.advanced .templateGroupChooser{
+    max-height: 65px;
+}
+/* OnTrack #935 - LIST VIEW - CHANGES */
+
+/* OnTrack #983 - MODULE MANAGEMENT */
+.suitepicon-admin-module-management{
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22fas%22%20data-icon%3D%22cubes%22%20class%3D%22svg-inline--fa%20fa-cubes%20fa-w-16%22%20role%3D%22img%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cscript%3E%3C%2Fscript%3E%0A%3Cpath%20fill%3D%22%23f08377%22%20d%3D%22M488.6%20250.2L392%20214V105.5c0-15-9.3-28.4-23.4-33.7l-100-37.5c-8.1-3.1-17.1-3.1-25.3%200l-100%2037.5c-14.1%205.3-23.4%2018.7-23.4%2033.7V214l-96.6%2036.2C9.3%20255.5%200%20268.9%200%20283.9V394c0%2013.6%207.7%2026.1%2019.9%2032.2l100%2050c10.1%205.1%2022.1%205.1%2032.2%200l103.9-52%20103.9%2052c10.1%205.1%2022.1%205.1%2032.2%200l100-50c12.2-6.1%2019.9-18.6%2019.9-32.2V283.9c0-15-9.3-28.4-23.4-33.7zM358%20214.8l-85%2031.9v-68.2l85-37v73.3zM154%20104.1l102-38.2%20102%2038.2v.6l-102%2041.4-102-41.4v-.6zm84%20291.1l-85%2042.5v-79.1l85-38.8v75.4zm0-112l-102%2041.4-102-41.4v-.6l102-38.2%20102%2038.2v.6zm240%20112l-85%2042.5v-79.1l85-38.8v75.4zm0-112l-102%2041.4-102-41.4v-.6l102-38.2%20102%2038.2v.6z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    padding-right: calc(1em);
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+    position: relative !important;
+    top: 5px !important;
+}
+
+#mdl-customer-product .search-filter{
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+#mdl-customer-product .search-actions{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#mdl-customer-product .search-actions input[type="button"]{
+  margin: 0px;
+}
+/* OnTrack 1493 - Notification Bell size and position adjustment */
+div#alerts {
+  min-width: 27rem !important;
+  right: 0 !important;
+}
+
+@media (max-width:1366px) {
+  div#alerts {
+    left: -235px !important;
+  }
+}
+/* End of OnTrack 1493 - Notification Bell size and position adjustment */
+
+span#custom_line_items_non_db {
+  width: 100%;
+}
+
+li.sugar_action_button > #track_log_entries_select_button {
+  background-color: inherit !important;
+}

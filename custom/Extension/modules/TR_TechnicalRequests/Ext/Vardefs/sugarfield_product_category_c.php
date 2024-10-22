@@ -1,0 +1,32 @@
+<?php
+    $dictionary['TR_TechnicalRequests']['fields']['product_category_c'] = array (
+        'inline_edit' => '1',
+        'labelValue' => 'Product Category',
+        'required' => true,
+        'source' => 'custom_fields',
+        'name' => 'product_category_c',
+        'vname' => 'LBL_PRODUCT_CATEGORY',
+        'type' => 'enum',
+        'massupdate' => '0',
+        'default' => '',
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => 100,
+        'size' => '20',
+        'studio' => 'visible',
+        'dependency' => false,
+        'function' => array(
+            'name' => 'retrieveProductCategoryDropdown',
+            'params' => array('bean', '$this'),
+        ),
+        'id' => 'TR_TechnicalRequestsproduct_category_c',
+    );
+?>
